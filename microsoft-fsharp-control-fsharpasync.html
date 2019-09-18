@@ -1,0 +1,126 @@
+<!doctype html>
+<html data-reactroot="" lang="en"><head><title>gitRepoName docs / Async-FSharp.Core</title><link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/><link href="/content/style.css" type="text/css" rel="stylesheet"/></head><body><nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark"><a class="navbar-brand" href="/index.html">FSharp.Core</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="/Getting_Started.html"><span>Getting Started</span></a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown-Docs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a><div class="dropdown-menu" aria-labelledby="navbarDropdown-Docs"><a class="dropdown-item" href="/docs/Docs.html">Docs</a></div></li><li class="nav-item"><a class="nav-link" href="/api/index.html"><span>Api</span></a></li></ul></div></nav><h1>Async</h1><p><span>Namespace: Microsoft.FSharp.Control</span><br/><span>Attributes: <br/>[&lt;Sealed&gt;]<br/>[&lt;CompiledName(&quotFSharpAsync&quot)&gt;]<br/></span></p><div class="xmldoc"><p>This static class holds members for creating and manipulating asynchronous computations.</p>
+
+</div><h3>Static members</h3><table class="table"><thead><tr><th>Static member</th><th>Description</th></tr></thead><tbody><tr><td class="member-name"><code class="function-or-value" data-guid="b0bddd18-9501-49c1-8c6f-22a188578b42">Async.AsBeginEnd(computation)</code><div class="tip" id="b0bddd18-9501-49c1-8c6f-22a188578b42"><strong>Signature:</strong>(computation:(&#x27;Arg -&gt; Async&lt;&#x27;T&gt;)) -&gt; (&#x27;Arg * AsyncCallback * obj -&gt; IAsyncResult) * (IAsyncResult -&gt; &#x27;T) * (IAsyncResult -&gt; unit)<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates three functions that can be used to implement the .NET Asynchronous
+Programming Model (APM) for a given asynchronous computation.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="60c4f0b6-bf25-4074-9eb7-289f12504e0d">Async.AwaitEvent(event, cancelAction)</code><div class="tip" id="60c4f0b6-bf25-4074-9eb7-289f12504e0d"><strong>Signature:</strong>(event:IEvent&lt;&#x27;Del,&#x27;T&gt; * cancelAction:(unit -&gt; unit) option) -&gt; Async&lt;&#x27;T&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that waits for a single invocation of a CLI
+event by adding a handler to the event. Once the computation completes or is
+cancelled, the handler is removed from the event.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="184ee1a4-71f7-4880-b15b-c49df64913d1">Async.AwaitIAsyncResult(...)</code><div class="tip" id="184ee1a4-71f7-4880-b15b-c49df64913d1"><strong>Signature:</strong>(iar:IAsyncResult * millisecondsTimeout:int option) -&gt; Async&lt;bool&gt;<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that will wait on the IAsyncResult.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="c5f798fc-49e1-4418-afd0-0da3e0948e9d">Async.AwaitTask(task)</code><div class="tip" id="c5f798fc-49e1-4418-afd0-0da3e0948e9d"><strong>Signature:</strong>task:Task -&gt; Async&lt;unit&gt;<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Return an asynchronous computation that will wait for the given task to complete and return
+its result.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="00bdc57e-1814-4eed-ae73-543137f6ed6f">Async.AwaitTask(task)</code><div class="tip" id="00bdc57e-1814-4eed-ae73-543137f6ed6f"><strong>Signature:</strong>task:Task&lt;&#x27;T&gt; -&gt; Async&lt;&#x27;T&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Return an asynchronous computation that will wait for the given task to complete and return
+its result.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="86e91f89-f59c-4cad-a9f8-227c20e7ab3e">Async.AwaitWaitHandle(...)</code><div class="tip" id="86e91f89-f59c-4cad-a9f8-227c20e7ab3e"><strong>Signature:</strong>(waitHandle:WaitHandle * millisecondsTimeout:int option) -&gt; Async&lt;bool&gt;<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that will wait on the given WaitHandle.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="64ae333f-77d8-4a84-86cd-d2827a02ef62">Async.CancelDefaultToken()</code><div class="tip" id="64ae333f-77d8-4a84-86cd-d2827a02ef62"><strong>Signature:</strong>unit -&gt; unit<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Raises the cancellation condition for the most recent set of asynchronous computations started
+without any specific CancellationToken. Replaces the global CancellationTokenSource with a new
+global token source for any asynchronous computations created after this point without any
+specific CancellationToken.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="d993bfe5-ca5b-4c3a-972b-e910842413fc">Async.CancellationToken</code><div class="tip" id="d993bfe5-ca5b-4c3a-972b-e910842413fc"><strong>Signature:</strong>Async&lt;CancellationToken&gt;<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that returns the CancellationToken governing the execution
+of the computation.</p>
+
+</div><p><strong>CompiledName:</strong><code>get_CancellationToken</code></p></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="ceb23d6b-8a6d-483b-9241-3f823ce0402f">Async.Catch(computation)</code><div class="tip" id="ceb23d6b-8a6d-483b-9241-3f823ce0402f"><strong>Signature:</strong>computation:Async&lt;&#x27;T&gt; -&gt; Async&lt;Choice&lt;&#x27;T,exn&gt;&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that executes computation.
+If this computation completes successfully then return Choice1Of2 with the returned
+value. If this computation raises an exception before it completes then return Choice2Of2
+with the raised exception.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="63f73876-8620-4089-ae3c-e5b7fa6d73cd">Async.Choice(computations)</code><div class="tip" id="63f73876-8620-4089-ae3c-e5b7fa6d73cd"><strong>Signature:</strong>(computations:seq&lt;Async&lt;&#x27;T option&gt;&gt;) -&gt; Async&lt;&#x27;T option&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that executes all given asynchronous computations in parallel,
+returning the result of the first succeeding computation (one whose result is 'Some x').
+If all child computations complete with None, the parent computation also returns None.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="0b7172e8-6554-4af8-afd3-69415cfe3378">Async.DefaultCancellationToken</code><div class="tip" id="0b7172e8-6554-4af8-afd3-69415cfe3378"><strong>Signature:</strong>CancellationToken<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Gets the default cancellation token for executing asynchronous computations.</p>
+
+</div><p><strong>CompiledName:</strong><code>get_DefaultCancellationToken</code></p></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="fd5b4373-7fa7-4a24-a945-5e6e2ceff56d">Async.FromBeginEnd(...)</code><div class="tip" id="fd5b4373-7fa7-4a24-a945-5e6e2ceff56d"><strong>Signature:</strong>(arg1:&#x27;Arg1 * arg2:&#x27;Arg2 * arg3:&#x27;Arg3 * beginAction:(&#x27;Arg1 * &#x27;Arg2 * &#x27;Arg3 * AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#x27;T) * cancelAction:(unit -&gt; unit) option) -&gt; Async&lt;&#x27;T&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation in terms of a Begin/End pair of actions in
+the style used in CLI APIs. This overload should be used if the operation is
+qualified by three arguments. For example,
+Async.FromBeginEnd(arg1,arg2,arg3,ws.BeginGetWeather,ws.EndGetWeather)
+When the computation is run, beginFunc is executed, with
+a callback which represents the continuation of the computation.
+When the callback is invoked, the overall result is fetched using endFunc.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="5dc83fc8-8101-420d-8151-f540c6ded886">Async.FromBeginEnd(...)</code><div class="tip" id="5dc83fc8-8101-420d-8151-f540c6ded886"><strong>Signature:</strong>(arg1:&#x27;Arg1 * arg2:&#x27;Arg2 * beginAction:(&#x27;Arg1 * &#x27;Arg2 * AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#x27;T) * cancelAction:(unit -&gt; unit) option) -&gt; Async&lt;&#x27;T&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation in terms of a Begin/End pair of actions in
+the style used in CLI APIs. This overload should be used if the operation is
+qualified by two arguments. For example,
+Async.FromBeginEnd(arg1,arg2,ws.BeginGetWeather,ws.EndGetWeather)
+When the computation is run, beginFunc is executed, with
+a callback which represents the continuation of the computation.
+When the callback is invoked, the overall result is fetched using endFunc.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="cf6922ed-0634-4205-9be7-4f692eba0521">Async.FromBeginEnd(...)</code><div class="tip" id="cf6922ed-0634-4205-9be7-4f692eba0521"><strong>Signature:</strong>(arg:&#x27;Arg1 * beginAction:(&#x27;Arg1 * AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#x27;T) * cancelAction:(unit -&gt; unit) option) -&gt; Async&lt;&#x27;T&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation in terms of a Begin/End pair of actions in
+the style used in CLI APIs. This overload should be used if the operation is
+qualified by one argument. For example,
+Async.FromBeginEnd(place,ws.BeginGetWeather,ws.EndGetWeather)
+When the computation is run, beginFunc is executed, with
+a callback which represents the continuation of the computation.
+When the callback is invoked, the overall result is fetched using endFunc.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="bf4afec2-12e1-4cb0-85ed-6bae6d0634a4">Async.FromBeginEnd(...)</code><div class="tip" id="bf4afec2-12e1-4cb0-85ed-6bae6d0634a4"><strong>Signature:</strong>(beginAction:(AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#x27;T) * cancelAction:(unit -&gt; unit) option) -&gt; Async&lt;&#x27;T&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation in terms of a Begin/End pair of actions in
+the style used in CLI APIs. For example,
+Async.FromBeginEnd(ws.BeginGetWeather,ws.EndGetWeather)
+When the computation is run, beginFunc is executed, with
+a callback which represents the continuation of the computation.
+When the callback is invoked, the overall result is fetched using endFunc.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="0d0fbb59-df84-4367-8658-9e5bbb517161">Async.FromContinuations(callback)</code><div class="tip" id="0d0fbb59-df84-4367-8658-9e5bbb517161"><strong>Signature:</strong>(callback:((&#x27;T -&gt; unit) * (exn -&gt; unit) * (OperationCanceledException -&gt; unit) -&gt; unit)) -&gt; Async&lt;&#x27;T&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that captures the current
+success, exception and cancellation continuations. The callback must
+eventually call exactly one of the given continuations.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="4c337a35-fbda-4295-afa4-f4096704df82">Async.Ignore(computation)</code><div class="tip" id="4c337a35-fbda-4295-afa4-f4096704df82"><strong>Signature:</strong>computation:Async&lt;&#x27;T&gt; -&gt; Async&lt;unit&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that runs the given computation and ignores
+its result.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="86c95d61-4a15-4219-9da1-5585ce01d7f8">Async.OnCancel(interruption)</code><div class="tip" id="86c95d61-4a15-4219-9da1-5585ce01d7f8"><strong>Signature:</strong>(interruption:(unit -&gt; unit)) -&gt; Async&lt;IDisposable&gt;<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Generates a scoped, cooperative cancellation handler for use within an asynchronous workflow.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="550f139a-862d-46da-ba4a-5f08288f0676">Async.Parallel(...)</code><div class="tip" id="550f139a-862d-46da-ba4a-5f08288f0676"><strong>Signature:</strong>(computations:seq&lt;Async&lt;&#x27;T&gt;&gt; * maxDegreeOfParallelism:int option) -&gt; Async&lt;&#x27;T []&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that executes all the given asynchronous computations,
+initially queueing each as work items and using a fork/join pattern.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="d86578ad-8390-4aa9-a511-952537ab6cc7">Async.Parallel(computations)</code><div class="tip" id="d86578ad-8390-4aa9-a511-952537ab6cc7"><strong>Signature:</strong>computations:seq&lt;Async&lt;&#x27;T&gt;&gt; -&gt; Async&lt;&#x27;T []&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that executes all the given asynchronous computations,
+initially queueing each as work items and using a fork/join pattern.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="03def2e5-cf23-4f7f-896e-7e6a06abd50a">Async.RunSynchronously(...)</code><div class="tip" id="03def2e5-cf23-4f7f-896e-7e6a06abd50a"><strong>Signature:</strong>(computation:Async&lt;&#x27;T&gt; * timeout:int option * cancellationToken:CancellationToken option) -&gt; &#x27;T<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Runs the asynchronous computation and await its result.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="3ad160df-270e-4c02-aafd-23787a5043c1">Async.Sequential(computations)</code><div class="tip" id="3ad160df-270e-4c02-aafd-23787a5043c1"><strong>Signature:</strong>computations:seq&lt;Async&lt;&#x27;T&gt;&gt; -&gt; Async&lt;&#x27;T []&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that executes all the given asynchronous computations sequentially.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="bc0bdd8c-adf3-446a-a220-14ea65eec143">Async.Sleep(millisecondsDueTime)</code><div class="tip" id="bc0bdd8c-adf3-446a-a220-14ea65eec143"><strong>Signature:</strong>millisecondsDueTime:int -&gt; Async&lt;unit&gt;<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that will sleep for the given time. This is scheduled
+using a System.Threading.Timer object. The operation will not block operating system threads
+for the duration of the wait.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="eac865da-3653-4f94-8f9c-745b6a4e5463">Async.Start(...)</code><div class="tip" id="eac865da-3653-4f94-8f9c-745b6a4e5463"><strong>Signature:</strong>(computation:Async&lt;unit&gt; * cancellationToken:CancellationToken option) -&gt; unit<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Starts the asynchronous computation in the thread pool. Do not await its result.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="2829536d-bc1d-4821-98f4-d4ce5e787c6f">Async.StartAsTask(...)</code><div class="tip" id="2829536d-bc1d-4821-98f4-d4ce5e787c6f"><strong>Signature:</strong>(computation:Async&lt;&#x27;T&gt; * taskCreationOptions:TaskCreationOptions option * cancellationToken:CancellationToken option) -&gt; Task&lt;&#x27;T&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Executes a computation in the thread pool.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="7f2f2614-4247-4112-8b6a-527cf564f120">Async.StartChild(...)</code><div class="tip" id="7f2f2614-4247-4112-8b6a-527cf564f120"><strong>Signature:</strong>(computation:Async&lt;&#x27;T&gt; * millisecondsTimeout:int option) -&gt; Async&lt;Async&lt;&#x27;T&gt;&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Starts a child computation within an asynchronous workflow.
+This allows multiple asynchronous computations to be executed simultaneously.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="18beb5f7-b604-49da-bc3c-41f5f9e03c40">Async.StartChildAsTask(...)</code><div class="tip" id="18beb5f7-b604-49da-bc3c-41f5f9e03c40"><strong>Signature:</strong>(computation:Async&lt;&#x27;T&gt; * taskCreationOptions:TaskCreationOptions option) -&gt; Async&lt;Task&lt;&#x27;T&gt;&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation which starts the given computation as a System.Threading.Tasks.Task</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="9986694b-a9ad-4abb-8f1d-749ca5b87bff">Async.StartImmediate(...)</code><div class="tip" id="9986694b-a9ad-4abb-8f1d-749ca5b87bff"><strong>Signature:</strong>(computation:Async&lt;unit&gt; * cancellationToken:CancellationToken option) -&gt; unit<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Runs an asynchronous computation, starting immediately on the current operating system
+thread.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="bb01e0cf-b4a8-4cc4-8aa4-e59217864984">Async.StartImmediateAsTask(...)</code><div class="tip" id="bb01e0cf-b4a8-4cc4-8aa4-e59217864984"><strong>Signature:</strong>(computation:Async&lt;&#x27;T&gt; * cancellationToken:CancellationToken option) -&gt; Task&lt;&#x27;T&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Runs an asynchronous computation, starting immediately on the current operating system,
+but also returns the execution as System.Threading.Tasks.Task</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="4bf85cfa-ec24-4f96-bdd2-ef4d37a7207b">Async.StartWithContinuations(...)</code><div class="tip" id="4bf85cfa-ec24-4f96-bdd2-ef4d37a7207b"><strong>Signature:</strong>(computation:Async&lt;&#x27;T&gt; * continuation:(&#x27;T -&gt; unit) * exceptionContinuation:(exn -&gt; unit) * cancellationContinuation:(OperationCanceledException -&gt; unit) * cancellationToken:CancellationToken option) -&gt; unit<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Runs an asynchronous computation, starting immediately on the current operating system
+thread. Call one of the three continuations when the operation completes.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="6b2779e8-7d5e-490c-bb65-8c0f852087a7">Async.SwitchToContext(syncContext)</code><div class="tip" id="6b2779e8-7d5e-490c-bb65-8c0f852087a7"><strong>Signature:</strong>syncContext:SynchronizationContext -&gt; Async&lt;unit&gt;<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that runs
+its continuation using syncContext.Post. If syncContext is null
+then the asynchronous computation is equivalent to SwitchToThreadPool().</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="63e3208d-71e7-4240-9c46-240860402966">Async.SwitchToNewThread()</code><div class="tip" id="63e3208d-71e7-4240-9c46-240860402966"><strong>Signature:</strong>unit -&gt; Async&lt;unit&gt;<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that creates a new thread and runs
+its continuation in that thread.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="0999d88a-82e5-4f21-bed5-99f432a0e94f">Async.SwitchToThreadPool()</code><div class="tip" id="0999d88a-82e5-4f21-bed5-99f432a0e94f"><strong>Signature:</strong>unit -&gt; Async&lt;unit&gt;<br/><strong>Modifiers:</strong><br/><strong>Type parameters:</strong></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that queues a work item that runs
+its continuation.</p>
+
+</div></td></tr><tr><td class="member-name"><code class="function-or-value" data-guid="69fc82d2-3d6e-4c90-b40f-dadd8f296f81">Async.TryCancelled(...)</code><div class="tip" id="69fc82d2-3d6e-4c90-b40f-dadd8f296f81"><strong>Signature:</strong>(computation:Async&lt;&#x27;T&gt; * compensation:(OperationCanceledException -&gt; unit)) -&gt; Async&lt;&#x27;T&gt;<br/><strong>Modifiers:</strong><br/></div></td><td class="xmldoc"><div class="comment-block"><p>Creates an asynchronous computation that executes computation.
+If this computation is cancelled before it completes then the computation generated by
+running compensation is executed.</p>
+
+</div></td></tr></tbody></table><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script><script src="/content/tips.js"></script><script src="/content/hotload.js"></script></body></html>
