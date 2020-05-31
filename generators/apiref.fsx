@@ -237,6 +237,8 @@ let generate' (ctx : SiteContents)  =
       all
       |> Seq.toList
       |> List.collect (fun n ->
+        printfn "processing entry"
+        printfn "%A" n
         let name = n.GeneratorOutput.AssemblyGroup.Name
         let namespaces =
           n.GeneratorOutput.AssemblyGroup.Namespaces
