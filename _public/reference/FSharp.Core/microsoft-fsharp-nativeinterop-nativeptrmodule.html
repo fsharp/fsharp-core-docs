@@ -1,0 +1,488 @@
+<html class="js csstransforms3d">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      F# Core API Docs | NativePtr
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080//static/images/favicon.png"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/nucleus.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/fontawesome-all.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/hybrid.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/featherlight.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/perfect-scrollbar.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/auto-complete.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/atom-one-dark-reasonable.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/theme.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/theme-green.css"/>
+    <script src="http://localhost:8080//static/js/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <div id="header-wrapper">
+        <div id="header">
+          <h2 id="logo">
+            F# Core API Docs
+          </h2>
+        </div>
+        <div class="searchbox">
+          <label for="search-by">
+            <i class="fas fa-search"></i>
+          </label>
+          <input data-search-input="" id="search-by" type="search" placeholder="Search..."/>
+          <span data-search-clear="">
+            <i class="fas fa-times"></i>
+          </span>
+        </div>
+        <script type="text/javascript" src="http://localhost:8080//static/js/lunr.min.js"></script>
+        <script type="text/javascript" src="http://localhost:8080//static/js/auto-complete.js"></script>
+        <script type="text/javascript">
+          var baseurl ='http://localhost:8080/'
+        </script>
+        <script type="text/javascript" src="http://localhost:8080//static/js/search.js"></script>
+        <script src="http://localhost:8080//static/js/highlight.pack.js"></script>
+        <script>
+          hljs.initHighlightingOnLoad();
+        </script>
+      </div>
+      <div class="highlightable">
+        <ul class="topics">
+          <li id="menu-refs" class="dd-item menu-group-link menu-group-link-active">
+            <a>
+              API References
+            </a>
+          </li>
+        </ul>
+        <ul id="submenu-refs" class="submenu submenu-active">
+          <li>
+            <a href="http://localhost:8080//reference/FSharp.Core/index.html" class="padding">
+              FSharp.Core
+            </a>
+          </li>
+        </ul>
+        <section id="shortcuts">
+          <h3>
+            Shortucts
+          </h3>
+          <ul>
+            <li>
+              <a class="padding" href="/">
+                <i class="fas fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="http://fsharp.org">
+                <i class="fas fa-cubes"></i>
+                F# Software Foundation
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="https://github.com/dotnet/fsharp">
+                <i class="fab fa-github"></i>
+                GitHub repo
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section id="footer">
+          <p>Built with <a href="https://github.com/ionide/Fornax">Fornax</a>
+        </section>
+      </div>
+    </nav>
+    <section id="body">
+      <div id="overlay"></div>
+      <div class="padding highlightable">
+        <div id="body-inner">
+          <span id="sidebar-toggle-span">
+            <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+              <i class="fas fa-bars"></i>
+               navigation
+            </a>
+          </span>
+          <div class="api-page">
+            <h2>
+              NativePtr
+            </h2>
+            <b>
+              Namespace: 
+            </b>
+            <a href="Microsoft.FSharp.NativeInterop.html">
+              Microsoft.FSharp.NativeInterop
+            </a>
+            <br/>
+            <b>
+              Parent: 
+            </b>
+            <a href="Microsoft.FSharp.NativeInterop.html">
+              Microsoft.FSharp.NativeInterop
+            </a>
+            <span>
+              <div class="comment"></br><p class='summary'>Contains operations on native pointers. Use of these operators may
+ result in the generation of unverifiable code.</p></div>
+            </span>
+            <br/>
+            <b>
+              Values and Functions
+            </b>
+            <table>
+              <tr>
+                <th width="35%">
+                  Name
+                </th>
+                <th width="65%">
+                  Description
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ofNativeInt
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  address:nativeint -> nativeptr<'T>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    UnverifiableAttribute
+                  </code>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns a typed native pointer for a given machine address.</p><h2>Parameters</h2><dl><dt><span class='parameter'>address</span></dt><dd><p>The pointer address.</p></dd></dl><p class='returns'>Returns: A typed pointer.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    toVoidPtr
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  address:nativeptr<'T> -> voidptr
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    UnverifiableAttribute
+                  </code>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns an untyped native pointer for a given typed pointer.</p><h2>Parameters</h2><dl><dt><span class='parameter'>address</span></dt><dd><p>The pointer address.</p></dd></dl><p class='returns'>Returns: A typed pointer.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ofVoidPtr
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  voidptr -> nativeptr<'T>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    UnverifiableAttribute
+                  </code>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns a typed native pointer for a untyped native pointer.</p><h2>Parameters</h2><dl><dt><span class='parameter'>address</span></dt><dd><p>The untyped pointer.</p></dd></dl><p class='returns'>Returns: A typed pointer.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    toNativeInt
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  address:nativeptr<'T> -> nativeint
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    UnverifiableAttribute
+                  </code>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns a machine address for a given typed native pointer.</p><h2>Parameters</h2><dl><dt><span class='parameter'>address</span></dt><dd><p>The input pointer.</p></dd></dl><p class='returns'>Returns: The machine address.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    add
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  address:nativeptr<'T> -> index:int -> nativeptr<'T>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    UnverifiableAttribute
+                  </code>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns a typed native pointer by adding index * sizeof<'T> to the 
+ given input pointer.</p><h2>Parameters</h2><dl><dt><span class='parameter'>address</span></dt><dd><p>The input pointer.</p></dd><dt><span class='parameter'>index</span></dt><dd><p>The index by which to offset the pointer.</p></dd></dl><p class='returns'>Returns: A typed pointer.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    get
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  address:nativeptr<'T> -> index:int -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    UnverifiableAttribute
+                  </code>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Dereferences the typed native pointer computed by adding index * sizeof<'T> to the 
+ given input pointer.</p><h2>Parameters</h2><dl><dt><span class='parameter'>address</span></dt><dd><p>The input pointer.</p></dd><dt><span class='parameter'>index</span></dt><dd><p>The index by which to offset the pointer.</p></dd></dl><p class='returns'>Returns: The value at the pointer address.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    read
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  address:nativeptr<'T> -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    UnverifiableAttribute
+                  </code>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Dereferences the given typed native pointer.</p><h2>Parameters</h2><dl><dt><span class='parameter'>address</span></dt><dd><p>The input pointer.</p></dd></dl><p class='returns'>Returns: The value at the pointer address.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    write
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  address:nativeptr<'T> -> value:'T -> unit
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    UnverifiableAttribute
+                  </code>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Assigns the  into the memory location referenced by the given typed native pointer.</p><h2>Parameters</h2><dl><dt><span class='parameter'>address</span></dt><dd><p>The input pointer.</p></dd><dt><span class='parameter'>value</span></dt><dd><p>The value to assign.</p></dd></dl></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    set
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  address:nativeptr<'T> -> index:int -> value:'T -> unit
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    UnverifiableAttribute
+                  </code>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Assigns the  into the memory location referenced by the typed native 
+ pointer computed by adding index * sizeof<'T> to the given input pointer.</p><h2>Parameters</h2><dl><dt><span class='parameter'>address</span></dt><dd><p>The input pointer.</p></dd><dt><span class='parameter'>index</span></dt><dd><p>The index by which to offset the pointer.</p></dd><dt><span class='parameter'>value</span></dt><dd><p>The value to assign.</p></dd></dl></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    stackalloc
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  count:int -> nativeptr<'T>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    UnverifiableAttribute
+                  </code>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Allocates a region of memory on the stack.</p><h2>Parameters</h2><dl><dt><span class='parameter'>count</span></dt><dd><p>The number of objects of type T to allocate.</p></dd></dl><p class='returns'>Returns: A typed pointer to the allocated memory.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    toByRef
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  nativeptr<'T> -> byref<'T>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    UnverifiableAttribute
+                  </code>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts a given typed native pointer to a managed pointer.</p><h2>Parameters</h2><dl><dt><span class='parameter'>address</span></dt><dd><p>The input pointer.</p></dd></dl><p class='returns'>Returns: The managed pointer.</p></div>
+                </td>
+              </tr>
+            </table>
+            <br/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="http://localhost:8080//static/js/clipboard.min.js"></script>
+    <script src="http://localhost:8080//static/js/perfect-scrollbar.min.js"></script>
+    <script src="http://localhost:8080//static/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="http://localhost:8080//static/js/jquery.sticky.js"></script>
+    <script src="http://localhost:8080//static/js/featherlight.min.js"></script>
+    <script src="http://localhost:8080//static/js/modernizr.custom-3.6.0.js"></script>
+    <script src="http://localhost:8080//static/js/learn.js"></script>
+    <script src="http://localhost:8080//static/js/hugo-learn.js"></script>
+    <link rel="stylesheet" href="http://localhost:8080//static/mermaid/mermaid.css"/>
+    <script src="http://localhost:8080//static/mermaid/mermaid.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/fsharp.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
+    </script>
+  </body>
+</html>

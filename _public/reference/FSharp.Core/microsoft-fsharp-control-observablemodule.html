@@ -1,0 +1,440 @@
+<html class="js csstransforms3d">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      F# Core API Docs | Observable
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080//static/images/favicon.png"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/nucleus.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/fontawesome-all.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/hybrid.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/featherlight.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/perfect-scrollbar.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/auto-complete.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/atom-one-dark-reasonable.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/theme.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/theme-green.css"/>
+    <script src="http://localhost:8080//static/js/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <div id="header-wrapper">
+        <div id="header">
+          <h2 id="logo">
+            F# Core API Docs
+          </h2>
+        </div>
+        <div class="searchbox">
+          <label for="search-by">
+            <i class="fas fa-search"></i>
+          </label>
+          <input data-search-input="" id="search-by" type="search" placeholder="Search..."/>
+          <span data-search-clear="">
+            <i class="fas fa-times"></i>
+          </span>
+        </div>
+        <script type="text/javascript" src="http://localhost:8080//static/js/lunr.min.js"></script>
+        <script type="text/javascript" src="http://localhost:8080//static/js/auto-complete.js"></script>
+        <script type="text/javascript">
+          var baseurl ='http://localhost:8080/'
+        </script>
+        <script type="text/javascript" src="http://localhost:8080//static/js/search.js"></script>
+        <script src="http://localhost:8080//static/js/highlight.pack.js"></script>
+        <script>
+          hljs.initHighlightingOnLoad();
+        </script>
+      </div>
+      <div class="highlightable">
+        <ul class="topics">
+          <li id="menu-refs" class="dd-item menu-group-link menu-group-link-active">
+            <a>
+              API References
+            </a>
+          </li>
+        </ul>
+        <ul id="submenu-refs" class="submenu submenu-active">
+          <li>
+            <a href="http://localhost:8080//reference/FSharp.Core/index.html" class="padding">
+              FSharp.Core
+            </a>
+          </li>
+        </ul>
+        <section id="shortcuts">
+          <h3>
+            Shortucts
+          </h3>
+          <ul>
+            <li>
+              <a class="padding" href="/">
+                <i class="fas fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="http://fsharp.org">
+                <i class="fas fa-cubes"></i>
+                F# Software Foundation
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="https://github.com/dotnet/fsharp">
+                <i class="fab fa-github"></i>
+                GitHub repo
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section id="footer">
+          <p>Built with <a href="https://github.com/ionide/Fornax">Fornax</a>
+        </section>
+      </div>
+    </nav>
+    <section id="body">
+      <div id="overlay"></div>
+      <div class="padding highlightable">
+        <div id="body-inner">
+          <span id="sidebar-toggle-span">
+            <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+              <i class="fas fa-bars"></i>
+               navigation
+            </a>
+          </span>
+          <div class="api-page">
+            <h2>
+              Observable
+            </h2>
+            <b>
+              Namespace: 
+            </b>
+            <a href="Microsoft.FSharp.Control.html">
+              Microsoft.FSharp.Control
+            </a>
+            <br/>
+            <b>
+              Parent: 
+            </b>
+            <a href="Microsoft.FSharp.Control.html">
+              Microsoft.FSharp.Control
+            </a>
+            <span>
+              <div class="comment"></br><p class='summary'>Basic operations on first class event and other observable objects.</p></div>
+            </span>
+            <br/>
+            <b>
+              Values and Functions
+            </b>
+            <table>
+              <tr>
+                <th width="35%">
+                  Name
+                </th>
+                <th width="65%">
+                  Description
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    merge
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  source1:IObservable<'T> -> source2:IObservable<'T> -> IObservable<'T>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns an observable for the merged observations from the sources. 
+ The returned object propagates success and error values arising 
+ from either source and completes when both the sources have completed.</p><h2>Parameters</h2><dl><dt><span class='parameter'>source1</span></dt><dd><p>The first Observable.</p></dd><dt><span class='parameter'>source2</span></dt><dd><p>The second Observable.</p></dd></dl><p class='returns'>Returns: An Observable that propagates information from both sources.</p><h2>Remarks</h2><p class='remarks'>For each observer, the registered intermediate observing object is not 
+ thread safe. That is, observations arising from the sources must not 
+ be triggered concurrently on different threads.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    map
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  mapping:('T -> 'U) -> source:IObservable<'T> -> IObservable<'U>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns an observable which transforms the observations of the source by the 
+ given function. The transformation function is executed once for each 
+ subscribed observer. The returned object also propagates error observations 
+ arising from the source and completes when the source completes.</p><h2>Parameters</h2><dl><dt><span class='parameter'>mapping</span></dt><dd><p>The function applied to observations from the source.</p></dd><dt><span class='parameter'>source</span></dt><dd><p>The input Observable.</p></dd></dl><p class='returns'>Returns: An Observable of the type specified by mapping.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    filter
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  predicate:('T -> bool) -> source:IObservable<'T> -> IObservable<'T>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns an observable which filters the observations of the source 
+ by the given function. The observable will see only those observations
+ for which the predicate returns true. The predicate is executed once for 
+ each subscribed observer. The returned object also propagates error 
+ observations arising from the source and completes when the source completes.</p><h2>Parameters</h2><dl><dt><span class='parameter'>filter</span></dt><dd><p>The function to apply to observations to determine if it should
+ be kept.</p></dd><dt><span class='parameter'>source</span></dt><dd><p>The input Observable.</p></dd></dl><p class='returns'>Returns: An Observable that filters observations based on filter.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    partition
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  predicate:('T -> bool) -> source:IObservable<'T> -> IObservable<'T> * IObservable<'T>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns two observables which partition the observations of the source by 
+ the given function. The first will trigger observations for those values 
+ for which the predicate returns true. The second will trigger observations 
+ for those values where the predicate returns false. The predicate is 
+ executed once for each subscribed observer. Both also propagate all error 
+ observations arising from the source and each completes when the source 
+ completes.</p><h2>Parameters</h2><dl><dt><span class='parameter'>predicate</span></dt><dd><p>The function to determine which output Observable will trigger
+ a particular observation.</p></dd><dt><span class='parameter'>source</span></dt><dd><p>The input Observable.</p></dd></dl><p class='returns'>Returns: A tuple of Observables.  The first triggers when the predicate returns true, and
+ the second triggers when the predicate returns false.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    split
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  splitter:('T -> Choice<'U1,'U2>) -> source:IObservable<'T> -> IObservable<'U1> * IObservable<'U2>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns two observables which split the observations of the source by the 
+ given function. The first will trigger observations  for which the 
+ splitter returns . The second will trigger observations 
+  for which the splitter returns  The splitter is 
+ executed once for each subscribed observer. Both also propagate error 
+ observations arising from the source and each completes when the source 
+ completes.</p><h2>Parameters</h2><dl><dt><span class='parameter'>splitter</span></dt><dd><p>The function that takes an observation an transforms
+ it into one of the two output Choice types.</p></dd><dt><span class='parameter'>source</span></dt><dd><p>The input Observable.</p></dd></dl><p class='returns'>Returns: A tuple of Observables.  The first triggers when splitter returns Choice1of2
+ and the second triggers when splitter returns Choice2of2.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    choose
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  chooser:('T -> 'U option) -> source:IObservable<'T> -> IObservable<'U>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns an observable which chooses a projection of observations from the source 
+ using the given function. The returned object will trigger observations 
+ for which the splitter returns . The returned object also propagates 
+ all errors arising from the source and completes when the source completes.</p><h2>Parameters</h2><dl><dt><span class='parameter'>chooser</span></dt><dd><p>The function that returns Some for observations to be propagated
+ and None for observations to ignore.</p></dd><dt><span class='parameter'>source</span></dt><dd><p>The input Observable.</p></dd></dl><p class='returns'>Returns: An Observable that only propagates some of the observations from the source.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    scan
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  collector:('U -> 'T -> 'U) -> state:'U -> source:IObservable<'T> -> IObservable<'U>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns an observable which, for each observer, allocates an item of state
+ and applies the given accumulating function to successive values arising from
+ the input. The returned object will trigger observations for each computed 
+ state value, excluding the initial value. The returned object propagates 
+ all errors arising from the source and completes when the source completes.</p><h2>Parameters</h2><dl><dt><span class='parameter'>collector</span></dt><dd><p>The function to update the state with each observation.</p></dd><dt><span class='parameter'>state</span></dt><dd><p>The initial state.</p></dd><dt><span class='parameter'>source</span></dt><dd><p>The input Observable.</p></dd></dl><p class='returns'>Returns: An Observable that triggers on the updated state values.</p><h2>Remarks</h2><p class='remarks'>For each observer, the registered intermediate observing object is not thread safe.
+ That is, observations arising from the source must not be triggered concurrently 
+ on different threads.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    add
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  callback:('T -> unit) -> source:IObservable<'T> -> unit
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Creates an observer which permanently subscribes to the given observable and which calls
+ the given function for each observation.</p><h2>Parameters</h2><dl><dt><span class='parameter'>callback</span></dt><dd><p>The function to be called on each observation.</p></dd><dt><span class='parameter'>source</span></dt><dd><p>The input Observable.</p></dd></dl></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    subscribe
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  callback:('T -> unit) -> source:IObservable<'T> -> IDisposable
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Creates an observer which subscribes to the given observable and which calls
+ the given function for each observation.</p><h2>Parameters</h2><dl><dt><span class='parameter'>callback</span></dt><dd><p>The function to be called on each observation.</p></dd><dt><span class='parameter'>source</span></dt><dd><p>The input Observable.</p></dd></dl><p class='returns'>Returns: An object that will remove the callback if disposed.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    pairwise
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  source:IObservable<'T> -> IObservable<'T * 'T>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns a new observable that triggers on the second and subsequent triggerings of the input observable.
+ The Nth triggering of the input observable passes the arguments from the N-1th and Nth triggering as
+ a pair. The argument passed to the N-1th triggering is held in hidden internal state until the 
+ Nth triggering occurs.</p><h2>Parameters</h2><dl><dt><span class='parameter'>source</span></dt><dd><p>The input Observable.</p></dd></dl><p class='returns'>Returns: An Observable that triggers on successive pairs of observations from the input Observable.</p><h2>Remarks</h2><p class='remarks'>For each observer, the registered intermediate observing object is not thread safe.
+ That is, observations arising from the source must not be triggered concurrently 
+ on different threads.</p></div>
+                </td>
+              </tr>
+            </table>
+            <br/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="http://localhost:8080//static/js/clipboard.min.js"></script>
+    <script src="http://localhost:8080//static/js/perfect-scrollbar.min.js"></script>
+    <script src="http://localhost:8080//static/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="http://localhost:8080//static/js/jquery.sticky.js"></script>
+    <script src="http://localhost:8080//static/js/featherlight.min.js"></script>
+    <script src="http://localhost:8080//static/js/modernizr.custom-3.6.0.js"></script>
+    <script src="http://localhost:8080//static/js/learn.js"></script>
+    <script src="http://localhost:8080//static/js/hugo-learn.js"></script>
+    <link rel="stylesheet" href="http://localhost:8080//static/mermaid/mermaid.css"/>
+    <script src="http://localhost:8080//static/mermaid/mermaid.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/fsharp.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
+    </script>
+  </body>
+</html>

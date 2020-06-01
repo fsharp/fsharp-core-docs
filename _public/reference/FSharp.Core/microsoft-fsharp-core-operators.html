@@ -1,0 +1,2718 @@
+<html class="js csstransforms3d">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      F# Core API Docs | Operators
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080//static/images/favicon.png"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/nucleus.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/fontawesome-all.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/hybrid.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/featherlight.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/perfect-scrollbar.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/auto-complete.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/atom-one-dark-reasonable.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/theme.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/theme-green.css"/>
+    <script src="http://localhost:8080//static/js/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <div id="header-wrapper">
+        <div id="header">
+          <h2 id="logo">
+            F# Core API Docs
+          </h2>
+        </div>
+        <div class="searchbox">
+          <label for="search-by">
+            <i class="fas fa-search"></i>
+          </label>
+          <input data-search-input="" id="search-by" type="search" placeholder="Search..."/>
+          <span data-search-clear="">
+            <i class="fas fa-times"></i>
+          </span>
+        </div>
+        <script type="text/javascript" src="http://localhost:8080//static/js/lunr.min.js"></script>
+        <script type="text/javascript" src="http://localhost:8080//static/js/auto-complete.js"></script>
+        <script type="text/javascript">
+          var baseurl ='http://localhost:8080/'
+        </script>
+        <script type="text/javascript" src="http://localhost:8080//static/js/search.js"></script>
+        <script src="http://localhost:8080//static/js/highlight.pack.js"></script>
+        <script>
+          hljs.initHighlightingOnLoad();
+        </script>
+      </div>
+      <div class="highlightable">
+        <ul class="topics">
+          <li id="menu-refs" class="dd-item menu-group-link menu-group-link-active">
+            <a>
+              API References
+            </a>
+          </li>
+        </ul>
+        <ul id="submenu-refs" class="submenu submenu-active">
+          <li>
+            <a href="http://localhost:8080//reference/FSharp.Core/index.html" class="padding">
+              FSharp.Core
+            </a>
+          </li>
+        </ul>
+        <section id="shortcuts">
+          <h3>
+            Shortucts
+          </h3>
+          <ul>
+            <li>
+              <a class="padding" href="/">
+                <i class="fas fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="http://fsharp.org">
+                <i class="fas fa-cubes"></i>
+                F# Software Foundation
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="https://github.com/dotnet/fsharp">
+                <i class="fab fa-github"></i>
+                GitHub repo
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section id="footer">
+          <p>Built with <a href="https://github.com/ionide/Fornax">Fornax</a>
+        </section>
+      </div>
+    </nav>
+    <section id="body">
+      <div id="overlay"></div>
+      <div class="padding highlightable">
+        <div id="body-inner">
+          <span id="sidebar-toggle-span">
+            <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+              <i class="fas fa-bars"></i>
+               navigation
+            </a>
+          </span>
+          <div class="api-page">
+            <h2>
+              Operators
+            </h2>
+            <b>
+              Namespace: 
+            </b>
+            <a href="Microsoft.FSharp.Core.html">
+              Microsoft.FSharp.Core
+            </a>
+            <br/>
+            <b>
+              Parent: 
+            </b>
+            <a href="Microsoft.FSharp.Core.html">
+              Microsoft.FSharp.Core
+            </a>
+            <span>
+              <div class="comment"></br><p class='summary'>Basic F# Operators. This module is automatically opened in all F# code.</p></div>
+            </span>
+            <br/>
+            <b>
+              Declared Modules
+            </b>
+            <table>
+              <tr>
+                <th width="35%">
+                  Module
+                </th>
+                <th width="65%">
+                  Description
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <a href="microsoft-fsharp-core-operators-arrayextensions.html">
+                    ArrayExtensions
+                  </a>
+                </td>
+                <td>
+                  <div class="comment"></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="microsoft-fsharp-core-operators-checked.html">
+                    Checked
+                  </a>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>This module contains the basic arithmetic operations with overflow checks.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="microsoft-fsharp-core-operators-nonstructuralcomparison.html">
+                    NonStructuralComparison
+                  </a>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>A module of comparison and equality operators that are statically resolved, but which are not fully generic and do not make structural comparison. Opening this
+ module may make code that relies on structural or generic comparison no longer compile.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="microsoft-fsharp-core-operators-operatorintrinsics.html">
+                    OperatorIntrinsics
+                  </a>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>A module of compiler intrinsic functions for efficient implementations of F# integer ranges
+ and dynamic invocations of other F# operators</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="microsoft-fsharp-core-operators-unchecked.html">
+                    Unchecked
+                  </a>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>This module contains basic operations which do not apply runtime and/or static checks</p></div>
+                </td>
+              </tr>
+            </table>
+            <br/>
+            <b>
+              Values and Functions
+            </b>
+            <table>
+              <tr>
+                <th width="35%">
+                  Name
+                </th>
+                <th width="65%">
+                  Description
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( ~- )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  n:^T -> ^T
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded unary negation.</p><h2>Parameters</h2><dl><dt><span class='parameter'>n</span></dt><dd><p>The value to negate.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( + )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:^T1 -> y:^T2 -> ^T3
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded addition operator</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( - )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:^T1 -> y:^T2 -> ^T3
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded subtraction operator</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( * )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:^T1 -> y:^T2 -> ^T3
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded multiplication operator</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( / )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:^T1 -> y:^T2 -> ^T3
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded division operator</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( % )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:^T1 -> y:^T2 -> ^T3
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded modulo operator</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( &&& )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:^T -> y:^T -> ^T
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded bitwise-AND operator</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( ||| )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:^T -> y:^T -> ^T
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded bitwise-OR operator</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( ^^^ )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:^T -> y:^T -> ^T
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded bitwise-XOR operator</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( <<< )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> shift:int32 -> ^T
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded byte-shift left operator by a specified number of bits</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd><dt><span class='parameter'>shift</span></dt><dd><p>The amount to shift.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( >>> )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> shift:int32 -> ^T
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded byte-shift right operator by a specified number of bits</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd><dt><span class='parameter'>shift</span></dt><dd><p>The amount to shift.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( ~~~ )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded bitwise-NOT operator</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( ~+ )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded prefix-plus operator</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The result of the operation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( < )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:'T -> y:'T -> bool
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Structural less-than comparison</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the comparison.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( > )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:'T -> y:'T -> bool
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Structural greater-than</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the comparison.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( >= )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:'T -> y:'T -> bool
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Structural greater-than-or-equal</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the comparison.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( <= )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:'T -> y:'T -> bool
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Structural less-than-or-equal comparison</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the comparison.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( = )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:'T -> y:'T -> bool
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Structural equality</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the comparison.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( <> )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:'T -> y:'T -> bool
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Structural inequality</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The first parameter.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The second parameter.</p></dd></dl><p class='returns'>Returns: The result of the comparison.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( >> )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  func1:('T1 -> 'T2) -> func2:('T2 -> 'T3) -> 'T1 -> 'T3
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Compose two functions, the function on the left being applied first</p><h2>Parameters</h2><dl><dt><span class='parameter'>func1</span></dt><dd><p>The first function to apply.</p></dd><dt><span class='parameter'>func2</span></dt><dd><p>The second function to apply.</p></dd></dl><p class='returns'>Returns: The composition of the input functions.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( << )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  func2:('T2 -> 'T3) -> func1:('T1 -> 'T2) -> 'T1 -> 'T3
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Compose two functions, the function on the right being applied first</p><h2>Parameters</h2><dl><dt><span class='parameter'>func2</span></dt><dd><p>The second function to apply.</p></dd><dt><span class='parameter'>func1</span></dt><dd><p>The first function to apply.</p></dd></dl><p class='returns'>Returns: The composition of the input functions.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( |> )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  arg:'T1 -> func:('T1 -> 'U) -> 'U
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Apply a function to a value, the value being on the left, the function on the right</p><h2>Parameters</h2><dl><dt><span class='parameter'>arg</span></dt><dd><p>The argument.</p></dd><dt><span class='parameter'>func</span></dt><dd><p>The function.</p></dd></dl><p class='returns'>Returns: The function result.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( ||> )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (arg1:'T1 * arg2:'T2) -> func:('T1 -> 'T2 -> 'U) -> 'U
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Apply a function to two values, the values being a pair on the left, the function on the right</p><h2>Parameters</h2><dl><dt><span class='parameter'>arg1</span></dt><dd><p>The first argument.</p></dd><dt><span class='parameter'>arg2</span></dt><dd><p>The second argument.</p></dd><dt><span class='parameter'>func</span></dt><dd><p>The function.</p></dd></dl><p class='returns'>Returns: The function result.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( |||> )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (arg1:'T1 * arg2:'T2 * arg3:'T3) -> func:('T1 -> 'T2 -> 'T3 -> 'U) -> 'U
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Apply a function to three values, the values being a triple on the left, the function on the right</p><h2>Parameters</h2><dl><dt><span class='parameter'>arg1</span></dt><dd><p>The first argument.</p></dd><dt><span class='parameter'>arg2</span></dt><dd><p>The second argument.</p></dd><dt><span class='parameter'>arg3</span></dt><dd><p>The third argument.</p></dd><dt><span class='parameter'>func</span></dt><dd><p>The function.</p></dd></dl><p class='returns'>Returns: The function result.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( <| )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  func:('T -> 'U) -> arg1:'T -> 'U
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Apply a function to a value, the value being on the right, the function on the left</p><h2>Parameters</h2><dl><dt><span class='parameter'>func</span></dt><dd><p>The function.</p></dd><dt><span class='parameter'>arg1</span></dt><dd><p>The argument.</p></dd></dl><p class='returns'>Returns: The function result.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( <|| )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  func:('T1 -> 'T2 -> 'U) -> (arg1:'T1 * arg2:'T2) -> 'U
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Apply a function to two values, the values being a pair on the right, the function on the left</p><h2>Parameters</h2><dl><dt><span class='parameter'>func</span></dt><dd><p>The function.</p></dd><dt><span class='parameter'>arg1</span></dt><dd><p>The first argument.</p></dd><dt><span class='parameter'>arg2</span></dt><dd><p>The second argument.</p></dd></dl><p class='returns'>Returns: The function result.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( <||| )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  func:('T1 -> 'T2 -> 'T3 -> 'U) -> (arg1:'T1 * arg2:'T2 * arg3:'T3) -> 'U
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Apply a function to three values, the values being a triple on the right, the function on the left</p><h2>Parameters</h2><dl><dt><span class='parameter'>func</span></dt><dd><p>The function.</p></dd><dt><span class='parameter'>arg1</span></dt><dd><p>The first argument.</p></dd><dt><span class='parameter'>arg2</span></dt><dd><p>The second argument.</p></dd><dt><span class='parameter'>arg3</span></dt><dd><p>The third argument.</p></dd></dl><p class='returns'>Returns: The function result.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    defaultArg
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  arg:'T option -> defaultValue:'T -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Used to specify a default value for an optional argument in the implementation of a function</p><h2>Parameters</h2><dl><dt><span class='parameter'>arg</span></dt><dd><p>An option representing the argument.</p></dd><dt><span class='parameter'>defaultValue</span></dt><dd><p>The default value of the argument.</p></dd></dl><p class='returns'>Returns: The argument value. If it is None, the defaultValue is returned.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    defaultValueArg
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  arg:'T voption -> defaultValue:'T -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Used to specify a default value for an optional argument in the implementation of a function</p><h2>Parameters</h2><dl><dt><span class='parameter'>arg</span></dt><dd><p>A value option representing the argument.</p></dd><dt><span class='parameter'>defaultValue</span></dt><dd><p>The default value of the argument.</p></dd></dl><p class='returns'>Returns: The argument value. If it is None, the defaultValue is returned.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( ^ )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  s1:string -> s2:string -> string
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompilerMessageAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Concatenate two strings. The operator '+' may also be used.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    raise
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  exn:Exception -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Raises an exception</p><h2>Parameters</h2><dl><dt><span class='parameter'>exn</span></dt><dd><p>The exception to raise.</p></dd></dl><p class='returns'>Returns: The result value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    rethrow
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  unit -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                  <code>
+                    ObsoleteAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Rethrows an exception. This should only be used when handling an exception</p><p class='returns'>Returns: The result value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    reraise
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  unit -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    NoDynamicInvocationAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Rethrows an exception. This should only be used when handling an exception</p><p class='returns'>Returns: The result value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Failure
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  message:string -> exn
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds a  object.</p><h2>Parameters</h2><dl><dt><span class='parameter'>message</span></dt><dd><p>The message for the Exception.</p></dd></dl><p class='returns'>Returns: A System.Exception.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    fst
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  tuple:('T1 * 'T2) -> 'T1
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Return the first element of a tuple, .</p><h2>Parameters</h2><dl><dt><span class='parameter'>tuple</span></dt><dd><p>The input tuple.</p></dd></dl><p class='returns'>Returns: The first value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    snd
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  tuple:('T1 * 'T2) -> 'T2
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Return the second element of a tuple, .</p><h2>Parameters</h2><dl><dt><span class='parameter'>tuple</span></dt><dd><p>The input tuple.</p></dd></dl><p class='returns'>Returns: The second value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    compare
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  e1:'T -> e2:'T -> int
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Generic comparison.</p><h2>Parameters</h2><dl><dt><span class='parameter'>e1</span></dt><dd><p>The first value.</p></dd><dt><span class='parameter'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='returns'>Returns: The result of the comparison.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    max
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  e1:'T -> e2:'T -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Maximum based on generic comparison</p><h2>Parameters</h2><dl><dt><span class='parameter'>e1</span></dt><dd><p>The first value.</p></dd><dt><span class='parameter'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='returns'>Returns: The maximum value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    min
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  e1:'T -> e2:'T -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Minimum based on generic comparison</p><h2>Parameters</h2><dl><dt><span class='parameter'>e1</span></dt><dd><p>The first value.</p></dd><dt><span class='parameter'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='returns'>Returns: The minimum value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ignore
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:'T -> unit
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Ignore the passed value. This is often used to throw away results of a computation.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The value to ignore.</p></dd></dl></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    unbox
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:obj -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Unbox a strongly typed value.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The boxed value.</p></dd></dl><p class='returns'>Returns: The unboxed result.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    box
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:'T -> obj
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Boxes a strongly typed value.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The value to box.</p></dd></dl><p class='returns'>Returns: The boxed object.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    tryUnbox
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:obj -> 'T option
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Try to unbox a strongly typed value.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The boxed value.</p></dd></dl><p class='returns'>Returns: The unboxed result as an option.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    isNull
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:'T -> bool
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Determines whether the given value is null.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The value to check.</p></dd></dl><p class='returns'>Returns: True when value is null, false otherwise.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    failwith
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  message:string -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Throw a  exception.</p><h2>Parameters</h2><dl><dt><span class='parameter'>message</span></dt><dd><p>The exception message.</p></dd></dl><p class='returns'>Returns: The result value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    invalidArg
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  argumentName:string -> message:string -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Throw a  exception with
+ the given argument name and message.</p><h2>Parameters</h2><dl><dt><span class='parameter'>argumentName</span></dt><dd><p>The argument name.</p></dd><dt><span class='parameter'>message</span></dt><dd><p>The exception message.</p></dd></dl><p class='returns'>Returns: The result value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    nullArg
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  argumentName:string -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Throw a  exception</p><h2>Parameters</h2><dl><dt><span class='parameter'>argumentName</span></dt><dd><p>The argument name.</p></dd></dl><p class='returns'>Returns: The result value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    invalidOp
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  message:string -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Throw a  exception</p><h2>Parameters</h2><dl><dt><span class='parameter'>message</span></dt><dd><p>The exception message.</p></dd></dl><p class='returns'>Returns: The result value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    id
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:'T -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>The identity function</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The same value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ref
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:'T -> 'T ref
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Create a mutable reference cell</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The value to contain in the cell.</p></dd></dl><p class='returns'>Returns: The created reference cell.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( := )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  cell:'T ref -> value:'T -> unit
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Assign to a mutable reference cell</p><h2>Parameters</h2><dl><dt><span class='parameter'>cell</span></dt><dd><p>The cell to mutate.</p></dd><dt><span class='parameter'>value</span></dt><dd><p>The value to set inside the cell.</p></dd></dl></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( ! )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  cell:'T ref -> 'T
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Dereference a mutable reference cell</p><h2>Parameters</h2><dl><dt><span class='parameter'>cell</span></dt><dd><p>The cell to dereference.</p></dd></dl><p class='returns'>Returns: The value contained in the cell.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    decr
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  cell:int ref -> unit
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Decrement a mutable reference cell containing an integer</p><h2>Parameters</h2><dl><dt><span class='parameter'>cell</span></dt><dd><p>The reference cell.</p></dd></dl></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    incr
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  cell:int ref -> unit
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Increment a mutable reference cell containing an integer</p><h2>Parameters</h2><dl><dt><span class='parameter'>cell</span></dt><dd><p>The reference cell.</p></dd></dl></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( @ )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  list1:'T list -> list2:'T list -> 'T list
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Concatenate two lists.</p><h2>Parameters</h2><dl><dt><span class='parameter'>list1</span></dt><dd><p>The first list.</p></dd><dt><span class='parameter'>list2</span></dt><dd><p>The second list.</p></dd></dl><p class='returns'>Returns: The concatenation of the lists.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    not
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:bool -> bool
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Negate a logical value. Not True equals False and not False equals True</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The value to negate.</p></dd></dl><p class='returns'>Returns: The result of the negation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    seq
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  sequence:seq<'T> -> seq<'T>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds a sequence using sequence expression syntax</p><h2>Parameters</h2><dl><dt><span class='parameter'>sequence</span></dt><dd><p>The input sequence.</p></dd></dl><p class='returns'>Returns: The result sequence.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    exit
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  exitcode:int -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Exit the current hardware isolated process, if security settings permit,
+ otherwise raise an exception. Calls .</p><h2>Parameters</h2><dl><dt><span class='parameter'>exitcode</span></dt><dd><p>The exit code to use.</p></dd></dl><p class='returns'>Returns: The result value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    infinity
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  float
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Equivalent to </p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    nan
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  float
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Equivalent to </p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    infinityf
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  float32
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Equivalent to </p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    nanf
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  float32
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Equivalent to </p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    stdin
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  TextReader
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Reads the value of the property . </p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    stderr
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  TextWriter
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Reads the value of the property . </p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    stdout
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  TextWriter
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Reads the value of the property .</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( .. )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  start:^T -> finish:^T -> seq<^T>
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>The standard overloaded range operator, e.g.  for lists,  for sequences</p><h2>Parameters</h2><dl><dt><span class='parameter'>start</span></dt><dd><p>The start value of the range.</p></dd><dt><span class='parameter'>finish</span></dt><dd><p>The end value of the range.</p></dd></dl><p class='returns'>Returns: The sequence spanning the range.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( .. .. )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  start:^T -> step:^Step -> finish:^T -> seq<^T>
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>The standard overloaded skip range operator, e.g.  for lists,  for sequences</p><h2>Parameters</h2><dl><dt><span class='parameter'>start</span></dt><dd><p>The start value of the range.</p></dd><dt><span class='parameter'>step</span></dt><dd><p>The step value of the range.</p></dd><dt><span class='parameter'>finish</span></dt><dd><p>The end value of the range.</p></dd></dl><p class='returns'>Returns: The sequence spanning the range using the specified step size.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    lock
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  lockObject:'Lock -> action:(unit -> 'T) -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Execute the function as a mutual-exclusion region using the input value as a lock. </p><h2>Parameters</h2><dl><dt><span class='parameter'>lockObject</span></dt><dd><p>The object to be locked.</p></dd><dt><span class='parameter'>action</span></dt><dd><p>The action to perform during the lock.</p></dd></dl><p class='returns'>Returns: The resulting value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    using
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  resource:'T -> action:('T -> 'U) -> 'U
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Clean up resources associated with the input object after the completion of the given function.
+ Cleanup occurs even when an exception is raised by the protected
+ code. </p><h2>Parameters</h2><dl><dt><span class='parameter'>resource</span></dt><dd><p>The resource to be disposed after action is called.</p></dd><dt><span class='parameter'>action</span></dt><dd><p>The action that accepts the resource.</p></dd></dl><p class='returns'>Returns: The resulting value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    typeof
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  Type
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    RequiresExplicitTypeArgumentsAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Generate a System.Type runtime representation of a static type.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    nameof
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  'T -> string
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns the name of the given symbol.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    typedefof
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  Type
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    RequiresExplicitTypeArgumentsAttribute
+                  </code>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Generate a System.Type representation for a type definition. If the
+ input type is a generic type instantiation then return the 
+ generic type definition associated with all such instantiations.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    sizeof
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  int
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                  <code>
+                    RequiresExplicitTypeArgumentsAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns the internal size of a type in bytes. For example,  returns 4.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    hash
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  obj:'T -> int
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>A generic hash function, designed to return equal hash values for items that are 
+ equal according to the "=" operator. By default it will use structural hashing
+ for F# union, record and tuple types, hashing the complete contents of the 
+ type. The exact behaviour of the function can be adjusted on a 
+ type-by-type basis by implementing GetHashCode for each type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>obj</span></dt><dd><p>The input object.</p></dd></dl><p class='returns'>Returns: The computed hash.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    limitedHash
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  limit:int -> obj:'T -> int
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>A generic hash function. This function has the same behaviour as 'hash', 
+ however the default structural hashing for F# union, record and tuple 
+ types stops when the given limit of nodes is reached. The exact behaviour of 
+ the function can be adjusted on a type-by-type basis by implementing 
+ GetHashCode for each type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>limit</span></dt><dd><p>The limit of nodes.</p></dd><dt><span class='parameter'>obj</span></dt><dd><p>The input object.</p></dd></dl><p class='returns'>Returns: The computed hash.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    abs
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Absolute value of the given number.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The absolute value of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    acos
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Inverse cosine of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The inverse cosine of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    asin
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Inverse sine of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The inverse sine of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    atan
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Inverse tangent of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The inverse tangent of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    atan2
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  y:^T1 -> x:^T1 -> 'T2
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Inverse tangent of  where  and  are specified separately</p><h2>Parameters</h2><dl><dt><span class='parameter'>y</span></dt><dd><p>The y input value.</p></dd><dt><span class='parameter'>x</span></dt><dd><p>The x input value.</p></dd></dl><p class='returns'>Returns: The inverse tangent of the input ratio.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ceil
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Ceiling of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The ceiling of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    exp
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Exponential of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The exponential of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    floor
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Floor of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The floor of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    sign
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> int
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Sign of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: -1, 0, or 1 depending on the sign of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    round
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Round the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The nearest integer to the input value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    log
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Natural logarithm of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The natural logarithm of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    log10
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Logarithm to base 10 of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The logarithm to base 10 of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    sqrt
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^U
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Square root of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The square root of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    cos
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Cosine of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The cosine of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    cosh
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Hyperbolic cosine  of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The hyperbolic cosine of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    sin
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Sine of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The sine of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    sinh
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Hyperbolic sine of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The hyperbolic sine of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    tan
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Tangent of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The tangent of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    tanh
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Hyperbolic tangent of the given number</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The hyperbolic tangent of the input.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    truncate
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded truncate operator.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The truncated value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ( ** )
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:^T -> y:^U -> ^T
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded power operator.</p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The input base.</p></dd><dt><span class='parameter'>y</span></dt><dd><p>The input exponent.</p></dd></dl><p class='returns'>Returns: The base raised to the exponent.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    pown
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  x:^T -> n:int -> ^T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Overloaded power operator. If  then equivalent to  for  occurrences of . </p><h2>Parameters</h2><dl><dt><span class='parameter'>x</span></dt><dd><p>The input base.</p></dd><dt><span class='parameter'>n</span></dt><dd><p>The input exponent.</p></dd></dl><p class='returns'>Returns: The base raised to the exponent.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    byte
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> byte
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to byte. This is a direct conversion for all 
+ primitive numeric types. For strings, the input is converted using  
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted byte</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    sbyte
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> sbyte
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to signed byte. This is a direct conversion for all 
+ primitive numeric types. For strings, the input is converted using   
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted sbyte</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    int16
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> int16
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to signed 16-bit integer. This is a direct conversion for all 
+ primitive numeric types. For strings, the input is converted using   
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted int16</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    uint16
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> uint16
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to unsigned 16-bit integer. This is a direct conversion for all 
+ primitive numeric types. For strings, the input is converted using   
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted uint16</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    int
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> int
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to signed 32-bit integer. This is a direct conversion for all 
+ primitive numeric types. For strings, the input is converted using   
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted int</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    enum
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:int32 -> ^U
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to a particular enum type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted enum type.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    int32
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> int32
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to signed 32-bit integer. This is a direct conversion for all 
+ primitive numeric types. For strings, the input is converted using   
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted int32</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    uint32
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> uint32
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to unsigned 32-bit integer. This is a direct conversion for all 
+ primitive numeric types. For strings, the input is converted using   
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted uint32</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    int64
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> int64
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to signed 64-bit integer. This is a direct conversion for all 
+ primitive numeric types. For strings, the input is converted using  
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted int64</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    uint64
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> uint64
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to unsigned 64-bit integer. This is a direct conversion for all 
+ primitive numeric types. For strings, the input is converted using   
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted uint64</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    float32
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> float32
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to 32-bit float. This is a direct conversion for all 
+ primitive numeric types. For strings, the input is converted using   
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted float32</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    float
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> float
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to 64-bit float. This is a direct conversion for all 
+ primitive numeric types. For strings, the input is converted using   
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted float</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    nativeint
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> nativeint
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to signed native integer. This is a direct conversion for all 
+ primitive numeric types. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted nativeint</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    unativeint
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> unativeint
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to unsigned native integer using a direct conversion for all 
+ primitive numeric types. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted unativeint</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    string
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> string
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to a string using .</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted string.</p><h2>Remarks</h2><p class='remarks'>For standard integer and floating point values the  conversion 
+ uses . </p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    decimal
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> decimal
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to System.Decimal using a direct conversion for all 
+ primitive numeric types. For strings, the input is converted using   
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted decimal.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    char
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:^T -> char
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Converts the argument to character. Numeric inputs are converted according to the UTF-16 
+ encoding for characters. String inputs must be exactly one character long. For other
+ input types the operation requires an appropriate static conversion method on the input type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The converted char.</p></div>
+                </td>
+              </tr>
+            </table>
+            <br/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="http://localhost:8080//static/js/clipboard.min.js"></script>
+    <script src="http://localhost:8080//static/js/perfect-scrollbar.min.js"></script>
+    <script src="http://localhost:8080//static/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="http://localhost:8080//static/js/jquery.sticky.js"></script>
+    <script src="http://localhost:8080//static/js/featherlight.min.js"></script>
+    <script src="http://localhost:8080//static/js/modernizr.custom-3.6.0.js"></script>
+    <script src="http://localhost:8080//static/js/learn.js"></script>
+    <script src="http://localhost:8080//static/js/hugo-learn.js"></script>
+    <link rel="stylesheet" href="http://localhost:8080//static/mermaid/mermaid.css"/>
+    <script src="http://localhost:8080//static/mermaid/mermaid.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/fsharp.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
+    </script>
+  </body>
+</html>

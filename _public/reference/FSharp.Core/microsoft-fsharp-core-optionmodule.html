@@ -1,0 +1,769 @@
+<html class="js csstransforms3d">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      F# Core API Docs | Option
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080//static/images/favicon.png"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/nucleus.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/fontawesome-all.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/hybrid.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/featherlight.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/perfect-scrollbar.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/auto-complete.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/atom-one-dark-reasonable.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/theme.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/theme-green.css"/>
+    <script src="http://localhost:8080//static/js/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <div id="header-wrapper">
+        <div id="header">
+          <h2 id="logo">
+            F# Core API Docs
+          </h2>
+        </div>
+        <div class="searchbox">
+          <label for="search-by">
+            <i class="fas fa-search"></i>
+          </label>
+          <input data-search-input="" id="search-by" type="search" placeholder="Search..."/>
+          <span data-search-clear="">
+            <i class="fas fa-times"></i>
+          </span>
+        </div>
+        <script type="text/javascript" src="http://localhost:8080//static/js/lunr.min.js"></script>
+        <script type="text/javascript" src="http://localhost:8080//static/js/auto-complete.js"></script>
+        <script type="text/javascript">
+          var baseurl ='http://localhost:8080/'
+        </script>
+        <script type="text/javascript" src="http://localhost:8080//static/js/search.js"></script>
+        <script src="http://localhost:8080//static/js/highlight.pack.js"></script>
+        <script>
+          hljs.initHighlightingOnLoad();
+        </script>
+      </div>
+      <div class="highlightable">
+        <ul class="topics">
+          <li id="menu-refs" class="dd-item menu-group-link menu-group-link-active">
+            <a>
+              API References
+            </a>
+          </li>
+        </ul>
+        <ul id="submenu-refs" class="submenu submenu-active">
+          <li>
+            <a href="http://localhost:8080//reference/FSharp.Core/index.html" class="padding">
+              FSharp.Core
+            </a>
+          </li>
+        </ul>
+        <section id="shortcuts">
+          <h3>
+            Shortucts
+          </h3>
+          <ul>
+            <li>
+              <a class="padding" href="/">
+                <i class="fas fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="http://fsharp.org">
+                <i class="fas fa-cubes"></i>
+                F# Software Foundation
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="https://github.com/dotnet/fsharp">
+                <i class="fab fa-github"></i>
+                GitHub repo
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section id="footer">
+          <p>Built with <a href="https://github.com/ionide/Fornax">Fornax</a>
+        </section>
+      </div>
+    </nav>
+    <section id="body">
+      <div id="overlay"></div>
+      <div class="padding highlightable">
+        <div id="body-inner">
+          <span id="sidebar-toggle-span">
+            <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+              <i class="fas fa-bars"></i>
+               navigation
+            </a>
+          </span>
+          <div class="api-page">
+            <h2>
+              Option
+            </h2>
+            <b>
+              Namespace: 
+            </b>
+            <a href="Microsoft.FSharp.Core.html">
+              Microsoft.FSharp.Core
+            </a>
+            <br/>
+            <b>
+              Parent: 
+            </b>
+            <a href="Microsoft.FSharp.Core.html">
+              Microsoft.FSharp.Core
+            </a>
+            <span>
+              <div class="comment"></br><p class='summary'>Basic operations on options.</p></div>
+            </span>
+            <br/>
+            <b>
+              Values and Functions
+            </b>
+            <table>
+              <tr>
+                <th width="35%">
+                  Name
+                </th>
+                <th width="65%">
+                  Description
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    isSome
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  option:'T option -> bool
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns true if the option is not None.</p><h2>Parameters</h2><dl><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: True if the option is not None.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    isNone
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  option:'T option -> bool
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns true if the option is None.</p><h2>Parameters</h2><dl><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: True if the option is None.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    defaultValue
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:'T -> option:'T option -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Gets the value of the option if the option is , otherwise returns the specified default value.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The specified default value.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: The option if the option is Some, else the default value.</p><h2>Remarks</h2><p class='remarks'>Identical to the built-in UNRESOLVED(defaultArg) operator, except with the arguments swapped.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    defaultWith
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  defThunk:(unit -> 'T) -> option:'T option -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Gets the value of the option if the option is , otherwise evaluates  and returns the result.</p><h2>Parameters</h2><dl><dt><span class='parameter'>defThunk</span></dt><dd><p>A thunk that provides a default value when evaluated.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: The option if the option is Some, else the result of evaluating .</p><h2>Remarks</h2><p class='remarks'> is not evaluated unless  is .</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    orElse
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  ifNone:'T option -> option:'T option -> 'T option
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns  if it is , otherwise returns .</p><h2>Parameters</h2><dl><dt><span class='parameter'>ifNone</span></dt><dd><p>The value to use if  is None.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: The option if the option is Some, else the alternate option.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    orElseWith
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  ifNoneThunk:(unit -> 'T option) -> option:'T option -> 'T option
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns  if it is , otherwise evaluates  and returns the result.</p><h2>Parameters</h2><dl><dt><span class='parameter'>ifNoneThunk</span></dt><dd><p>A thunk that provides an alternate option when evaluated.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: The option if the option is Some, else the result of evaluating .</p><h2>Remarks</h2><p class='remarks'> is not evaluated unless  is .</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    get
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  option:'T option -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Gets the value associated with the option.</p><h2>Parameters</h2><dl><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: The value within the option.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    count
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  option:'T option -> int
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'> evaluates to .</p><h2>Parameters</h2><dl><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: A zero if the option is None, a one otherwise.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    fold
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  folder:('State -> 'T -> 'State) -> state:'State -> option:'T option -> 'State
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'> evaluates to .</p><h2>Parameters</h2><dl><dt><span class='parameter'>folder</span></dt><dd><p>A function to update the state data when given a value from an option.</p></dd><dt><span class='parameter'>state</span></dt><dd><p>The initial state.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: The original state if the option is None, otherwise it returns the updated state with the folder
+ and the option value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    foldBack
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  folder:('T -> 'State -> 'State) -> option:'T option -> state:'State -> 'State
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'> evaluates to .</p><h2>Parameters</h2><dl><dt><span class='parameter'>folder</span></dt><dd><p>A function to update the state data when given a value from an option.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd><dt><span class='parameter'>state</span></dt><dd><p>The initial state.</p></dd></dl><p class='returns'>Returns: The original state if the option is None, otherwise it returns the updated state with the folder
+ and the option value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    exists
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  predicate:('T -> bool) -> option:'T option -> bool
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'> evaluates to .</p><h2>Parameters</h2><dl><dt><span class='parameter'>predicate</span></dt><dd><p>A function that evaluates to a boolean when given a value from the option type.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: False if the option is None, otherwise it returns the result of applying the predicate
+ to the option value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    forall
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  predicate:('T -> bool) -> option:'T option -> bool
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'> evaluates to .</p><h2>Parameters</h2><dl><dt><span class='parameter'>predicate</span></dt><dd><p>A function that evaluates to a boolean when given a value from the option type.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: True if the option is None, otherwise it returns the result of applying the predicate
+ to the option value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    contains
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:'T -> option:'T option -> bool
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Evaluates to true if  is  and its value is equal to .</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The value to test for equality.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: True if the option is Some and contains a value equal to , otherwise false.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    iter
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  action:('T -> unit) -> option:'T option -> unit
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'> executes .</p><h2>Parameters</h2><dl><dt><span class='parameter'>action</span></dt><dd><p>A function to apply to the option value.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: Unit if the option is None, otherwise it returns the result of applying the predicate
+ to the option value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    map
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  mapping:('T -> 'U) -> option:'T option -> 'U option
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'> evaluates to .</p><h2>Parameters</h2><dl><dt><span class='parameter'>mapping</span></dt><dd><p>A function to apply to the option value.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: An option of the input value after applying the mapping function, or None if the input is None.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    map2
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  mapping:('T1 -> 'T2 -> 'U) -> 'T1 option -> 'T2 option -> 'U option
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'> evaluates to .</p><h2>Parameters</h2><dl><dt><span class='parameter'>mapping</span></dt><dd><p>A function to apply to the option values.</p></dd><dt><span class='parameter'>option1</span></dt><dd><p>The first option.</p></dd><dt><span class='parameter'>option2</span></dt><dd><p>The second option.</p></dd></dl><p class='returns'>Returns: An option of the input values after applying the mapping function, or None if either input is None.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    map3
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  mapping:('T1 -> 'T2 -> 'T3 -> 'U) -> 'T1 option -> 'T2 option -> 'T3 option -> 'U option
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'> evaluates to .</p><h2>Parameters</h2><dl><dt><span class='parameter'>mapping</span></dt><dd><p>A function to apply to the option values.</p></dd><dt><span class='parameter'>option1</span></dt><dd><p>The first option.</p></dd><dt><span class='parameter'>option2</span></dt><dd><p>The second option.</p></dd><dt><span class='parameter'>option3</span></dt><dd><p>The third option.</p></dd></dl><p class='returns'>Returns: An option of the input values after applying the mapping function, or None if any input is None.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    bind
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  binder:('T -> 'U option) -> option:'T option -> 'U option
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'> evaluates to </p><h2>Parameters</h2><dl><dt><span class='parameter'>binder</span></dt><dd><p>A function that takes the value of type T from an option and transforms it into
+ an option containing a value of type U.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: An option of the output type of the binder.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    flatten
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  option:'T option option -> 'T option
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'> evaluates to </p><h2>Parameters</h2><dl><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: An option of the output type of the binder.</p><h2>Remarks</h2><p class='remarks'> is equivalent to .</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    filter
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  predicate:('T -> bool) -> option:'T option -> 'T option
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'> evaluates to .</p><h2>Parameters</h2><dl><dt><span class='parameter'>predicate</span></dt><dd><p>A function that evaluates whether the value contained in the option should remain, or be filtered out.</p></dd><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: The input if the predicate evaluates to true; otherwise, None.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    toArray
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  option:'T option -> 'T []
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Convert the option to an array of length 0 or 1.</p><h2>Parameters</h2><dl><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: The result array.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    toList
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  option:'T option -> 'T list
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Convert the option to a list of length 0 or 1.</p><h2>Parameters</h2><dl><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: The result list.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    toNullable
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  option:'T option -> Nullable<'T>
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Convert the option to a Nullable value.</p><h2>Parameters</h2><dl><dt><span class='parameter'>option</span></dt><dd><p>The input option.</p></dd></dl><p class='returns'>Returns: The result value.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ofNullable
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:Nullable<'T> -> 'T option
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Convert a Nullable value to an option.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input nullable value.</p></dd></dl><p class='returns'>Returns: The result option.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ofObj
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:'T -> 'T option
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Convert a potentially null value to an option.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The result option.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    toObj
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:'T option -> 'T
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    CompiledNameAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Convert an option to a potentially null value.</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='returns'>Returns: The result value, which is null if the input was None.</p></div>
+                </td>
+              </tr>
+            </table>
+            <br/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="http://localhost:8080//static/js/clipboard.min.js"></script>
+    <script src="http://localhost:8080//static/js/perfect-scrollbar.min.js"></script>
+    <script src="http://localhost:8080//static/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="http://localhost:8080//static/js/jquery.sticky.js"></script>
+    <script src="http://localhost:8080//static/js/featherlight.min.js"></script>
+    <script src="http://localhost:8080//static/js/modernizr.custom-3.6.0.js"></script>
+    <script src="http://localhost:8080//static/js/learn.js"></script>
+    <script src="http://localhost:8080//static/js/hugo-learn.js"></script>
+    <link rel="stylesheet" href="http://localhost:8080//static/mermaid/mermaid.css"/>
+    <script src="http://localhost:8080//static/mermaid/mermaid.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/fsharp.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
+    </script>
+  </body>
+</html>

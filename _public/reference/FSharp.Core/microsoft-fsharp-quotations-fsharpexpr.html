@@ -1,0 +1,1175 @@
+<html class="js csstransforms3d">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      F# Core API Docs | Expr
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080//static/images/favicon.png"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/nucleus.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/fontawesome-all.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/hybrid.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/featherlight.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/perfect-scrollbar.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/auto-complete.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/atom-one-dark-reasonable.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/theme.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/theme-green.css"/>
+    <script src="http://localhost:8080//static/js/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <div id="header-wrapper">
+        <div id="header">
+          <h2 id="logo">
+            F# Core API Docs
+          </h2>
+        </div>
+        <div class="searchbox">
+          <label for="search-by">
+            <i class="fas fa-search"></i>
+          </label>
+          <input data-search-input="" id="search-by" type="search" placeholder="Search..."/>
+          <span data-search-clear="">
+            <i class="fas fa-times"></i>
+          </span>
+        </div>
+        <script type="text/javascript" src="http://localhost:8080//static/js/lunr.min.js"></script>
+        <script type="text/javascript" src="http://localhost:8080//static/js/auto-complete.js"></script>
+        <script type="text/javascript">
+          var baseurl ='http://localhost:8080/'
+        </script>
+        <script type="text/javascript" src="http://localhost:8080//static/js/search.js"></script>
+        <script src="http://localhost:8080//static/js/highlight.pack.js"></script>
+        <script>
+          hljs.initHighlightingOnLoad();
+        </script>
+      </div>
+      <div class="highlightable">
+        <ul class="topics">
+          <li id="menu-refs" class="dd-item menu-group-link menu-group-link-active">
+            <a>
+              API References
+            </a>
+          </li>
+        </ul>
+        <ul id="submenu-refs" class="submenu submenu-active">
+          <li>
+            <a href="http://localhost:8080//reference/FSharp.Core/index.html" class="padding">
+              FSharp.Core
+            </a>
+          </li>
+        </ul>
+        <section id="shortcuts">
+          <h3>
+            Shortucts
+          </h3>
+          <ul>
+            <li>
+              <a class="padding" href="/">
+                <i class="fas fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="http://fsharp.org">
+                <i class="fas fa-cubes"></i>
+                F# Software Foundation
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="https://github.com/dotnet/fsharp">
+                <i class="fab fa-github"></i>
+                GitHub repo
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section id="footer">
+          <p>Built with <a href="https://github.com/ionide/Fornax">Fornax</a>
+        </section>
+      </div>
+    </nav>
+    <section id="body">
+      <div id="overlay"></div>
+      <div class="padding highlightable">
+        <div id="body-inner">
+          <span id="sidebar-toggle-span">
+            <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+              <i class="fas fa-bars"></i>
+               navigation
+            </a>
+          </span>
+          <div class="api-page">
+            <h2>
+              Expr
+            </h2>
+            <b>
+              Namespace: 
+            </b>
+            <a href="Microsoft.FSharp.Quotations.html">
+              Microsoft.FSharp.Quotations
+            </a>
+            <br/>
+            <b>
+              Parent: 
+            </b>
+            <a href="Microsoft.FSharp.Quotations.html">
+              Microsoft.FSharp.Quotations
+            </a>
+            <span>
+              <div class="comment"></br><p class='summary'>Quoted expressions annotated with System.Type values. </p></div>
+            </span>
+            <br/>
+            <b>
+              Attributes:
+            </b>
+            <br/>
+            <code>
+              CompiledNameAttribute
+            </code>
+            <br/>
+            <code>
+              ClassAttribute
+            </code>
+            <br/>
+            <table>
+              <tr>
+                <th width="35%">
+                  Name
+                </th>
+                <th width="65%">
+                  Description
+                </th>
+              </tr>
+              <tr>
+                <td colSpan="3">
+                  <b>
+                    Instance Members
+                  </b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    GetFreeVars
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  unit -> seq<Var>
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Gets the free expression variables of an expression as a list.</p><p class='returns'>Returns: A sequence of the free variables in the expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Substitute
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (substitution:(Var -> Expr option)) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Substitutes through the given expression using the given functions
+ to map variables to new values. The functions must give consistent results
+ at each application. Variable renaming may occur on the target expression
+ if variable capture occurs.</p><h2>Parameters</h2><dl><dt><span class='parameter'>substitution</span></dt><dd><p>The function to map variables into expressions.</p></dd></dl><p class='returns'>Returns: The expression with the given substitutions.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ToString
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  full:bool -> string
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Format the expression as a string</p><h2>Parameters</h2><dl><dt><span class='parameter'>full</span></dt><dd><p>Indicates if method, property, constructor and type objects should be printed in detail. If false, these are abbreviated to their name.</p></dd></dl><p class='returns'>Returns: The formatted string.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Type
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  Type
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns type of an expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    CustomAttributes
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  Expr list
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns the custom attributes of an expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td colSpan="3">
+                  <b>
+                    Static Members
+                  </b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    AddressOf
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  target:Expr -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents getting the address of a value.</p><h2>Parameters</h2><dl><dt><span class='parameter'>target</span></dt><dd><p>The target expression.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    AddressSet
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (target:Expr * value:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents setting the value held at a particular address.</p><h2>Parameters</h2><dl><dt><span class='parameter'>target</span></dt><dd><p>The target expression.</p></dd><dt><span class='parameter'>value</span></dt><dd><p>The value to set at the address.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Application
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (functionExpr:Expr * argument:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the application of a first class function value to a single argument.</p><h2>Parameters</h2><dl><dt><span class='parameter'>functionExpr</span></dt><dd><p>The function to apply.</p></dd><dt><span class='parameter'>argument</span></dt><dd><p>The argument to the function.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Applications
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (functionExpr:Expr * arguments:Expr list list) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the application of a first class function value to multiple arguments</p><h2>Parameters</h2><dl><dt><span class='parameter'>functionExpr</span></dt><dd><p>The function to apply.</p></dd><dt><span class='parameter'>arguments</span></dt><dd><p>The list of lists of arguments to the function.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Call
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (obj:Expr * methodInfo:MethodInfo * arguments:Expr list) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a call to an instance method associated with an object</p><h2>Parameters</h2><dl><dt><span class='parameter'>obj</span></dt><dd><p>The input object.</p></dd><dt><span class='parameter'>methodInfo</span></dt><dd><p>The description of the method to call.</p></dd><dt><span class='parameter'>arguments</span></dt><dd><p>The list of arguments to the method.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Call
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (methodInfo:MethodInfo * arguments:Expr list) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a call to an static method or module-bound function</p><h2>Parameters</h2><dl><dt><span class='parameter'>methodInfo</span></dt><dd><p>The MethodInfo describing the method to call.</p></dd><dt><span class='parameter'>arguments</span></dt><dd><p>The list of arguments to the method.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Cast
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  source:Expr -> Expr<'T>
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns a new typed expression given an underlying runtime-typed expression.
+ A type annotation is usually required to use this function, and 
+ using an incorrect type annotation may result in a later runtime exception.</p><h2>Parameters</h2><dl><dt><span class='parameter'>source</span></dt><dd><p>The expression to cast.</p></dd></dl><p class='returns'>Returns: The resulting typed expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Coerce
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (source:Expr * target:Type) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the coercion of an expression to a type</p><h2>Parameters</h2><dl><dt><span class='parameter'>source</span></dt><dd><p>The expression to coerce.</p></dd><dt><span class='parameter'>target</span></dt><dd><p>The target type.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    DefaultValue
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  expressionType:Type -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the invocation of a default object constructor</p><h2>Parameters</h2><dl><dt><span class='parameter'>expressionType</span></dt><dd><p>The type on which the constructor is invoked.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Deserialize
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (qualifyingType:Type * spliceTypes:Type list * spliceExprs:Expr list * bytes:byte []) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>This function is called automatically when quotation syntax (<@ @>) and other sources of
+ quotations are used. </p><h2>Parameters</h2><dl><dt><span class='parameter'>qualifyingType</span></dt><dd><p>A type in the assembly where the quotation occurs.</p></dd><dt><span class='parameter'>spliceTypes</span></dt><dd><p>The spliced types, to replace references to type variables.</p></dd><dt><span class='parameter'>spliceExprs</span></dt><dd><p>The spliced expressions to replace references to spliced expressions.</p></dd><dt><span class='parameter'>bytes</span></dt><dd><p>The serialized form of the quoted expression.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Deserialize40
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (qualifyingType:Type * referencedTypes:Type [] * spliceTypes:Type [] * spliceExprs:Expr [] * bytes:byte []) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>This function is called automatically when quotation syntax (<@ @>) and other sources of
+ quotations are used. </p><h2>Parameters</h2><dl><dt><span class='parameter'>qualifyingType</span></dt><dd><p>A type in the assembly where the quotation occurs.</p></dd><dt><span class='parameter'>referencedTypes</span></dt><dd><p>The type definitions referenced.</p></dd><dt><span class='parameter'>spliceTypes</span></dt><dd><p>The spliced types, to replace references to type variables.</p></dd><dt><span class='parameter'>spliceExprs</span></dt><dd><p>The spliced expressions to replace references to spliced expressions.</p></dd><dt><span class='parameter'>bytes</span></dt><dd><p>The serialized form of the quoted expression.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    FieldGet
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (obj:Expr * fieldInfo:FieldInfo) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the access of a field of an object</p><h2>Parameters</h2><dl><dt><span class='parameter'>obj</span></dt><dd><p>The input object.</p></dd><dt><span class='parameter'>fieldInfo</span></dt><dd><p>The description of the field to access.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    FieldGet
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  fieldInfo:FieldInfo -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the access of a static field</p><h2>Parameters</h2><dl><dt><span class='parameter'>fieldInfo</span></dt><dd><p>The description of the field to access.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    FieldSet
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (obj:Expr * fieldInfo:FieldInfo * value:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents writing to a field of an object</p><h2>Parameters</h2><dl><dt><span class='parameter'>obj</span></dt><dd><p>The input object.</p></dd><dt><span class='parameter'>fieldInfo</span></dt><dd><p>The description of the field to write to.</p></dd><dt><span class='parameter'>value</span></dt><dd><p>The value to set to the field.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    FieldSet
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (fieldInfo:FieldInfo * value:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents writing to a static field </p><h2>Parameters</h2><dl><dt><span class='parameter'>fieldInfo</span></dt><dd><p>The description of the field to write to.</p></dd><dt><span class='parameter'>value</span></dt><dd><p>The value to the set to the field.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ForIntegerRangeLoop
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (loopVariable:Var * start:Expr * endExpr:Expr * body:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds a 'for i = ... to ... do ...' expression that represent loops over integer ranges</p><h2>Parameters</h2><dl><dt><span class='parameter'>loopVariable</span></dt><dd><p>The sub-expression declaring the loop variable.</p></dd><dt><span class='parameter'>start</span></dt><dd><p>The sub-expression setting the initial value of the loop variable.</p></dd><dt><span class='parameter'>endExpr</span></dt><dd><p>The sub-expression declaring the final value of the loop variable.</p></dd><dt><span class='parameter'>body</span></dt><dd><p>The sub-expression representing the body of the loop.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    GlobalVar
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  name:string -> Expr<'T>
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Fetches or creates a new variable with the given name and type from a global pool of shared variables
+ indexed by name and type. The type is given by the explicit or inferred type parameter</p><h2>Parameters</h2><dl><dt><span class='parameter'>name</span></dt><dd><p>The variable name.</p></dd></dl><p class='returns'>Returns: The created of fetched typed global variable.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    IfThenElse
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (guard:Expr * thenExpr:Expr * elseExpr:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds 'if ... then ... else' expressions.</p><h2>Parameters</h2><dl><dt><span class='parameter'>guard</span></dt><dd><p>The condition expression.</p></dd><dt><span class='parameter'>thenExpr</span></dt><dd><p>The then sub-expression.</p></dd><dt><span class='parameter'>elseExpr</span></dt><dd><p>The else sub-expression.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Lambda
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (parameter:Var * body:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the construction of an F# function value</p><h2>Parameters</h2><dl><dt><span class='parameter'>parameter</span></dt><dd><p>The parameter to the function.</p></dd><dt><span class='parameter'>body</span></dt><dd><p>The body of the function.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Let
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (letVariable:Var * letExpr:Expr * body:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds expressions associated with 'let' constructs</p><h2>Parameters</h2><dl><dt><span class='parameter'>letVariable</span></dt><dd><p>The variable in the let expression.</p></dd><dt><span class='parameter'>letExpr</span></dt><dd><p>The expression bound to the variable.</p></dd><dt><span class='parameter'>body</span></dt><dd><p>The sub-expression where the binding is in scope.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    LetRecursive
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (bindings:(Var * Expr) list * body:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds recursive expressions associated with 'let rec' constructs</p><h2>Parameters</h2><dl><dt><span class='parameter'>bindings</span></dt><dd><p>The list of bindings for the let expression.</p></dd><dt><span class='parameter'>body</span></dt><dd><p>The sub-expression where the bindings are in scope.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    NewArray
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (elementType:Type * elements:Expr list) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the creation of an array value initialized with the given elements</p><h2>Parameters</h2><dl><dt><span class='parameter'>elementType</span></dt><dd><p>The type for the elements of the array.</p></dd><dt><span class='parameter'>elements</span></dt><dd><p>The list of elements of the array.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    NewDelegate
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (delegateType:Type * parameters:Var list * body:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the creation of a delegate value for the given type</p><h2>Parameters</h2><dl><dt><span class='parameter'>delegateType</span></dt><dd><p>The type of delegate.</p></dd><dt><span class='parameter'>parameters</span></dt><dd><p>The parameters for the delegate.</p></dd><dt><span class='parameter'>body</span></dt><dd><p>The body of the function.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    NewObject
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (constructorInfo:ConstructorInfo * arguments:Expr list) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the invocation of an object constructor</p><h2>Parameters</h2><dl><dt><span class='parameter'>constructorInfo</span></dt><dd><p>The description of the constructor.</p></dd><dt><span class='parameter'>arguments</span></dt><dd><p>The list of arguments to the constructor.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    NewRecord
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (recordType:Type * elements:Expr list) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds record-construction expressions </p><h2>Parameters</h2><dl><dt><span class='parameter'>recordType</span></dt><dd><p>The type of record.</p></dd><dt><span class='parameter'>elements</span></dt><dd><p>The list of elements of the record.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    NewTuple
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (elements:Expr list) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the creation of an F# tuple value</p><h2>Parameters</h2><dl><dt><span class='parameter'>elements</span></dt><dd><p>The list of elements of the tuple.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    NewUnionCase
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (unionCase:UnionCaseInfo * arguments:Expr list) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the creation of a union case value</p><h2>Parameters</h2><dl><dt><span class='parameter'>unionCase</span></dt><dd><p>The description of the union case.</p></dd><dt><span class='parameter'>arguments</span></dt><dd><p>The list of arguments for the case.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    PropertyGet
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (property:PropertyInfo * indexerArgs:Expr list option) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents reading a static property </p><h2>Parameters</h2><dl><dt><span class='parameter'>property</span></dt><dd><p>The description of the property.</p></dd><dt><span class='parameter'>indexerArgs</span></dt><dd><p>List of indices for the property if it is an indexed property.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    PropertyGet
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (obj:Expr * property:PropertyInfo * indexerArgs:Expr list option) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents reading a property of an object</p><h2>Parameters</h2><dl><dt><span class='parameter'>obj</span></dt><dd><p>The input object.</p></dd><dt><span class='parameter'>property</span></dt><dd><p>The description of the property.</p></dd><dt><span class='parameter'>indexerArgs</span></dt><dd><p>List of indices for the property if it is an indexed property.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    PropertySet
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (property:PropertyInfo * value:Expr * indexerArgs:Expr list option) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents writing to a static property </p><h2>Parameters</h2><dl><dt><span class='parameter'>property</span></dt><dd><p>The description of the property.</p></dd><dt><span class='parameter'>value</span></dt><dd><p>The value to set.</p></dd><dt><span class='parameter'>indexerArgs</span></dt><dd><p>List of indices for the property if it is an indexed property.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    PropertySet
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (obj:Expr * property:PropertyInfo * value:Expr * indexerArgs:Expr list option) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents writing to a property of an object</p><h2>Parameters</h2><dl><dt><span class='parameter'>obj</span></dt><dd><p>The input object.</p></dd><dt><span class='parameter'>property</span></dt><dd><p>The description of the property.</p></dd><dt><span class='parameter'>value</span></dt><dd><p>The value to set.</p></dd><dt><span class='parameter'>indexerArgs</span></dt><dd><p>List of indices for the property if it is an indexed property.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Quote
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  inner:Expr -> Expr
+                  <br/>
+                  <b>
+                    Attributes:
+                  </b>
+                  <code>
+                    ObsoleteAttribute
+                  </code>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a nested typed or raw quotation literal</p><h2>Parameters</h2><dl><dt><span class='parameter'>inner</span></dt><dd><p>The expression being quoted.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    QuoteRaw
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  inner:Expr -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a nested raw quotation literal</p><h2>Parameters</h2><dl><dt><span class='parameter'>inner</span></dt><dd><p>The expression being quoted.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    QuoteTyped
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  inner:Expr -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a nested typed quotation literal</p><h2>Parameters</h2><dl><dt><span class='parameter'>inner</span></dt><dd><p>The expression being quoted.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    RegisterReflectedDefinitions
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (assembly:Assembly * resource:string * serializedValue:byte [] * referencedTypes:Type []) -> unit
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Permits interactive environments such as F# Interactive
+ to explicitly register new pickled resources that represent persisted 
+ top level definitions.</p><h2>Parameters</h2><dl><dt><span class='parameter'>assembly</span></dt><dd><p>The assembly associated with the resource.</p></dd><dt><span class='parameter'>resource</span></dt><dd><p>The unique name for the resources being added.</p></dd><dt><span class='parameter'>referencedTypes</span></dt><dd><p>The type definitions referenced.</p></dd><dt><span class='parameter'>serializedValue</span></dt><dd><p>The serialized resource to register with the environment.</p></dd></dl></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    RegisterReflectedDefinitions
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (assembly:Assembly * resource:string * serializedValue:byte []) -> unit
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Permits interactive environments such as F# Interactive
+ to explicitly register new pickled resources that represent persisted 
+ top level definitions.</p><h2>Parameters</h2><dl><dt><span class='parameter'>assembly</span></dt><dd><p>The assembly associated with the resource.</p></dd><dt><span class='parameter'>resource</span></dt><dd><p>The unique name for the resources being added.</p></dd><dt><span class='parameter'>serializedValue</span></dt><dd><p>The serialized resource to register with the environment.</p></dd></dl></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Sequential
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (first:Expr * second:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents the sequential execution of one expression followed by another</p><h2>Parameters</h2><dl><dt><span class='parameter'>first</span></dt><dd><p>The first expression.</p></dd><dt><span class='parameter'>second</span></dt><dd><p>The second expression.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    TryFinally
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (body:Expr * compensation:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a try/finally construct </p><h2>Parameters</h2><dl><dt><span class='parameter'>body</span></dt><dd><p>The body of the try expression.</p></dd><dt><span class='parameter'>compensation</span></dt><dd><p>The final part of the expression to be evaluated.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    TryGetReflectedDefinition
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  methodBase:MethodBase -> Expr option
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Try and find a stored reflection definition for the given method. Stored reflection
+ definitions are added to an F# assembly through the use of the [<ReflectedDefinition>] attribute.</p><h2>Parameters</h2><dl><dt><span class='parameter'>methodBase</span></dt><dd><p>The description of the method to find.</p></dd></dl><p class='returns'>Returns: The reflection definition or None if a match could not be found.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    TryWith
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (body:Expr * filterVar:Var * filterBody:Expr * catchVar:Var * catchBody:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a try/with construct for exception filtering and catching.</p><h2>Parameters</h2><dl><dt><span class='parameter'>body</span></dt><dd><p>The body of the try expression.</p></dd><dt><span class='parameter'>filterVar</span></dt><dd><p></p></dd><dt><span class='parameter'>filterBody</span></dt><dd><p></p></dd><dt><span class='parameter'>catchVar</span></dt><dd><p>The variable to bind to a caught exception.</p></dd><dt><span class='parameter'>catchBody</span></dt><dd><p>The expression evaluated when an exception is caught.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    TupleGet
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (tuple:Expr * index:int) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents getting a field of a tuple</p><h2>Parameters</h2><dl><dt><span class='parameter'>tuple</span></dt><dd><p>The input tuple.</p></dd><dt><span class='parameter'>index</span></dt><dd><p>The index of the tuple element to get.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    TypeTest
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (source:Expr * target:Type) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a type test.</p><h2>Parameters</h2><dl><dt><span class='parameter'>source</span></dt><dd><p>The expression to test.</p></dd><dt><span class='parameter'>target</span></dt><dd><p>The target type.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    UnionCaseTest
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (source:Expr * unionCase:UnionCaseInfo) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a test of a value is of a particular union case</p><h2>Parameters</h2><dl><dt><span class='parameter'>source</span></dt><dd><p>The expression to test.</p></dd><dt><span class='parameter'>unionCase</span></dt><dd><p>The description of the union case.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Value
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  value:'T -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a constant value </p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The typed value.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Value
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (value:obj * expressionType:Type) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a constant value of a particular type</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The untyped object.</p></dd><dt><span class='parameter'>expressionType</span></dt><dd><p>The type of the object.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ValueWithName
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (value:obj * expressionType:Type * name:string) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a constant value of a particular type, arising from a variable of the given name </p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The untyped object.</p></dd><dt><span class='parameter'>expressionType</span></dt><dd><p>The type of the object.</p></dd><dt><span class='parameter'>name</span></dt><dd><p>The name of the variable.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    ValueWithName
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (value:'T * name:string) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a constant value, arising from a variable of the given name </p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The typed value.</p></dd><dt><span class='parameter'>name</span></dt><dd><p>The name of the variable.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Var
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  variable:Var -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a variable</p><h2>Parameters</h2><dl><dt><span class='parameter'>variable</span></dt><dd><p>The input variable.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    VarSet
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (variable:Var * value:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents setting a mutable variable</p><h2>Parameters</h2><dl><dt><span class='parameter'>variable</span></dt><dd><p>The input variable.</p></dd><dt><span class='parameter'>value</span></dt><dd><p>The value to set.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    WhileLoop
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (guard:Expr * body:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a while loop</p><h2>Parameters</h2><dl><dt><span class='parameter'>guard</span></dt><dd><p>The predicate to control the loop iteration.</p></dd><dt><span class='parameter'>body</span></dt><dd><p>The body of the while loop.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    WithValue
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (value:obj * expressionType:Type * definition:Expr) -> Expr
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a value and its associated reflected definition as a quotation</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The untyped object.</p></dd><dt><span class='parameter'>expressionType</span></dt><dd><p>The type of the object.</p></dd><dt><span class='parameter'>definition</span></dt><dd><p>The definition of the value being quoted.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    WithValue
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (value:'T * definition:Expr<'T>) -> Expr<'T>
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Builds an expression that represents a value and its associated reflected definition as a quotation</p><h2>Parameters</h2><dl><dt><span class='parameter'>value</span></dt><dd><p>The value being quoted.</p></dd><dt><span class='parameter'>definition</span></dt><dd><p>The definition of the value being quoted.</p></dd></dl><p class='returns'>Returns: The resulting expression.</p></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="http://localhost:8080//static/js/clipboard.min.js"></script>
+    <script src="http://localhost:8080//static/js/perfect-scrollbar.min.js"></script>
+    <script src="http://localhost:8080//static/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="http://localhost:8080//static/js/jquery.sticky.js"></script>
+    <script src="http://localhost:8080//static/js/featherlight.min.js"></script>
+    <script src="http://localhost:8080//static/js/modernizr.custom-3.6.0.js"></script>
+    <script src="http://localhost:8080//static/js/learn.js"></script>
+    <script src="http://localhost:8080//static/js/hugo-learn.js"></script>
+    <link rel="stylesheet" href="http://localhost:8080//static/mermaid/mermaid.css"/>
+    <script src="http://localhost:8080//static/mermaid/mermaid.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/fsharp.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
+    </script>
+  </body>
+</html>

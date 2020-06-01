@@ -1,0 +1,435 @@
+<html class="js csstransforms3d">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      F# Core API Docs | FSharpType
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080//static/images/favicon.png"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/nucleus.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/fontawesome-all.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/hybrid.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/featherlight.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/perfect-scrollbar.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/auto-complete.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/atom-one-dark-reasonable.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/theme.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css"/>
+    <link rel="stylesheet" href="http://localhost:8080//static/css/theme-green.css"/>
+    <script src="http://localhost:8080//static/js/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <div id="header-wrapper">
+        <div id="header">
+          <h2 id="logo">
+            F# Core API Docs
+          </h2>
+        </div>
+        <div class="searchbox">
+          <label for="search-by">
+            <i class="fas fa-search"></i>
+          </label>
+          <input data-search-input="" id="search-by" type="search" placeholder="Search..."/>
+          <span data-search-clear="">
+            <i class="fas fa-times"></i>
+          </span>
+        </div>
+        <script type="text/javascript" src="http://localhost:8080//static/js/lunr.min.js"></script>
+        <script type="text/javascript" src="http://localhost:8080//static/js/auto-complete.js"></script>
+        <script type="text/javascript">
+          var baseurl ='http://localhost:8080/'
+        </script>
+        <script type="text/javascript" src="http://localhost:8080//static/js/search.js"></script>
+        <script src="http://localhost:8080//static/js/highlight.pack.js"></script>
+        <script>
+          hljs.initHighlightingOnLoad();
+        </script>
+      </div>
+      <div class="highlightable">
+        <ul class="topics">
+          <li id="menu-refs" class="dd-item menu-group-link menu-group-link-active">
+            <a>
+              API References
+            </a>
+          </li>
+        </ul>
+        <ul id="submenu-refs" class="submenu submenu-active">
+          <li>
+            <a href="http://localhost:8080//reference/FSharp.Core/index.html" class="padding">
+              FSharp.Core
+            </a>
+          </li>
+        </ul>
+        <section id="shortcuts">
+          <h3>
+            Shortucts
+          </h3>
+          <ul>
+            <li>
+              <a class="padding" href="/">
+                <i class="fas fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="http://fsharp.org">
+                <i class="fas fa-cubes"></i>
+                F# Software Foundation
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="https://github.com/dotnet/fsharp">
+                <i class="fab fa-github"></i>
+                GitHub repo
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section id="footer">
+          <p>Built with <a href="https://github.com/ionide/Fornax">Fornax</a>
+        </section>
+      </div>
+    </nav>
+    <section id="body">
+      <div id="overlay"></div>
+      <div class="padding highlightable">
+        <div id="body-inner">
+          <span id="sidebar-toggle-span">
+            <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+              <i class="fas fa-bars"></i>
+               navigation
+            </a>
+          </span>
+          <div class="api-page">
+            <h2>
+              FSharpType
+            </h2>
+            <b>
+              Namespace: 
+            </b>
+            <a href="Microsoft.FSharp.Reflection.html">
+              Microsoft.FSharp.Reflection
+            </a>
+            <br/>
+            <b>
+              Parent: 
+            </b>
+            <a href="Microsoft.FSharp.Reflection.html">
+              Microsoft.FSharp.Reflection
+            </a>
+            <span>
+              <div class="comment"></br><p class='summary'>Contains operations associated with constructing and analyzing F# types such as records, unions and tuples</p></div>
+            </span>
+            <br/>
+            <b>
+              Attributes:
+            </b>
+            <br/>
+            <code>
+              AbstractClassAttribute
+            </code>
+            <br/>
+            <code>
+              SealedAttribute
+            </code>
+            <br/>
+            <table>
+              <tr>
+                <th width="35%">
+                  Name
+                </th>
+                <th width="65%">
+                  Description
+                </th>
+              </tr>
+              <tr>
+                <td colSpan="3">
+                  <b>
+                    Static Members
+                  </b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    GetExceptionFields
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (exceptionType:Type * bindingFlags:BindingFlags option) -> PropertyInfo []
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Reads all the fields from an F# exception declaration, in declaration order</p><h2>Parameters</h2><dl><dt><span class='parameter'>exceptionType</span></dt><dd><p>The exception type to read.</p></dd><dt><span class='parameter'>bindingFlags</span></dt><dd><p>Optional binding flags.</p></dd></dl><p class='returns'>Returns: An array containing the PropertyInfo of each field in the exception.</p><h2>Remarks</h2><p class='remarks'>Assumes  is an exception representation type. If not, ArgumentException is raised.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    GetFunctionElements
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  functionType:Type -> Type * Type
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Gets the domain and range types from an F# function type  or from the runtime type of a closure implementing an F# type</p><h2>Parameters</h2><dl><dt><span class='parameter'>functionType</span></dt><dd><p>The input function type.</p></dd></dl><p class='returns'>Returns: A tuple of the domain and range types of the input function.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    GetRecordFields
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (recordType:Type * bindingFlags:BindingFlags option) -> PropertyInfo []
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Reads all the fields from a record value, in declaration order</p><h2>Parameters</h2><dl><dt><span class='parameter'>recordType</span></dt><dd><p>The input record type.</p></dd><dt><span class='parameter'>bindingFlags</span></dt><dd><p>Optional binding flags.</p></dd></dl><p class='returns'>Returns: An array of descriptions of the properties of the record type.</p><h2>Remarks</h2><p class='remarks'>Assumes the given input is a record value. If not, ArgumentException is raised.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    GetTupleElements
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  tupleType:Type -> Type []
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Gets the tuple elements from the representation of an F# tuple type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>tupleType</span></dt><dd><p>The input tuple type.</p></dd></dl><p class='returns'>Returns: An array of the types contained in the given tuple type.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    GetUnionCases
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (unionType:Type * bindingFlags:BindingFlags option) -> UnionCaseInfo []
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Gets the cases of a union type.</p><h2>Parameters</h2><dl><dt><span class='parameter'>unionType</span></dt><dd><p>The input union type.</p></dd><dt><span class='parameter'>bindingFlags</span></dt><dd><p>Optional binding flags.</p></dd></dl><p class='returns'>Returns: An array of descriptions of the cases of the given union type.</p><h2>Remarks</h2><p class='remarks'>Assumes the given type is a union type. If not, ArgumentException is raised during pre-computation.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    IsExceptionRepresentation
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (exceptionType:Type * bindingFlags:BindingFlags option) -> bool
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns true if the  is a representation of an F# exception declaration</p><h2>Parameters</h2><dl><dt><span class='parameter'>exceptionType</span></dt><dd><p>The type to check.</p></dd><dt><span class='parameter'>bindingFlags</span></dt><dd><p>Optional binding flags.</p></dd></dl><p class='returns'>Returns: True if the type check is an F# exception.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    IsFunction
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  typ:Type -> bool
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Return true if the  is a representation of an F# function type or the runtime type of a closure implementing an F# function type</p><h2>Parameters</h2><dl><dt><span class='parameter'>typ</span></dt><dd><p>The type to check.</p></dd></dl><p class='returns'>Returns: True if the type check succeeds.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    IsModule
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  typ:Type -> bool
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Return true if the  is a  value corresponding to the compiled form of an F# module </p><h2>Parameters</h2><dl><dt><span class='parameter'>typ</span></dt><dd><p>The type to check.</p></dd></dl><p class='returns'>Returns: True if the type check succeeds.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    IsRecord
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (typ:Type * bindingFlags:BindingFlags option) -> bool
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Return true if the  is a representation of an F# record type </p><h2>Parameters</h2><dl><dt><span class='parameter'>typ</span></dt><dd><p>The type to check.</p></dd><dt><span class='parameter'>bindingFlags</span></dt><dd><p>Optional binding flags.</p></dd></dl><p class='returns'>Returns: True if the type check succeeds.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    IsTuple
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  typ:Type -> bool
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Return true if the  is a representation of an F# tuple type </p><h2>Parameters</h2><dl><dt><span class='parameter'>typ</span></dt><dd><p>The type to check.</p></dd></dl><p class='returns'>Returns: True if the type check succeeds.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    IsUnion
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (typ:Type * bindingFlags:BindingFlags option) -> bool
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns true if the  is a representation of an F# union type or the runtime type of a value of that type</p><h2>Parameters</h2><dl><dt><span class='parameter'>typ</span></dt><dd><p>The type to check.</p></dd><dt><span class='parameter'>bindingFlags</span></dt><dd><p>Optional binding flags.</p></dd></dl><p class='returns'>Returns: True if the type check succeeds.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    MakeFunctionType
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (domain:Type * range:Type) -> Type
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns a  representing the F# function type with the given domain and range</p><h2>Parameters</h2><dl><dt><span class='parameter'>domain</span></dt><dd><p>The input type of the function.</p></dd><dt><span class='parameter'>range</span></dt><dd><p>The output type of the function.</p></dd></dl><p class='returns'>Returns: The function type with the given domain and range.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    MakeStructTupleType
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (asm:Assembly * types:Type []) -> Type
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns a  representing an F# struct tuple type with the given element types</p><h2>Parameters</h2><dl><dt><span class='parameter'>asm</span></dt><dd><p>Runtime assembly containing System.ValueTuple definitions.</p></dd><dt><span class='parameter'>types</span></dt><dd><p>An array of types for the tuple elements.</p></dd></dl><p class='returns'>Returns: The type representing the struct tuple containing the input elements.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    MakeTupleType
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (asm:Assembly * types:Type []) -> Type
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns a  representing an F# tuple type with the given element types</p><h2>Parameters</h2><dl><dt><span class='parameter'>asm</span></dt><dd><p>Runtime assembly containing System.Tuple definitions.</p></dd><dt><span class='parameter'>types</span></dt><dd><p>An array of types for the tuple elements.</p></dd></dl><p class='returns'>Returns: The type representing the tuple containing the input elements.</p></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    MakeTupleType
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (types:Type []) -> Type
+                  <br/>
+                </td>
+                <td>
+                  <div class="comment"></br><p class='summary'>Returns a  representing an F# tuple type with the given element types</p><h2>Parameters</h2><dl><dt><span class='parameter'>types</span></dt><dd><p>An array of types for the tuple elements.</p></dd></dl><p class='returns'>Returns: The type representing the tuple containing the input elements.</p></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="http://localhost:8080//static/js/clipboard.min.js"></script>
+    <script src="http://localhost:8080//static/js/perfect-scrollbar.min.js"></script>
+    <script src="http://localhost:8080//static/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="http://localhost:8080//static/js/jquery.sticky.js"></script>
+    <script src="http://localhost:8080//static/js/featherlight.min.js"></script>
+    <script src="http://localhost:8080//static/js/modernizr.custom-3.6.0.js"></script>
+    <script src="http://localhost:8080//static/js/learn.js"></script>
+    <script src="http://localhost:8080//static/js/hugo-learn.js"></script>
+    <link rel="stylesheet" href="http://localhost:8080//static/mermaid/mermaid.css"/>
+    <script src="http://localhost:8080//static/mermaid/mermaid.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/fsharp.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
+    </script>
+  </body>
+</html>
