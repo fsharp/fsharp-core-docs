@@ -1,5 +1,4 @@
 #r "../_lib/Fornax.Core.dll"
-#r "../packages/Markdig/lib/netstandard2.0/Markdig.dll"
 #r "../packages/Newtonsoft.Json/lib/netstandard2.0/Newtonsoft.Json.dll"
 #r "../packages/FSharp.Formatting/lib/netstandard2.0/FSharp.MetadataFormat.dll"
 
@@ -13,19 +12,9 @@ open System
 open FSharp.MetadataFormat
 open Html
 open Apirefloader
-open Markdig
 
-let markdownPipeline =
-    MarkdownPipelineBuilder()
-        .UsePipeTables()
-        .UseGridTables()
-        .Build()
 let getComment (c: Comment) =
-  let t =
-    c.RawData
-    |> List.map (fun n -> n.Value)
-    |> String.concat "\n\n"
-  Markdown.ToHtml(t, markdownPipeline)
+    sprintf """<div class="comment">%s</div>""" c.FullText
 
 let formatMember (m: Member) =
     let attributes =

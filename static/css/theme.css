@@ -1218,3 +1218,11 @@ option {
   margin: 1.2rem 0;
 }
 
+.comment h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.comment dt {
+    font-weight: bold;
+}
