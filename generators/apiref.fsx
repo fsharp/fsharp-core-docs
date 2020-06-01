@@ -1,5 +1,6 @@
 #r "../_lib/Fornax.Core.dll"
-#load "../.paket/load/main.group.fsx"
+#r "../packages/Newtonsoft.Json/lib/netstandard2.0/Newtonsoft.Json.dll"
+#r "../packages/FSharp.Formatting/lib/netstandard2.0/FSharp.MetadataFormat.dll"
 
 #if !FORNAX
 #load "../loaders/apirefloader.fsx"
@@ -11,20 +12,10 @@ open System
 open FSharp.MetadataFormat
 open Html
 open Apirefloader
-open Markdig
 
-let markdownPipeline =
-    MarkdownPipelineBuilder()
-        .UsePipeTables()
-        .UseGridTables()
-        .Build()
 let getComment (c: Comment) =
-  let t =
-    c.RawData
-    |> List.map (fun n -> n.Value)
-    |> String.concat "\n\n"
-  Markdown.ToHtml(t, markdownPipeline)
-  
+    sprintf """<div class="comment">%s</div>""" c.FullText
+
 let formatMember (m: Member) =
     let attributes =
       m.Attributes
@@ -229,16 +220,13 @@ let generateNamespace ctx (n: Namespace)  =
 let generate' (ctx : SiteContents)  =
     let all = ctx.TryGetValues<AssemblyEntities>()
     match all with
-    | None -> 
+    | None ->
         printfn "no assembly entities found"
         []
     | Some all ->
-      printfn "found %d assembly entities" (Seq.length all)
       all
       |> Seq.toList
       |> List.collect (fun n ->
-        printfn "processing entry"
-        printfn "%A" n
         let name = n.GeneratorOutput.AssemblyGroup.Name
         let namespaces =
           n.GeneratorOutput.AssemblyGroup.Namespaces
@@ -268,7 +256,6 @@ let generate' (ctx : SiteContents)  =
 
 
 let generate (ctx : SiteContents) (projectRoot: string) (page: string) =
-    printfn "generating api docs for F# core at %s for page %s" projectRoot page
     try
         generate' ctx
         |> List.map (fun (n,b) -> n, (Layout.render ctx b))

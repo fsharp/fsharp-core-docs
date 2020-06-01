@@ -1,6 +1,6 @@
 packages
 paket-files
 .ionide
-.config
+_public
 .vscode
 .paket

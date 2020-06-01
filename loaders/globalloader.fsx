@@ -10,7 +10,7 @@ type SiteInfo = {
 let config = {
     title = "F# Core API Docs"
     description = "Reference docs for the FSharp.Core library"
-    theme_variant = Some "blue"
+    theme_variant = Some "green"
     root_url =
       #if WATCH
         "http://localhost:8080/"
