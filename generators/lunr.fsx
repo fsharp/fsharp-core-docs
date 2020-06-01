@@ -1,7 +1,8 @@
 #r "../_lib/Fornax.Core.dll"
-#load "../.paket/load/main.group.fsx"
+#r "../packages/Newtonsoft.Json/lib/netstandard2.0/Newtonsoft.Json.dll"
+#r "../packages/FSharp.Formatting/lib/netstandard2.0/FSharp.MetadataFormat.dll"
+
 #if !FORNAX
-#load "../loaders/contentloader.fsx"
 #load "../loaders/apirefloader.fsx"
 #load "../loaders/globalloader.fsx"
 #endif
@@ -19,12 +20,6 @@ let generate (ctx : SiteContents) (projectRoot: string) (page: string) =
     let siteInfo = ctx.TryGetValue<Globalloader.SiteInfo>().Value
     let rootUrl = siteInfo.root_url
 
-    let pages = ctx.TryGetValues<Contentloader.Post> () |> Option.defaultValue Seq.empty
-    let entries =
-      pages
-      |> Seq.map (fun n ->
-          {uri = rootUrl + "/" + n.link.Replace("content/", ""); title = n.title; content = n.text}
-      )
 
     let all = ctx.TryGetValues<AssemblyEntities>()
     let refs =
@@ -73,9 +68,9 @@ let generate (ctx : SiteContents) (projectRoot: string) (page: string) =
 
                   {uri = rootUrl + sprintf "/reference/%s/%s.html" n.Label m.UrlName ; title = m.Name; content = cnt }
               )
-          [yield! entries; gen; yield! mdlsGen; yield! tsGen]
+          [gen; yield! mdlsGen; yield! tsGen]
         )
 
-    [|yield! entries; yield! refs|]
+    [|yield! refs|]
     |> Newtonsoft.Json.JsonConvert.SerializeObject
 

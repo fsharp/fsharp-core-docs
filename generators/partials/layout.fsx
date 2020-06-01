@@ -1,6 +1,5 @@
 #r "../../_lib/Fornax.Core.dll"
 #if !FORNAX
-#load "../../loaders/contentloader.fsx"
 #load "../../loaders/pageloader.fsx"
 #load "../../loaders/globalloader.fsx"
 #endif
@@ -59,8 +58,5 @@ let layout (ctx : SiteContents) bodyCnt (page: string) =
     ]
 
 let render (ctx : SiteContents) cnt =
-  printfn "rendering site content"
-  // let disableLiveRefresh = ctx.TryGetValue<Contentloader.PostConfig> () |> Option.map (fun n -> n.disableLiveRefresh) |> Option.defaultValue false
   cnt
   |> HtmlElement.ToString
-  // |> fun n -> if disableLiveRefresh then n else injectWebsocketCode n
