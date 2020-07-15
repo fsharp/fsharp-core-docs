@@ -37,7 +37,7 @@ let menu (ctx : SiteContents) (page: string) =
 
   let renderShortucuts =
     section [Id "shortcuts"] [
-        h3 [] [!! "Shortucts"]
+        h3 [] [!! "Shortcuts"]
         ul [] [
           for s in shortcuts do
             yield
