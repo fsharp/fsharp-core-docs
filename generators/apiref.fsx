@@ -14,8 +14,8 @@ open Html
 open Apirefloader
 
 let stripMicrosoft (str: string) =
-    if (str.StartsWith("Microsoft")) then
-        str.Split('.').[1..] |> String.concat "."
+    if (str.StartsWith("Microsoft.")) then
+        str.["Microsoft.".Length ..]
     else
         str
 
