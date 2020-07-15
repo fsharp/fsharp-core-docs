@@ -20,9 +20,15 @@ type AssemblyEntities = {
   GeneratorOutput: GeneratorOutput
 }
 
+let stripMicrosoft (str: string) =
+    if (str.StartsWith("Microsoft")) then
+        str.Split('.').[1..] |> String.concat "."
+    else
+        str
+
 let rec collectModules pn pu nn nu (m: Module) =
     [
-        yield { ParentName = pn; ParentUrlName = pu; NamespaceName = nn; NamespaceUrlName = nu; Info =  m}
+        yield { ParentName = stripMicrosoft pn; ParentUrlName = stripMicrosoft pu; NamespaceName = stripMicrosoft nn; NamespaceUrlName = stripMicrosoft nu; Info = m}
         yield! m.NestedModules |> List.collect (collectModules m.Name m.UrlName nn nu )
     ]
 
@@ -45,12 +51,24 @@ let loader (projectRoot: string) (siteContent: SiteContents) =
                 yield!
                     output.AssemblyGroup.Namespaces
                     |> List.collect (fun n ->
-                        n.Types |> List.map (fun t -> {ParentName = n.Name; ParentUrlName = n.Name; NamespaceName = n.Name; NamespaceUrlName = n.Name; Info = t} )
+                        n.Types
+                        |> List.map (fun t ->
+                            { ParentName = stripMicrosoft n.Name
+                              ParentUrlName = stripMicrosoft n.Name
+                              NamespaceName = stripMicrosoft n.Name
+                              NamespaceUrlName = stripMicrosoft n.Name
+                              Info = t })
                     )
                 yield!
                     allModules
                     |> List.collect (fun n ->
-                        n.Info.NestedTypes |> List.map (fun t -> {ParentName = n.Info.Name; ParentUrlName = n.Info.UrlName; NamespaceName = n.NamespaceName; NamespaceUrlName = n.NamespaceUrlName; Info = t}) )
+                        n.Info.NestedTypes
+                        |> List.map (fun t ->
+                            { ParentName = stripMicrosoft n.Info.Name
+                              ParentUrlName = stripMicrosoft n.Info.UrlName
+                              NamespaceName = stripMicrosoft n.NamespaceName
+                              NamespaceUrlName = stripMicrosoft n.NamespaceUrlName
+                              Info = t }))
             ]
 
         let entities = {

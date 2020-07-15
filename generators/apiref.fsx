@@ -13,6 +13,12 @@ open FSharp.MetadataFormat
 open Html
 open Apirefloader
 
+let stripMicrosoft (str: string) =
+    if (str.StartsWith("Microsoft")) then
+        str.Split('.').[1..] |> String.concat "."
+    else
+        str
+
 let getComment (c: Comment) =
     sprintf """<div class="comment">%s</div>""" c.FullText
 
@@ -181,7 +187,7 @@ let generateModule ctx (page: ApiPageInfo<Module>) =
 let generateNamespace ctx (n: Namespace)  =
     let body =
         div [Class "api-page"] [
-            h2 [] [!!n.Name]
+            h2 [] [!! (stripMicrosoft n.Name)]
 
             if not n.Types.IsEmpty then
 
@@ -246,12 +252,13 @@ let generate' (ctx : SiteContents)  =
             b [] [!! "Declared namespaces"]
             br []
             for (n, _) in namespaces do
-                a [Href (sprintf "%s.html"  n)] [!!n]
+                let ns = n.Split('.').[1..] |> String.concat "."
+                a [Href (sprintf "%s.html"  ns)] [!!ns]
                 br []
           ] n.Label
 
         [("index" , ref); yield! namespaces; yield! modules; yield! types]
-        |> List.map (fun (x, y) -> (sprintf "%s/%s" n.Label x), y)
+        |> List.map (fun (x, y) -> (sprintf "%s/%s" (stripMicrosoft n.Label) (stripMicrosoft x)), y)
       )
 
 
