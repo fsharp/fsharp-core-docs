@@ -1,9 +1,9 @@
 #r "../_lib/Fornax.Core.dll"
-#r "../packages/FSharp.Formatting/lib/netstandard2.0/FSharp.MetadataFormat.dll"
+#r "../packages/FSharp.Formatting/lib/netstandard2.0/FSharp.Formatting.ApiDocs.dll"
 
 open System
 open System.IO
-open FSharp.MetadataFormat
+open FSharp.Formatting.ApiDocs
 
 type ApiPageInfo<'a> = {
     ParentName: string
@@ -17,7 +17,7 @@ type AssemblyEntities = {
   Label: string
   Modules: ApiPageInfo<Module> list
   Types: ApiPageInfo<Type> list
-  GeneratorOutput: GeneratorOutput
+  GeneratorOutput: ApiDocsModel
 }
 
 let rec collectModules pn pu nn nu (m: Module) =
@@ -30,10 +30,10 @@ let loader (projectRoot: string) (siteContent: SiteContents) =
     try
         let dir = Path.Combine(projectRoot, "packages", "FSharp.Core", "lib", "netstandard2.0")
         let xml = Path.Combine(dir, "FSharp.Core.xml")
-        let dll = Path.Combine(System.AppContext.BaseDirectory, "FSharp.Core.dll")
+        let dlls = [ Path.Combine(System.AppContext.BaseDirectory, "FSharp.Core.dll") ]
         let sourceRepo = "https://github.com/dotnet/fsharp"
         let sourceFolder = "src/fsharp/FSharp.Core"
-        let output = MetadataFormat.Generate(dll, markDownComments = false, publicOnly = true, xmlFile = xml, sourceRepo = sourceRepo, sourceFolder = sourceFolder)
+        let output = ApiDocs.GenerateModel(dlls, markDownComments = false, publicOnly = true, xmlFile = xml, sourceRepo = sourceRepo, sourceFolder = sourceFolder)
 
         let allModules =
             output.AssemblyGroup.Namespaces
