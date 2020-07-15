@@ -1,6 +1,6 @@
 #r "../_lib/Fornax.Core.dll"
 #r "../packages/Newtonsoft.Json/lib/netstandard2.0/Newtonsoft.Json.dll"
-#r "../packages/FSharp.Formatting/lib/netstandard2.0/FSharp.MetadataFormat.dll"
+#r "../packages/FSharp.Formatting/lib/netstandard2.0/FSharp.Formatting.ApiDocs.dll"
 
 #if !FORNAX
 #load "../loaders/apirefloader.fsx"
@@ -8,7 +8,7 @@
 #endif
 
 open Apirefloader
-open FSharp.MetadataFormat
+open FSharp.Formatting.ApiDocs
 
 
 type Entry = {

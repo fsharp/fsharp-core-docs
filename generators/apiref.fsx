@@ -1,6 +1,6 @@
 #r "../_lib/Fornax.Core.dll"
 #r "../packages/Newtonsoft.Json/lib/netstandard2.0/Newtonsoft.Json.dll"
-#r "../packages/FSharp.Formatting/lib/netstandard2.0/FSharp.MetadataFormat.dll"
+#r "../packages/FSharp.Formatting/lib/netstandard2.0/FSharp.Formatting.ApiDocs.dll"
 
 #if !FORNAX
 #load "../loaders/apirefloader.fsx"
@@ -9,7 +9,7 @@
 #load "partials/layout.fsx"
 
 open System
-open FSharp.MetadataFormat
+open FSharp.Formatting.ApiDocs
 open Html
 open Apirefloader
 
@@ -21,7 +21,7 @@ let stripMicrosoft (str: string) =
     else
         str
 
-let getComment (c: Comment) =
+let getComment (c: DocComment) =
     sprintf """<div class="comment">%s</div>""" c.FullText
 
 let formatMember (m: Member) =
