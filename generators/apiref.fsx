@@ -50,11 +50,6 @@ let formatMember (m: Member) =
             br []
             b [] [!! "Signature: "]
             !!m.Details.Signature
-            br []
-            if not (attributes.IsEmpty) then
-                b [] [!! "Attributes:"]
-                for a in attributes do
-                    code [] [!! (a.Name)]
         ]
         td [] [!! (getComment m.Comment)]
     ]
