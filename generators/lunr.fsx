@@ -10,17 +10,23 @@
 open Apirefloader
 open FSharp.Formatting.ApiDocs
 
-
 type Entry = {
     uri: string
     title: string
     content: string
 }
+
+let stripMicrosoft (str: string) =
+    if str.StartsWith("Microsoft.") then
+        str.["Microsoft.".Length ..]
+    elif str.StartsWith("microsoft-") then
+        str.["microsoft-".Length ..]
+    else
+        str
+
 let generate (ctx : SiteContents) (projectRoot: string) (page: string) =
     let siteInfo = ctx.TryGetValue<Globalloader.SiteInfo>().Value
     let rootUrl = siteInfo.root_url
-
-
     let all = ctx.TryGetValues<AssemblyEntities>()
     let refs =
       match all with
@@ -52,7 +58,7 @@ let generate (ctx : SiteContents) (projectRoot: string) (page: string) =
                           (m.TypeExtensions |> List.map (fun m -> m.Name + " " + m.Comment.FullText ) |> String.concat " ")
 
 
-                  {uri = rootUrl + sprintf "/reference/%s/%s.html" n.Label m.UrlName ; title = m.Name; content = cnt }
+                  {uri = rootUrl + sprintf "/reference/%s/%s.html" n.Label (stripMicrosoft m.UrlName) ; title = m.Name; content = cnt }
               )
 
           let tsGen =
