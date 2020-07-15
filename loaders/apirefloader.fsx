@@ -21,8 +21,10 @@ type AssemblyEntities = {
 }
 
 let stripMicrosoft (str: string) =
-    if (str.StartsWith("Microsoft.")) then
+    if str.StartsWith("Microsoft.") then
         str.["Microsoft.".Length ..]
+    elif str.StartsWith("microsoft-") then
+        str.["microsoft-".Length ..]
     else
         str
 

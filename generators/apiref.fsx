@@ -14,8 +14,10 @@ open Html
 open Apirefloader
 
 let stripMicrosoft (str: string) =
-    if (str.StartsWith("Microsoft.")) then
+    if str.StartsWith("Microsoft.") then
         str.["Microsoft.".Length ..]
+    elif str.StartsWith("microsoft-") then
+        str.["microsoft-".Length ..]
     else
         str
 
@@ -140,7 +142,7 @@ let generateModule ctx (page: ApiPageInfo<Module>) =
                     ]
                     for t in m.NestedTypes do
                         tr [] [
-                            td [] [a [Href (sprintf "%s.html" t.UrlName )] [!! t.Name ]]
+                            td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlName))] [!! t.Name ]]
                             td [] [!! (getComment t.Comment)]
                         ]
                 ]
@@ -155,7 +157,7 @@ let generateModule ctx (page: ApiPageInfo<Module>) =
                     ]
                     for t in m.NestedModules do
                         tr [] [
-                            td [] [a [Href (sprintf "%s.html" t.UrlName )] [!! t.Name ]]
+                            td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlName))] [!! t.Name ]]
                             td [] [!! (getComment t.Comment)]
                         ]
                 ]
@@ -199,7 +201,7 @@ let generateNamespace ctx (n: Namespace)  =
                     ]
                     for t in n.Types do
                         tr [] [
-                            td [] [a [Href (sprintf "%s.html" t.UrlName )] [!! t.Name ]]
+                            td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlName))] [!! t.Name ]]
                             td [] [!!(getComment t.Comment)]
                         ]
                 ]
@@ -215,7 +217,7 @@ let generateNamespace ctx (n: Namespace)  =
                     ]
                     for t in n.Modules do
                         tr [] [
-                            td [] [a [Href (sprintf "%s.html" t.UrlName )] [!! t.Name ]]
+                            td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlName))] [!! t.Name ]]
                             td [] [!! (getComment t.Comment)]
                         ]
                 ]
@@ -233,7 +235,7 @@ let generate' (ctx : SiteContents)  =
       all
       |> Seq.toList
       |> List.collect (fun n ->
-        let name = n.GeneratorOutput.AssemblyGroup.Name
+        let name = stripMicrosoft n.GeneratorOutput.AssemblyGroup.Name
         let namespaces =
           n.GeneratorOutput.AssemblyGroup.Namespaces
           |> List.map (generateNamespace ctx)
@@ -252,7 +254,7 @@ let generate' (ctx : SiteContents)  =
             b [] [!! "Declared namespaces"]
             br []
             for (n, _) in namespaces do
-                let ns = n.Split('.').[1..] |> String.concat "."
+                let ns = stripMicrosoft n
                 a [Href (sprintf "%s.html"  ns)] [!!ns]
                 br []
           ] n.Label
