@@ -17,10 +17,6 @@ let getComment (c: DocComment) =
     sprintf """<div class="comment">%s</div>""" c.FullText
 
 let formatMember (m: Member) =
-    let attributes =
-      m.Attributes
-      |> List.filter (fun a -> a.FullName <> "Microsoft.FSharp.Core.CustomOperationAttribute")
-
     let hasCustomOp =
       m.Attributes
       |> List.exists (fun a -> a.FullName = "Microsoft.FSharp.Core.CustomOperationAttribute")
