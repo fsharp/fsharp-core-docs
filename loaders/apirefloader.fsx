@@ -30,10 +30,10 @@ let loader (projectRoot: string) (siteContent: SiteContents) =
     try
         let dir = Path.Combine(projectRoot, "packages", "FSharp.Core", "lib", "netstandard2.0")
         let xml = Path.Combine(dir, "FSharp.Core.xml")
-        let dll = [ Path.Combine(System.AppContext.BaseDirectory, "FSharp.Core.dll") ]
+        let dlls = [ Path.Combine(System.AppContext.BaseDirectory, "FSharp.Core.dll") ]
         let sourceRepo = "https://github.com/dotnet/fsharp"
         let sourceFolder = "src/fsharp/FSharp.Core"
-        let output = ApiDocs.GenerateModel(dll, markDownComments = false, publicOnly = true, xmlFile = xml, sourceRepo = sourceRepo, sourceFolder = sourceFolder)
+        let output = ApiDocs.GenerateModel(dlls, markDownComments = false, publicOnly = true, xmlFile = xml, sourceRepo = sourceRepo, sourceFolder = sourceFolder)
 
         let allModules =
             output.AssemblyGroup.Namespaces
