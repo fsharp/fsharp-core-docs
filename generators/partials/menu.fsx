@@ -15,6 +15,21 @@ let menu (ctx : SiteContents) (page: string) =
   let siteInfo = ctx.TryGetValue<Globalloader.SiteInfo>().Value
   let rootUrl = siteInfo.root_url
 
+  let namespaces =
+     [
+         "FSharp.Core"
+         "FSharp.Collections"
+         "FSharp.Control"
+         "FSharp.Core.CompilerServices"
+         "FSharp.Data.UnitSystems.SI.UnitNames"
+         "FSharp.Data.UnitSystems.SI.UnitSymbols"
+         "FSharp.Linq"
+         "FSharp.Linq.QueryRunExtensions"
+         "FSharp.Linq.RuntimeHelpers"
+         "FSharp.NativeInterop"
+         "FSharp.Quotations"
+         "FSharp.Reflection"
+     ]
 
   let menuHeader =
     [
@@ -23,14 +38,18 @@ let menu (ctx : SiteContents) (page: string) =
       ]
     ]
 
-
-
   let renderRefs =
     ul [Id "submenu-refs"; Class "submenu submenu-active" ] [
       for r in all ->
         li [] [
-          a [Href (rootUrl + "/reference/" +  r.Label + "/index.html"); if r.Label = page then Class "active-link padding" else Class "padding" ] [
-            !! r.Label
+          a [Href (rootUrl + "/reference/" + r.Label + "/index.html"); Class "padding" ] [
+            !! "Index"
+          ]
+        ]
+      for ns in namespaces ->
+        li [] [
+          a [Href (rootUrl + "/reference/" + "FSharp.Core/" + ns + ".html"); Class "padding" ] [
+            !! ns
           ]
         ]
     ]

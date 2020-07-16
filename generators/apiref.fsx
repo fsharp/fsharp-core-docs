@@ -251,12 +251,34 @@ let generate' (ctx : SiteContents)  =
         let ref =
           Layout.layout ctx [
             h1 [] [!! name ]
-            b [] [!! "Declared namespaces"]
-            br []
-            for (n, _) in namespaces do
-                let ns = stripMicrosoft n
-                a [Href (sprintf "%s.html"  ns)] [!!ns]
-                br []
+            table [] [
+               tr [] [
+                    th [ Width "35%" ] [!!"Namespace"]
+                    th [ Width "65%"] [!!"Description"]
+               ]
+
+               let namespaces =
+                   [
+                       ("FSharp.Core", "Types, type abbreviations, and modules implicitly in scope for all F# code.")
+                       ("FSharp.Collections", "Types and modules for F# core library collection types.")
+                       ("FSharp.Control", "Types and functionality for asynchronous and event-driven programming in F#.")
+                       ("FSharp.Core.CompilerServices", "Types and modules intrinsic to F# compilation.")
+                       ("FSharp.Data.UnitSystems.SI.UnitNames", "Units of Measure based on the SI system.")
+                       ("FSharp.Data.UnitSystems.SI.UnitSymbols", "Symbols defined as Units of Measure based on the SI system.")
+                       ("FSharp.Linq", "Types and modules for working with F# query syntax and nullable value types.")
+                       ("FSharp.Linq.QueryRunExtensions", "Modules used to support F# query syntax.")
+                       ("FSharp.Linq.RuntimeHelpers", "Support for evaulating F# quotations via refection.")
+                       ("FSharp.NativeInterop", "Access to the NativePtr module for low-level native interoperation in F#.")
+                       ("FSharp.Quotations", "Types and modules used to represent and analyze F# quotations.")
+                       ("FSharp.Reflection", "Types and extensions for using .NET reflection with F# types and values.")
+                   ]
+               
+               for (name, desc) in namespaces do
+                  tr [] [
+                      td [] [a [Href (sprintf "%s.html" name)] [!! name]]
+                      td [] [!! desc]
+                  ]
+            ]
           ] n.Label
 
         [("index" , ref); yield! namespaces; yield! modules; yield! types]
