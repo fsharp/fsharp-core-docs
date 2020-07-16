@@ -15,7 +15,7 @@ let config = {
       #if WATCH
         "http://localhost:8080/"
       #else
-        "https://fsprojects.github.io/fsharp-core-api-docs/"
+        "https://fsharp.github.io/fsharp-core-api-docs/"
       #endif
 }
 
