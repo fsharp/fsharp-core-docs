@@ -1,5 +1,6 @@
 #r "../_lib/Fornax.Core.dll"
 #r "../packages/Newtonsoft.Json/lib/netstandard2.0/Newtonsoft.Json.dll"
+#r "../packages/FSharp.Compiler.Service/lib/netstandard2.0/FSharp.Compiler.Service.dll"
 #r "../packages/FSharp.Formatting/lib/netstandard2.0/FSharp.Formatting.ApiDocs.dll"
 
 #if !FORNAX
@@ -21,10 +22,10 @@ let stripMicrosoft (str: string) =
     else
         str
 
-let getComment (c: DocComment) =
+let getComment (c: ApiDocComment) =
     sprintf """<div class="comment">%s</div>""" c.FullText
 
-let formatMember (m: Member) =
+let formatMember (m: ApiDocMember) =
     let hasCustomOp =
       m.Attributes
       |> List.exists (fun a -> a.FullName = "Microsoft.FSharp.Core.CustomOperationAttribute")
@@ -53,12 +54,12 @@ let formatMember (m: Member) =
               br []
             br []
             b [] [!! "Signature: "]
-            !!m.Details.Signature
+            !! m.SignatureTooltip
         ]
         td [] [!! (getComment m.Comment)]
     ]
 
-let generateType ctx (page: ApiPageInfo<Type>) =
+let generateType ctx (page: ApiPageInfo<ApiDocType>) =
     let t = page.Info
     let body =
         div [Class "api-page"] [
@@ -105,9 +106,9 @@ let generateType ctx (page: ApiPageInfo<Type>) =
                 yield! t.UnionCases |> List.map formatMember
             ]
         ]
-    t.UrlName, Layout.layout ctx [body] t.Name
+    t.UrlBaseName, Layout.layout ctx [body] t.Name
 
-let generateModule ctx (page: ApiPageInfo<Module>) =
+let generateModule ctx (page: ApiPageInfo<ApiDocModule>) =
     let m = page.Info
     let body =
         div [Class "api-page"] [
@@ -133,7 +134,7 @@ let generateModule ctx (page: ApiPageInfo<Module>) =
                     ]
                     for t in m.NestedTypes do
                         tr [] [
-                            td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlName))] [!! t.Name ]]
+                            td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlBaseName))] [!! t.Name ]]
                             td [] [!! (getComment t.Comment)]
                         ]
                 ]
@@ -148,7 +149,7 @@ let generateModule ctx (page: ApiPageInfo<Module>) =
                     ]
                     for t in m.NestedModules do
                         tr [] [
-                            td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlName))] [!! t.Name ]]
+                            td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlBaseName))] [!! t.Name ]]
                             td [] [!! (getComment t.Comment)]
                         ]
                 ]
@@ -175,9 +176,9 @@ let generateModule ctx (page: ApiPageInfo<Module>) =
                     yield! m.TypeExtensions |> List.map formatMember
                 ]
         ]
-    m.UrlName, Layout.layout ctx [body] m.Name
+    m.UrlBaseName, Layout.layout ctx [body] m.Name
 
-let generateNamespace ctx (n: Namespace)  =
+let generateNamespace ctx (n: ApiDocNamespace)  =
     let body =
         div [Class "api-page"] [
             h2 [] [!! (stripMicrosoft n.Name)]
@@ -192,7 +193,7 @@ let generateNamespace ctx (n: Namespace)  =
                     ]
                     for t in n.Types do
                         tr [] [
-                            td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlName))] [!! t.Name ]]
+                            td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlBaseName))] [!! t.Name ]]
                             td [] [!!(getComment t.Comment)]
                         ]
                 ]
@@ -208,7 +209,7 @@ let generateNamespace ctx (n: Namespace)  =
                     ]
                     for t in n.Modules do
                         tr [] [
-                            td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlName))] [!! t.Name ]]
+                            td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlBaseName))] [!! t.Name ]]
                             td [] [!! (getComment t.Comment)]
                         ]
                 ]

@@ -58,7 +58,7 @@ let generate (ctx : SiteContents) (projectRoot: string) (page: string) =
                           (m.TypeExtensions |> List.map (fun m -> m.Name + " " + m.Comment.FullText ) |> String.concat " ")
 
 
-                  {uri = rootUrl + sprintf "/reference/%s/%s.html" n.Label (stripMicrosoft m.UrlName) ; title = m.Name; content = cnt }
+                  {uri = rootUrl + sprintf "/reference/%s/%s.html" n.Label (stripMicrosoft m.UrlBaseName) ; title = m.Name; content = cnt }
               )
 
           let tsGen =
@@ -72,7 +72,7 @@ let generate (ctx : SiteContents) (projectRoot: string) (page: string) =
                           (m.AllMembers |> List.map (fun m -> m.Name + " " + m.Comment.FullText ) |> String.concat " ")
 
 
-                  {uri = rootUrl + sprintf "/reference/%s/%s.html" n.Label m.UrlName ; title = m.Name; content = cnt }
+                  {uri = rootUrl + sprintf "/reference/%s/%s.html" n.Label m.UrlBaseName ; title = m.Name; content = cnt }
               )
           [gen; yield! mdlsGen; yield! tsGen]
         )
