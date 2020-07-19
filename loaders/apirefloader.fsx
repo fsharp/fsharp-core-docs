@@ -15,8 +15,8 @@ type ApiPageInfo<'a> = {
 
 type AssemblyEntities = {
   Label: string
-  Modules: ApiPageInfo<Module> list
-  Types: ApiPageInfo<Type> list
+  Modules: ApiPageInfo<ApiDocModule> list
+  Types: ApiPageInfo<ApiDocType> list
   GeneratorOutput: ApiDocsModel
 }
 
@@ -28,10 +28,10 @@ let stripMicrosoft (str: string) =
     else
         str
 
-let rec collectModules pn pu nn nu (m: Module) =
+let rec collectModules pn pu nn nu (m: ApiDocModule) =
     [
         yield { ParentName = stripMicrosoft pn; ParentUrlName = stripMicrosoft pu; NamespaceName = stripMicrosoft nn; NamespaceUrlName = stripMicrosoft nu; Info = m}
-        yield! m.NestedModules |> List.collect (collectModules m.Name m.UrlName nn nu )
+        yield! m.NestedModules |> List.collect (collectModules m.Name m.UrlBaseName nn nu )
     ]
 
 let loader (projectRoot: string) (siteContent: SiteContents) =
@@ -67,7 +67,7 @@ let loader (projectRoot: string) (siteContent: SiteContents) =
                         n.Info.NestedTypes
                         |> List.map (fun t ->
                             { ParentName = stripMicrosoft n.Info.Name
-                              ParentUrlName = stripMicrosoft n.Info.UrlName
+                              ParentUrlName = stripMicrosoft n.Info.UrlBaseName
                               NamespaceName = stripMicrosoft n.NamespaceName
                               NamespaceUrlName = stripMicrosoft n.NamespaceUrlName
                               Info = t }))
