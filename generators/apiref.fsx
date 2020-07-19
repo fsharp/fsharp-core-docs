@@ -41,8 +41,8 @@ let formatMember (m: Member) =
         |> Option.defaultValue ""
       else
         ""
-
-    tr [] [
+    let sanitizedMemberName = System.Web.HttpUtility.HtmlDecode m.Name
+    tr [ Id sanitizedMemberName ] [
         td [] [
             code [] [!! m.Name]
             br []
