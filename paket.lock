@@ -11,7 +11,7 @@ NUGET
       System.Reflection.TypeExtensions (>= 4.3)
       System.Runtime.Loader (>= 4.0)
     FSharp.Core (4.7.2)
-    FSharp.Formatting (6.0.2)
+    FSharp.Formatting (6.0.3)
       FSharp.Compiler.Service (>= 36.0.3)
     Microsoft.NETCore.Platforms (3.1.1)
     Microsoft.NETCore.Targets (3.1)

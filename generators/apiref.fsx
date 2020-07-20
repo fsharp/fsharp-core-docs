@@ -23,7 +23,9 @@ let stripMicrosoft (str: string) =
         str
 
 let getComment (c: ApiDocComment) =
-    sprintf """<div class="comment">%s</div>""" c.FullText
+    div [Class "comment"] [
+        !! c.FullText
+    ]
 
 let formatMember (m: ApiDocMember) =
     let hasCustomOp =
@@ -54,9 +56,18 @@ let formatMember (m: ApiDocMember) =
               br []
             br []
             b [] [!! "Signature: "]
-            !! m.SignatureTooltip
+            code [] [!! m.UsageTooltip]
+            br []
+            b [] [ !! "Parameters: " ]
+            ul [] [
+                for (name, paramTy) in m.ParameterTooltips -> 
+                li [] [
+                    code [] [!! (sprintf "%s: %s" name paramTy) ]
+                ]
+            ]
+                
         ]
-        td [] [!! (getComment m.Comment)]
+        td [] [ getComment m.Comment ]
     ]
 
 let generateType ctx (page: ApiPageInfo<ApiDocType>) =
@@ -69,7 +80,7 @@ let generateType ctx (page: ApiPageInfo<ApiDocType>) =
             br []
             b [] [!! "Parent: "]
             a [Href (sprintf "%s.html" page.ParentUrlName)] [!! page.ParentName]
-            span [] [!! (getComment t.Comment)]
+            span [] [ getComment t.Comment ]
             br []
             if not (String.IsNullOrWhiteSpace t.Category) then
                 b [] [!! "Category:"]
@@ -118,7 +129,7 @@ let generateModule ctx (page: ApiPageInfo<ApiDocModule>) =
             br []
             b [] [!! "Parent: "]
             a [Href (sprintf "%s.html" page.ParentUrlName)] [!! page.ParentName]
-            span [] [!! (getComment m.Comment)]
+            span [] [ getComment m.Comment ]
             br []
             if not (String.IsNullOrWhiteSpace m.Category) then
                 b [] [!! "Category:"]
@@ -135,7 +146,7 @@ let generateModule ctx (page: ApiPageInfo<ApiDocModule>) =
                     for t in m.NestedTypes do
                         tr [] [
                             td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlBaseName))] [!! t.Name ]]
-                            td [] [!! (getComment t.Comment)]
+                            td [] [ getComment t.Comment ]
                         ]
                 ]
                 br []
@@ -150,7 +161,7 @@ let generateModule ctx (page: ApiPageInfo<ApiDocModule>) =
                     for t in m.NestedModules do
                         tr [] [
                             td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlBaseName))] [!! t.Name ]]
-                            td [] [!! (getComment t.Comment)]
+                            td [] [ getComment t.Comment ]
                         ]
                 ]
                 br []
@@ -194,7 +205,7 @@ let generateNamespace ctx (n: ApiDocNamespace)  =
                     for t in n.Types do
                         tr [] [
                             td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlBaseName))] [!! t.Name ]]
-                            td [] [!!(getComment t.Comment)]
+                            td [] [ getComment t.Comment ]
                         ]
                 ]
                 br []
@@ -210,7 +221,7 @@ let generateNamespace ctx (n: ApiDocNamespace)  =
                     for t in n.Modules do
                         tr [] [
                             td [] [a [Href (sprintf "%s.html" (stripMicrosoft t.UrlBaseName))] [!! t.Name ]]
-                            td [] [!! (getComment t.Comment)]
+                            td [] [ getComment t.Comment ]
                         ]
                 ]
         ]
