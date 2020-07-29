@@ -9,9 +9,9 @@
 
 open Apirefloader
 open FSharp.Formatting.ApiDocs
-
 let generate (ctx : SiteContents) (projectRoot: string) (page: string) =
     let all = ctx.TryGetValues<AssemblyEntities>()
+    let siteInfo = ctx.TryGetValue<SiteInfo>() |> Option.get
     let refs =
       match all with
       | None -> [| |]
@@ -19,7 +19,7 @@ let generate (ctx : SiteContents) (projectRoot: string) (page: string) =
         match List.ofSeq all with
         | [model] ->
             let model = { model.GeneratorOutput with
-                                CollectionRootUrl = "/reference/FSharp.Core" }
+                                CollectionRootUrl = siteInfo.root_url + "/reference/FSharp.Core" }
             ApiDocs.GenerateSearchIndexFromModel model
         | _ ->
             [| |]
