@@ -25,11 +25,11 @@ jobs:
     - name: Restore dependencies
       run: dotnet paket restore
     - name: Run Fornax
-      run: dotnet fornax build
+      run: dotnet fsdocs build
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_public
+        publish_dir: ./otuput
         publish_branch: gh-pages
         force_orphan: true

@@ -6,11 +6,7 @@ https://fsharp.github.io/fsharp-core-api-docs/
 
 * dotnet tool restore
 * dotnet paket restore
-
-from here, if you're trying to do a one-off build, run:
-* dotnet fornax build
-otherwise, for a more interactive hot-reload experience run:
-* dotnet fornax watch
+* dotnet fsdocs build --sourcefolder F:/workspace/_work/1/s/
 
 ## CI Pipeline
 

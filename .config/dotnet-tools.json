@@ -2,16 +2,22 @@
   "version": 1,
   "isRoot": true,
   "tools": {
+    "fsharp.formatting.commandtool": {
+      "version": "6.1.0",
+      "commands": [
+        "fsdocs"
+      ]
+    },
     "paket": {
-      "version": "5.245.2",
+      "version": "5.247.4",
       "commands": [
         "paket"
       ]
     },
-    "fornax": {
-      "version": "0.13.1",
+    "fake-cli": {
+      "version": "5.20.2",
       "commands": [
-        "fornax"
+        "fake"
       ]
     }
   }
