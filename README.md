@@ -27,4 +27,13 @@ Change the `TargetPath` in our local `FSharp.Core.fsproj` if needed to picl up a
 
 ## CI Pipeline
 
-This repo is published via GitHub Actions. On each push to master, `dotnet fornax build` is run, and the outputs (which are written to the `_public` directory by fornax) are pushed to the `gh-pages` branch. This repo is configured to host using GitHub Pages from this branch, so once the generated files are pushed the update is nearly-instant.
+This repo is published via GitHub Actions. On each push to master, the docs are built, and the outputs (which are written to the `output` directory by fsdocs) are pushed to the `gh-pages` branch. This repo is configured to host using GitHub Pages from this branch, so once the generated files are pushed the update is nearly-instant.
+
+To build the very latest and freshest docs using the latest `fsdocs` tooling the CI does this:
+
+1. build dotnet/fsharp `feature/docs` branch (where we assume latest doc updates have been pushed)
+
+2. builds `FSharp.Formatting` master branch
+
+3. Uses that `FSharp.Formatting` tool to build the docs for the FSharp.Core built in step 1
+
