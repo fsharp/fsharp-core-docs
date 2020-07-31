@@ -2,11 +2,28 @@
 
 https://fsharp.github.io/fsharp-core-api-docs/
 
-## Build steps:
+## Build steps
 
-* dotnet tool restore
-* dotnet paket restore
-* dotnet fsdocs build --sourcefolder F:/workspace/_work/1/s/
+Have a build of https://github.com/dotnet/fsharp in a parallel directory, e.g.
+
+    git clone https://github.com/dotnet/fsharp --depth 1
+    cd fsharp
+    .\build
+
+Then
+
+    dotnet tool restore
+    dotnet paket restore
+    dotnet fsdocs build --sourcefolder ../fsharp
+
+For iterative development use:
+
+    dotnet fsdocs watch --sourcefolder ../fsharp --open reference/index.html
+
+Change the `TargetPath` in our local `FSharp.Core.fsproj` if needed to picl up a different build of FSHarp.Core.
+
+    <TargetPath>$(MSBuildThisFileDirectory)..\..\fsharp\artifacts\bin\FSharp.Core\Debug\netstandard2.0\FSharp.Core.dll</TargetPath>
+
 
 ## CI Pipeline
 
