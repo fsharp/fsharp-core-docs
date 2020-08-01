@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>F# Software Foundation; Microsoft; F# Contributors</Authors>
+    <Summary>The core library for F#</Summary>
+    <Description>The core library F#</Description>
+    <Copyright>Copyright 2003-2020</Copyright>
+    <PackageLicenseUrl>https://github.com/dotnet/fsharp/blob/master/License.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://fsharp.github.io/fsharp-core-api-docs/</PackageProjectUrl>
+    <PackageIconUrl>https://fsharp.org/img/logo/fsharp128.png</PackageIconUrl>
+    <PackageTags>F#;async;fsharp;streaming</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
+    <RepositoryUrl>https://github.com/dotnet/fsharp/</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <OutputType>Library</OutputType>
+    <IsTestProject>false</IsTestProject>
+    <IsPackable>true</IsPackable>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageVersion>4.7.2</PackageVersion>
+    <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
+    <!-- <TargetPath>$(MSBuildThisFileDirectory)..\packages\FSharp.Core\lib\netstandard2.0\FSharp.Core.dll</TargetPath> -->
+
+    <!-- for a parallel checkout and build of fsharp  -->
+    <TargetPath Condition="Exists('..\..\fsharp\build.cmd')">$(MSBuildThisFileDirectory)..\..\fsharp\artifacts\bin\FSharp.Core\Debug\netstandard2.0\FSharp.Core.dll</TargetPath>
+
+    <!-- for a local checkout and build of fsharp in CI -->
+    <TargetPath Condition="Exists('..\fsharp\build.cmd')">$(MSBuildThisFileDirectory)..\fsharp\artifacts\bin\FSharp.Core\Debug\netstandard2.0\FSharp.Core.dll</TargetPath>
+  </PropertyGroup>
+</Project>
+
