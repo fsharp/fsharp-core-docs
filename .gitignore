@@ -4,3 +4,5 @@ paket-files
 _public
 .vscode
 .paket
+fsharp/
+FSharp.Formatting/
