@@ -1,6 +1,6 @@
 # FSharp.Core API documentation generation
 
-https://fsharp.github.io/docs/
+https://fsharp.github.io/fsharp-core-docs
 
 ## Build steps
 
