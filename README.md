@@ -62,7 +62,6 @@ For now, we want to pick up the latest copies of FSharp.Formatting and FSharp.Co
     
 Then do iterative development using:
 
-    dotnet tool restore
     FSharp.Formatting\src\FSharp.Formatting.CommandTool\bin\Debug\netcoreapp3.1\fsdocs.exe watch --sourcefolder fsharp 
 
 ## CI Pipeline
