@@ -38,7 +38,7 @@ This template is *not* the long term plan (unless it is improved enough).  We ca
 
 1. Copy the template and/or  any of the CSS or JavaScript to `docs/_template.html` and a new directory `docs/content`.  Now make changes and rebuild as before.  Your template will be used instead of the default template.
 
-2. After you have identified fixes and improvements, contribute back to the default template of FSharp.Formatting, or submit your work here and we can assess that for you.  If your design is good enough it might become the default design for all F# libraries.
+2. After you have identified fixes and improvements, contribute back to the default template of FSharp.Formatting, or submit your work here and we can assess that for you.  If your design is good enough it might become a default design choice for all F# libraries.
 
 
 ## Build steps
