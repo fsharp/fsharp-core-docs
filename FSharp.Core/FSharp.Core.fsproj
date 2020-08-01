@@ -7,7 +7,7 @@
     <Description>The core library F#</Description>
     <Copyright>Copyright 2003-2020</Copyright>
     <PackageLicenseUrl>https://github.com/dotnet/fsharp/blob/master/License.txt</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/fsharp/fsharp-core-api-docs/</PackageProjectUrl>
+    <PackageProjectUrl>https://fsharp.github.io/fsharp-core-api-docs/</PackageProjectUrl>
     <PackageIconUrl>https://fsharp.org/img/logo/fsharp128.png</PackageIconUrl>
     <PackageTags>F#;async;fsharp;streaming</PackageTags>
     <IncludeSymbols>true</IncludeSymbols>
