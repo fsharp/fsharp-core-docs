@@ -1,6 +1,6 @@
 # FSharp.Core documentation
 
-https://fsharp.github.io/fsharp-core-api-docs/
+https://fsharp.github.io/docs/
 
 ## Build steps
 
