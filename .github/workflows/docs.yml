@@ -22,8 +22,6 @@ jobs:
         dotnet-version: 3.1.201
     - name: Restore tools
       run: dotnet tool restore
-    - name: Restore dependencies
-      run: dotnet paket restore
     - name: Checkout fsharp master
       run: git clone https://github.com/dotnet/fsharp --depth 1 fsharp -b feature/docs
     - name: Build fsharp master
