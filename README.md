@@ -1,4 +1,4 @@
-# FSharp.Core documentation
+# FSharp.Core API documentation generation
 
 https://fsharp.github.io/docs/
 
