@@ -46,6 +46,7 @@ This template is *not* the long term plan (unless it is improved enough).  We ca
 Eventually the build will just be
 
     dotnet tool restore
+    dotnet restore FSharp.Core
     dotnet fsdocs build
 
 For now, we want to pick up the latest copies of FSharp.Formatting and FSharp.Core, and set you up to make contributions to these. So we ask you to clone local copies of these:
@@ -57,12 +58,12 @@ For now, we want to pick up the latest copies of FSharp.Formatting and FSharp.Co
     popd
 
     pushd FSharp.Formatting
-    .\build
+    .\build -t Build
     popd
     
 Then do iterative development using:
 
-    FSharp.Formatting\src\FSharp.Formatting.CommandTool\bin\Debug\netcoreapp3.1\fsdocs.exe watch --sourcefolder fsharp 
+    FSharp.Formatting\src\FSharp.Formatting.CommandTool\bin\Release\netcoreapp3.1\fsdocs.exe watch --sourcefolder fsharp 
 
 ## CI Pipeline
 
