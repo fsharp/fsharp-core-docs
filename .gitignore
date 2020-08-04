@@ -6,3 +6,7 @@ _public
 .paket
 fsharp/
 FSharp.Formatting/
+.fsdocs/
+FSharp.Core/obj/
+tmp/
+

@@ -12,6 +12,7 @@
     <PackageTags>F#;async;fsharp;streaming</PackageTags>
     <IncludeSymbols>true</IncludeSymbols>
     <RepositoryUrl>https://github.com/dotnet/fsharp/</RepositoryUrl>
+    <FsDocsLogoLink>https://fsharp.org</FsDocsLogoLink>
     <RepositoryType>git</RepositoryType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <OutputType>Library</OutputType>
@@ -22,11 +23,16 @@
     <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
     <!-- <TargetPath>$(MSBuildThisFileDirectory)..\packages\FSharp.Core\lib\netstandard2.0\FSharp.Core.dll</TargetPath> -->
 
+    <FsDocsRootUrl>/</FsDocsRootUrl>
+    <FsDocsLogoLink>https://fsharp.org</FsDocsLogoLink>
+    <FsDocsLogoLink>https://fsharp.org</FsDocsLogoLink>
+
     <!-- for a parallel checkout and build of fsharp  -->
     <TargetPath Condition="Exists('..\..\fsharp\build.cmd')">$(MSBuildThisFileDirectory)..\..\fsharp\artifacts\bin\FSharp.Core\Debug\netstandard2.0\FSharp.Core.dll</TargetPath>
 
     <!-- for a local checkout and build of fsharp in CI -->
     <TargetPath Condition="Exists('..\fsharp\build.cmd')">$(MSBuildThisFileDirectory)..\fsharp\artifacts\bin\FSharp.Core\Debug\netstandard2.0\FSharp.Core.dll</TargetPath>
-  </PropertyGroup>
+  
+</PropertyGroup>
 </Project>
 
