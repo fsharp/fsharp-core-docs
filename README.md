@@ -42,7 +42,7 @@ This template is *not* the long term plan (unless it is improved enough).  We ca
 
 2. After you have identified fixes and improvements, contribute back to the default template of FSharp.Formatting, or submit your work here and we can assess that for you.  If your design is good enough it might become a default design choice for all F# libraries.
 
-It's a seconddary goal of this repo to have the default template(s) of FSharp.Formatting to be good enough for this site. This means whatever improvements you make should eventually get copied across back into FSharp.Formatting (and the duplicated template and styling will then likely be removed from this repo once it's no longer needed). If the design diverges to be a completely different look and feel then we can make several templates available in FSharp.Formatting with this as one of them.
+It's a secondary goal of this repo to have the default template(s) of FSharp.Formatting to be good enough for this site. This means whatever improvements you make should eventually get copied across back into FSharp.Formatting (and the duplicated template and styling will then likely be removed from this repo once it's no longer needed). If the design diverges to be a completely different look and feel then we can make several templates available in FSharp.Formatting with this as one of them.
 
 
 
