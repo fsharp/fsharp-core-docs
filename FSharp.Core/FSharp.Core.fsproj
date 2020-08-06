@@ -36,6 +36,7 @@
     <FsDocsReleaseNotesLink>https://github.com/dotnet/fsharp/blob/master/release-notes.md</FsDocsReleaseNotesLink>
     <RepositoryType>git</RepositoryType>
     <FsDocsNavbarPosition>fixed-left</FsDocsNavbarPosition>
+    <FsDocsWarnOnMissingDocs>true</FsDocsWarnOnMissingDocs>
   </PropertyGroup>
 
 </Project>
