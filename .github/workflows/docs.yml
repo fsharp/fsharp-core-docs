@@ -28,7 +28,7 @@ jobs:
     - name: Checkout fsharp master
       run: git clone https://github.com/dotnet/fsharp --depth 1 fsharp -b feature/docs
     - name: Build fsharp master
-      run: cd fsharp && .\build -noVisualStudio
+      run: cd fsharp && .\build -noVisualStudio /p:UpdateXlf
     - name: Checkout FSharp.Formatting master
       run: git clone https://github.com/fsprojects/FSharp.Formatting --depth 1 FSharp.Formatting 
     - name: Build FSharp.Formatting master
