@@ -29,6 +29,8 @@ jobs:
       run: git clone https://github.com/dotnet/fsharp --depth 1 fsharp -b feature/docs
     - name: Build fsharp master (turn of CI build status)
       run: cd fsharp && .\build -noVisualStudio -ci -binaryLog
+      env:
+        UpdateXlfOnBuild: true
     - name: Checkout FSharp.Formatting master
       run: git clone https://github.com/fsprojects/FSharp.Formatting --depth 1 FSharp.Formatting 
     - name: Build FSharp.Formatting master
