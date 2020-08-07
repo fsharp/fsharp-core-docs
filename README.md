@@ -81,3 +81,4 @@ To build the very latest and freshest docs using the latest `fsdocs` tooling the
 2. builds `FSharp.Formatting` master branch
 
 3. Uses that `FSharp.Formatting` tool to build the docs for the FSharp.Core built in step 1
+
