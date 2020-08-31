@@ -56,8 +56,8 @@ Eventually the build will just be
 
 For now, we want to pick up the latest copies of FSharp.Formatting and FSharp.Core, and set you up to make contributions to these. So we ask you to clone local copies of these:
 
-    git clone https://github.com/dotnet/fsharp --depth 1 -b feature/docs
-    git clone https://github.com/fsprojects/FSharp.Formatting
+    git clone https://github.com/dotnet/fsharp --depth 1 -b main
+    git clone https://github.com/fsprojects/FSharp.Formatting --depth 1
     pushd fsharp
     .\build -noVisualStudio
     popd
