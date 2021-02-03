@@ -56,18 +56,26 @@ Eventually the build will just be
 
 For now, we want to pick up the latest copies of FSharp.Formatting and FSharp.Core, and set you up to make contributions to these. So we ask you to clone local copies of these:
 
+    (start in 'fsharp-core-docs')
+    dotnet restore FSharp.Core
+
+    (make 'fsharp-core-docs/fsharp' and 'fsharp-core-docs/FSharp.Formatting' )
     git clone https://github.com/dotnet/fsharp --depth 1 -b main
     git clone https://github.com/fsprojects/FSharp.Formatting --depth 1
+
+    (build 'fsharp-core-docs/fsharp')
     pushd fsharp
     .\build -noVisualStudio
     popd
 
+    (build 'fsharp-core-docs/FSharp.Formatting')
     pushd FSharp.Formatting
     .\build -t Build
     popd
     
 Then do iterative development using:
 
+    (from 'fsharp-core-docs')
     FSharp.Formatting\src\FSharp.Formatting.CommandTool\bin\Release\netcoreapp3.1\fsdocs.exe watch --sourcefolder fsharp  
 
 ## CI Pipeline
