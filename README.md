@@ -84,7 +84,7 @@ This repo is published via GitHub Actions. On each push to master, the docs are 
 
 To build the very latest and freshest docs using the latest `fsdocs` tooling the CI does this:
 
-1. build dotnet/fsharp `feature/docs` branch (where we assume latest doc updates have been pushed)
+1. build dotnet/fsharp `main` branch (where we assume latest doc updates have been pushed)
 
 2. builds `FSharp.Formatting` master branch
 
