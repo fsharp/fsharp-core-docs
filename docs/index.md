@@ -1,5 +1,5 @@
 
-# F# Core Library Documentation (community edition)
+# F# Core Library Documentation
 
 This site contains the documentation for the FSharp.Core library used in all F# code.
 
