@@ -26,14 +26,14 @@
   </PropertyGroup>
   <PropertyGroup>
     <!-- styling and generation settings for FsDocs default template-->
-    <PackageLicenseUrl>https://github.com/dotnet/fsharp/blob/master/License.txt</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/dotnet/fsharp/blob/main/License.txt</PackageLicenseUrl>
     <PackageProjectUrl>https://fsharp.github.io/fsharp-core-docs/</PackageProjectUrl>
     <PackageIconUrl>https://fsharp.org/img/logo/fsharp128.png</PackageIconUrl>
     <PackageTags>F#;async;fsharp;streaming</PackageTags>
     <RepositoryUrl>https://github.com/dotnet/fsharp/</RepositoryUrl>
     <FsDocsLogoLink>https://fsharp.org</FsDocsLogoLink>
-    <FsDocsLicenseLink>https://github.com/dotnet/fsharp/blob/master/License.txt</FsDocsLicenseLink>
-    <FsDocsReleaseNotesLink>https://github.com/dotnet/fsharp/blob/master/release-notes.md</FsDocsReleaseNotesLink>
+    <FsDocsLicenseLink>https://github.com/dotnet/fsharp/blob/main/License.txt</FsDocsLicenseLink>
+    <FsDocsReleaseNotesLink>https://github.com/dotnet/fsharp/blob/main/release-notes.md</FsDocsReleaseNotesLink>
     <RepositoryType>git</RepositoryType>
     <FsDocsWarnOnMissingDocs>true</FsDocsWarnOnMissingDocs>
   </PropertyGroup>
