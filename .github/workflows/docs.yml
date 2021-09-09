@@ -34,7 +34,7 @@ jobs:
     - name: Build FSharp.Formatting master
       run: cd FSharp.Formatting && .\build -t Build
     - name: Run fsdocs
-      run: FSharp.Formatting\src\FSharp.Formatting.CommandTool\bin\Release\netcoreapp3.1\fsdocs.exe build --sourcefolder fsharp
+      run: dotnet FSharp.Formatting\src\FSharp.Formatting.CommandTool\bin\Release\net5.0\fsdocs.dll build --sourcefolder fsharp
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
