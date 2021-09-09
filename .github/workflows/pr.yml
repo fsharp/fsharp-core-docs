@@ -1,6 +1,9 @@
 name: Pull request checks
 
-on: [push]
+on:
+  pull_request:
+    branches:
+      - '**'
 
 jobs:
   build:
