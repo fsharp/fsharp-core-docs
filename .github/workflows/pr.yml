@@ -1,0 +1,33 @@
+name: Release docs
+
+on: [push]
+
+jobs:
+  build:
+
+    strategy:
+      matrix:
+        os: [windows-latest]
+        dotnet: [5.0.400]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.400
+    - name: Restore tools
+      run: dotnet tool restore
+    - name: Restore projects
+      run: dotnet restore FSharp.Core\FSharp.Core.fsproj
+    - name: Checkout fsharp master
+      run: git clone https://github.com/dotnet/fsharp --depth 1 fsharp -b main
+    - name: Build fsharp master (turn of CI build status)
+      run: cd fsharp && eng\CIBuild.cmd
+    - name: Checkout FSharp.Formatting master
+      run: git clone https://github.com/fsprojects/FSharp.Formatting --depth 1 FSharp.Formatting 
+    - name: Build FSharp.Formatting master
+      run: cd FSharp.Formatting && .\build -t Build
+    - name: Run fsdocs
+      run: FSharp.Formatting\src\FSharp.Formatting.CommandTool\bin\Release\netcoreapp3.1\fsdocs.exe build --sourcefolder fsharp
