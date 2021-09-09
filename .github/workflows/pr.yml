@@ -1,4 +1,4 @@
-name: Release docs
+name: Pull request checks
 
 on: [push]
 
