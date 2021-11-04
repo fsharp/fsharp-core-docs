@@ -15,7 +15,7 @@ signature files (`*.fsi`) in the FSharp.Core implementation.
 
 * Submit work to  `main` branch of https://github.com/dotnet/fsharp
 
-* Once accepted your work will be published through a rebuild here, so submit a dummy pull request here
+* Once accepted your work will be published through a rebuild here. Site rebuilds daily at 17:30 UTC, or submit a dummy pull request here to trigger.
 
 ## Contributing to Generation of API Docs
 
