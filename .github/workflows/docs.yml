@@ -1,6 +1,9 @@
 name: Release docs
 
 on:
+  schedule:
+    # Triggers the workflow every day at 17:30 UTC
+    - cron:  '30 17 * * *'
   push:
     branches:
       - main
