@@ -33,4 +33,4 @@ jobs:
     - name: Build FSharp.Formatting master
       run: cd FSharp.Formatting && .\build -t Build
     - name: Run fsdocs
-      run: dotnet FSharp.Formatting\src\FSharp.Formatting.CommandTool\bin\Release\net5.0\fsdocs.dll build --sourcefolder fsharp
+      run: dotnet FSharp.Formatting\src\fsdocs-tool\bin\Release\net5.0\fsdocs.dll build --sourcefolder fsharp
