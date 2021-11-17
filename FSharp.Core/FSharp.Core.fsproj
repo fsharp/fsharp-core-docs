@@ -33,6 +33,7 @@
     <RepositoryUrl>https://github.com/dotnet/fsharp/</RepositoryUrl>
     <FsDocsLogoLink>https://fsharp.org</FsDocsLogoLink>
     <FsDocsLicenseLink>https://github.com/dotnet/fsharp/blob/main/License.txt</FsDocsLicenseLink>
+    <FsDocsRepositoryBranch>main</FsDocsRepositoryBranch>
     <FsDocsReleaseNotesLink>https://github.com/dotnet/fsharp/blob/main/release-notes.md</FsDocsReleaseNotesLink>
     <RepositoryType>git</RepositoryType>
     <FsDocsWarnOnMissingDocs>true</FsDocsWarnOnMissingDocs>
