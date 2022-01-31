@@ -12,7 +12,7 @@ The following namespaces are available:
 
 * [FSharp.Collections](reference/fsharp-collections.html) - Operations for collections such as lists, arrays, sets, maps and sequences. See also [F# Collection Types](https://docs.microsoft.com/dotnet/fsharp/language-reference/fsharp-collection-types) in the F# Language Guide.
 
-* [FSharp.Control](reference/fsharp-control.html) - Library functionality for asynchronous programming, events and agents. See also [F# Asynchronous Programming](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/asynchronous-workflows) in the F# Language Guide.
+* [FSharp.Control](reference/fsharp-control.html) - Library functionality for asynchronous programming, events and agents. See also [F# Asynchronous Programming](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/async-expressions) in the F# Language Guide.
 
 * [FSharp.Linq](reference/fsharp-linq.html) - Library functionality for F# query syntax and interoperability with .NET Expressions. See also [F# Query Expressions](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/query-expressions) in the F# Language Guide.
 
