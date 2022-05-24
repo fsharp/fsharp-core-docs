@@ -13,15 +13,15 @@
     <IsTestProject>false</IsTestProject>
     <IsPackable>true</IsPackable>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageVersion>4.7.2</PackageVersion>
+    <PackageVersion>6.0.3</PackageVersion>
     <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
-    <!-- <TargetPath>$(MSBuildThisFileDirectory)..\packages\FSharp.Core\lib\netstandard2.0\FSharp.Core.dll</TargetPath> -->
+    <!-- <TargetPath>$(MSBuildThisFileDirectory)..\packages\FSharp.Core\lib\netstandard2.1\FSharp.Core.dll</TargetPath> -->
 
     <!-- for a parallel checkout and build of fsharp  -->
-    <TargetPath Condition="Exists('..\..\fsharp\build.cmd')">$(MSBuildThisFileDirectory)..\..\fsharp\artifacts\bin\FSharp.Core\Debug\netstandard2.0\FSharp.Core.dll</TargetPath>
+    <TargetPath Condition="Exists('..\..\fsharp\build.cmd')">$(MSBuildThisFileDirectory)..\..\fsharp\artifacts\bin\FSharp.Core\Debug\netstandard2.1\FSharp.Core.dll</TargetPath>
 
     <!-- for a local checkout and build of fsharp in CI -->
-    <TargetPath Condition="Exists('..\fsharp\build.cmd')">$(MSBuildThisFileDirectory)..\fsharp\artifacts\bin\FSharp.Core\Debug\netstandard2.0\FSharp.Core.dll</TargetPath>
+    <TargetPath Condition="Exists('..\fsharp\build.cmd')">$(MSBuildThisFileDirectory)..\fsharp\artifacts\bin\FSharp.Core\Debug\netstandard2.1\FSharp.Core.dll</TargetPath>
   
   </PropertyGroup>
   <PropertyGroup>
