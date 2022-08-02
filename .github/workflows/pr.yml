@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        dotnet: [6.0.302]
+        dotnet: [6.0.203]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -18,7 +18,7 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: 6.0.302
+          dotnet-version: 6.0.203
       - name: Restore tools
         run: dotnet tool restore
       - name: Restore projects
@@ -32,4 +32,4 @@ jobs:
       - name: Build FSharp.Formatting master
         run: cd FSharp.Formatting && .\build -t Build
       - name: Run fsdocs
-        run: dotnet FSharp.Formatting\src\fsdocs-tool\bin\Release\net5.0\fsdocs.dll build --sourcefolder fsharp
+        run: dotnet FSharp.Formatting\src\fsdocs-tool\bin\Release\net6.0\fsdocs.dll build --sourcefolder fsharp
