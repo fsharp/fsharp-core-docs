@@ -1,0 +1,2896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Array2D (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Array2D Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+        FSharp.Collections
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        Contains operations for working with 2-dimensional arrays.
+      </p>
+    </div>
+    <p class="fsdocs-remarks">
+      <p class='fsdocs-para'>See also <a href="https://docs.microsoft.com/dotnet/fsharp/language-reference/arrays">F# Language Guide - Arrays</a>.</p><p class='fsdocs-para'>F# and CLI multi-dimensional arrays are typically zero-based.
+ However, CLI multi-dimensional arrays used in conjunction with external
+ libraries (e.g. libraries associated with Visual Basic) be
+ non-zero based, using a potentially different base for each dimension.
+ The operations in this module will accept such arrays, and
+ the basing on an input array will be propagated to a matching output
+ array on the <code>Array2D.map</code> and <code>Array2D.mapi</code> operations.
+ Non-zero-based arrays can also be created using <code>Array2D.zeroCreateBased</code>,
+ <code>Array2D.createBased</code> and <code>Array2D.initBased</code>.</p>
+    </p>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '124', 124)" onmouseover="showTip(event, '124', 124)">
+                <p>
+                  <a id="base1">
+                    <a href="#base1">
+                      <code><span>Array2D.base1&#32;<span>array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="124">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.base1&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  The base-index of the first dimension of the array.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.Base1``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.Base1``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L33-33" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Fetches the base-index for the first dimension of the array.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The base-index of the first dimension of the array.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="base1-1">
+              Create a 10x10 1-based array:
+ <pre><code class="">
+ open System
+
+ let array = Array.CreateInstance(typeof&lt;int&gt;, [| 10; 10 |], [| 1; 1 |]) :?&gt; int[,]
+
+ array |&gt; Array2D.base1</code></pre>
+ Evaluates to <code>1</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '125', 125)" onmouseover="showTip(event, '125', 125)">
+                <p>
+                  <a id="base2">
+                    <a href="#base2">
+                      <code><span>Array2D.base2&#32;<span>array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="125">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.base2&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  The base-index of the second dimension of the array.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.Base2``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.Base2``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L36-36" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Fetches the base-index for the second dimension of the array.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The base-index of the second dimension of the array.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="base2-1">
+              Create a 10x10 1-based array:
+ <pre><code class="">
+ open System
+
+ let array = Array.CreateInstance(typeof&lt;int&gt;, [| 10; 10 |], [| 1; 1 |]) :?&gt; int[,]
+
+ array |&gt; Array2D.base2</code></pre>
+ Evaluates to <code>1</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '126', 126)" onmouseover="showTip(event, '126', 126)">
+                <p>
+                  <a id="blit">
+                    <a href="#blit">
+                      <code><span>Array2D.blit&#32;<span>source&#32;sourceIndex1&#32;sourceIndex2&#32;target&#32;targetIndex1&#32;targetIndex2&#32;length1&#32;length2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="126">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.blit&#32;<span>source&#32;sourceIndex1&#32;sourceIndex2&#32;target&#32;targetIndex1&#32;targetIndex2&#32;length1&#32;length2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The source array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sourceIndex1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The first-dimension index to begin copying from in the source array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sourceIndex2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The second-dimension index to begin copying from in the source array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        target
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The target array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        targetIndex1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The first-dimension index to begin copying into in the target array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        targetIndex2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The second-dimension index to begin copying into in the target array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The number of elements to copy across the first dimension of the arrays.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The number of elements to copy across the second dimension of the arrays.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.CopyTo``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.CopyTo``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L136-136" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Reads a range of elements from the first array and write them into the second.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              
+ Slicing syntax is generally preferred, e.g.
+ <pre><code class="fsharp language-fsharp">
+ let source = array2D [ [ 3; 4 ]; [ 13; 14 ] ]
+ let target = array2D [ [ 2; 2; 2 ]; [ 12; 12; 12 ] ]
+ target[0..1,1..2] &lt;- source</code></pre>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The source array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sourceIndex1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The first-dimension index to begin copying from in the source array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sourceIndex2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The second-dimension index to begin copying from in the source array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  target
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The target array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  targetIndex1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The first-dimension index to begin copying into in the target array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  targetIndex2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The second-dimension index to begin copying into in the target array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The number of elements to copy across the first dimension of the arrays.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The number of elements to copy across the second dimension of the arrays.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when any of the indices are negative or if either of
+ the counts are larger than the dimensions of the array allow.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="blit-1">
+              <pre><code class="fsharp language-fsharp">
+ let source = array2D [ [ 3; 4 ]; [ 13; 14 ] ]
+ let target = array2D [ [ 2; 2; 2 ]; [ 12; 12; 12 ] ]
+
+ Array2D.blit source 0 0 target 0 1 2 2</code></pre>
+ After evaluation <code>target</code> contains <code>[ [ 2; 3; 4 ]; [ 12; 13; 14 ] ]</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '127', 127)" onmouseover="showTip(event, '127', 127)">
+                <p>
+                  <a id="copy">
+                    <a href="#copy">
+                      <code><span>Array2D.copy&#32;<span>array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="127">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.copy&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  A copy of the input array.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.Copy``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.Copy``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L124-124" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Builds a new array whose elements are the same as the input array.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              For non-zero-based arrays the basing on an input array will be propagated to the output
+ array.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A copy of the input array.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="copy-1">
+              <pre><code class="">
+ open System
+
+ let array = Array2D.zeroCreate&lt;int&gt; 10 10
+
+ array |&gt; Array2D.copy</code></pre>
+ Evaluates to a new copy of the 10x10 array.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '128', 128)" onmouseover="showTip(event, '128', 128)">
+                <p>
+                  <a id="create">
+                    <a href="#create">
+                      <code><span>Array2D.create&#32;<span>length1&#32;length2&#32;value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="128">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.create&#32;<span>length1&#32;length2&#32;value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The length of the first dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The length of the second dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The value to populate the new array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  The created array.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.Create``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.Create``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L82-82" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Creates an array whose elements are all initially the given value.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The length of the first dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The length of the second dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The value to populate the new array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The created array.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when length1 or length2 is negative.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="create-1">
+              <pre><code class="fsharp language-fsharp">
+ Array2D.create 2 3 1</code></pre>
+ Evaluates to a 2x3 array with contents <code>[[1; 1; 1]; [1; 1; 1]]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '129', 129)" onmouseover="showTip(event, '129', 129)">
+                <p>
+                  <a id="createBased">
+                    <a href="#createBased">
+                      <code><span>Array2D.createBased&#32;<span>base1&#32;base2&#32;length1&#32;length2&#32;initial</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="129">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.createBased&#32;<span>base1&#32;base2&#32;length1&#32;length2&#32;initial</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        base1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The base for the first dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        base2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The base for the second dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The length of the first dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The length of the second dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        initial
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The value to populate the new array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  The created array.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.CreateBased``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.CreateBased``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L65-65" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Creates a based array whose elements are all initially the given value.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  base1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The base for the first dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  base2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The base for the second dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The length of the first dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The length of the second dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  initial
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The value to populate the new array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The created array.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when base1, base2, length1, or length2 is negative.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="createbased-1">
+              <pre><code class="fsharp language-fsharp">
+ Array2D.createBased 1 1 2 3 1</code></pre>
+ Evaluates to a 2x3 1-based array with contents <code>[[1; 1; 1]; [1; 1; 1]]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '130', 130)" onmouseover="showTip(event, '130', 130)">
+                <p>
+                  <a id="get">
+                    <a href="#get">
+                      <code><span>Array2D.get&#32;<span>array&#32;index1&#32;index2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="130">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.get&#32;<span>array&#32;index1&#32;index2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        index1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The index along the first dimension.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        index2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The index along the second dimension.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The value of the array at the given index.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.Get``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.Get``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L39-39" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Fetches an element from a 2D array. You can also use the syntax <code>array.[index1,index2]</code>.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              
+ Indexer syntax is generally preferred, e.g.
+ <pre><code class="fsharp language-fsharp">
+ let array = array2D [ [ 1.0; 2.0 ]; [ 3.0; 4.0 ] ]
+
+ array[0,1]</code></pre>
+ Evaluates to <code>2.0</code>.
+ 
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  index1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The index along the first dimension.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  index2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The index along the second dimension.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The value of the array at the given index.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the indices are negative or exceed the bounds of the array.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-1">
+              <pre><code class="fsharp language-fsharp">
+ let array = array2D [ [ 1.0; 2.0 ]; [ 3.0; 4.0 ] ]
+
+ Array2D.get array 0 1</code></pre>
+ Evaluates to <code>2.0</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '131', 131)" onmouseover="showTip(event, '131', 131)">
+                <p>
+                  <a id="init">
+                    <a href="#init">
+                      <code><span>Array2D.init&#32;<span>length1&#32;length2&#32;initializer</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="131">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.init&#32;<span>length1&#32;length2&#32;initializer</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The length of the first dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The length of the second dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        initializer
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T</span></code>
+                       - 
+                      A function to produce elements of the array given the two indices.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  The generated array.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.Initialize``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.Initialize``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L86-86" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Creates an array given the dimensions and a generator function to compute the elements.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The length of the first dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The length of the second dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  initializer
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function to produce elements of the array given the two indices.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The generated array.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when either of the lengths is negative.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="init-1">
+              <pre><code class="fsharp language-fsharp">
+ Array2D.init 2 3 (fun i j -&gt; i + j)</code></pre>
+ Evaluates to a 2x3 array with contents <code>[[0; 1; 2]; [1; 2; 3]]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '132', 132)" onmouseover="showTip(event, '132', 132)">
+                <p>
+                  <a id="initBased">
+                    <a href="#initBased">
+                      <code><span>Array2D.initBased&#32;<span>base1&#32;base2&#32;length1&#32;length2&#32;initializer</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="132">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.initBased&#32;<span>base1&#32;base2&#32;length1&#32;length2&#32;initializer</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        base1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The base for the first dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        base2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The base for the second dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The length of the first dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The length of the second dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        initializer
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T</span></code>
+                       - 
+                      A function to produce elements of the array given the two indices.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  The created array.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.InitializeBased``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.InitializeBased``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L73-73" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Creates a based array given the dimensions and a generator function to compute the elements.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  base1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The base for the first dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  base2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The base for the second dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The length of the first dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The length of the second dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  initializer
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function to produce elements of the array given the two indices.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The created array.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when base1, base2, length1, or length2 is negative.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="initbased-1">
+              <pre><code class="fsharp language-fsharp">
+ Array2D.initBased 1 1 2 3 (fun i j -&gt; i + j)</code></pre>
+ Evaluates to a 2x3 1-based array with contents <code>[[2; 3; 4]; [3; 4; 5]]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '133', 133)" onmouseover="showTip(event, '133', 133)">
+                <p>
+                  <a id="iter">
+                    <a href="#iter">
+                      <code><span>Array2D.iter&#32;<span>action&#32;array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="133">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.iter&#32;<span>action&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        action
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                       - 
+                      A function to apply to each element of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.Iterate``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.Iterate``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L90-90" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Applies the given function to each element of the array.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  action
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function to apply to each element of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="iter-1">
+              <pre><code class="fsharp language-fsharp">
+ let inputs = array2D [ [ 3; 4 ]; [ 13; 14 ] ]
+
+ inputs |&gt; Array2D.iter (fun v -&gt; printfn $&quot;value = {v}&quot;)</code></pre>
+ Evaluates to <code>unit</code> and prints
+ <pre><code class="">
+ value = 3
+ value = 4
+ value = 13
+ value = 14</code></pre>
+ in the console.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '134', 134)" onmouseover="showTip(event, '134', 134)">
+                <p>
+                  <a id="iteri">
+                    <a href="#iteri">
+                      <code><span>Array2D.iteri&#32;<span>action&#32;array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="134">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.iteri&#32;<span>action&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        action
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                       - 
+                      A function to apply to each element of the array with the indices available as an argument.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.IterateIndexed``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.IterateIndexed``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L101-101" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Applies the given function to each element of the array.  The integer indices passed to the
+ function indicates the index of element.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  action
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function to apply to each element of the array with the indices available as an argument.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="iteri-1">
+              <pre><code class="fsharp language-fsharp">
+ let inputs = array2D [ [ 3; 4 ]; [ 13; 14 ] ]
+
+ inputs |&gt; Array2D.iteri (fun i j v -&gt; printfn $&quot;value at ({i},{j}) = {v}&quot;)</code></pre>
+ Evaluates to <code>unit</code> and prints
+ <pre><code class="">
+ value at (0,0) = 3
+ value at (0,1) = 4
+ value at (1,0) = 13
+ value at (1,1) = 14</code></pre>
+ in the console.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '135', 135)" onmouseover="showTip(event, '135', 135)">
+                <p>
+                  <a id="length1">
+                    <a href="#length1">
+                      <code><span>Array2D.length1&#32;<span>array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="135">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.length1&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  The length of the array in the first dimension.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.Length1``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.Length1``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L27-27" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns the length of an array in the first dimension.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The length of the array in the first dimension.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="length1-1">
+              <pre><code class="">
+ let array = array2D [ [ 3; 4; 5 ]; [ 13; 14; 15 ] ]
+
+ array |&gt; Array2D.length1</code></pre>
+ Evaluates to <code>2</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '136', 136)" onmouseover="showTip(event, '136', 136)">
+                <p>
+                  <a id="length2">
+                    <a href="#length2">
+                      <code><span>Array2D.length2&#32;<span>array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="136">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.length2&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  The length of the array in the second dimension.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.Length2``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.Length2``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L30-30" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns the length of an array in the second dimension.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The length of the array in the second dimension.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="length2-1">
+              <pre><code class="">
+ let array = array2D [ [ 3; 4; 5 ]; [ 13; 14; 15 ] ]
+
+ array |&gt; Array2D.length2</code></pre>
+ Evaluates to <code>3</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '137', 137)" onmouseover="showTip(event, '137', 137)">
+                <p>
+                  <a id="map">
+                    <a href="#map">
+                      <code><span>Array2D.map&#32;<span>mapping&#32;array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="137">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.map&#32;<span>mapping&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'U</span></code>
+                       - 
+                      A function that is applied to transform each item of the input array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'U[,]</span></code>
+                  </span>
+                  An array whose elements have been transformed by the given mapping.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.Map``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.Map``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L113-113" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Builds a new array whose elements are the results of applying the given function
+ to each of the elements of the array.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              For non-zero-based arrays the basing on an input array will be propagated to the output
+ array.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function that is applied to transform each item of the input array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'U[,]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An array whose elements have been transformed by the given mapping.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="map-1">
+              <pre><code class="fsharp language-fsharp">
+ let inputs = array2D [ [ 3; 4 ]; [ 13; 14 ] ]
+
+ inputs |&gt; Array2D.map (fun v -&gt; 2 * v)</code></pre>
+ Evaluates to a 2x2 array with contents <code>[[6; 8;]; [26; 28]]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '138', 138)" onmouseover="showTip(event, '138', 138)">
+                <p>
+                  <a id="mapi">
+                    <a href="#mapi">
+                      <code><span>Array2D.mapi&#32;<span>mapping&#32;array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="138">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.mapi&#32;<span>mapping&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T&#32;->&#32;'U</span></code>
+                       - 
+                      A function that is applied to transform each element of the array.  The two integers
+ provide the index of the element.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'U[,]</span></code>
+                  </span>
+                  An array whose elements have been transformed by the given mapping.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.MapIndexed``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.MapIndexed``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L118-118" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Builds a new array whose elements are the results of applying the given function
+ to each of the elements of the array. The integer indices passed to the
+ function indicates the element being transformed.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              For non-zero-based arrays the basing on an input array will be propagated to the output
+ array.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function that is applied to transform each element of the array.  The two integers
+ provide the index of the element.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'U[,]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An array whose elements have been transformed by the given mapping.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="mapi-1">
+              <pre><code class="fsharp language-fsharp">
+ let inputs = array2D [ [ 3; 4 ]; [ 13; 14 ] ]
+
+ inputs |&gt; Array2D.mapi (fun i j v -&gt; i + j + v)</code></pre>
+ Evaluates to a 2x2 array with contents <code>[[3; 5;]; [14; 16]]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '139', 139)" onmouseover="showTip(event, '139', 139)">
+                <p>
+                  <a id="rebase">
+                    <a href="#rebase">
+                      <code><span>Array2D.rebase&#32;<span>array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="139">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.rebase&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  The zero-based output array.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.Rebase``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.Rebase``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L129-129" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Builds a new array whose elements are the same as the input array but
+ where a non-zero-based input array generates a corresponding zero-based
+ output array.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The zero-based output array.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="rebase-1">
+              <pre><code class="fsharp language-fsharp">
+ let inputs = Array2D.createBased 1 1 2 3 1
+
+ inputs |&gt; Array2D.rebase</code></pre>
+ Evaluates to a 2x2 zero-based array with contents <code>[[1; 1]; [1; 1]]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '140', 140)" onmouseover="showTip(event, '140', 140)">
+                <p>
+                  <a id="set">
+                    <a href="#set">
+                      <code><span>Array2D.set&#32;<span>array&#32;index1&#32;index2&#32;value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="140">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.set&#32;<span>array&#32;index1&#32;index2&#32;value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        index1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The index along the first dimension.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        index2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The index along the second dimension.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The value to set in the array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.Set``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.Set``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L43-43" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Sets the value of an element in an array. You can also use the syntax <code>array.[index1,index2] &lt;- value</code>.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              
+ Indexer syntax is generally preferred, e.g.
+ <pre><code class="fsharp language-fsharp">
+ let array = Array2D.zeroCreate 2 2
+
+ array[0,1] &lt;- 4.0</code></pre>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  index1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The index along the first dimension.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  index2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The index along the second dimension.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The value to set in the array.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the indices are negative or exceed the bounds of the array.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-1">
+              <pre><code class="fsharp language-fsharp">
+ let array = Array2D.zeroCreate 2 2
+
+ Array2D.set array 0 1 4.0</code></pre>
+ After evaluation <code>array</code> is a 2x2 array with contents <code>[[0.0; 4.0]; [0.0; 0.0]]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '141', 141)" onmouseover="showTip(event, '141', 141)">
+                <p>
+                  <a id="zeroCreate">
+                    <a href="#zeroCreate">
+                      <code><span>Array2D.zeroCreate&#32;<span>length1&#32;length2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="141">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.zeroCreate&#32;<span>length1&#32;length2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The length of the first dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The length of the second dimension of the array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  The created array.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.ZeroCreate``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.ZeroCreate``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L47-47" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Creates an array where the entries are initially Unchecked.defaultof<'T>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The length of the first dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The length of the second dimension of the array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The created array.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when length1 or length2 is negative.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="zeroCreate-1">
+              <pre><code class="fsharp language-fsharp">
+ Array2D.zeroCreate 2 3</code></pre>
+ Evaluates to a 2x3 array with contents <code>[[0; 0; 0]; [0; 0; 0]]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '142', 142)" onmouseover="showTip(event, '142', 142)">
+                <p>
+                  <a id="zeroCreateBased">
+                    <a href="#zeroCreateBased">
+                      <code><span>Array2D.zeroCreateBased&#32;<span>base1&#32;base2&#32;length1&#32;length2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="142">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.zeroCreateBased&#32;<span>base1&#32;base2&#32;length1&#32;length2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        base1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The base for the first dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        base2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The base for the second dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The length of the first dimension of the array.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The length of the second dimension of the array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  The created array.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.Array2DModule.ZeroCreateBased``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.Array2DModule.ZeroCreateBased``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array2.fs#L53-53" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Creates a based array where the entries are initially Unchecked.defaultof<'T>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  base1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The base for the first dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  base2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The base for the second dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The length of the first dimension of the array.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The length of the second dimension of the array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T[,]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The created array.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when base1, base2, length1, or length2 is negative.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="zerocreatebased-1">
+              <pre><code class="fsharp language-fsharp">
+ Array2D.zeroCreateBased 1 1 2 3</code></pre>
+ Evaluates to a 2x3 1-based array with contents <code>[[0; 0; 0]; [0; 0; 0]]</code>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

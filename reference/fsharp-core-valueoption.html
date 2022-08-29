@@ -1,0 +1,3204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ValueOption (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    ValueOption Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+        FSharp.Core
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        Contains operations for working with value options.
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '976', 976)" onmouseover="showTip(event, '976', 976)">
+                <p>
+                  <a id="bind">
+                    <a href="#bind">
+                      <code><span>ValueOption.bind&#32;<span>binder&#32;voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="976">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.bind&#32;<span>binder&#32;voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        binder
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></span></code>
+                       - 
+                      A function that takes the value of type T from a value option and transforms it into
+ a value option containing a value of type U.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                  </span>
+                  An option of the output type of the binder.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.Bind``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.Bind``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L272-272" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                <code>bind f inp</code> evaluates to <code>match inp with ValueNone -&gt; ValueNone | ValueSome x -&gt; f x</code>
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  binder
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function that takes the value of type T from a value option and transforms it into
+ a value option containing a value of type U.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An option of the output type of the binder.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="bind-1">
+              <pre><code class="fsharp language-fsharp">
+ let tryParse input =
+     match System.Int32.TryParse (input: string) with
+     | true, v -&gt; ValueSome v
+     | false, _ -&gt; ValueNone
+ ValueNone |&gt; ValueOption.bind tryParse // evaluates to ValueNone
+ ValueSome &quot;42&quot; |&gt; ValueOption.bind tryParse // evaluates to ValueSome 42
+ ValueSome &quot;Forty-two&quot; |&gt; ValueOption.bind tryParse // evaluates to ValueNone</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '977', 977)" onmouseover="showTip(event, '977', 977)">
+                <p>
+                  <a id="contains">
+                    <a href="#contains">
+                      <code><span>ValueOption.contains&#32;<span>value&#32;voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="977">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.contains&#32;<span>value&#32;voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The value to test for equality.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if the option is <code>ValueSome</code> and contains a value equal to <span class="fsdocs-param-name">value</span>, otherwise false.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.Contains``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.Contains``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L242-242" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Evaluates to true if <span class="fsdocs-param-name">voption</span> is <code>ValueSome</code> and its value is equal to <span class="fsdocs-param-name">value</span>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The value to test for equality.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if the option is <code>ValueSome</code> and contains a value equal to <span class="fsdocs-param-name">value</span>, otherwise false.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="contains-1">
+              <pre><code class="fsharp language-fsharp">
+ (99, ValueNone) ||&gt; ValueOption.contains // evaluates to false
+ (99, ValueSome 99) ||&gt; ValueOption.contains // evaluates to true
+ (99, ValueSome 100) ||&gt; ValueOption.contains // evaluates to false</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '978', 978)" onmouseover="showTip(event, '978', 978)">
+                <p>
+                  <a id="count">
+                    <a href="#count">
+                      <code><span>ValueOption.count&#32;<span>voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="978">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.count&#32;<span>voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  A zero if the option is ValueNone, a one otherwise.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.Count``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.Count``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L212-212" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                <code>count inp</code> evaluates to <code>match inp with ValueNone -&gt; 0 | ValueSome _ -&gt; 1</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A zero if the option is ValueNone, a one otherwise.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="count-1">
+              <pre><code class="fsharp language-fsharp">
+ ValueNone |&gt; ValueOption.count // evaluates to 0
+ ValueSome 99 |&gt; ValueOption.count // evaluates to 1</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '979', 979)" onmouseover="showTip(event, '979', 979)">
+                <p>
+                  <a id="defaultValue">
+                    <a href="#defaultValue">
+                      <code><span>ValueOption.defaultValue&#32;<span>value&#32;voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="979">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.defaultValue&#32;<span>value&#32;voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The specified default value.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input voption.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The voption if the voption is ValueSome, else the default value.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.DefaultValue``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.DefaultValue``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L188-188" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Gets the value of the value option if the option is <code>ValueSome</code>, otherwise returns the specified default value.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Identical to the built-in <a href="https://docs.microsoft.com/dotnet/api/defaultarg">defaultArg</a> operator, except with the arguments swapped.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The specified default value.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input voption.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The voption if the voption is ValueSome, else the default value.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="defaultValue-1">
+              <pre><code class="fsharp language-fsharp">
+ (99, ValueNone) ||&gt; ValueOption.defaultValue // evaluates to 99
+ (99, ValueSome 42) ||&gt; ValueOption.defaultValue // evaluates to 42</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '980', 980)" onmouseover="showTip(event, '980', 980)">
+                <p>
+                  <a id="defaultWith">
+                    <a href="#defaultWith">
+                      <code><span>ValueOption.defaultWith&#32;<span>defThunk&#32;voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="980">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.defaultWith&#32;<span>defThunk&#32;voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        defThunk
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;'T</span></code>
+                       - 
+                      A thunk that provides a default value when evaluated.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input voption.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The voption if the voption is ValueSome, else the result of evaluating <span class="fsdocs-param-name">defThunk</span>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.DefaultWith``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.DefaultWith``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L194-194" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Gets the value of the voption if the voption is <code>ValueSome</code>, otherwise evaluates <span class="fsdocs-param-name">defThunk</span> and returns the result.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              <span class="fsdocs-param-name">defThunk</span> is not evaluated unless <span class="fsdocs-param-name">voption</span> is <code>ValueNone</code>.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  defThunk
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;'T</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A thunk that provides a default value when evaluated.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input voption.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The voption if the voption is ValueSome, else the result of evaluating <span class="fsdocs-param-name">defThunk</span>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="defaultWith-1">
+              <pre><code class="fsharp language-fsharp">
+ ValueNone |&gt; ValueOption.defaultWith (fun () -&gt; 99) // evaluates to 99
+ ValueSome 42 |&gt; ValueOption.defaultWith (fun () -&gt; 99) // evaluates to 42</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '981', 981)" onmouseover="showTip(event, '981', 981)">
+                <p>
+                  <a id="exists">
+                    <a href="#exists">
+                      <code><span>ValueOption.exists&#32;<span>predicate&#32;voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="981">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.exists&#32;<span>predicate&#32;voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      A function that evaluates to a boolean when given a value from the option type.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  False if the option is ValueNone, otherwise it returns the result of applying the predicate
+ to the option value.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.Exists``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.Exists``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L230-230" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                <code>exists p inp</code> evaluates to <code>match inp with ValueNone -&gt; false | ValueSome x -&gt; p x</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function that evaluates to a boolean when given a value from the option type.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  False if the option is ValueNone, otherwise it returns the result of applying the predicate
+ to the option value.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="exists-1">
+              <pre><code class="fsharp language-fsharp">
+ ValueNone |&gt; ValueOption.exists (fun x -&gt; x &gt;= 5) // evaluates to false
+ ValueSome 42 |&gt; ValueOption.exists (fun x -&gt; x &gt;= 5) // evaluates to true
+ ValueSome 4 |&gt; ValueOption.exists (fun x -&gt; x &gt;= 5) // evaluates to false</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '982', 982)" onmouseover="showTip(event, '982', 982)">
+                <p>
+                  <a id="filter">
+                    <a href="#filter">
+                      <code><span>ValueOption.filter&#32;<span>predicate&#32;voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="982">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.filter&#32;<span>predicate&#32;voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      A function that evaluates whether the value contained in the value option should remain, or be filtered out.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                  </span>
+                  The input if the predicate evaluates to true; otherwise, ValueNone.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.Filter``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.Filter``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L284-284" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                <code>filter f inp</code> evaluates to <code>match inp with ValueNone -&gt; ValueNone | ValueSome x -&gt; if f x then ValueSome x else ValueNone</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function that evaluates whether the value contained in the value option should remain, or be filtered out.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The input if the predicate evaluates to true; otherwise, ValueNone.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="filter-1">
+              <pre><code class="fsharp language-fsharp">
+ ValueNone |&gt; ValueOption.filter (fun x -&gt; x &gt;= 5) // evaluates to ValueNone
+ ValueSome 42 |&gt; ValueOption.filter (fun x -&gt; x &gt;= 5) // evaluates to ValueSome 42
+ ValueSome 4 |&gt; ValueOption.filter (fun x -&gt; x &gt;= 5) // evaluates to ValueNone</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '983', 983)" onmouseover="showTip(event, '983', 983)">
+                <p>
+                  <a id="flatten">
+                    <a href="#flatten">
+                      <code><span>ValueOption.flatten&#32;<span>voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="983">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.flatten&#32;<span>voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                  </span>
+                  The input value if the value is Some; otherwise, ValueNone.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.Flatten``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.Flatten``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L278-278" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                <code>flatten inp</code> evaluates to <code>match inp with ValueNone -&gt; ValueNone | ValueSome x -&gt; x</code>
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              <code>flatten</code> is equivalent to <code>bind id</code>.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The input value if the value is Some; otherwise, ValueNone.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="flatten-1">
+              <pre><code class="fsharp language-fsharp">
+ (ValueNone: int ValueOption ValueOption) |&gt; ValueOption.flatten // evaluates to ValueNone
+ (ValueSome ((ValueNone: int ValueOption))) |&gt; ValueOption.flatten // evaluates to ValueNone
+ (ValueSome (ValueSome 42)) |&gt; ValueOption.flatten // evaluates to ValueSome 42</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '984', 984)" onmouseover="showTip(event, '984', 984)">
+                <p>
+                  <a id="fold">
+                    <a href="#fold">
+                      <code><span>ValueOption.fold&#32;<span>folder&#32;state&#32;voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="984">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.fold&#32;<span>folder&#32;state&#32;voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        folder
+                      </b>
+                      :
+                      <code><span>'State&#32;->&#32;'T&#32;->&#32;'State</span></code>
+                       - 
+                      A function to update the state data when given a value from a value option.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        state
+                      </b>
+                      :
+                      <code>'State</code>
+                       - 
+                      The initial state.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'State</code>
+                  </span>
+                  The original state if the option is ValueNone, otherwise it returns the updated state with the folder
+ and the voption value.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.Fold``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.Fold``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L218-218" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                <code>fold f s inp</code> evaluates to <code>match inp with ValueNone -&gt; s | ValueSome x -&gt; f s x</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  folder
+                </span>
+                :
+                <code><span>'State&#32;->&#32;'T&#32;->&#32;'State</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function to update the state data when given a value from a value option.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  state
+                </span>
+                :
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The initial state.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The original state if the option is ValueNone, otherwise it returns the updated state with the folder
+ and the voption value.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="fold-1">
+              <pre><code class="fsharp language-fsharp">
+ (0, ValueNone) ||&gt; ValueOption.fold (fun accum x -&gt; accum + x * 2) // evaluates to 0
+ (0, ValueSome 1) ||&gt; ValueOption.fold (fun accum x -&gt; accum + x * 2) // evaluates to 2
+ (10, ValueSome 1) ||&gt; ValueOption.fold (fun accum x -&gt; accum + x * 2) // evaluates to 12</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '985', 985)" onmouseover="showTip(event, '985', 985)">
+                <p>
+                  <a id="foldBack">
+                    <a href="#foldBack">
+                      <code><span>ValueOption.foldBack&#32;<span>folder&#32;voption&#32;state</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="985">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.foldBack&#32;<span>folder&#32;voption&#32;state</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        folder
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'State&#32;->&#32;'State</span></code>
+                       - 
+                      A function to update the state data when given a value from a value option.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        state
+                      </b>
+                      :
+                      <code>'State</code>
+                       - 
+                      The initial state.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'State</code>
+                  </span>
+                  The original state if the option is ValueNone, otherwise it returns the updated state with the folder
+ and the voption value.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.FoldBack``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.FoldBack``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L224-224" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                <code>fold f inp s</code> evaluates to <code>match inp with ValueNone -&gt; s | ValueSome x -&gt; f x s</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  folder
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'State&#32;->&#32;'State</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function to update the state data when given a value from a value option.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  state
+                </span>
+                :
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The initial state.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The original state if the option is ValueNone, otherwise it returns the updated state with the folder
+ and the voption value.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="foldBack-1">
+              <pre><code class="fsharp language-fsharp">
+ (ValueNone, 0) ||&gt; ValueOption.foldBack (fun x accum -&gt; accum + x * 2) // evaluates to 0
+ (ValueSome 1, 0) ||&gt; ValueOption.foldBack (fun x accum -&gt; accum + x * 2) // evaluates to 2
+ (ValueSome 1, 10) ||&gt; ValueOption.foldBack (fun x accum -&gt; accum + x * 2) // evaluates to 12</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '986', 986)" onmouseover="showTip(event, '986', 986)">
+                <p>
+                  <a id="forall">
+                    <a href="#forall">
+                      <code><span>ValueOption.forall&#32;<span>predicate&#32;voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="986">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.forall&#32;<span>predicate&#32;voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      A function that evaluates to a boolean when given a value from the value option type.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if the option is None, otherwise it returns the result of applying the predicate
+ to the option value.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.ForAll``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.ForAll``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L236-236" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                <code>forall p inp</code> evaluates to <code>match inp with ValueNone -&gt; true | ValueSome x -&gt; p x</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function that evaluates to a boolean when given a value from the value option type.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if the option is None, otherwise it returns the result of applying the predicate
+ to the option value.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="forall-1">
+              <pre><code class="fsharp language-fsharp">
+ ValueNone |&gt; ValueOption.forall (fun x -&gt; x &gt;= 5) // evaluates to true
+ ValueSome 42 |&gt; ValueOption.forall (fun x -&gt; x &gt;= 5) // evaluates to true
+ ValueSome 4 |&gt; ValueOption.forall (fun x -&gt; x &gt;= 5) // evaluates to false</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '987', 987)" onmouseover="showTip(event, '987', 987)">
+                <p>
+                  <a id="get">
+                    <a href="#get">
+                      <code><span>ValueOption.get&#32;<span>voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="987">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.get&#32;<span>voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The value within the option.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.GetValue``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.GetValue``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L170-170" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Gets the value associated with the option.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The value within the option.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="get-1">
+              <pre><code class="fsharp language-fsharp">
+ ValueSome 42 |&gt; ValueOption.get // evaluates to 42
+ (ValueNone: int ValueOption) |&gt; ValueOption.get // throws exception!</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '988', 988)" onmouseover="showTip(event, '988', 988)">
+                <p>
+                  <a id="isNone">
+                    <a href="#isNone">
+                      <code><span>ValueOption.isNone&#32;<span>voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="988">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.isNone&#32;<span>voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if the voption is ValueNone.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.IsNone``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.IsNone``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L182-182" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns true if the value option is ValueNone.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if the voption is ValueNone.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="isNone-1">
+              <pre><code class="fsharp language-fsharp">
+ ValueNone |&gt; ValueOption.isNone // evaluates to true
+ ValueSome 42 |&gt; ValueOption.isNone // evaluates to false</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '989', 989)" onmouseover="showTip(event, '989', 989)">
+                <p>
+                  <a id="isSome">
+                    <a href="#isSome">
+                      <code><span>ValueOption.isSome&#32;<span>voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="989">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.isSome&#32;<span>voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if the value option is not ValueNone.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.IsSome``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.IsSome``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L176-176" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns true if the value option is not ValueNone.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if the value option is not ValueNone.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="isSome-1">
+              <pre><code class="fsharp language-fsharp">
+ ValueNone |&gt; ValueOption.isSome // evaluates to false
+ ValueSome 42 |&gt; ValueOption.isSome // evaluates to true</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '990', 990)" onmouseover="showTip(event, '990', 990)">
+                <p>
+                  <a id="iter">
+                    <a href="#iter">
+                      <code><span>ValueOption.iter&#32;<span>action&#32;voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="990">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.iter&#32;<span>action&#32;voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        action
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                       - 
+                      A function to apply to the voption value.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.Iterate``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.Iterate``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L248-248" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                <code>iter f inp</code> executes <code>match inp with ValueNone -&gt; () | ValueSome x -&gt; f x</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  action
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function to apply to the voption value.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="iter-1">
+              <pre><code class="fsharp language-fsharp">
+ ValueNone |&gt; ValueOption.iter (printfn &quot;%s&quot;) // does nothing
+ ValueSome &quot;Hello world&quot; |&gt; ValueOption.iter (printfn &quot;%s&quot;) // prints &quot;Hello world&quot;</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '991', 991)" onmouseover="showTip(event, '991', 991)">
+                <p>
+                  <a id="map">
+                    <a href="#map">
+                      <code><span>ValueOption.map&#32;<span>mapping&#32;voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="991">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.map&#32;<span>mapping&#32;voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'U</span></code>
+                       - 
+                      A function to apply to the voption value.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                  </span>
+                  A value option of the input value after applying the mapping function, or ValueNone if the input is ValueNone.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.Map``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.Map``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L254-254" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                <code>map f inp</code> evaluates to <code>match inp with ValueNone -&gt; ValueNone | ValueSome x -&gt; ValueSome (f x)</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function to apply to the voption value.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A value option of the input value after applying the mapping function, or ValueNone if the input is ValueNone.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="map-1">
+              <pre><code class="fsharp language-fsharp">
+ ValueNone |&gt; ValueOption.map (fun x -&gt; x * 2) // evaluates to ValueNone
+ ValueSome 42 |&gt; ValueOption.map (fun x -&gt; x * 2) // evaluates to ValueSome 84</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '992', 992)" onmouseover="showTip(event, '992', 992)">
+                <p>
+                  <a id="map2">
+                    <a href="#map2">
+                      <code><span>ValueOption.map2&#32;<span>mapping&#32;voption1&#32;voption2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="992">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.map2&#32;<span>mapping&#32;voption1&#32;voption2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'T1&#32;->&#32;'T2&#32;->&#32;'U</span></code>
+                       - 
+                      A function to apply to the voption values.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption1
+                      </b>
+                      :
+                      <code><span>'T1&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The first value option.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption2
+                      </b>
+                      :
+                      <code><span>'T2&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The second value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                  </span>
+                  A value option of the input values after applying the mapping function, or ValueNone if either input is ValueNone.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.Map2``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.Map2``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L260-260" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                <code>map f voption1 voption2</code> evaluates to <code>match voption1, voption2 with ValueSome x, ValueSome y -&gt; ValueSome (f x y) | _ -&gt; ValueNone</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span>'T1&#32;->&#32;'T2&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function to apply to the voption values.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption1
+                </span>
+                :
+                <code><span>'T1&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The first value option.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption2
+                </span>
+                :
+                <code><span>'T2&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The second value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A value option of the input values after applying the mapping function, or ValueNone if either input is ValueNone.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="map2-1">
+              <pre><code class="fsharp language-fsharp">
+ (ValueNone, ValueNone) ||&gt; ValueOption.map2 (fun x y -&gt; x + y) // evaluates to ValueNone
+ (ValueSome 5, ValueNone) ||&gt; ValueOption.map2 (fun x y -&gt; x + y) // evaluates to ValueNone
+ (ValueNone, ValueSome 10) ||&gt; ValueOption.map2 (fun x y -&gt; x + y) // evaluates to ValueNone
+ (ValueSome 5, ValueSome 10) ||&gt; ValueOption.map2 (fun x y -&gt; x + y) // evaluates to ValueSome 15</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '993', 993)" onmouseover="showTip(event, '993', 993)">
+                <p>
+                  <a id="map3">
+                    <a href="#map3">
+                      <code><span>ValueOption.map3&#32;<span>mapping&#32;voption1&#32;voption2&#32;voption3</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="993">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.map3&#32;<span>mapping&#32;voption1&#32;voption2&#32;voption3</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'T1&#32;->&#32;'T2&#32;->&#32;'T3&#32;->&#32;'U</span></code>
+                       - 
+                      A function to apply to the value option values.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption1
+                      </b>
+                      :
+                      <code><span>'T1&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The first value option.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption2
+                      </b>
+                      :
+                      <code><span>'T2&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The second value option.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption3
+                      </b>
+                      :
+                      <code><span>'T3&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The third value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                  </span>
+                  A value option of the input values after applying the mapping function, or ValueNone if any input is ValueNone.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.Map3``4```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.Map3``4\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L266-266" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                <code>map f voption1 voption2 voption3</code> evaluates to <code>match voption1, voption2, voption3 with ValueSome x, ValueSome y, ValueSome z -&gt; ValueSome (f x y z) | _ -&gt; ValueNone</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span>'T1&#32;->&#32;'T2&#32;->&#32;'T3&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A function to apply to the value option values.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption1
+                </span>
+                :
+                <code><span>'T1&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The first value option.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption2
+                </span>
+                :
+                <code><span>'T2&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The second value option.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption3
+                </span>
+                :
+                <code><span>'T3&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The third value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A value option of the input values after applying the mapping function, or ValueNone if any input is ValueNone.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="map3-1">
+              <pre><code class="fsharp language-fsharp">
+ (ValueNone, ValueNone, ValueNone) |||&gt; ValueOption.map3 (fun x y z -&gt; x + y + z) // evaluates to ValueNone
+ (ValueSome 100, ValueNone, ValueNone) |||&gt; ValueOption.map3 (fun x y z -&gt; x + y + z) // evaluates to ValueNone
+ (ValueNone, ValueSome 100, ValueNone) |||&gt; ValueOption.map3 (fun x y z -&gt; x + y + z) // evaluates to ValueNone
+ (ValueNone, ValueNone, ValueSome 100) |||&gt; ValueOption.map3 (fun x y z -&gt; x + y + z) // evaluates to ValueNone
+ (ValueSome 5, ValueSome 100, ValueSome 10) |||&gt; ValueOption.map3 (fun x y z -&gt; x + y + z) // evaluates to ValueSome 115</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '994', 994)" onmouseover="showTip(event, '994', 994)">
+                <p>
+                  <a id="ofNullable">
+                    <a href="#ofNullable">
+                      <code><span>ValueOption.ofNullable&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="994">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.ofNullable&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input nullable value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                  </span>
+                  The result value option.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.OfNullable``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.OfNullable``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L312-312" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Convert a Nullable value to a value option.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input nullable value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The result value option.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="ofNullable-1">
+              <pre><code class="fsharp language-fsharp">
+ System.Nullable&lt;int&gt;() |&gt; ValueOption.ofNullable // evaluates to ValueNone
+ System.Nullable(42) |&gt; ValueOption.ofNullable // evaluates to ValueSome 42</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '995', 995)" onmouseover="showTip(event, '995', 995)">
+                <p>
+                  <a id="ofObj">
+                    <a href="#ofObj">
+                      <code><span>ValueOption.ofObj&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="995">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.ofObj&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                  </span>
+                  The result value option.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.OfObj``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.OfObj``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L319-319" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Convert a potentially null value to a value option.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The result value option.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="ofObj-1">
+              <pre><code class="fsharp language-fsharp">
+ (null: string) |&gt; ValueOption.ofObj // evaluates to ValueNone
+ &quot;not a null string&quot; |&gt; ValueOption.ofObj // evaluates to (ValueSome &quot;not a null string&quot;)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '996', 996)" onmouseover="showTip(event, '996', 996)">
+                <p>
+                  <a id="orElse">
+                    <a href="#orElse">
+                      <code><span>ValueOption.orElse&#32;<span>ifNone&#32;voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="996">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.orElse&#32;<span>ifNone&#32;voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ifNone
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The value to use if <span class="fsdocs-param-name">voption</span> is <code>None</code>.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                  </span>
+                  The option if the option is Some, else the alternate option.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.OrElse``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.OrElse``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L200-200" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns <span class="fsdocs-param-name">voption</span> if it is <code>Some</code>, otherwise returns <span class="fsdocs-param-name">ifNone</span>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ifNone
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The value to use if <span class="fsdocs-param-name">voption</span> is <code>None</code>.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The option if the option is Some, else the alternate option.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="orElse-1">
+              <pre><code class="fsharp language-fsharp">
+ ((ValueNone: int ValueOption), ValueNone) ||&gt; ValueOption.orElse // evaluates to ValueNone
+ (ValueSome 99, ValueNone) ||&gt; ValueOption.orElse // evaluates to ValueSome 99
+ (ValueNone, ValueSome 42) ||&gt; ValueOption.orElse // evaluates to ValueSome 42
+ (ValueSome 99, ValueSome 42) ||&gt; ValueOption.orElse // evaluates to ValueSome 42</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '997', 997)" onmouseover="showTip(event, '997', 997)">
+                <p>
+                  <a id="orElseWith">
+                    <a href="#orElseWith">
+                      <code><span>ValueOption.orElseWith&#32;<span>ifNoneThunk&#32;voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="997">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.orElseWith&#32;<span>ifNoneThunk&#32;voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ifNoneThunk
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></span></code>
+                       - 
+                      A thunk that provides an alternate value option when evaluated.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                  </span>
+                  The voption if the voption is ValueSome, else the result of evaluating <span class="fsdocs-param-name">ifNoneThunk</span>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.OrElseWith``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.OrElseWith``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L206-206" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns <span class="fsdocs-param-name">voption</span> if it is <code>Some</code>, otherwise evaluates <span class="fsdocs-param-name">ifNoneThunk</span> and returns the result.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              <span class="fsdocs-param-name">ifNoneThunk</span> is not evaluated unless <span class="fsdocs-param-name">voption</span> is <code>ValueNone</code>.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ifNoneThunk
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  A thunk that provides an alternate value option when evaluated.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The voption if the voption is ValueSome, else the result of evaluating <span class="fsdocs-param-name">ifNoneThunk</span>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="orElseWith-1">
+              <pre><code class="fsharp language-fsharp">
+ (ValueNone: int ValueOption) |&gt; ValueOption.orElseWith (fun () -&gt; ValueNone) // evaluates to ValueNone
+ ValueNone |&gt; ValueOption.orElseWith (fun () -&gt; (ValueSome 99)) // evaluates to ValueSome 99
+ ValueSome 42 |&gt; ValueOption.orElseWith (fun () -&gt; ValueNone) // evaluates to ValueSome 42
+ ValueSome 42 |&gt; ValueOption.orElseWith (fun () -&gt; (ValueSome 99)) // evaluates to ValueSome 42</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '998', 998)" onmouseover="showTip(event, '998', 998)">
+                <p>
+                  <a id="toArray">
+                    <a href="#toArray">
+                      <code><span>ValueOption.toArray&#32;<span>voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="998">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.toArray&#32;<span>voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T[]</span></code>
+                  </span>
+                  The result array.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.ToArray``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.ToArray``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L294-294" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Convert the value option to an array of length 0 or 1.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The result array.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="toArray-1">
+              <pre><code class="fsharp language-fsharp">
+ (ValueNone: int ValueOption) |&gt; ValueOption.toArray // evaluates to [||]
+ ValueSome 42 |&gt; ValueOption.toArray // evaluates to [|42|]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '999', 999)" onmouseover="showTip(event, '999', 999)">
+                <p>
+                  <a id="toList">
+                    <a href="#toList">
+                      <code><span>ValueOption.toList&#32;<span>voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="999">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.toList&#32;<span>voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></code>
+                  </span>
+                  The result list.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.ToList``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.ToList``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L300-300" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Convert the value option to a list of length 0 or 1.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The result list.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="toList-1">
+              <pre><code class="fsharp language-fsharp">
+ (ValueNone: int ValueOption) |&gt; ValueOption.toList // evaluates to []
+ ValueSome 42 |&gt; ValueOption.toList // evaluates to [42]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1000', 1000)" onmouseover="showTip(event, '1000', 1000)">
+                <p>
+                  <a id="toNullable">
+                    <a href="#toNullable">
+                      <code><span>ValueOption.toNullable&#32;<span>voption</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1000">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.toNullable&#32;<span>voption</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        voption
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value option.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'T&gt;</span></code>
+                  </span>
+                  The result value.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.ToNullable``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.ToNullable``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L306-306" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Convert the value option to a Nullable value.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  voption
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value option.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The result value.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="toNullable-1">
+              <pre><code class="fsharp language-fsharp">
+ (ValueNone: int ValueOption) |&gt; ValueOption.toNullable // evaluates to new System.Nullable&lt;int&gt;()
+ ValueSome 42 |&gt; ValueOption.toNullable // evaluates to new System.Nullable(42)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1001', 1001)" onmouseover="showTip(event, '1001', 1001)">
+                <p>
+                  <a id="toObj">
+                    <a href="#toObj">
+                      <code><span>ValueOption.toObj&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1001">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ValueOption.toObj&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The result value, which is null if the input was ValueNone.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ValueOption.ToObj``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ValueOption.ToObj``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/option.fs#L325-325" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Convert an option to a potentially null value.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">voption</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The result value, which is null if the input was ValueNone.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="toObj-1">
+              <pre><code class="fsharp language-fsharp">
+ (ValueNone: string ValueOption) |&gt; ValueOption.toObj // evaluates to null
+ ValueSome &quot;not a null string&quot; |&gt; ValueOption.toObj // evaluates to &quot;not a null string&quot;</code></pre>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

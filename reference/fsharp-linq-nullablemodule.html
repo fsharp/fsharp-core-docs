@@ -1,0 +1,2449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Nullable (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Nullable Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+        FSharp.Linq
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        
+ Functions for converting nullable values
+
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1027', 1027)" onmouseover="showTip(event, '1027', 1027)">
+                <p>
+                  <a id="byte">
+                    <a href="#byte">
+                      <code><span>Nullable.byte&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1027">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.byte&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byte.html">byte</a>&gt;</span></code>
+                  </span>
+                  The converted byte
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToByte``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToByte``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L175-175" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to byte. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byte.html">byte</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted byte
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="byte-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.byte (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;byte&gt;()
+ Nullable.byte (Nullable&lt;int&gt;(3))  // evaluates to Nullable(3uy)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1028', 1028)" onmouseover="showTip(event, '1028', 1028)">
+                <p>
+                  <a id="char">
+                    <a href="#char">
+                      <code><span>Nullable.char&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1028">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.char&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-char.html">char</a>&gt;</span></code>
+                  </span>
+                  The converted char.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToChar``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToChar``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L301-301" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to character. Numeric inputs are converted according to the UTF-16 
+ encoding for characters. The operation requires an appropriate static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-char.html">char</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted char.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="char-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.char (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;char&gt;()
+ Nullable.char (Nullable&lt;int&gt;(64))  // evaluates to Nullable&lt;char&gt;(&#39;@&#39;)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1029', 1029)" onmouseover="showTip(event, '1029', 1029)">
+                <p>
+                  <a id="decimal">
+                    <a href="#decimal">
+                      <code><span>Nullable.decimal&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1029">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.decimal&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-decimal.html">decimal</a>&gt;</span></code>
+                  </span>
+                  The converted decimal.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToDecimal``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToDecimal``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L294-294" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to System.Decimal using a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-decimal.html">decimal</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted decimal.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="decimal-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.decimal (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;decimal&gt;()
+ Nullable.decimal (Nullable&lt;int&gt;(3))  // evaluates to Nullable&lt;decimal&gt;(3.0M)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1030', 1030)" onmouseover="showTip(event, '1030', 1030)">
+                <p>
+                  <a id="double">
+                    <a href="#double">
+                      <code><span>Nullable.double&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1030">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.double&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-double.html">double</a>&gt;</span></code>
+                  </span>
+                  The converted float
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToDouble``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToDouble``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L273-273" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to 64-bit float. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-double.html">double</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted float
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="double-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.double (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;double&gt;()
+ Nullable.double (Nullable&lt;int&gt;(3))  // evaluates to Nullable&lt;double&gt;(3.0)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1031', 1031)" onmouseover="showTip(event, '1031', 1031)">
+                <p>
+                  <a id="enum">
+                    <a href="#enum">
+                      <code><span>Nullable.enum&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1031">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.enum&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int32.html">int32</a>&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^U&gt;</span></code>
+                  </span>
+                  The converted enum type.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^U
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToEnum``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToEnum``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L217-217" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to a particular enum type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int32.html">int32</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^U&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted enum type.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="enum-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.enum&lt;DayOfWeek&gt; (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;uint&gt;()
+ Nullable.enum&lt;DayOfWeek&gt; (Nullable&lt;int&gt;(3))  // evaluates to Nullable&lt;DayOfWeek&gt;(Wednesday)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1032', 1032)" onmouseover="showTip(event, '1032', 1032)">
+                <p>
+                  <a id="float">
+                    <a href="#float">
+                      <code><span>Nullable.float&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1032">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.float&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float.html">float</a>&gt;</span></code>
+                  </span>
+                  The converted float
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToFloat``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToFloat``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L259-259" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to 64-bit float. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float.html">float</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted float
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="float-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.float (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;float&gt;()
+ Nullable.float (Nullable&lt;int&gt;(3))  // evaluates to Nullable&lt;float&gt;(3.0)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1033', 1033)" onmouseover="showTip(event, '1033', 1033)">
+                <p>
+                  <a id="float32">
+                    <a href="#float32">
+                      <code><span>Nullable.float32&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1033">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.float32&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float32.html">float32</a>&gt;</span></code>
+                  </span>
+                  The converted float32
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToFloat32``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToFloat32``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L252-252" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to 32-bit float. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float32.html">float32</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted float32
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="float32-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.float32 (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;float32&gt;()
+ Nullable.float32 (Nullable&lt;int&gt;(3))  // evaluates to Nullable&lt;float32&gt;(3.0f)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1034', 1034)" onmouseover="showTip(event, '1034', 1034)">
+                <p>
+                  <a id="int">
+                    <a href="#int">
+                      <code><span>Nullable.int&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1034">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.int&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&gt;</span></code>
+                  </span>
+                  The converted int
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToInt``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToInt``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L203-203" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to signed 32-bit integer. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted int
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="int-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.int (Nullable&lt;int64&gt;())  // evaluates to Nullable&lt;int&gt;()
+ Nullable.int (Nullable&lt;int64&gt;(3))  // evaluates to Nullable(3)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1035', 1035)" onmouseover="showTip(event, '1035', 1035)">
+                <p>
+                  <a id="int16">
+                    <a href="#int16">
+                      <code><span>Nullable.int16&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1035">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.int16&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int16.html">int16</a>&gt;</span></code>
+                  </span>
+                  The converted int16
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToInt16``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToInt16``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L189-189" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to signed 16-bit integer. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int16.html">int16</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted int16
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="int16-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.int16 (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;int16&gt;()
+ Nullable.int16 (Nullable&lt;int&gt;(3))  // evaluates to Nullable(3s)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1036', 1036)" onmouseover="showTip(event, '1036', 1036)">
+                <p>
+                  <a id="int32">
+                    <a href="#int32">
+                      <code><span>Nullable.int32&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1036">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.int32&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int32.html">int32</a>&gt;</span></code>
+                  </span>
+                  The converted int32
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToInt32``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToInt32``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L224-224" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to signed 32-bit integer. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int32.html">int32</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted int32
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="int32-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.int32 (Nullable&lt;int64&gt;())  // evaluates to Nullable&lt;int32&gt;()
+ Nullable.int32 (Nullable&lt;int64&gt;(3))  // evaluates to Nullable(3)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1037', 1037)" onmouseover="showTip(event, '1037', 1037)">
+                <p>
+                  <a id="int64">
+                    <a href="#int64">
+                      <code><span>Nullable.int64&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1037">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.int64&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int64.html">int64</a>&gt;</span></code>
+                  </span>
+                  The converted int64
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToInt64``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToInt64``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L238-238" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to signed 64-bit integer. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int64.html">int64</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted int64
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="int64-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.int64 (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;int64&gt;()
+ Nullable.int64 (Nullable&lt;int&gt;(3))  // evaluates to Nullable&lt;int64&gt;(3L)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1038', 1038)" onmouseover="showTip(event, '1038', 1038)">
+                <p>
+                  <a id="int8">
+                    <a href="#int8">
+                      <code><span>Nullable.int8&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1038">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.int8&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int8.html">int8</a>&gt;</span></code>
+                  </span>
+                  The converted sbyte
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToInt8``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToInt8``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L168-168" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to signed byte. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int8.html">int8</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted sbyte
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="int8-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.int8 (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;sbyte&gt;()
+ Nullable.int8 (Nullable&lt;int&gt;(3))  // evaluates to Nullable(3y)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1039', 1039)" onmouseover="showTip(event, '1039', 1039)">
+                <p>
+                  <a id="nativeint">
+                    <a href="#nativeint">
+                      <code><span>Nullable.nativeint&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1039">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.nativeint&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-nativeint.html">nativeint</a>&gt;</span></code>
+                  </span>
+                  The converted nativeint
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToIntPtr``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToIntPtr``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L280-280" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to signed native integer. This is a direct conversion for all 
+ primitive numeric types. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-nativeint.html">nativeint</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted nativeint
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="nativeint-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.nativeint (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;nativeint&gt;()
+ Nullable.nativeint (Nullable&lt;int&gt;(3))  // evaluates to Nullable&lt;nativeint&gt;(3n)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1040', 1040)" onmouseover="showTip(event, '1040', 1040)">
+                <p>
+                  <a id="sbyte">
+                    <a href="#sbyte">
+                      <code><span>Nullable.sbyte&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1040">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.sbyte&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-sbyte.html">sbyte</a>&gt;</span></code>
+                  </span>
+                  The converted sbyte
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToSByte``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToSByte``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L182-182" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to signed byte. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-sbyte.html">sbyte</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted sbyte
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="sbyte-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.sbyte (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;sbyte&gt;()
+ Nullable.sbyte (Nullable&lt;int&gt;(3))  // evaluates to Nullable(3y)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1041', 1041)" onmouseover="showTip(event, '1041', 1041)">
+                <p>
+                  <a id="single">
+                    <a href="#single">
+                      <code><span>Nullable.single&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1041">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.single&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-single.html">single</a>&gt;</span></code>
+                  </span>
+                  The converted float32
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToSingle``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToSingle``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L266-266" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to 32-bit float. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-single.html">single</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted float32
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="single-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.single (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;float32&gt;()
+ Nullable.single (Nullable&lt;int&gt;(3))  // evaluates to Nullable&lt;float32&gt;(3.0f)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1042', 1042)" onmouseover="showTip(event, '1042', 1042)">
+                <p>
+                  <a id="uint">
+                    <a href="#uint">
+                      <code><span>Nullable.uint&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1042">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.uint&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint.html">uint</a>&gt;</span></code>
+                  </span>
+                  The converted unsigned integer
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToUInt``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToUInt``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L210-210" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to an unsigned 32-bit integer. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint.html">uint</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted unsigned integer
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="uint-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.uint (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;uint&gt;()
+ Nullable.uint (Nullable&lt;int&gt;(3))  // evaluates to Nullable(3u)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1043', 1043)" onmouseover="showTip(event, '1043', 1043)">
+                <p>
+                  <a id="uint16">
+                    <a href="#uint16">
+                      <code><span>Nullable.uint16&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1043">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.uint16&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint16.html">uint16</a>&gt;</span></code>
+                  </span>
+                  The converted uint16
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToUInt16``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToUInt16``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L196-196" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to unsigned 16-bit integer. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint16.html">uint16</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted uint16
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="uint16-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.uint16 (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;uint16&gt;()
+ Nullable.uint16 (Nullable&lt;int&gt;(3))  // evaluates to Nullable(3us)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1044', 1044)" onmouseover="showTip(event, '1044', 1044)">
+                <p>
+                  <a id="uint32">
+                    <a href="#uint32">
+                      <code><span>Nullable.uint32&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1044">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.uint32&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint32.html">uint32</a>&gt;</span></code>
+                  </span>
+                  The converted uint32
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToUInt32``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToUInt32``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L231-231" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to unsigned 32-bit integer. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint32.html">uint32</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted uint32
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="uint32-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.uint32 (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;uint32&gt;()
+ Nullable.uint32 (Nullable&lt;int&gt;(3))  // evaluates to Nullable(3u)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1045', 1045)" onmouseover="showTip(event, '1045', 1045)">
+                <p>
+                  <a id="uint64">
+                    <a href="#uint64">
+                      <code><span>Nullable.uint64&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1045">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.uint64&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint64.html">uint64</a>&gt;</span></code>
+                  </span>
+                  The converted uint64
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToUInt64``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToUInt64``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L245-245" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to unsigned 64-bit integer. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint64.html">uint64</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted uint64
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="uint64-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.uint64 (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;uint64&gt;()
+ Nullable.uint64 (Nullable&lt;int&gt;(3))  // evaluates to Nullable&lt;uint64&gt;(3UL)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1046', 1046)" onmouseover="showTip(event, '1046', 1046)">
+                <p>
+                  <a id="uint8">
+                    <a href="#uint8">
+                      <code><span>Nullable.uint8&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1046">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.uint8&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint8.html">uint8</a>&gt;</span></code>
+                  </span>
+                  The converted byte
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToUInt8``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToUInt8``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L161-161" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to byte. This is a direct conversion for all 
+ primitive numeric types. The operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint8.html">uint8</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted byte
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="uint8-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.uint8 (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;byte&gt;()
+ Nullable.uint8 (Nullable&lt;int&gt;(3))  // evaluates to Nullable(3uy)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1047', 1047)" onmouseover="showTip(event, '1047', 1047)">
+                <p>
+                  <a id="unativeint">
+                    <a href="#unativeint">
+                      <code><span>Nullable.unativeint&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1047">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Nullable.unativeint&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unativeint.html">unativeint</a>&gt;</span></code>
+                  </span>
+                  The converted unativeint
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Linq.NullableModule.ToUIntPtr``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Linq.NullableModule.ToUIntPtr``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fs#L287-287" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Converts the argument to unsigned native integer using a direct conversion for all 
+ primitive numeric types. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unativeint.html">unativeint</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The converted unativeint
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="unativeint-1">
+              <pre><code class="fsharp language-fsharp">
+ open System
+ open FSharp.Linq.NullableOperators
+
+ Nullable.unativeint (Nullable&lt;int&gt;())  // evaluates to Nullable&lt;unativeint&gt;()
+ Nullable.unativeint (Nullable&lt;int&gt;(3))  // evaluates to Nullable&lt;unativeint&gt;(3un)</code></pre>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,3754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Map (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Map Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+        FSharp.Collections
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        Contains operations for working with values of type <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>.
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '276', 276)" onmouseover="showTip(event, '276', 276)">
+                <p>
+                  <a id="add">
+                    <a href="#add">
+                      <code><span>Map.add&#32;<span>key&#32;value&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="276">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.add&#32;<span>key&#32;value&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        key
+                      </b>
+                      :
+                      <code>'Key</code>
+                       - 
+                      The input key.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                  </span>
+                  The resulting map.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Add``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Add``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1139-1139" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new map with the binding added to the given map.
+ If a binding with the given key already exists in the input map, the existing binding is replaced by the new binding in the result map.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  key
+                </span>
+                :
+                <code>'Key</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input key.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input value.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The resulting map.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="add-1">
+              <pre><code class="fsharp language-fsharp">
+ let input = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ input |&gt; Map.add 3 &quot;c&quot; // evaluates to map [(1, &quot;a&quot;); (2, &quot;b&quot;); (3, &quot;c&quot;)]
+ input |&gt; Map.add 2 &quot;aa&quot; // evaluates to map [(1, &quot;a&quot;); (2, &quot;aa&quot;)]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '277', 277)" onmouseover="showTip(event, '277', 277)">
+                <p>
+                  <a id="change">
+                    <a href="#change">
+                      <code><span>Map.change&#32;<span>key&#32;f&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="277">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.change&#32;<span>key&#32;f&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        key
+                      </b>
+                      :
+                      <code>'Key</code>
+                       - 
+                      The input key.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        f
+                      </b>
+                      :
+                      <code><span><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&#32;->&#32;<span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                       - 
+                      The change function.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                  </span>
+                  The resulting map.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Change``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Change``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1143-1143" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new map with the value stored under key changed according to f.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  key
+                </span>
+                :
+                <code>'Key</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input key.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  f
+                </span>
+                :
+                <code><span><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&#32;->&#32;<span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The change function.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The resulting map.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="change-1">
+              <pre><code class="fsharp language-fsharp">
+ let input = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ input |&gt; Map.change 1 (fun x -&gt;
+     match x with
+     | Some s -&gt; Some (s + &quot;z&quot;)
+     | None -&gt; None
+ )
+ evaluates to map [(1, &quot;az&quot;); (2, &quot;b&quot;)]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '278', 278)" onmouseover="showTip(event, '278', 278)">
+                <p>
+                  <a id="containsKey">
+                    <a href="#containsKey">
+                      <code><span>Map.containsKey&#32;<span>key&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="278">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.containsKey&#32;<span>key&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        key
+                      </b>
+                      :
+                      <code>'Key</code>
+                       - 
+                      The input key.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if the map contains the key.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.ContainsKey``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.ContainsKey``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1159-1159" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Tests if an element is in the domain of the map.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  key
+                </span>
+                :
+                <code>'Key</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input key.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if the map contains the key.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="containskey-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.containsKey 1 // evaluates to true
+ sample |&gt; Map.containsKey 3 // evaluates to false</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '279', 279)" onmouseover="showTip(event, '279', 279)">
+                <p>
+                  <a id="count">
+                    <a href="#count">
+                      <code><span>Map.count&#32;<span>table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="279">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.count&#32;<span>table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Count``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Count``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1255-1255" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                The number of bindings in the map.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="count-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.count // evaluates to 2</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '280', 280)" onmouseover="showTip(event, '280', 280)">
+                <p>
+                  <a id="empty">
+                    <a href="#empty">
+                      <code><span>Map.empty&#32;<span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="280">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.empty&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Empty``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Empty``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1252-1252" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                The empty map.
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="empty-1">
+              <pre><code class="fsharp language-fsharp">
+ let emptyMap = Map.empty&lt;int, string&gt;</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '281', 281)" onmouseover="showTip(event, '281', 281)">
+                <p>
+                  <a id="exists">
+                    <a href="#exists">
+                      <code><span>Map.exists&#32;<span>predicate&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="281">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.exists&#32;<span>predicate&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to test the input elements.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if the predicate returns true for one of the key/value pairs.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Exists``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Exists``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1177-1177" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns true if the given predicate returns true for one of the
+ bindings in the map.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to test the input elements.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if the predicate returns true for one of the key/value pairs.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="exists-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.exists (fun n s -&gt; n = s.Length) // evaluates to true
+ sample |&gt; Map.exists (fun n s -&gt; n &lt; s.Length) // evaluates to false</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '282', 282)" onmouseover="showTip(event, '282', 282)">
+                <p>
+                  <a id="filter">
+                    <a href="#filter">
+                      <code><span>Map.filter&#32;<span>predicate&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="282">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.filter&#32;<span>predicate&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to test the key/value pairs.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                  </span>
+                  The filtered map.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Filter``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Filter``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1181-1181" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Builds a new map containing only the bindings for which the given predicate returns 'true'.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to test the key/value pairs.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The filtered map.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="filter-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.filter (fun n s -&gt; n = s.Length) // evaluates to map [(1, &quot;a&quot;)]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '283', 283)" onmouseover="showTip(event, '283', 283)">
+                <p>
+                  <a id="find">
+                    <a href="#find">
+                      <code><span>Map.find&#32;<span>key&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="283">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.find&#32;<span>key&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        key
+                      </b>
+                      :
+                      <code>'Key</code>
+                       - 
+                      The input key.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The value mapped to the given key.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Find``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Find``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1147-1147" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Lookup an element in the map, raising <code>KeyNotFoundException</code> if no binding
+ exists in the map.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  key
+                </span>
+                :
+                <code>'Key</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input key.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The value mapped to the given key.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception">
+                    KeyNotFoundException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the key does not exist in the map.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="find-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.find 1 // evaluates to &quot;a&quot;
+ sample |&gt; Map.find 3 // throws KeyNotFoundException</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '284', 284)" onmouseover="showTip(event, '284', 284)">
+                <p>
+                  <a id="findKey">
+                    <a href="#findKey">
+                      <code><span>Map.findKey&#32;<span>predicate&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="284">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.findKey&#32;<span>predicate&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to test the input elements.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'Key</code>
+                  </span>
+                  The first key for which the predicate evaluates true.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.FindKey``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.FindKey``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1209-1209" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Evaluates the function on each mapping in the collection. Returns the key for the first mapping
+ where the function returns 'true'. Raise <code>KeyNotFoundException</code> if no such element exists.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to test the input elements.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'Key</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The first key for which the predicate evaluates true.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception">
+                    KeyNotFoundException
+                  </a>
+                </td>
+                <td>
+                  Thrown if the key does not exist in the map.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="findkey-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.findKey (fun n s -&gt; n = s.Length) // evaluates to 1
+ sample |&gt; Map.findKey (fun n s -&gt; n &lt; s.Length) // throws KeyNotFoundException</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '285', 285)" onmouseover="showTip(event, '285', 285)">
+                <p>
+                  <a id="fold">
+                    <a href="#fold">
+                      <code><span>Map.fold&#32;<span>folder&#32;state&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="285">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.fold&#32;<span>folder&#32;state&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        folder
+                      </b>
+                      :
+                      <code><span>'State&#32;->&#32;'Key&#32;->&#32;'T&#32;->&#32;'State</span></code>
+                       - 
+                      The function to update the state given the input key/value pairs.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        state
+                      </b>
+                      :
+                      <code>'State</code>
+                       - 
+                      The initial state.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'State</code>
+                  </span>
+                  The final state value.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Fold``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Fold``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1197-1197" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Folds over the bindings in the map 
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  folder
+                </span>
+                :
+                <code><span>'State&#32;->&#32;'Key&#32;->&#32;'T&#32;->&#32;'State</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to update the state given the input key/value pairs.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  state
+                </span>
+                :
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The initial state.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The final state value.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="fold-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ (&quot;initial&quot;, sample) ||&gt; Map.fold (fun state n s -&gt; sprintf &quot;%s %i %s&quot; state n s)</code></pre>
+ Evaluates to <code>&quot;initial 1 a 2 b&quot;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '286', 286)" onmouseover="showTip(event, '286', 286)">
+                <p>
+                  <a id="foldBack">
+                    <a href="#foldBack">
+                      <code><span>Map.foldBack&#32;<span>folder&#32;table&#32;state</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="286">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.foldBack&#32;<span>folder&#32;table&#32;state</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        folder
+                      </b>
+                      :
+                      <code><span>'Key&#32;->&#32;'T&#32;->&#32;'State&#32;->&#32;'State</span></code>
+                       - 
+                      The function to update the state given the input key/value pairs.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        state
+                      </b>
+                      :
+                      <code>'State</code>
+                       - 
+                      The initial state.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'State</code>
+                  </span>
+                  The final state value.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.FoldBack``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.FoldBack``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1201-1201" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Folds over the bindings in the map.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  folder
+                </span>
+                :
+                <code><span>'Key&#32;->&#32;'T&#32;->&#32;'State&#32;->&#32;'State</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to update the state given the input key/value pairs.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  state
+                </span>
+                :
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The initial state.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The final state value.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="foldback-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ (sample, &quot;initial&quot;) ||&gt; Map.foldBack (fun n s state -&gt; sprintf &quot;%i %s %s&quot; n s state)</code></pre>
+ Evaluates to <code>&quot;1 a 2 b initial&quot;</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '287', 287)" onmouseover="showTip(event, '287', 287)">
+                <p>
+                  <a id="forall">
+                    <a href="#forall">
+                      <code><span>Map.forall&#32;<span>predicate&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="287">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.forall&#32;<span>predicate&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to test the input elements.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if the predicate evaluates to true for all of the bindings in the map.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.ForAll``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.ForAll``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1189-1189" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns true if the given predicate returns true for all of the
+ bindings in the map.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to test the input elements.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if the predicate evaluates to true for all of the bindings in the map.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="forall-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.forall (fun n s -&gt; n &gt;= s.Length) // evaluates to true
+ sample |&gt; Map.forall (fun n s -&gt; n = s.Length)  // evaluates to false</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '288', 288)" onmouseover="showTip(event, '288', 288)">
+                <p>
+                  <a id="isEmpty">
+                    <a href="#isEmpty">
+                      <code><span>Map.isEmpty&#32;<span>table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="288">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.isEmpty&#32;<span>table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if the map is empty.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.IsEmpty``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.IsEmpty``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1135-1135" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Is the map empty?
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if the map is empty.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="isempty-1">
+              <pre><code class="fsharp language-fsharp">
+ let emptyMap = Map.empty&lt;int, string&gt;
+ emptyMap |&gt; Map.isEmpty  // evaluates to true
+
+ let notEmptyMap = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+ emptyMap |&gt; Map.isEmpty // evaluates to false</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '289', 289)" onmouseover="showTip(event, '289', 289)">
+                <p>
+                  <a id="iter">
+                    <a href="#iter">
+                      <code><span>Map.iter&#32;<span>action&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="289">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.iter&#32;<span>action&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        action
+                      </b>
+                      :
+                      <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                       - 
+                      The function to apply to each key/value pair.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Iterate``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Iterate``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1163-1163" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Applies the given function to each binding in the dictionary
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  action
+                </span>
+                :
+                <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to apply to each key/value pair.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="iter-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.iter (fun n s -&gt; printf &quot;%i %s &quot; n s)</code></pre>
+ Prints <code>&quot;1 a 2 b &quot;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '290', 290)" onmouseover="showTip(event, '290', 290)">
+                <p>
+                  <a id="keys">
+                    <a href="#keys">
+                      <code><span>Map.keys&#32;<span>table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="290">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.keys&#32;<span>table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;'Key&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Keys``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Keys``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1259-1259" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                The keys in the map.
+ The sequence will be ordered by the keys of the map.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;'Key&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="keys-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.keys // evaluates to seq [1; 2]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '291', 291)" onmouseover="showTip(event, '291', 291)">
+                <p>
+                  <a id="map">
+                    <a href="#map">
+                      <code><span>Map.map&#32;<span>mapping&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="291">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.map&#32;<span>mapping&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'Key&#32;->&#32;'T&#32;->&#32;'U</span></code>
+                       - 
+                      The function to transform the key/value pairs.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'U</span>&gt;</span></code>
+                  </span>
+                  The resulting map of keys and transformed values.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Map``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Map``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1193-1193" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Builds a new collection whose elements are the results of applying the given function
+ to each of the elements of the collection. The key passed to the
+ function indicates the key of element being transformed.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span>'Key&#32;->&#32;'T&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to transform the key/value pairs.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'U</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The resulting map of keys and transformed values.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="map-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.map (fun n s -&gt; sprintf &quot;%i %s&quot; n s) // evaluates to map [(1, &quot;1 a&quot;); (2, &quot;2 b&quot;)]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '292', 292)" onmouseover="showTip(event, '292', 292)">
+                <p>
+                  <a id="maxKeyValue">
+                    <a href="#maxKeyValue">
+                      <code><span>Map.maxKeyValue&#32;<span>table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="292">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.maxKeyValue&#32;<span>table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'Key&#32;*&#32;'T</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.MaxKeyValue``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.MaxKeyValue``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1271-1271" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns binding for the largest key in the map.
+ Raise <code>KeyNotFoundException</code> when map is empty.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'Key&#32;*&#32;'T</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception">
+                    KeyNotFoundException
+                  </a>
+                </td>
+                <td>
+                  Thrown if the map is empty.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="maxkeyvalue-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.maxKeyValue // evaluates to (2, &quot;b&quot;)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '293', 293)" onmouseover="showTip(event, '293', 293)">
+                <p>
+                  <a id="minKeyValue">
+                    <a href="#minKeyValue">
+                      <code><span>Map.minKeyValue&#32;<span>table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="293">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.minKeyValue&#32;<span>table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'Key&#32;*&#32;'T</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.MinKeyValue``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.MinKeyValue``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1267-1267" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns binding for the smallest key in the map.
+ Raise <code>KeyNotFoundException</code> when map is empty.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'Key&#32;*&#32;'T</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception">
+                    KeyNotFoundException
+                  </a>
+                </td>
+                <td>
+                  Thrown if the map is empty.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="minkeyvalue-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.minKeyValue // evaluates to (1, &quot;a&quot;)</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '294', 294)" onmouseover="showTip(event, '294', 294)">
+                <p>
+                  <a id="ofArray">
+                    <a href="#ofArray">
+                      <code><span>Map.ofArray&#32;<span>elements</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="294">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.ofArray&#32;<span>elements</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        elements
+                      </b>
+                      :
+                      <code><span><span>(<span>'Key&#32;*&#32;'T</span>)</span>[]</span></code>
+                       - 
+                      The input array of key/value pairs.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                  </span>
+                  The resulting map.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.OfArray``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.OfArray``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1239-1239" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new map made from the given bindings.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  elements
+                </span>
+                :
+                <code><span><span>(<span>'Key&#32;*&#32;'T</span>)</span>[]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array of key/value pairs.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The resulting map.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="ofarray-1">
+              <pre><code class="fsharp language-fsharp">
+ let input = [| (1, &quot;a&quot;); (2, &quot;b&quot;) |]
+
+ input |&gt; Map.ofArray // evaluates to map [(1, &quot;a&quot;); (2, &quot;b&quot;)]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '295', 295)" onmouseover="showTip(event, '295', 295)">
+                <p>
+                  <a id="ofList">
+                    <a href="#ofList">
+                      <code><span>Map.ofList&#32;<span>elements</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="295">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.ofList&#32;<span>elements</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        elements
+                      </b>
+                      :
+                      <code><span><span>(<span>'Key&#32;*&#32;'T</span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></code>
+                       - 
+                      The input list of key/value pairs.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                  </span>
+                  The resulting map.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.OfList``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.OfList``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1231-1231" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new map made from the given bindings.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  elements
+                </span>
+                :
+                <code><span><span>(<span>'Key&#32;*&#32;'T</span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input list of key/value pairs.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The resulting map.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="oflist-1">
+              <pre><code class="fsharp language-fsharp">
+ let input = [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ input |&gt; Map.ofList // evaluates to map [(1, &quot;a&quot;); (2, &quot;b&quot;)]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '296', 296)" onmouseover="showTip(event, '296', 296)">
+                <p>
+                  <a id="ofSeq">
+                    <a href="#ofSeq">
+                      <code><span>Map.ofSeq&#32;<span>elements</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="296">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.ofSeq&#32;<span>elements</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        elements
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span>'Key&#32;*&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input sequence of key/value pairs.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                  </span>
+                  The resulting map.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.OfSeq``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.OfSeq``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1235-1235" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new map made from the given bindings.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  elements
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span>'Key&#32;*&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input sequence of key/value pairs.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The resulting map.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="ofseq-1">
+              <pre><code class="fsharp language-fsharp">
+ let input = seq { (1, &quot;a&quot;); (2, &quot;b&quot;) }
+
+ input |&gt; Map.ofSeq // evaluates to map [(1, &quot;a&quot;); (2, &quot;b&quot;)]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '297', 297)" onmouseover="showTip(event, '297', 297)">
+                <p>
+                  <a id="partition">
+                    <a href="#partition">
+                      <code><span>Map.partition&#32;<span>predicate&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="297">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.partition&#32;<span>predicate&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to test the input elements.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></span></code>
+                  </span>
+                  A pair of maps in which the first contains the elements for which the predicate returned true
+ and the second containing the elements for which the predicated returned false.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Partition``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Partition``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1185-1185" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Builds two new maps, one containing the bindings for which the given predicate returns 'true',
+ and the other the remaining bindings.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to test the input elements.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A pair of maps in which the first contains the elements for which the predicate returned true
+ and the second containing the elements for which the predicated returned false.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="partition-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.partition (fun n s -&gt; n = s.Length) // evaluates to (map [(1, &quot;a&quot;)], map [(2, &quot;b&quot;)])</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '298', 298)" onmouseover="showTip(event, '298', 298)">
+                <p>
+                  <a id="pick">
+                    <a href="#pick">
+                      <code><span>Map.pick&#32;<span>chooser&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="298">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.pick&#32;<span>chooser&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        chooser
+                      </b>
+                      :
+                      <code><span>'Key&#32;->&#32;'T&#32;->&#32;<span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                       - 
+                      The function to generate options from the key/value pairs.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'U</code>
+                  </span>
+                  The first result.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Pick``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Pick``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1171-1171" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Searches the map looking for the first element where the given function returns a <code>Some</code> value.
+ Raise <code>KeyNotFoundException</code> if no such element exists.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  chooser
+                </span>
+                :
+                <code><span>'Key&#32;->&#32;'T&#32;->&#32;<span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to generate options from the key/value pairs.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'U</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The first result.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception">
+                    KeyNotFoundException
+                  </a>
+                </td>
+                <td>
+                  Thrown if no element returns a <code>Some</code>
+ value when evaluated by the chooser function
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="pick-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;); (10, &quot;ccc&quot;); (20, &quot;ddd&quot;) ]
+
+ sample |&gt; Map.pick (fun n s -&gt; if n &gt; 5 &amp;&amp; s.Length &gt; 2 then Some s else None)</code></pre>
+ Evaluates to <code>&quot;ccc&quot;</code>
+            </p>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="pick-2">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;); (10, &quot;ccc&quot;); (20, &quot;ddd&quot;) ]
+
+ sample |&gt; Map.pick (fun n s -&gt; if n &gt; 5 &amp;&amp; s.Length &gt; 4 then Some s else None)</code></pre>
+ Raises <code>KeyNotFoundException</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '299', 299)" onmouseover="showTip(event, '299', 299)">
+                <p>
+                  <a id="remove">
+                    <a href="#remove">
+                      <code><span>Map.remove&#32;<span>key&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="299">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.remove&#32;<span>key&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        key
+                      </b>
+                      :
+                      <code>'Key</code>
+                       - 
+                      The input key.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                  </span>
+                  The resulting map.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Remove``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Remove``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1155-1155" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Removes an element from the domain of the map. No exception is raised if the element is not present.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  key
+                </span>
+                :
+                <code>'Key</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input key.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The resulting map.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="remove-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.remove 1 // evaluates to map [(2, &quot;b&quot;)]
+ sample |&gt; Map.remove 3 // equal to sample</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '300', 300)" onmouseover="showTip(event, '300', 300)">
+                <p>
+                  <a id="toArray">
+                    <a href="#toArray">
+                      <code><span>Map.toArray&#32;<span>table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="300">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.toArray&#32;<span>table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span>(<span>'Key&#32;*&#32;'T</span>)</span>[]</span></code>
+                  </span>
+                  The array of key/value pairs.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.ToArray``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.ToArray``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1248-1248" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns an array of all key-value pairs in the mapping.
+ The array will be ordered by the keys of the map.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span>(<span>'Key&#32;*&#32;'T</span>)</span>[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The array of key/value pairs.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="toarray-1">
+              <pre><code class="fsharp language-fsharp">
+ let input = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ input |&gt; Map.toArray // evaluates to [|(1, &quot;a&quot;); (2, &quot;b&quot;)|]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '301', 301)" onmouseover="showTip(event, '301', 301)">
+                <p>
+                  <a id="toList">
+                    <a href="#toList">
+                      <code><span>Map.toList&#32;<span>table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="301">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.toList&#32;<span>table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span>(<span>'Key&#32;*&#32;'T</span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></code>
+                  </span>
+                  The list of key/value pairs.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.ToList``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.ToList``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1244-1244" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a list of all key-value pairs in the mapping.
+ The list will be ordered by the keys of the map.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span>(<span>'Key&#32;*&#32;'T</span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The list of key/value pairs.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="tolist-1">
+              <pre><code class="fsharp language-fsharp">
+ let input = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ input |&gt; Map.toList // evaluates to [(1, &quot;a&quot;); (2, &quot;b&quot;)]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '302', 302)" onmouseover="showTip(event, '302', 302)">
+                <p>
+                  <a id="toSeq">
+                    <a href="#toSeq">
+                      <code><span>Map.toSeq&#32;<span>table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="302">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.toSeq&#32;<span>table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span>'Key&#32;*&#32;'T</span>&gt;</span></code>
+                  </span>
+                  The sequence of key/value pairs.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.ToSeq``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.ToSeq``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1205-1205" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Views the collection as an enumerable sequence of pairs.
+ The sequence will be ordered by the keys of the map.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span>'Key&#32;*&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The sequence of key/value pairs.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="toseq-1">
+              <pre><code class="fsharp language-fsharp">
+ let input = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ input |&gt; Map.toSeq // evaluates to seq [(1, &quot;a&quot;); (2, &quot;b&quot;)]</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '303', 303)" onmouseover="showTip(event, '303', 303)">
+                <p>
+                  <a id="tryFind">
+                    <a href="#tryFind">
+                      <code><span>Map.tryFind&#32;<span>key&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="303">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.tryFind&#32;<span>key&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        key
+                      </b>
+                      :
+                      <code>'Key</code>
+                       - 
+                      The input key.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  The found <code>Some</code> value or <code>None</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.TryFind``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.TryFind``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1151-1151" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Lookup an element in the map, returning a <code>Some</code> value if the element is in the domain
+ of the map and <code>None</code> if not.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  key
+                </span>
+                :
+                <code>'Key</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input key.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The found <code>Some</code> value or <code>None</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="tryfind-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.tryFind 1 // evaluates to Some &quot;a&quot;
+ sample |&gt; Map.tryFind 3 // evaluates to None</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '304', 304)" onmouseover="showTip(event, '304', 304)">
+                <p>
+                  <a id="tryFindKey">
+                    <a href="#tryFindKey">
+                      <code><span>Map.tryFindKey&#32;<span>predicate&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="304">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.tryFindKey&#32;<span>predicate&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to test the input elements.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'Key&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  The first key for which the predicate returns true or None if the predicate evaluates to false for each key/value pair.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.TryFindKey``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.TryFindKey``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1220-1220" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns the key of the first mapping in the collection that satisfies the given predicate.
+ Returns 'None' if no such element exists.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'Key&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to test the input elements.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'Key&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The first key for which the predicate returns true or None if the predicate evaluates to false for each key/value pair.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="tryfindkey-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.tryFindKey (fun n s -&gt; n = s.Length) // evaluates to Some 1
+ sample |&gt; Map.tryFindKey (fun n s -&gt; n &lt; s.Length) // evaluates to None</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '305', 305)" onmouseover="showTip(event, '305', 305)">
+                <p>
+                  <a id="tryPick">
+                    <a href="#tryPick">
+                      <code><span>Map.tryPick&#32;<span>chooser&#32;table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="305">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.tryPick&#32;<span>chooser&#32;table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        chooser
+                      </b>
+                      :
+                      <code><span>'Key&#32;->&#32;'T&#32;->&#32;<span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                       - 
+                      The function to generate options from the key/value pairs.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input map.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  The first result.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.TryPick``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.TryPick``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1167-1167" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Searches the map looking for the first element where the given function returns a <code>Some</code> value.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  chooser
+                </span>
+                :
+                <code><span>'Key&#32;->&#32;'T&#32;->&#32;<span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to generate options from the key/value pairs.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input map.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The first result.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="trypick-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;); (10, &quot;ccc&quot;); (20, &quot;ddd&quot;) ]
+
+ sample |&gt; Map.tryPick (fun n s -&gt; if n &gt; 5 &amp;&amp; s.Length &gt; 2 then Some s else None)</code></pre>
+ Evaluates to <code>Some &quot;ccc&quot;</code>.
+ 
+            </p>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="trypick-2">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;); (10, &quot;ccc&quot;); (20, &quot;ddd&quot;) ]
+
+ sample |&gt; Map.tryPick (fun n s -&gt; if n &gt; 5 &amp;&amp; s.Length &gt; 4 then Some s else None)</code></pre>
+ Evaluates to <code>None</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '306', 306)" onmouseover="showTip(event, '306', 306)">
+                <p>
+                  <a id="values">
+                    <a href="#values">
+                      <code><span>Map.values&#32;<span>table</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="306">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Map.values&#32;<span>table</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        table
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.MapModule.Values``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.MapModule.Values``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/map.fs#L1263-1263" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                The values in the map, including the duplicates.
+ The sequence will be ordered by the keys of the map.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  table
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">Map</a>&lt;<span>'Key,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="values-1">
+              <pre><code class="fsharp language-fsharp">
+ let sample = Map [ (1, &quot;a&quot;); (2, &quot;b&quot;) ]
+
+ sample |&gt; Map.values // evaluates to seq [&quot;a&quot;; &quot;b&quot;]</code></pre>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,2841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HashCompare (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    HashCompare Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+        FSharp.Core
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+    <dt>
+      Parent Module: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-languageprimitives.html">
+        LanguagePrimitives
+      </a>
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        The F# compiler emits calls to some of the functions in this module as part of the compiled form of some language constructs
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '593', 593)" onmouseover="showTip(event, '593', 593)">
+                <p>
+                  <a id="FastCompareTuple2">
+                    <a href="#FastCompareTuple2">
+                      <code><span>FastCompareTuple2&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="593">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastCompareTuple2&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple1
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple2
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T1, &#39;T2
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastCompareTuple2``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastCompareTuple2``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1957-1957" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple1
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple2
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '594', 594)" onmouseover="showTip(event, '594', 594)">
+                <p>
+                  <a id="FastCompareTuple3">
+                    <a href="#FastCompareTuple3">
+                      <code><span>FastCompareTuple3&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="594">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastCompareTuple3&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple1
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple2
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T1, &#39;T2, &#39;T3
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastCompareTuple3``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastCompareTuple3``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1969-1969" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple1
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple2
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '595', 595)" onmouseover="showTip(event, '595', 595)">
+                <p>
+                  <a id="FastCompareTuple4">
+                    <a href="#FastCompareTuple4">
+                      <code><span>FastCompareTuple4&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="595">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastCompareTuple4&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple1
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple2
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T1, &#39;T2, &#39;T3, &#39;T4
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastCompareTuple4``4```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastCompareTuple4``4\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1983-1983" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple1
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple2
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '596', 596)" onmouseover="showTip(event, '596', 596)">
+                <p>
+                  <a id="FastCompareTuple5">
+                    <a href="#FastCompareTuple5">
+                      <code><span>FastCompareTuple5&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="596">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastCompareTuple5&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple1
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4&#32;*&#32;'T5</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple2
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4&#32;*&#32;'T5</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T1, &#39;T2, &#39;T3, &#39;T4, &#39;T5
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastCompareTuple5``5```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastCompareTuple5``5\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1999-1999" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple1
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4&#32;*&#32;'T5</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple2
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4&#32;*&#32;'T5</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '597', 597)" onmouseover="showTip(event, '597', 597)">
+                <p>
+                  <a id="FastEqualsTuple2">
+                    <a href="#FastEqualsTuple2">
+                      <code><span>FastEqualsTuple2&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="597">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastEqualsTuple2&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple1
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple2
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T1, &#39;T2
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastEqualsTuple2``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastEqualsTuple2``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1907-1907" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple1
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple2
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '598', 598)" onmouseover="showTip(event, '598', 598)">
+                <p>
+                  <a id="FastEqualsTuple3">
+                    <a href="#FastEqualsTuple3">
+                      <code><span>FastEqualsTuple3&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="598">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastEqualsTuple3&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple1
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple2
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T1, &#39;T2, &#39;T3
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastEqualsTuple3``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastEqualsTuple3``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1918-1918" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple1
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple2
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '599', 599)" onmouseover="showTip(event, '599', 599)">
+                <p>
+                  <a id="FastEqualsTuple4">
+                    <a href="#FastEqualsTuple4">
+                      <code><span>FastEqualsTuple4&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="599">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastEqualsTuple4&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple1
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple2
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T1, &#39;T2, &#39;T3, &#39;T4
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastEqualsTuple4``4```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastEqualsTuple4``4\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1930-1930" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple1
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple2
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '600', 600)" onmouseover="showTip(event, '600', 600)">
+                <p>
+                  <a id="FastEqualsTuple5">
+                    <a href="#FastEqualsTuple5">
+                      <code><span>FastEqualsTuple5&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="600">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastEqualsTuple5&#32;<span>comparer&#32;tuple1&#32;tuple2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple1
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4&#32;*&#32;'T5</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple2
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4&#32;*&#32;'T5</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T1, &#39;T2, &#39;T3, &#39;T4, &#39;T5
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastEqualsTuple5``5```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastEqualsTuple5``5\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1943-1943" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple1
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4&#32;*&#32;'T5</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple2
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4&#32;*&#32;'T5</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '601', 601)" onmouseover="showTip(event, '601', 601)">
+                <p>
+                  <a id="FastHashTuple2">
+                    <a href="#FastHashTuple2">
+                      <code><span>FastHashTuple2&#32;<span>comparer&#32;tuple</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="601">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastHashTuple2&#32;<span>comparer&#32;tuple</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T1, &#39;T2
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastHashTuple2``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastHashTuple2``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1847-1847" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '602', 602)" onmouseover="showTip(event, '602', 602)">
+                <p>
+                  <a id="FastHashTuple3">
+                    <a href="#FastHashTuple3">
+                      <code><span>FastHashTuple3&#32;<span>comparer&#32;tuple</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="602">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastHashTuple3&#32;<span>comparer&#32;tuple</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T1, &#39;T2, &#39;T3
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastHashTuple3``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastHashTuple3``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1859-1859" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '603', 603)" onmouseover="showTip(event, '603', 603)">
+                <p>
+                  <a id="FastHashTuple4">
+                    <a href="#FastHashTuple4">
+                      <code><span>FastHashTuple4&#32;<span>comparer&#32;tuple</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="603">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastHashTuple4&#32;<span>comparer&#32;tuple</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T1, &#39;T2, &#39;T3, &#39;T4
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastHashTuple4``4```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastHashTuple4``4\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1873-1873" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '604', 604)" onmouseover="showTip(event, '604', 604)">
+                <p>
+                  <a id="FastHashTuple5">
+                    <a href="#FastHashTuple5">
+                      <code><span>FastHashTuple5&#32;<span>comparer&#32;tuple</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="604">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastHashTuple5&#32;<span>comparer&#32;tuple</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tuple
+                      </b>
+                      :
+                      <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4&#32;*&#32;'T5</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T1, &#39;T2, &#39;T3, &#39;T4, &#39;T5
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastHashTuple5``5```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.FastHashTuple5``5\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1889-1889" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tuple
+                </span>
+                :
+                <code><span>'T1&#32;*&#32;'T2&#32;*&#32;'T3&#32;*&#32;'T4&#32;*&#32;'T5</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '605', 605)" onmouseover="showTip(event, '605', 605)">
+                <p>
+                  <a id="GenericComparisonIntrinsic">
+                    <a href="#GenericComparisonIntrinsic">
+                      <code><span>GenericComparisonIntrinsic&#32;<span>x&#32;y</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="605">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericComparisonIntrinsic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericComparisonIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericComparisonIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1103-1103" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '606', 606)" onmouseover="showTip(event, '606', 606)">
+                <p>
+                  <a id="GenericComparisonWithComparerIntrinsic">
+                    <a href="#GenericComparisonWithComparerIntrinsic">
+                      <code><span>GenericComparisonWithComparerIntrinsic&#32;<span>comp&#32;x&#32;y</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="606">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericComparisonWithComparerIntrinsic&#32;<span>comp&#32;x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comp
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericComparisonWithComparerIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericComparisonWithComparerIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1052-1052" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comp
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '607', 607)" onmouseover="showTip(event, '607', 607)">
+                <p>
+                  <a id="GenericEqualityERIntrinsic">
+                    <a href="#GenericEqualityERIntrinsic">
+                      <code><span>GenericEqualityERIntrinsic&#32;<span>x&#32;y</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="607">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericEqualityERIntrinsic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericEqualityERIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericEqualityERIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1505-1505" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '608', 608)" onmouseover="showTip(event, '608', 608)">
+                <p>
+                  <a id="GenericEqualityIntrinsic">
+                    <a href="#GenericEqualityIntrinsic">
+                      <code><span>GenericEqualityIntrinsic&#32;<span>x&#32;y</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="608">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericEqualityIntrinsic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericEqualityIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericEqualityIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1496-1496" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '609', 609)" onmouseover="showTip(event, '609', 609)">
+                <p>
+                  <a id="GenericEqualityWithComparerIntrinsic">
+                    <a href="#GenericEqualityWithComparerIntrinsic">
+                      <code><span>GenericEqualityWithComparerIntrinsic&#32;<span>comp&#32;x&#32;y</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="609">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericEqualityWithComparerIntrinsic&#32;<span>comp&#32;x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comp
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericEqualityWithComparerIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericEqualityWithComparerIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1513-1513" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comp
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '610', 610)" onmouseover="showTip(event, '610', 610)">
+                <p>
+                  <a id="GenericGreaterOrEqualIntrinsic">
+                    <a href="#GenericGreaterOrEqualIntrinsic">
+                      <code><span>GenericGreaterOrEqualIntrinsic&#32;<span>x&#32;y</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="610">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericGreaterOrEqualIntrinsic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericGreaterOrEqualIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericGreaterOrEqualIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1127-1127" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '611', 611)" onmouseover="showTip(event, '611', 611)">
+                <p>
+                  <a id="GenericGreaterThanIntrinsic">
+                    <a href="#GenericGreaterThanIntrinsic">
+                      <code><span>GenericGreaterThanIntrinsic&#32;<span>x&#32;y</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="611">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericGreaterThanIntrinsic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericGreaterThanIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericGreaterThanIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1118-1118" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '612', 612)" onmouseover="showTip(event, '612', 612)">
+                <p>
+                  <a id="GenericHashIntrinsic">
+                    <a href="#GenericHashIntrinsic">
+                      <code><span>GenericHashIntrinsic&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="612">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericHashIntrinsic&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericHashIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericHashIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1756-1756" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '613', 613)" onmouseover="showTip(event, '613', 613)">
+                <p>
+                  <a id="GenericHashWithComparerIntrinsic">
+                    <a href="#GenericHashWithComparerIntrinsic">
+                      <code><span>GenericHashWithComparerIntrinsic&#32;<span>comp&#32;input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="613">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericHashWithComparerIntrinsic&#32;<span>comp&#32;input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        comp
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericHashWithComparerIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericHashWithComparerIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1768-1768" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  comp
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '614', 614)" onmouseover="showTip(event, '614', 614)">
+                <p>
+                  <a id="GenericLessOrEqualIntrinsic">
+                    <a href="#GenericLessOrEqualIntrinsic">
+                      <code><span>GenericLessOrEqualIntrinsic&#32;<span>x&#32;y</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="614">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericLessOrEqualIntrinsic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericLessOrEqualIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericLessOrEqualIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1137-1137" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '615', 615)" onmouseover="showTip(event, '615', 615)">
+                <p>
+                  <a id="GenericLessThanIntrinsic">
+                    <a href="#GenericLessThanIntrinsic">
+                      <code><span>GenericLessThanIntrinsic&#32;<span>x&#32;y</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="615">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericLessThanIntrinsic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericLessThanIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.GenericLessThanIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1109-1109" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '616', 616)" onmouseover="showTip(event, '616', 616)">
+                <p>
+                  <a id="LimitedGenericHashIntrinsic">
+                    <a href="#LimitedGenericHashIntrinsic">
+                      <code><span>LimitedGenericHashIntrinsic&#32;<span>limit&#32;input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="616">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>LimitedGenericHashIntrinsic&#32;<span>limit&#32;input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        limit
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.LimitedGenericHashIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.LimitedGenericHashIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L1759-1759" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  limit
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '617', 617)" onmouseover="showTip(event, '617', 617)">
+                <p>
+                  <a id="PhysicalEqualityIntrinsic">
+                    <a href="#PhysicalEqualityIntrinsic">
+                      <code><span>PhysicalEqualityIntrinsic&#32;<span>x&#32;y</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="617">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>PhysicalEqualityIntrinsic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.PhysicalEqualityIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.PhysicalEqualityIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L832-832" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '618', 618)" onmouseover="showTip(event, '618', 618)">
+                <p>
+                  <a id="PhysicalHashIntrinsic">
+                    <a href="#PhysicalHashIntrinsic">
+                      <code><span>PhysicalHashIntrinsic&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="618">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>PhysicalHashIntrinsic&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.PhysicalHashIntrinsic``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.LanguagePrimitives.HashCompare.PhysicalHashIntrinsic``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L838-838" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A primitive entry point used by the F# compiler for optimization purposes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

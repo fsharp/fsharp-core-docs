@@ -1,0 +1,3778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Set (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Set Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+        FSharp.Collections
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        Contains operations for working with values of type <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>.
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '412', 412)" onmouseover="showTip(event, '412', 412)">
+                <p>
+                  <a id="add">
+                    <a href="#add">
+                      <code><span>Set.add&#32;<span>value&#32;set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="412">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.add&#32;<span>value&#32;set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The value to add.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  A new set containing <code>value</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Add``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Add``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1018-1018" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new set with an element added to the set. No exception is raised if
+ the set already contains the given element.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The value to add.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A new set containing <code>value</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-add">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(1).Add(2)
+ printfn $&quot;The new set is: {set}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The new set is: set [1; 2]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '413', 413)" onmouseover="showTip(event, '413', 413)">
+                <p>
+                  <a id="contains">
+                    <a href="#contains">
+                      <code><span>Set.contains&#32;<span>element&#32;set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="413">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.contains&#32;<span>element&#32;set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        element
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The element to test.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if <code>element</code> is in <code>set</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Contains``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Contains``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1014-1014" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Evaluates to "true" if the given element is in the given set.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  element
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The element to test.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if <code>element</code> is in <code>set</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-contains">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(2).Add(3)
+ printfn $&quot;Does the set contain 1? {set.Contains(1))}&quot;</code></pre>
+ The sample evaluates to the following output: <code>Does the set contain 1? false</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '414', 414)" onmouseover="showTip(event, '414', 414)">
+                <p>
+                  <a id="count">
+                    <a href="#count">
+                      <code><span>Set.count&#32;<span>set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="414">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.count&#32;<span>set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  The number of elements in the set.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Count``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Count``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1081-1081" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns the number of elements in the set. Same as <code>size</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The number of elements in the set.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-count">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ printfn $&quot;The set has {set.Count} elements&quot;</code></pre>
+ The sample evaluates to the following output: <code>The set has 3 elements</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '415', 415)" onmouseover="showTip(event, '415', 415)">
+                <p>
+                  <a id="difference">
+                    <a href="#difference">
+                      <code><span>Set.difference&#32;<span>set1&#32;set2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="415">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.difference&#32;<span>set1&#32;set2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set1
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The first input set.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set2
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The set whose elements will be removed from <code>set1</code>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  The set with the elements of <code>set2</code> removed from <code>set1</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Difference``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Difference``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1109-1109" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new set with the elements of the second set removed from the first.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set1
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The first input set.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set2
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The set whose elements will be removed from <code>set1</code>.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The set with the elements of <code>set2</code> removed from <code>set1</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-difference">
+              <pre><code class="fsharp language-fsharp">
+ let set1 = Set.empty.Add(1).Add(2).Add(3)
+ let set2 = Set.empty.Add(2).Add(3).Add(4)
+ printfn $&quot;The difference of {set1} and {set2} is {Set.difference set1 set2}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The difference of set [1; 2; 3] and set [2; 3; 4] is set [1]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '416', 416)" onmouseover="showTip(event, '416', 416)">
+                <p>
+                  <a id="empty">
+                    <a href="#empty">
+                      <code><span>Set.empty&#32;<span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="416">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.empty&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Empty``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Empty``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1050-1050" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                The empty set for the type 'T.
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="empty-1">
+              <pre><code class="fsharp language-fsharp">
+ Set.empty&lt;int&gt;</code></pre>
+ Evaluates to <code>set [ ]</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '417', 417)" onmouseover="showTip(event, '417', 417)">
+                <p>
+                  <a id="exists">
+                    <a href="#exists">
+                      <code><span>Set.exists&#32;<span>predicate&#32;set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="417">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.exists&#32;<span>predicate&#32;set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to test set elements.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if any element of <code>set</code> satisfies <code>predicate</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Exists``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Exists``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1057-1057" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Tests if any element of the collection satisfies the given predicate.
+ If the input function is <code>predicate</code> and the elements are <code>i0...iN</code>
+ then computes <code>p i0 or ... or p iN</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to test set elements.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if any element of <code>set</code> satisfies <code>predicate</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-exists">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ printfn $&quot;Does the set contain 1? {Set.exists (fun x -&gt; x = 1) set}&quot;</code></pre>
+ The sample evaluates to the following output: <code>Does the set contain 1? true</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '418', 418)" onmouseover="showTip(event, '418', 418)">
+                <p>
+                  <a id="filter">
+                    <a href="#filter">
+                      <code><span>Set.filter&#32;<span>predicate&#32;set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="418">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.filter&#32;<span>predicate&#32;set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to test set elements.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  The set containing only the elements for which <code>predicate</code> returns true.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Filter``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Filter``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1061-1061" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new collection containing only the elements of the collection
+ for which the given predicate returns True.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to test set elements.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The set containing only the elements for which <code>predicate</code> returns true.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-filter">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3).Add(4)
+ printfn $&quot;The set with even numbers is {Set.filter (fun x -&gt; x % 2 = 0) set}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The set with even numbers is set [2; 4]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '419', 419)" onmouseover="showTip(event, '419', 419)">
+                <p>
+                  <a id="fold">
+                    <a href="#fold">
+                      <code><span>Set.fold&#32;<span>folder&#32;state&#32;set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="419">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.fold&#32;<span>folder&#32;state&#32;set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        folder
+                      </b>
+                      :
+                      <code><span>'State&#32;->&#32;'T&#32;->&#32;'State</span></code>
+                       - 
+                      The accumulating function.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        state
+                      </b>
+                      :
+                      <code>'State</code>
+                       - 
+                      The initial state.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'State</code>
+                  </span>
+                  The final state.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Fold``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Fold``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1069-1069" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Applies the given accumulating function to all the elements of the set
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  folder
+                </span>
+                :
+                <code><span>'State&#32;->&#32;'T&#32;->&#32;'State</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The accumulating function.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  state
+                </span>
+                :
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The initial state.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The final state.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-fold">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ printfn $&quot;The sum of the set is {Set.fold (+) 0 set}&quot;
+ printfn $&quot;The product of the set is {Set.fold (*) 1 set}&quot;
+ printfn $&quot;The reverse of the set is {Set.fold (fun x y -&gt; y :: x) [] set}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The sum of the set is 6
+ The product of the set is 6
+ The reverse of the set is [3; 2; 1]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '420', 420)" onmouseover="showTip(event, '420', 420)">
+                <p>
+                  <a id="foldBack">
+                    <a href="#foldBack">
+                      <code><span>Set.foldBack&#32;<span>folder&#32;set&#32;state</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="420">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.foldBack&#32;<span>folder&#32;set&#32;state</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        folder
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'State&#32;->&#32;'State</span></code>
+                       - 
+                      The accumulating function.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        state
+                      </b>
+                      :
+                      <code>'State</code>
+                       - 
+                      The initial state.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'State</code>
+                  </span>
+                  The final state.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.FoldBack``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.FoldBack``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1073-1073" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Applies the given accumulating function to all the elements of the set.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  folder
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'State&#32;->&#32;'State</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The accumulating function.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  state
+                </span>
+                :
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The initial state.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'State</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The final state.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-foldback">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ printfn $&quot;The sum of the set is {Set.foldBack (+) set 0}&quot;
+ printfn $&quot;The set is {Set.foldBack (fun x acc -&gt; x :: acc) set []}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The sum of the set is 6
+ The set is [1; 2; 3]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '421', 421)" onmouseover="showTip(event, '421', 421)">
+                <p>
+                  <a id="forall">
+                    <a href="#forall">
+                      <code><span>Set.forall&#32;<span>predicate&#32;set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="421">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.forall&#32;<span>predicate&#32;set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to test set elements.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if all elements of <code>set</code> satisfy <code>predicate</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.ForAll``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.ForAll``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1053-1053" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Tests if all elements of the collection satisfy the given predicate.
+ If the input function is <code>f</code> and the elements are <code>i0...iN</code> and "j0...jN"
+ then computes <code>p i0 &amp;&amp; ... &amp;&amp; p iN</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to test set elements.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if all elements of <code>set</code> satisfy <code>predicate</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-forall">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ printfn $&quot;Does the set contain even numbers? {Set.forall (fun x -&gt; x % 2 = 0) set}&quot;</code></pre>
+ The sample evaluates to the following output: <code>Does the set contain even numbers? false</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '422', 422)" onmouseover="showTip(event, '422', 422)">
+                <p>
+                  <a id="intersect">
+                    <a href="#intersect">
+                      <code><span>Set.intersect&#32;<span>set1&#32;set2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="422">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.intersect&#32;<span>set1&#32;set2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set1
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The first input set.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set2
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The second input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  The intersection of <code>set1</code> and <code>set2</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Intersect``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Intersect``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1038-1038" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Computes the intersection of the two sets.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set1
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The first input set.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set2
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The second input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The intersection of <code>set1</code> and <code>set2</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-intersect">
+              <pre><code class="fsharp language-fsharp">
+ let set1 = Set.empty.Add(1).Add(2).Add(3)
+ let set2 = Set.empty.Add(2).Add(3).Add(4)
+ printfn $&quot;The intersection of {set1} and {set2} is {Set.intersect set1 set2}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The intersection of set [1; 2; 3] and set [2; 3; 4] is set [2; 3]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '423', 423)" onmouseover="showTip(event, '423', 423)">
+                <p>
+                  <a id="intersectMany">
+                    <a href="#intersectMany">
+                      <code><span>Set.intersectMany&#32;<span>sets</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="423">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.intersectMany&#32;<span>sets</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        sets
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span>&gt;</span></code>
+                       - 
+                      The sequence of sets to intersect.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  The intersection of the input sets.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.IntersectMany``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.IntersectMany``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1042-1042" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Computes the intersection of a sequence of sets. The sequence must be non-empty.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sets
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The sequence of sets to intersect.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The intersection of the input sets.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-intersectmany">
+              <pre><code class="fsharp language-fsharp">
+ let headersByFile = seq{
+ yield [ &quot;id&quot;; &quot;name&quot;; &quot;date&quot;; &quot;color&quot; ]
+ yield [ &quot;id&quot;; &quot;age&quot;; &quot;date&quot; ]
+ yield [ &quot;id&quot;; &quot;sex&quot;; &quot;date&quot;; &quot;animal&quot; ]
+ }
+ headersByFile
+ |&gt; Seq.map Set.ofList
+ |&gt; Set.intersectMany
+ |&gt; printfn &quot;The intersection of %A is %A&quot; headersByFile</code></pre>
+ The sample evaluates to the following output: <code>The intersection of seq
+ [[&quot;id&quot;; &quot;name&quot;; &quot;date&quot;; &quot;color&quot;]; [&quot;id&quot;; &quot;age&quot;; &quot;date&quot;];
+ [&quot;id&quot;; &quot;sex&quot;; &quot;date&quot;; &quot;animal&quot;]] is set [&quot;date&quot;; &quot;id&quot;]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '424', 424)" onmouseover="showTip(event, '424', 424)">
+                <p>
+                  <a id="isEmpty">
+                    <a href="#isEmpty">
+                      <code><span>Set.isEmpty&#32;<span>set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="424">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.isEmpty&#32;<span>set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if <code>set</code> is empty.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.IsEmpty``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.IsEmpty``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1010-1010" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns "true" if the set is empty.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if <code>set</code> is empty.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-isempty">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(2).Add(3)
+ printfn $&quot;Is the set empty? {set.IsEmpty}&quot;</code></pre>
+ The sample evaluates to the following output: <code>Is the set empty? false</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '425', 425)" onmouseover="showTip(event, '425', 425)">
+                <p>
+                  <a id="isProperSubset">
+                    <a href="#isProperSubset">
+                      <code><span>Set.isProperSubset&#32;<span>set1&#32;set2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="425">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.isProperSubset&#32;<span>set1&#32;set2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set1
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The potential subset.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set2
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The set to test against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if <code>set1</code> is a proper subset of <code>set2</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.IsProperSubset``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.IsProperSubset``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1121-1121" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Evaluates to "true" if all elements of the first set are in the second, and at least
+ one element of the second is not in the first.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set1
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The potential subset.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set2
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The set to test against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if <code>set1</code> is a proper subset of <code>set2</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-ispropersubset">
+              <pre><code class="fsharp language-fsharp">
+ let set1 = Set.empty.Add(1).Add(2).Add(3)
+ let set2 = Set.empty.Add(1).Add(2).Add(3).Add(4)
+ printfn $&quot;Is {set1} a proper subset of {set2}? {Set.isProperSubset set1 set2}&quot;</code></pre>
+ The sample evaluates to the following output: <code>Is set [1; 2; 3] a proper subset of set [1; 2; 3; 4]? true</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '426', 426)" onmouseover="showTip(event, '426', 426)">
+                <p>
+                  <a id="isProperSuperset">
+                    <a href="#isProperSuperset">
+                      <code><span>Set.isProperSuperset&#32;<span>set1&#32;set2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="426">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.isProperSuperset&#32;<span>set1&#32;set2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set1
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The potential superset.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set2
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The set to test against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if <code>set1</code> is a proper superset of <code>set2</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.IsProperSuperset``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.IsProperSuperset``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1125-1125" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Evaluates to "true" if all elements of the second set are in the first, and at least
+ one element of the first is not in the second.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set1
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The potential superset.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set2
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The set to test against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if <code>set1</code> is a proper superset of <code>set2</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-ispropersuperset">
+              <pre><code class="fsharp language-fsharp">
+ let set1 = Set.empty.Add(1).Add(2).Add(3)
+ let set2 = Set.empty.Add(1).Add(2).Add(3).Add(4)
+ printfn $&quot;Is {set1} a proper superset of {set2}? {Set.isProperSuperset set1 set2}&quot;</code></pre>
+ The sample evaluates to the following output: <code>Is set [1; 2; 3] a proper superset of set [1; 2; 3; 4]? false</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '427', 427)" onmouseover="showTip(event, '427', 427)">
+                <p>
+                  <a id="isSubset">
+                    <a href="#isSubset">
+                      <code><span>Set.isSubset&#32;<span>set1&#32;set2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="427">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.isSubset&#32;<span>set1&#32;set2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set1
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The potential subset.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set2
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The set to test against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if <code>set1</code> is a subset of <code>set2</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.IsSubset``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.IsSubset``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1113-1113" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Evaluates to "true" if all elements of the first set are in the second
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set1
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The potential subset.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set2
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The set to test against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if <code>set1</code> is a subset of <code>set2</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-issubset">
+              <pre><code class="fsharp language-fsharp">
+ let set1 = Set.empty.Add(1).Add(2).Add(3)
+ let set2 = Set.empty.Add(1).Add(2).Add(3).Add(4)
+ printfn $&quot;Is {set1} a subset of {set2}? {Set.isSubset set1 set2}&quot;</code></pre>
+ The sample evaluates to the following output: <code>Is set [1; 2; 3] a subset of set [1; 2; 3; 4]? true</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '428', 428)" onmouseover="showTip(event, '428', 428)">
+                <p>
+                  <a id="isSuperset">
+                    <a href="#isSuperset">
+                      <code><span>Set.isSuperset&#32;<span>set1&#32;set2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="428">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.isSuperset&#32;<span>set1&#32;set2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set1
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The potential superset.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set2
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The set to test against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if <code>set1</code> is a superset of <code>set2</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.IsSuperset``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.IsSuperset``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1117-1117" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Evaluates to "true" if all elements of the second set are in the first.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set1
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The potential superset.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set2
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The set to test against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if <code>set1</code> is a superset of <code>set2</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-issuperset">
+              <pre><code class="fsharp language-fsharp">
+ let set1 = Set.empty.Add(1).Add(2).Add(3)
+ let set2 = Set.empty.Add(1).Add(2).Add(3).Add(4)
+ printfn $&quot;Is {set1} a superset of {set2}? {Set.isSuperset set1 set2}&quot;</code></pre>
+ The sample evaluates to the following output: <code>Is set [1; 2; 3] a superset of set [1; 2; 3; 4]? false</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '429', 429)" onmouseover="showTip(event, '429', 429)">
+                <p>
+                  <a id="iter">
+                    <a href="#iter">
+                      <code><span>Set.iter&#32;<span>action&#32;set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="429">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.iter&#32;<span>action&#32;set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        action
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                       - 
+                      The function to apply to each element.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Iterate``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Iterate``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1046-1046" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Applies the given function to each element of the set, in order according
+ to the comparison function.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  action
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to apply to each element.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-iter">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ Set.iter (fun x -&gt; printfn $&quot;The set contains {x}&quot;) set</code></pre>
+ The sample evaluates to the following output: <code>
+ The set contains 1
+ The set contains 2
+ The set contains 3</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '430', 430)" onmouseover="showTip(event, '430', 430)">
+                <p>
+                  <a id="map">
+                    <a href="#map">
+                      <code><span>Set.map&#32;<span>mapping&#32;set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="430">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.map&#32;<span>mapping&#32;set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'U</span></code>
+                       - 
+                      The function to transform elements of the input set.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'U&gt;</span></code>
+                  </span>
+                  A set containing the transformed elements.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Map``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Map``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1077-1077" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new collection containing the results of applying the
+ given function to each element of the input set.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to transform elements of the input set.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'U&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A set containing the transformed elements.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-map">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ printfn $&quot;The set with doubled values is {Set.map (fun x -&gt; x * 2) set}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The set with doubled values is set [2; 4; 6]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '431', 431)" onmouseover="showTip(event, '431', 431)">
+                <p>
+                  <a id="maxElement">
+                    <a href="#maxElement">
+                      <code><span>Set.maxElement&#32;<span>set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="431">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.maxElement&#32;<span>set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The max value from the set.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.MaxElement``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.MaxElement``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1133-1133" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns the highest element in the set according to the ordering being used for the set.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The max value from the set.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-maxelement">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ printfn $&quot;The min element of {set} is {Set.minElement set}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The max element of set [1; 2; 3] is 3</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '432', 432)" onmouseover="showTip(event, '432', 432)">
+                <p>
+                  <a id="minElement">
+                    <a href="#minElement">
+                      <code><span>Set.minElement&#32;<span>set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="432">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.minElement&#32;<span>set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The min value from the set.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.MinElement``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.MinElement``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1129-1129" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns the lowest element in the set according to the ordering being used for the set.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The min value from the set.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-minelement">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ printfn $&quot;The min element of {set} is {Set.minElement set}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The min element of set [1; 2; 3] is 1</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '433', 433)" onmouseover="showTip(event, '433', 433)">
+                <p>
+                  <a id="ofArray">
+                    <a href="#ofArray">
+                      <code><span>Set.ofArray&#32;<span>array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="433">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.ofArray&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  A set containing the elements of <code>array</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.OfArray``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.OfArray``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1089-1089" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Builds a set that contains the same elements as the given array.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A set containing the elements of <code>array</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-remove">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.ofArray [|1, 2, 3|]
+ printfn $&quot;The set is {set} and type is {set.GetType().Name}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The set is set [(1, 2, 3)] and type is &quot;FSharpSet`1&quot;</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '434', 434)" onmouseover="showTip(event, '434', 434)">
+                <p>
+                  <a id="ofList">
+                    <a href="#ofList">
+                      <code><span>Set.ofList&#32;<span>elements</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="434">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.ofList&#32;<span>elements</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        elements
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></code>
+                       - 
+                      The input list.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  A set containing the elements form the input list.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.OfList``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.OfList``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1085-1085" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Builds a set that contains the same elements as the given list.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  elements
+                </span>
+                :
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input list.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A set containing the elements form the input list.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-oflist">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.ofList [1, 2, 3]
+ printfn $&quot;The set is {set} and type is {set.GetType().Name}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The set is set [(1, 2, 3)] and type is &quot;FSharpSet`1&quot;</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '435', 435)" onmouseover="showTip(event, '435', 435)">
+                <p>
+                  <a id="ofSeq">
+                    <a href="#ofSeq">
+                      <code><span>Set.ofSeq&#32;<span>elements</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="435">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.ofSeq&#32;<span>elements</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        elements
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input sequence.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  The set containing <code>elements</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.OfSeq``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.OfSeq``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1105-1105" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Builds a new collection from the given enumerable object.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  elements
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input sequence.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The set containing <code>elements</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-ofseq">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.ofSeq [1, 2, 3]
+ printfn $&quot;The set is {set} and type is {set.GetType().Name}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The set is set [(1, 2, 3)] and type is &quot;FSharpSet`1&quot;</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '436', 436)" onmouseover="showTip(event, '436', 436)">
+                <p>
+                  <a id="partition">
+                    <a href="#partition">
+                      <code><span>Set.partition&#32;<span>predicate&#32;set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="436">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.partition&#32;<span>predicate&#32;set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to test set elements.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></span></code>
+                  </span>
+                  A pair of sets with the first containing the elements for which <code>predicate</code> returns
+ true and the second containing the elements for which <code>predicate</code> returns false.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Partition``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Partition``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1065-1065" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Splits the set into two sets containing the elements for which the given predicate
+ returns true and false respectively.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to test set elements.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A pair of sets with the first containing the elements for which <code>predicate</code> returns
+ true and the second containing the elements for which <code>predicate</code> returns false.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-partition">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3).Add(4)
+ printfn $&quot;The set with even numbers is {Set.partition (fun x -&gt; x % 2 = 0) set}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The partitioned sets are: (set [2; 4], set [1; 3])</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '437', 437)" onmouseover="showTip(event, '437', 437)">
+                <p>
+                  <a id="remove">
+                    <a href="#remove">
+                      <code><span>Set.remove&#32;<span>value&#32;set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="437">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.remove&#32;<span>value&#32;set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The element to remove.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  The input set with <code>value</code> removed.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Remove``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Remove``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1026-1026" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new set with the given element removed. No exception is raised if
+ the set doesn't contain the given element.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The element to remove.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The input set with <code>value</code> removed.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-remove">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ printfn $&quot;The set without 1 is {Set.remove 1 set}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The set without 1 is set [2; 3]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '438', 438)" onmouseover="showTip(event, '438', 438)">
+                <p>
+                  <a id="singleton">
+                    <a href="#singleton">
+                      <code><span>Set.singleton&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="438">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.singleton&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The value for the set to contain.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  The set containing <code>value</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Singleton``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Singleton``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1022-1022" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                The set containing the given element.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The value for the set to contain.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The set containing <code>value</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="singleton-1">
+              <pre><code class="fsharp language-fsharp">
+ Set.singleton 7</code></pre>
+ Evaluates to <code>set [ 7 ]</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '439', 439)" onmouseover="showTip(event, '439', 439)">
+                <p>
+                  <a id="toArray">
+                    <a href="#toArray">
+                      <code><span>Set.toArray&#32;<span>set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="439">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.toArray&#32;<span>set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T[]</span></code>
+                  </span>
+                  An ordered array of the elements of <code>set</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.ToArray``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.ToArray``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1097-1097" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Builds an array that contains the elements of the set in order.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An ordered array of the elements of <code>set</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-toarray">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ let array = Set.toArray set
+ printfn$ &quot;The set is {set} and type is {array.GetType().Name}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The set is [|1; 2; 3|] and type is System.Int32[]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '440', 440)" onmouseover="showTip(event, '440', 440)">
+                <p>
+                  <a id="toList">
+                    <a href="#toList">
+                      <code><span>Set.toList&#32;<span>set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="440">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.toList&#32;<span>set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></code>
+                  </span>
+                  An ordered list of the elements of <code>set</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.ToList``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.ToList``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1093-1093" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Builds a list that contains the elements of the set in order.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An ordered list of the elements of <code>set</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-tolist">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ let list = Set.toList set
+ printfn $&quot;The set is {list} and type is {list.GetType().Name}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The set is [1; 2; 3] and type is &quot;FSharpList`1&quot;</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '441', 441)" onmouseover="showTip(event, '441', 441)">
+                <p>
+                  <a id="toSeq">
+                    <a href="#toSeq">
+                      <code><span>Set.toSeq&#32;<span>set</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="441">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.toSeq&#32;<span>set</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;'T&gt;</span></code>
+                  </span>
+                  An ordered sequence of the elements of <code>set</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.ToSeq``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.ToSeq``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1101-1101" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns an ordered view of the collection as an enumerable object.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An ordered sequence of the elements of <code>set</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-toseq">
+              <pre><code class="fsharp language-fsharp">
+ let set = Set.empty.Add(1).Add(2).Add(3)
+ let seq = Set.toSeq set
+ printfn $&quot;The set is {set} and type is {seq.GetType().Name}&quot;</code></pre>
+ The sample evaluates to the following output: <code>he set is set [1; 2; 3] and type is Microsoft.FSharp.Collections.FSharpSet`1[System.Int32]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '442', 442)" onmouseover="showTip(event, '442', 442)">
+                <p>
+                  <a id="union">
+                    <a href="#union">
+                      <code><span>Set.union&#32;<span>set1&#32;set2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="442">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.union&#32;<span>set1&#32;set2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        set1
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The first input set.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        set2
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                       - 
+                      The second input set.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  The union of <code>set1</code> and <code>set2</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.Union``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.Union``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1030-1030" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Computes the union of the two sets.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set1
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The first input set.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  set2
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The second input set.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The union of <code>set1</code> and <code>set2</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-union">
+              <pre><code class="fsharp language-fsharp">
+ let set1 = Set.empty.Add(1).Add(2).Add(3)
+ let set2 = Set.empty.Add(2).Add(3).Add(4)
+ printfn $&quot;The union of {set1} and {set2} is {(Set.union set1 set2)}&quot;</code></pre>
+ The sample evaluates to the following output: <code>The union of set [1; 2; 3] and set [2; 3; 4] is set [1; 2; 3; 4]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '443', 443)" onmouseover="showTip(event, '443', 443)">
+                <p>
+                  <a id="unionMany">
+                    <a href="#unionMany">
+                      <code><span>Set.unionMany&#32;<span>sets</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="443">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Set.unionMany&#32;<span>sets</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        sets
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span>&gt;</span></code>
+                       - 
+                      The sequence of sets to union.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  The union of the input sets.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.SetModule.UnionMany``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.SetModule.UnionMany``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/set.fs#L1034-1034" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Computes the union of a sequence of sets.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sets
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The sequence of sets to union.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The union of the input sets.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="set-unionmany">
+              <pre><code class="fsharp language-fsharp">
+ let headersByFile = seq{
+ yield [ &quot;id&quot;; &quot;name&quot;; &quot;date&quot;; &quot;color&quot; ]
+ yield [ &quot;id&quot;; &quot;age&quot;; &quot;date&quot; ]
+ yield [ &quot;id&quot;; &quot;sex&quot;; &quot;date&quot;; &quot;animal&quot; ]
+ }
+ headersByFile
+ |&gt; Seq.map Set.ofList
+ |&gt; Set.intersectMany
+ |&gt; printfn &quot;The intersection of %A is %A&quot; headersByFile</code></pre>
+ The sample evaluates to the following output: <code>The union of seq
+ [[&quot;id&quot;; &quot;name&quot;; &quot;date&quot;; &quot;color&quot;]; [&quot;id&quot;; &quot;age&quot;; &quot;date&quot;];
+ [&quot;id&quot;; &quot;sex&quot;; &quot;date&quot;; &quot;animal&quot;]] is set [&quot;age&quot;; &quot;animal&quot;; &quot;color&quot;; &quot;date&quot;; &quot;id&quot;; &quot;name&quot;; &quot;sex&quot;]</code>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

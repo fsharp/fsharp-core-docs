@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Parallel (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Array.Parallel Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+        FSharp.Collections
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+    <dt>
+      Parent Module: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html">
+        Array
+      </a>
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        Provides parallel operations on arrays 
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '116', 116)" onmouseover="showTip(event, '116', 116)">
+                <p>
+                  <a id="choose">
+                    <a href="#choose">
+                      <code><span>Array.Parallel.choose&#32;<span>chooser&#32;array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="116">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array.Parallel.choose&#32;<span>chooser&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        chooser
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                       - 
+                      The function to generate options from the elements.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'U[]</span></code>
+                  </span>
+                  The array of results.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.ArrayModule.Parallel.Choose``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.ArrayModule.Parallel.Choose``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array.fs#L1938-1938" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Apply the given function to each element of the array. Return
+ the array comprised of the results <code>x</code> for each element where
+ the function returns <code>Some(x)</code>.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Performs the operation in parallel using <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.parallel.for">Parallel.For</a>.
+ The order in which the given function is applied to elements of the input array is not specified.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  chooser
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to generate options from the elements.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'U[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The array of results.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">
+                    ArgumentNullException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input array is null.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="choose-1">
+              <pre><code class="fsharp language-fsharp">
+ let input = [| Some 1; None; Some 2 |]
+
+ input |&gt; Array.Parallel.choose id</code></pre>
+ Evaluates to <code>[| 1; 2 |]</code>
+            </p>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="choose-2">
+              <pre><code class="fsharp language-fsharp">
+ let input = [| 1; 2; 3 |]
+
+ input |&gt; Array.Parallel.choose (fun n -&gt; if n % 2 = 0 then Some n else None)</code></pre>
+ Evaluates to <code>[| 2 |]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '117', 117)" onmouseover="showTip(event, '117', 117)">
+                <p>
+                  <a id="collect">
+                    <a href="#collect">
+                      <code><span>Array.Parallel.collect&#32;<span>mapping&#32;array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="117">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array.Parallel.collect&#32;<span>mapping&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span>'U[]</span></span></code>
+                       - 
+                      
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'U[]</span></code>
+                  </span>
+                  'U[]
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.ArrayModule.Parallel.Collect``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.ArrayModule.Parallel.Collect``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array.fs#L1978-1978" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                For each element of the array, apply the given function. Concatenate all the results and return the combined array.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Performs the operation in parallel using <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.parallel.for">Parallel.For</a>.
+ The order in which the given function is applied to elements of the input array is not specified.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span>'U[]</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'U[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  'U[]
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">
+                    ArgumentNullException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input array is null.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="collect-1">
+              <pre><code class="fsharp language-fsharp">
+ type Foo = { Bar: int[] }
+
+ let input = [| {Bar = [| 1; 2 |]}; {Bar = [| 3; 4 |]} |]
+
+ input |&gt; Array.Parallel.collect (fun foo -&gt; foo.Bar)</code></pre>
+ Evaluates to <code>[| 1; 2; 3; 4 |]</code>
+            </p>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="collect-2">
+              <pre><code class="fsharp language-fsharp">
+ let input = [| [| 1; 2 |]; [| 3; 4 |] |]
+
+ input |&gt; Array.Parallel.collect id</code></pre>
+ Evaluates to <code>[| 1; 2; 3; 4 |]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '118', 118)" onmouseover="showTip(event, '118', 118)">
+                <p>
+                  <a id="init">
+                    <a href="#init">
+                      <code><span>Array.Parallel.init&#32;<span>count&#32;initializer</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="118">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array.Parallel.init&#32;<span>count&#32;initializer</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        count
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        initializer
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T</span></code>
+                       - 
+                      
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T[]</span></code>
+                  </span>
+                  The array of results.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.ArrayModule.Parallel.Initialize``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.ArrayModule.Parallel.Initialize``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array.fs#L2029-2029" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Create an array given the dimension and a generator function to compute the elements.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Performs the operation in parallel using <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.parallel.for">Parallel.For</a>.
+ The order in which the given function is applied to indices is not specified.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  count
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  initializer
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'T[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The array of results.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="init-1">
+              <pre><code class="fsharp language-fsharp">
+ Array.Parallel.init 4 (fun v -&gt; v + 5)</code></pre>
+ Evaluates to <code>[| 5; 6; 7; 8 |]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '119', 119)" onmouseover="showTip(event, '119', 119)">
+                <p>
+                  <a id="iter">
+                    <a href="#iter">
+                      <code><span>Array.Parallel.iter&#32;<span>action&#32;array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="119">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array.Parallel.iter&#32;<span>action&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        action
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                       - 
+                      
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.ArrayModule.Parallel.Iterate``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.ArrayModule.Parallel.Iterate``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array.fs#L2018-2018" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Apply the given function to each element of the array. 
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Performs the operation in parallel using <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.parallel.for">Parallel.For</a>.
+ The order in which the given function is applied to elements of the input array is not specified.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  action
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">
+                    ArgumentNullException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input array is null.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="iter-1">
+              <pre><code class="fsharp language-fsharp">
+ let inputs = [| &quot;a&quot;; &quot;b&quot;; &quot;c&quot; |]
+
+ inputs |&gt; Array.Parallel.iter (printfn &quot;%s&quot;)</code></pre>
+ Evaluates to <code>unit</code> and prints the following to the console in an unspecified order:
+ <pre><code class="">
+ a
+ c
+ b</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '120', 120)" onmouseover="showTip(event, '120', 120)">
+                <p>
+                  <a id="iteri">
+                    <a href="#iteri">
+                      <code><span>Array.Parallel.iteri&#32;<span>action&#32;array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="120">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array.Parallel.iteri&#32;<span>action&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        action
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                       - 
+                      
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.ArrayModule.Parallel.IterateIndexed``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.ArrayModule.Parallel.IterateIndexed``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array.fs#L2023-2023" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Apply the given function to each element of the array. The integer passed to the
+ function indicates the index of element.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Performs the operation in parallel using <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.parallel.for">Parallel.For</a>.
+ The order in which the given function is applied to elements of the input array is not specified.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  action
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">
+                    ArgumentNullException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input array is null.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="iteri-1">
+              <pre><code class="fsharp language-fsharp">
+ let inputs = [| &quot;a&quot;; &quot;b&quot;; &quot;c&quot; |]
+
+ inputs |&gt; Array.Parallel.iteri (fun i v -&gt; printfn &quot;{i}: {v}&quot;)</code></pre>
+ Evaluates to <code>unit</code> and prints the following to the console in an unspecified order:
+ <pre><code class="">
+ 0: a
+ 2: c
+ 1: b</code></pre>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '121', 121)" onmouseover="showTip(event, '121', 121)">
+                <p>
+                  <a id="map">
+                    <a href="#map">
+                      <code><span>Array.Parallel.map&#32;<span>mapping&#32;array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="121">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array.Parallel.map&#32;<span>mapping&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'U</span></code>
+                       - 
+                      
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'U[]</span></code>
+                  </span>
+                  The array of results.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.ArrayModule.Parallel.Map``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.ArrayModule.Parallel.Map``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array.fs#L1991-1991" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Build a new array whose elements are the results of applying the given function
+ to each of the elements of the array.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Performs the operation in parallel using <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.parallel.for">Parallel.For</a>.
+ The order in which the given function is applied to elements of the input array is not specified.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'U[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The array of results.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">
+                    ArgumentNullException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input array is null.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="map-1">
+              <pre><code class="fsharp language-fsharp">
+ let inputs = [| &quot;a&quot;; &quot;bbb&quot;; &quot;cc&quot; |]
+
+ inputs |&gt; Array.Parallel.map (fun x -&gt; x.Length)</code></pre>
+ Evaluates to <code>[| 1; 3; 2 |]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '122', 122)" onmouseover="showTip(event, '122', 122)">
+                <p>
+                  <a id="mapi">
+                    <a href="#mapi">
+                      <code><span>Array.Parallel.mapi&#32;<span>mapping&#32;array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="122">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array.Parallel.mapi&#32;<span>mapping&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T&#32;->&#32;'U</span></code>
+                       - 
+                      
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'U[]</span></code>
+                  </span>
+                  The array of results.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.ArrayModule.Parallel.MapIndexed``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.ArrayModule.Parallel.MapIndexed``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array.fs#L2004-2004" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Build a new array whose elements are the results of applying the given function
+ to each of the elements of the array. The integer index passed to the
+ function indicates the index of element being transformed.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Performs the operation in parallel using <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.parallel.for">Parallel.For</a>.
+ The order in which the given function is applied to elements of the input array is not specified.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'U[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The array of results.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">
+                    ArgumentNullException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input array is null.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="mapi-1">
+              <pre><code class="fsharp language-fsharp">
+ let inputs = [| 10; 10; 10 |]
+
+ inputs |&gt; Array.Parallel.mapi (fun i x -&gt; i + x)</code></pre>
+ Evaluates to <code>[| 10; 11; 12 |]</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '123', 123)" onmouseover="showTip(event, '123', 123)">
+                <p>
+                  <a id="partition">
+                    <a href="#partition">
+                      <code><span>Array.Parallel.partition&#32;<span>predicate&#32;array</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="123">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array.Parallel.partition&#32;<span>predicate&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to test the input elements.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[]</span></code>
+                       - 
+                      The input array.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span>'T[]</span>&#32;*&#32;<span>'T[]</span></span></code>
+                  </span>
+                  The two arrays of results.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Collections.ArrayModule.Parallel.Partition``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Collections.ArrayModule.Parallel.Partition``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/array.fs#L2035-2035" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Split the collection into two collections, containing the 
+ elements for which the given predicate returns "true" and "false"
+ respectively 
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Performs the operation in parallel using <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.parallel.for">Parallel.For</a>.
+ The order in which the given function is applied to indices is not specified.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to test the input elements.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input array.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span>'T[]</span>&#32;*&#32;<span>'T[]</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The two arrays of results.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">
+                    ArgumentNullException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input array is null.
+                </td>
+              </tr>
+            </table>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="partition-1">
+              <pre><code class="fsharp language-fsharp">
+ let inputs = [| 1; 2; 3; 4 |]
+
+ inputs |&gt; Array.Parallel.partition (fun x -&gt; x % 2 = 0)</code></pre>
+ Evaluates to <code>([|2; 4|], [|1; 3|])</code>.
+ 
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

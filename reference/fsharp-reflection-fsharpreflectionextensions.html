@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FSharpReflectionExtensions (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    FSharpReflectionExtensions Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+        FSharp.Reflection
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        Defines further accessing additional information about F# types and F# values at runtime.
+      </p>
+    </div>
+  </div>
+  <div></div>
+  <div>
+    <h3>
+      Type extensions
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Type extension
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1172', 1172)" onmouseover="showTip(event, '1172', 1172)">
+                <p>
+                  <a id="GetExceptionFields">
+                    <a href="#GetExceptionFields">
+                      <code><span>FSharpValue.GetExceptionFields<span><span>(<span>exn,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1172">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.GetExceptionFields<span><span>(<span>exn,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        exn
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                       - 
+                      The exception instance.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></code>
+                  </span>
+                  The fields from the given exception.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.GetExceptionFields.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.GetExceptionFields.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1512-1512" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Reads all the fields from a value built using an instance of an F# exception declaration
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Assumes the given input is an F# exception value. If not, <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised.
+            </p>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  exn
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The exception instance.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The fields from the given exception.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input type is not an F# exception.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1173', 1173)" onmouseover="showTip(event, '1173', 1173)">
+                <p>
+                  <a id="GetExceptionFields">
+                    <a href="#GetExceptionFields">
+                      <code><span>FSharpType.GetExceptionFields<span><span>(<span>exceptionType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1173">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.GetExceptionFields<span><span>(<span>exceptionType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        exceptionType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The exception type to read.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>[]</span></code>
+                  </span>
+                  An array containing the PropertyInfo of each field in the exception.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpType.GetExceptionFields.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpType.GetExceptionFields.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1434-1434" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Reads all the fields from an F# exception declaration, in declaration order
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Assumes <code>exceptionType</code> is an exception representation type. If not, <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised.
+            </p>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharptype.html">FSharpType</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  exceptionType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The exception type to read.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An array containing the PropertyInfo of each field in the exception.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown if the given type is not an exception.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1174', 1174)" onmouseover="showTip(event, '1174', 1174)">
+                <p>
+                  <a id="GetRecordFields">
+                    <a href="#GetRecordFields">
+                      <code><span>FSharpValue.GetRecordFields<span><span>(<span>record,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1174">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.GetRecordFields<span><span>(<span>record,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        record
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                       - 
+                      The record object.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></code>
+                  </span>
+                  The array of fields from the record.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.GetRecordFields.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.GetRecordFields.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1464-1464" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Reads all the fields from a record value.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Assumes the given input is a record value. If not, <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised.
+            </p>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  record
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The record object.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The array of fields from the record.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input type is not a record type.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1175', 1175)" onmouseover="showTip(event, '1175', 1175)">
+                <p>
+                  <a id="GetRecordFields">
+                    <a href="#GetRecordFields">
+                      <code><span>FSharpType.GetRecordFields<span><span>(<span>recordType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1175">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.GetRecordFields<span><span>(<span>recordType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recordType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The input record type.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>[]</span></code>
+                  </span>
+                  An array of descriptions of the properties of the record type.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpType.GetRecordFields.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpType.GetRecordFields.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1446-1446" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Reads all the fields from a record value, in declaration order
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Assumes the given input is a record value. If not, <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised.
+            </p>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharptype.html">FSharpType</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recordType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input record type.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An array of descriptions of the properties of the record type.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1176', 1176)" onmouseover="showTip(event, '1176', 1176)">
+                <p>
+                  <a id="GetUnionCases">
+                    <a href="#GetUnionCases">
+                      <code><span>FSharpType.GetUnionCases<span><span>(<span>unionType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1176">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.GetUnionCases<span><span>(<span>unionType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The input union type.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a>[]</span></code>
+                  </span>
+                  An array of descriptions of the cases of the given union type.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpType.GetUnionCases.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpType.GetUnionCases.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1442-1442" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Gets the cases of a union type.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Assumes the given type is a union type. If not, <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised during pre-computation.
+            </p>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharptype.html">FSharpType</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  unionType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input union type.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a>[]</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An array of descriptions of the cases of the given union type.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input type is not a union type.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1177', 1177)" onmouseover="showTip(event, '1177', 1177)">
+                <p>
+                  <a id="GetUnionFields">
+                    <a href="#GetUnionFields">
+                      <code><span>FSharpValue.GetUnionFields<span><span>(<span>value,&#32;unionType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1177">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.GetUnionFields<span><span>(<span>value,&#32;unionType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                       - 
+                      The input union case.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        unionType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The union type containing the value.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></span></code>
+                  </span>
+                  The description of the union case and its fields.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.GetUnionFields.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.GetUnionFields.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1496-1496" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Identify the union case and its fields for an object
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Assumes the given input is a union case value. If not, <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised.
+
+ If the type is not given, then the runtime type of the input object is used to identify the
+ relevant union type. The type should always be given if the input object may be null. For example,
+ option values may be represented using the 'null'.
+            </p>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input union case.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  unionType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The union type containing the value.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The description of the union case and its fields.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input type is not a union case value.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1178', 1178)" onmouseover="showTip(event, '1178', 1178)">
+                <p>
+                  <a id="IsExceptionRepresentation">
+                    <a href="#IsExceptionRepresentation">
+                      <code><span>FSharpType.IsExceptionRepresentation<span><span>(<span>exceptionType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1178">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.IsExceptionRepresentation<span><span>(<span>exceptionType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        exceptionType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type to check.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if the type check is an F# exception.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpType.IsExceptionRepresentation.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpType.IsExceptionRepresentation.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1438-1438" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns true if the <code>exceptionType</code> is a representation of an F# exception declaration
+              </p>
+            </div>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharptype.html">FSharpType</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  exceptionType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The type to check.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if the type check is an F# exception.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1179', 1179)" onmouseover="showTip(event, '1179', 1179)">
+                <p>
+                  <a id="IsRecord">
+                    <a href="#IsRecord">
+                      <code><span>FSharpType.IsRecord<span><span>(<span>typ,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1179">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.IsRecord<span><span>(<span>typ,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        typ
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type to check.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if the type check succeeds.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpType.IsRecord.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpType.IsRecord.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1454-1454" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Return true if the <code>typ</code> is a representation of an F# record type 
+              </p>
+            </div>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharptype.html">FSharpType</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  typ
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The type to check.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if the type check succeeds.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1180', 1180)" onmouseover="showTip(event, '1180', 1180)">
+                <p>
+                  <a id="IsUnion">
+                    <a href="#IsUnion">
+                      <code><span>FSharpType.IsUnion<span><span>(<span>typ,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1180">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.IsUnion<span><span>(<span>typ,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        typ
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type to check.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  True if the type check succeeds.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpType.IsUnion.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpType.IsUnion.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1450-1450" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns true if the <code>typ</code> is a representation of an F# union type or the runtime type of a value of that type
+              </p>
+            </div>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharptype.html">FSharpType</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  typ
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The type to check.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  True if the type check succeeds.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1181', 1181)" onmouseover="showTip(event, '1181', 1181)">
+                <p>
+                  <a id="MakeRecord">
+                    <a href="#MakeRecord">
+                      <code><span>FSharpValue.MakeRecord<span><span>(<span>recordType,&#32;values,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1181">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.MakeRecord<span><span>(<span>recordType,&#32;values,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recordType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type of record to make.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        values
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></code>
+                       - 
+                      The array of values to initialize the record.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flags that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                  </span>
+                  The created record.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.MakeRecord.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.MakeRecord.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1460-1460" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Creates an instance of a record type.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Assumes the given input is a record type.
+            </p>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recordType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The type of record to make.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  values
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The array of values to initialize the record.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flags that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The created record.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input type is not a record type.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1182', 1182)" onmouseover="showTip(event, '1182', 1182)">
+                <p>
+                  <a id="MakeUnion">
+                    <a href="#MakeUnion">
+                      <code><span>FSharpValue.MakeUnion<span><span>(<span>unionCase,&#32;args,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1182">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.MakeUnion<span><span>(<span>unionCase,&#32;args,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionCase
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+                       - 
+                      The description of the union case to create.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        args
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></code>
+                       - 
+                      The array of arguments to construct the given case.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                  </span>
+                  The constructed union case.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.MakeUnion.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.MakeUnion.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1480-1480" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Create a union case value.
+              </p>
+            </div>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  unionCase
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The description of the union case to create.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  args
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The array of arguments to construct the given case.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The constructed union case.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1183', 1183)" onmouseover="showTip(event, '1183', 1183)">
+                <p>
+                  <a id="PreComputeRecordConstructor">
+                    <a href="#PreComputeRecordConstructor">
+                      <code><span>FSharpValue.PreComputeRecordConstructor<span><span>(<span>recordType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1183">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeRecordConstructor<span><span>(<span>recordType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recordType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type of record to construct.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+                  </span>
+                  A function to construct records of the given type.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeRecordConstructor.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeRecordConstructor.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1472-1472" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Precompute a function for constructing a record value. 
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Assumes the given type is a RecordType.
+ If not, <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised during pre-computation.
+            </p>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recordType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The type of record to construct.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A function to construct records of the given type.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input type is not a record type.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1184', 1184)" onmouseover="showTip(event, '1184', 1184)">
+                <p>
+                  <a id="PreComputeRecordConstructorInfo">
+                    <a href="#PreComputeRecordConstructorInfo">
+                      <code><span>FSharpValue.PreComputeRecordConstructorInfo<span><span>(<span>recordType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1184">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeRecordConstructorInfo<span><span>(<span>recordType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recordType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The record type.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.constructorinfo">ConstructorInfo</a></code>
+                  </span>
+                  A ConstructorInfo for the given record type.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeRecordConstructorInfo.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeRecordConstructorInfo.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1476-1476" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Get a ConstructorInfo for a record type
+              </p>
+            </div>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recordType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The record type.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.constructorinfo">ConstructorInfo</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A ConstructorInfo for the given record type.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1185', 1185)" onmouseover="showTip(event, '1185', 1185)">
+                <p>
+                  <a id="PreComputeRecordReader">
+                    <a href="#PreComputeRecordReader">
+                      <code><span>FSharpValue.PreComputeRecordReader<span><span>(<span>recordType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1185">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeRecordReader<span><span>(<span>recordType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recordType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type of record to read.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></span></code>
+                  </span>
+                  An optimized reader for the given record type.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeRecordReader.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeRecordReader.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1468-1468" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Precompute a function for reading all the fields from a record. The fields are returned in the
+ same order as the fields reported by a call to Microsoft.FSharp.Reflection.Type.GetInfo for
+ this type.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Assumes the given type is a RecordType.
+ If not, <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised during pre-computation.
+
+ Using the computed function will typically be faster than executing a corresponding call to Value.GetInfo
+ because the path executed by the computed function is optimized given the knowledge that it will be
+ used to read values of the given type.
+            </p>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  recordType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The type of record to read.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An optimized reader for the given record type.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">
+                    ArgumentException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the input type is not a record type.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1186', 1186)" onmouseover="showTip(event, '1186', 1186)">
+                <p>
+                  <a id="PreComputeUnionConstructor">
+                    <a href="#PreComputeUnionConstructor">
+                      <code><span>FSharpValue.PreComputeUnionConstructor<span><span>(<span>unionCase,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1186">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeUnionConstructor<span><span>(<span>unionCase,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionCase
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+                       - 
+                      The description of the union case.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+                  </span>
+                  A function for constructing values of the given union case.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeUnionConstructor.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeUnionConstructor.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1484-1484" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Precompute a function for constructing a discriminated union value for a particular union case. 
+              </p>
+            </div>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  unionCase
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The description of the union case.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A function for constructing values of the given union case.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1187', 1187)" onmouseover="showTip(event, '1187', 1187)">
+                <p>
+                  <a id="PreComputeUnionConstructorInfo">
+                    <a href="#PreComputeUnionConstructorInfo">
+                      <code><span>FSharpValue.PreComputeUnionConstructorInfo<span><span>(<span>unionCase,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1187">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeUnionConstructorInfo<span><span>(<span>unionCase,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionCase
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+                       - 
+                      The description of the union case.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></code>
+                  </span>
+                  The description of the constructor of the given union case.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeUnionConstructorInfo.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeUnionConstructorInfo.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1488-1488" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A method that constructs objects of the given case
+              </p>
+            </div>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  unionCase
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The description of the union case.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The description of the constructor of the given union case.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1188', 1188)" onmouseover="showTip(event, '1188', 1188)">
+                <p>
+                  <a id="PreComputeUnionReader">
+                    <a href="#PreComputeUnionReader">
+                      <code><span>FSharpValue.PreComputeUnionReader<span><span>(<span>unionCase,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1188">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeUnionReader<span><span>(<span>unionCase,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionCase
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+                       - 
+                      The description of the union case to read.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></span></code>
+                  </span>
+                  A function to for reading the fields of the given union case.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeUnionReader.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeUnionReader.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1504-1504" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Precompute a function for reading all the fields for a particular discriminator case of a union type
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Using the computed function will typically be faster than executing a corresponding call to GetFields
+            </p>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  unionCase
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The description of the union case to read.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>[]</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A function to for reading the fields of the given union case.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1189', 1189)" onmouseover="showTip(event, '1189', 1189)">
+                <p>
+                  <a id="PreComputeUnionTagMemberInfo">
+                    <a href="#PreComputeUnionTagMemberInfo">
+                      <code><span>FSharpValue.PreComputeUnionTagMemberInfo<span><span>(<span>unionType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1189">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeUnionTagMemberInfo<span><span>(<span>unionType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type of union to read.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></code>
+                  </span>
+                  The description of the union case reader.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeUnionTagMemberInfo.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeUnionTagMemberInfo.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1492-1492" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Precompute a property or static method for reading an integer representing the case tag of a union type.
+              </p>
+            </div>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  unionType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The type of union to read.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The description of the union case reader.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1190', 1190)" onmouseover="showTip(event, '1190', 1190)">
+                <p>
+                  <a id="PreComputeUnionTagReader">
+                    <a href="#PreComputeUnionTagReader">
+                      <code><span>FSharpValue.PreComputeUnionTagReader<span><span>(<span>unionType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1190">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeUnionTagReader<span><span>(<span>unionType,&#32;?allowAccessToPrivateRepresentation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type of union to optimize reading.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?allowAccessToPrivateRepresentation
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                       - 
+                      Optional flag that denotes accessibility of the private representation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></span></code>
+                  </span>
+                  An optimized function to read the tags of the given union type.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeUnionTagReader.Static`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpReflectionExtensions.FSharpValue.PreComputeUnionTagReader.Static\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1500-1500" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Assumes the given type is a union type.
+ If not, <a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised during pre-computation.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Using the computed function is more efficient than calling GetUnionCase
+ because the path executed by the computed function is optimized given the knowledge that it will be
+ used to read values of the given type.
+            </p>
+            <p>
+              Extended Type: 
+              <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">FSharpValue</a></code>
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  unionType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The type of union to optimize reading.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?allowAccessToPrivateRepresentation
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Optional flag that denotes accessibility of the private representation.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An optimized function to read the tags of the given union type.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

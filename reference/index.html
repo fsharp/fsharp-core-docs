@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FSharp.Core (API Reference)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h1>
+    API Reference
+  </h1>
+  <h2>
+    Available Namespaces:
+  </h2>
+  <table class="table outer-list fsdocs-member-list">
+    <thead>
+      <tr>
+        <td class="fsdocs-member-list-header">
+          Namespace
+        </td>
+        <td class="fsdocs-member-list-header">
+          Description
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+            FSharp.Collections
+          </a>
+        </td>
+        <td>
+          Operations for collections such as lists, arrays, sets, maps and sequences. See also 
+    <a href="https://docs.microsoft.com/dotnet/fsharp/language-reference/fsharp-collection-types">F# Collection Types</a> in the F# Language Guide.
+ 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+            FSharp.Control
+          </a>
+        </td>
+        <td>
+          
+   Library functionality for asynchronous programming, events and agents. See also
+   <a href="https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/asynchronous-workflows">Asynchronous Programming</a>, 
+   <a href="https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/members/events">Events</a> and
+   <a href="https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/lazy-expressions">Lazy Expressions</a> in the
+   F# Language Guide.
+ 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+            FSharp.Control.TaskBuilderExtensions
+          </a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+            FSharp.Core
+          </a>
+        </td>
+        <td>
+          
+   Basic definitions of operators, options, functions, results, choices, attributes and plain text formatting.
+ 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+            FSharp.Core.CompilerServices
+          </a>
+        </td>
+        <td>
+          
+   Library functionality for supporting type providers and code generated by the F# compiler. See
+   also <a href="https://docs.microsoft.com/en-us/dotnet/fsharp/tutorials/type-providers/">F# Type Providers</a> in the F# Language Guide.
+ 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+            FSharp.Linq
+          </a>
+        </td>
+        <td>
+          
+   Library functionality for F# query syntax and interoperability with .NET LINQ Expressions. See
+   also <a href="https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/query-expressions">F# Query Expressions</a> in the F# Language Guide.
+ 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+            FSharp.Linq.RuntimeHelpers
+          </a>
+        </td>
+        <td>
+          
+   Library functionality associated with converting F# quotations to .NET LINQ expression trees.
+ 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+            FSharp.NativeInterop
+          </a>
+        </td>
+        <td>
+          
+   Library functionality for native interopability. See
+   also <a href="https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/functions/external-functions">F# External Functions</a> in
+   the F# Language Guide.
+ 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+            FSharp.Quotations
+          </a>
+        </td>
+        <td>
+          
+   Library functionality for F# quotations.
+    See also <a href="https: //docs.microsoft.com/dotnet/fsharp/language-reference/code-quotations">F# Code Quotations</a> in the F# Language Guide.
+ 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+            FSharp.Reflection
+          </a>
+        </td>
+        <td>
+          
+   Library functionality for accessing additional information about F# types and F# values at
+   runtime, augmenting that available through <a href="https://docs.microsoft.com/dotnet/api/system.reflection">System.Reflection</a>.
+ 
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

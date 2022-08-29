@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Observable (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Observable Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+        FSharp.Control
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        Contains operations for working with first class event and other observable objects.
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '467', 467)" onmouseover="showTip(event, '467', 467)">
+                <p>
+                  <a id="add">
+                    <a href="#add">
+                      <code><span>Observable.add&#32;<span>callback&#32;source</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="467">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Observable.add&#32;<span>callback&#32;source</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        callback
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                       - 
+                      The function to be called on each observation.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input Observable.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.ObservableModule.Add``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.ObservableModule.Add``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/observable.fs#L128-128" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Creates an observer which permanently subscribes to the given observable and which calls
+ the given function for each observation.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  callback
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to be called on each observation.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input Observable.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System.Reactive.Linq
+ let numbers = seq { 1..5 }
+ let observableNumbers = Observable.ToObservable numbers
+ let multiplyByTwo = fun number -&gt; printf $&quot;{number * 2} &quot;
+ Observable.add multiplyByTwo observableNumbers</code></pre>
+ The sample evaluates to: <code>2 4 6 8 10</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '468', 468)" onmouseover="showTip(event, '468', 468)">
+                <p>
+                  <a id="choose">
+                    <a href="#choose">
+                      <code><span>Observable.choose&#32;<span>chooser&#32;source</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="468">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Observable.choose&#32;<span>chooser&#32;source</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        chooser
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                       - 
+                      The function that returns Some for observations to be propagated
+ and None for observations to ignore.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input Observable.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'U&gt;</span></code>
+                  </span>
+                  An Observable that only propagates some of the observations from the source.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.ObservableModule.Choose``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.ObservableModule.Choose``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/observable.fs#L70-70" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns an observable which chooses a projection of observations from the source
+ using the given function. The returned object will trigger observations <code>x</code>
+ for which the splitter returns <code>Some x</code>. The returned object also propagates
+ all errors arising from the source and completes when the source completes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  chooser
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function that returns Some for observations to be propagated
+ and None for observations to ignore.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input Observable.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'U&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An Observable that only propagates some of the observations from the source.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System.Reactive.Linq
+ let numbers = seq { 1..5 }
+ let observableNumbers = Observable.ToObservable numbers
+
+ let getOddNumbers number =
+     match number with
+     | _ when number % 2 = 0 -&gt; None
+     | _ -&gt; Some number
+
+ let map = Observable.choose getOddNumbers observableNumbers
+
+ map.Subscribe(fun x -&gt; printf $&quot;{x} &quot;) |&gt; ignore</code></pre>
+ The sample will output: <code>1 3 5</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '469', 469)" onmouseover="showTip(event, '469', 469)">
+                <p>
+                  <a id="filter">
+                    <a href="#filter">
+                      <code><span>Observable.filter&#32;<span>predicate&#32;source</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="469">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Observable.filter&#32;<span>predicate&#32;source</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to apply to observations to determine if it should
+ be kept.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input Observable.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                  </span>
+                  An Observable that filters observations based on <code>filter</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.ObservableModule.Filter``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.ObservableModule.Filter``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/observable.fs#L93-93" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns an observable which filters the observations of the source
+ by the given function. The observable will see only those observations
+ for which the predicate returns true. The predicate is executed once for
+ each subscribed observer. The returned object also propagates error
+ observations arising from the source and completes when the source completes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to apply to observations to determine if it should
+ be kept.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input Observable.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An Observable that filters observations based on <code>filter</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System.Reactive.Linq
+ let numbers = seq { 1..5 }
+ let observableNumbers = Observable.ToObservable numbers
+
+ let getEvenNumbers = fun number -&gt; number % 2 = 0
+ let map = Observable.filter multiplyByTwo observableNumbers
+
+ map.Subscribe(fun x -&gt; printf $&quot;{x} &quot;) |&gt; ignore</code></pre>
+ The sample will output: <code>2 4</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '470', 470)" onmouseover="showTip(event, '470', 470)">
+                <p>
+                  <a id="map">
+                    <a href="#map">
+                      <code><span>Observable.map&#32;<span>mapping&#32;source</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="470">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Observable.map&#32;<span>mapping&#32;source</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'U</span></code>
+                       - 
+                      The function applied to observations from the source.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input Observable.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'U&gt;</span></code>
+                  </span>
+                  An Observable of the type specified by <code>mapping</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.ObservableModule.Map``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.ObservableModule.Map``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/observable.fs#L52-52" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns an observable which transforms the observations of the source by the
+ given function. The transformation function is executed once for each
+ subscribed observer. The returned object also propagates error observations
+ arising from the source and completes when the source completes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function applied to observations from the source.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input Observable.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'U&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An Observable of the type specified by <code>mapping</code>.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System.Reactive.Linq
+ let numbers = seq { 1..5 }
+ let observableNumbers = Observable.ToObservable numbers
+
+ let multiplyByTwo = fun number -&gt; number * 2
+ let map = Observable.map multiplyByTwo observableNumbers
+
+ map.Subscribe(fun x -&gt; printf $&quot;{x} &quot;) |&gt; ignore</code></pre>
+ The sample will output: <code>2 4 6 8 10</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '471', 471)" onmouseover="showTip(event, '471', 471)">
+                <p>
+                  <a id="merge">
+                    <a href="#merge">
+                      <code><span>Observable.merge&#32;<span>source1&#32;source2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="471">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Observable.merge&#32;<span>source1&#32;source2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        source1
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                       - 
+                      The first Observable.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        source2
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                       - 
+                      The second Observable.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                  </span>
+                  An Observable that propagates information from both sources.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.ObservableModule.Merge``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.ObservableModule.Merge``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/observable.fs#L160-160" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns an observable for the merged observations from the sources.
+ The returned object propagates success and error values arising
+ from either source and completes when both the sources have completed.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              For each observer, the registered intermediate observing object is not
+ thread safe. That is, observations arising from the sources must not
+ be triggered concurrently on different threads.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  source1
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The first Observable.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  source2
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The second Observable.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An Observable that propagates information from both sources.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System.Reactive.Linq
+ open System
+
+ let createTimer interval =
+     let timer = new Timers.Timer(interval)
+     timer.AutoReset &lt;- true
+     timer.Enabled &lt;- true
+     Observable.Create(fun observer -&gt; timer.Elapsed.Subscribe(observer))
+
+ let observableFirstTimer = createTimer 1000
+ let observableSecondTimer = createTimer 3000
+
+ let result = Observable.merge observableFirstTimer observableSecondTimer
+
+ result.Subscribe(fun output -&gt; printfn $&quot;Output - {output.SignalTime} &quot;)
+ |&gt; ignore
+
+ Console.ReadLine() |&gt; ignore</code></pre>
+ The sample will merge all events at a given interval and output it to the stream: <code>
+ Output - 2/5/2022 3:49:37 AM
+ Output - 2/5/2022 3:49:38 AM
+ Output - 2/5/2022 3:49:39 AM
+ Output - 2/5/2022 3:49:39 AM
+ Output - 2/5/2022 3:49:40 AM
+ Output - 2/5/2022 3:49:41 AM
+ Output - 2/5/2022 3:49:42 AM
+ Output - 2/5/2022 3:49:42 AM</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '472', 472)" onmouseover="showTip(event, '472', 472)">
+                <p>
+                  <a id="pairwise">
+                    <a href="#pairwise">
+                      <code><span>Observable.pairwise&#32;<span>source</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="472">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Observable.pairwise&#32;<span>source</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input Observable.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;<span>'T&#32;*&#32;'T</span>&gt;</span></code>
+                  </span>
+                  An Observable that triggers on successive pairs of observations from the input Observable.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.ObservableModule.Pairwise``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.ObservableModule.Pairwise``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/observable.fs#L136-136" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new observable that triggers on the second and subsequent triggerings of the input observable.
+ The Nth triggering of the input observable passes the arguments from the N-1th and Nth triggering as
+ a pair. The argument passed to the N-1th triggering is held in hidden internal state until the
+ Nth triggering occurs.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              For each observer, the registered intermediate observing object is not thread safe.
+ That is, observations arising from the source must not be triggered concurrently
+ on different threads.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input Observable.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;<span>'T&#32;*&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An Observable that triggers on successive pairs of observations from the input Observable.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ /// open System.Reactive.Linq
+ let numbers = seq { 1..5 }
+ let observableNumbers = Observable.ToObservable numbers
+
+ let pairWise = Observable.pairwise observableNumbers
+
+ pairWise.Subscribe(fun pair -&gt; printf $&quot;{pair} &quot;)
+ |&gt; ignore</code></pre>
+ The sample evaluates to: <code>(1, 2), (2, 3), (3, 4), (4, 5)</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '473', 473)" onmouseover="showTip(event, '473', 473)">
+                <p>
+                  <a id="partition">
+                    <a href="#partition">
+                      <code><span>Observable.partition&#32;<span>predicate&#32;source</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="473">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Observable.partition&#32;<span>predicate&#32;source</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to determine which output Observable will trigger
+ a particular observation.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input Observable.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span>&#32;*&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></span></code>
+                  </span>
+                  A tuple of Observables.  The first triggers when the predicate returns true, and
+ the second triggers when the predicate returns false.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.ObservableModule.Partition``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.ObservableModule.Partition``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/observable.fs#L97-97" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns two observables which partition the observations of the source by
+ the given function. The first will trigger observations for those values
+ for which the predicate returns true. The second will trigger observations
+ for those values where the predicate returns false. The predicate is
+ executed once for each subscribed observer. Both also propagate all error
+ observations arising from the source and each completes when the source
+ completes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to determine which output Observable will trigger
+ a particular observation.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input Observable.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span>&#32;*&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A tuple of Observables.  The first triggers when the predicate returns true, and
+ the second triggers when the predicate returns false.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System.Reactive.Linq
+ let numbers = seq { 1..5 }
+ let observableNumbers = Observable.ToObservable numbers
+
+ let isEvenNumber = fun number -&gt; number % 2 = 0
+ let initialState = 2
+
+ let leftPartition, rightPartition =
+     Observable.partition isEvenNumber observableNumbers
+
+ leftPartition.Subscribe(fun x -&gt; printfn $&quot;Left partition: {x}&quot;) |&gt; ignore
+
+ rightPartition.Subscribe(fun x -&gt; printfn $&quot;Right partition: {x}&quot;) |&gt; ignore</code></pre>
+ The sample evaluates to: <code>Left partition: 2, 4, Right partition: 1, 3, 5</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '474', 474)" onmouseover="showTip(event, '474', 474)">
+                <p>
+                  <a id="scan">
+                    <a href="#scan">
+                      <code><span>Observable.scan&#32;<span>collector&#32;state&#32;source</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="474">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Observable.scan&#32;<span>collector&#32;state&#32;source</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        collector
+                      </b>
+                      :
+                      <code><span>'U&#32;->&#32;'T&#32;->&#32;'U</span></code>
+                       - 
+                      The function to update the state with each observation.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        state
+                      </b>
+                      :
+                      <code>'U</code>
+                       - 
+                      The initial state.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input Observable.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'U&gt;</span></code>
+                  </span>
+                  An Observable that triggers on the updated state values.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.ObservableModule.Scan``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.ObservableModule.Scan``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/observable.fs#L101-101" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns an observable which, for each observer, allocates an item of state
+ and applies the given accumulating function to successive values arising from
+ the input. The returned object will trigger observations for each computed
+ state value, excluding the initial value. The returned object propagates
+ all errors arising from the source and completes when the source completes.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              For each observer, the registered intermediate observing object is not thread safe.
+ That is, observations arising from the source must not be triggered concurrently
+ on different threads.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  collector
+                </span>
+                :
+                <code><span>'U&#32;->&#32;'T&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to update the state with each observation.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  state
+                </span>
+                :
+                <code>'U</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The initial state.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input Observable.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'U&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An Observable that triggers on the updated state values.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System.Reactive.Linq
+ let numbers = seq { 1..5 }
+ let observableNumbers = Observable.ToObservable numbers
+
+ let multiplyBy number = fun y -&gt; number * y
+ let initialState = 2
+ let scan = Observable.scan multiplyBy initialState observableNumbers
+
+ scan.Subscribe(fun x -&gt; printf &quot;%A &quot; x) |&gt; ignore</code></pre>
+ The sample evaluates to: <code>2 4 12 48 240</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '475', 475)" onmouseover="showTip(event, '475', 475)">
+                <p>
+                  <a id="split">
+                    <a href="#split">
+                      <code><span>Observable.split&#32;<span>splitter&#32;source</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="475">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Observable.split&#32;<span>splitter&#32;source</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        splitter
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpchoice-2.html">Choice</a>&lt;<span>'U1,&#32;'U2</span>&gt;</span></span></code>
+                       - 
+                      The function that takes an observation an transforms
+ it into one of the two output Choice types.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input Observable.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'U1&gt;</span>&#32;*&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'U2&gt;</span></span></code>
+                  </span>
+                  A tuple of Observables.  The first triggers when <code>splitter</code> returns Choice1of2
+ and the second triggers when <code>splitter</code> returns Choice2of2.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.ObservableModule.Split``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.ObservableModule.Split``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/observable.fs#L217-217" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns two observables which split the observations of the source by the
+ given function. The first will trigger observations <code>x</code> for which the
+ splitter returns <code>Choice1Of2 x</code>. The second will trigger observations
+ <code>y</code> for which the splitter returns <code>Choice2Of2 y</code> The splitter is
+ executed once for each subscribed observer. Both also propagate error
+ observations arising from the source and each completes when the source
+ completes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  splitter
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpchoice-2.html">Choice</a>&lt;<span>'U1,&#32;'U2</span>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function that takes an observation an transforms
+ it into one of the two output Choice types.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input Observable.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'U1&gt;</span>&#32;*&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'U2&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A tuple of Observables.  The first triggers when <code>splitter</code> returns Choice1of2
+ and the second triggers when <code>splitter</code> returns Choice2of2.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System.Reactive.Linq
+ let numbers = seq { 1..5 }
+ let observableNumbers = Observable.ToObservable numbers
+
+ let getEvenNumbers number =
+     match number % 2 = 0 with
+     | true -&gt; Choice1Of2 number
+     | false -&gt; Choice2Of2 $&quot;{number} is not an even number&quot;
+
+ let evenSplit, printOddNumbers = Observable.split getEvenNumbers observableNumbers
+
+ let printOutput observable functionName =
+     use subscription =
+         Observable.subscribe
+             (fun output -&gt; printfn $&quot;{functionName} - Split output: {output}. Type: {output.GetType()}&quot;)
+             observable
+
+     subscription
+
+ printOutput evenSplit (nameof evenSplit) |&gt; ignore
+ printOutput printOddNumbers (nameof printOddNumbers) |&gt; ignore</code></pre>
+ The sample evaluates to: <code>evenSplit - Split output: 2. Type: System.Int32
+ evenSplit - Split output: 4. Type: System.Int32
+ printOddNumbers - Split output: 1 is not an even number. Type: System.String
+ printOddNumbers - Split output: 3 is not an even number. Type: System.String
+ printOddNumbers - Split output: 5 is not an even number. Type: System.String</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '476', 476)" onmouseover="showTip(event, '476', 476)">
+                <p>
+                  <a id="subscribe">
+                    <a href="#subscribe">
+                      <code><span>Observable.subscribe&#32;<span>callback&#32;source</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="476">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Observable.subscribe&#32;<span>callback&#32;source</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        callback
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                       - 
+                      The function to be called on each observation.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input Observable.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></code>
+                  </span>
+                  An object that will remove the callback if disposed.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.ObservableModule.Subscribe``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.ObservableModule.Subscribe``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/observable.fs#L132-132" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Creates an observer which subscribes to the given observable and which calls
+ the given function for each observation.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  callback
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to be called on each observation.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input Observable.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An object that will remove the callback if disposed.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System.Reactive.Linq
+ let numbers = seq { 1..3 }
+ let observableNumbers = Observable.ToObservable numbers
+ let printOutput observable =
+     use subscription = Observable.subscribe (fun x -&gt; printfn &quot;%A&quot; x) observable
+     subscription
+ printOutput observableNumbers |&gt; ignore</code></pre>
+ The sample evaluates to: <code>1, 2, 3</code>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

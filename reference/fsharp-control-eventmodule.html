@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Event (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Event Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+        FSharp.Control
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        Contains operations for working with values of type <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>.
+      </p>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '455', 455)" onmouseover="showTip(event, '455', 455)">
+                <p>
+                  <a id="add">
+                    <a href="#add">
+                      <code><span>Event.add&#32;<span>callback&#32;sourceEvent</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="455">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Event.add&#32;<span>callback&#32;sourceEvent</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        callback
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                       - 
+                      The function to call when the event is triggered.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sourceEvent
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input event.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.EventModule.Add``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.EventModule.Add``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/eventmodule.fs#L70-70" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Runs the given function each time the given event is triggered.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  callback
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to call when the event is triggered.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sourceEvent
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input event.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System
+
+ let createTimer interval =
+     let timer = new Timers.Timer(interval)
+     timer.AutoReset &lt;- true
+     timer.Enabled &lt;- true
+     timer.Elapsed
+
+ let timer = createTimer 1000
+
+ Event.add (fun (event: Timers.ElapsedEventArgs) -&gt; printfn $&quot;{event.SignalTime} &quot;)  timer
+
+ Console.ReadLine() |&gt; ignore</code></pre>
+ The sample will output the timer event every second: <code>
+ 2/14/2022 11:52:05 PM
+ 2/14/2022 11:52:06 PM
+ 2/14/2022 11:52:07 PM
+ 2/14/2022 11:52:08 PM</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '456', 456)" onmouseover="showTip(event, '456', 456)">
+                <p>
+                  <a id="choose">
+                    <a href="#choose">
+                      <code><span>Event.choose&#32;<span>chooser&#32;sourceEvent</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="456">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Event.choose&#32;<span>chooser&#32;sourceEvent</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        chooser
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                       - 
+                      The function to select and transform event values to pass on.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sourceEvent
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input event.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'U&gt;</span></code>
+                  </span>
+                  An event that fires only when the chooser returns Some.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.EventModule.Choose``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.EventModule.Choose``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/eventmodule.fs#L46-46" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new event which fires on a selection of messages from the original event.
+ The selection function takes an original message to an optional new message.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  chooser
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span>'U&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to select and transform event values to pass on.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sourceEvent
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input event.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'U&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An event that fires only when the chooser returns Some.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System
+
+ let createTimer interval =
+     let timer = new Timers.Timer(interval)
+     timer.AutoReset &lt;- true
+     timer.Enabled &lt;- true
+     timer.Elapsed
+
+ let timer = createTimer 1000
+
+ let getEvenSeconds (number: Timers.ElapsedEventArgs) =
+     match number with
+     | _ when number.SignalTime.Second % 2 = 0 -&gt; Some number.SignalTime
+     | _ -&gt; None
+
+ let evenSecondsEvent = Event.choose getEvenSeconds timer
+
+ evenSecondsEvent.Subscribe(fun x -&gt; printfn $&quot;{x} &quot;)
+ |&gt; ignore
+
+ Console.ReadLine() |&gt; ignore</code></pre>
+ The sample will output: <code>2/15/2022 12:04:04 AM
+ 2/15/2022 12:04:06 AM
+ 2/15/2022 12:04:08 AM</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '457', 457)" onmouseover="showTip(event, '457', 457)">
+                <p>
+                  <a id="filter">
+                    <a href="#filter">
+                      <code><span>Event.filter&#32;<span>predicate&#32;sourceEvent</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="457">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Event.filter&#32;<span>predicate&#32;sourceEvent</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to determine which triggers from the event to propagate.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sourceEvent
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input event.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'T&gt;</span></code>
+                  </span>
+                  An event that only passes values that pass the predicate.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.EventModule.Filter``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.EventModule.Filter``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/eventmodule.fs#L23-23" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new event that listens to the original event and triggers the resulting
+ event only when the argument to the event passes the given function.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to determine which triggers from the event to propagate.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sourceEvent
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input event.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An event that only passes values that pass the predicate.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System
+
+ let createTimer interval =
+     let timer = new Timers.Timer(interval)
+     timer.AutoReset &lt;- true
+     timer.Enabled &lt;- true
+     timer.Elapsed
+
+ let timer = createTimer 1000
+
+ let getEvenSeconds (number: Timers.ElapsedEventArgs) =
+     match number with
+     | _ when number.SignalTime.Second % 2 = 0 -&gt; true
+     | _ -&gt; false
+
+ let evenSecondsEvent = Event.filter getEvenSeconds timer
+
+ evenSecondsEvent.Subscribe(fun x -&gt; printfn $&quot;{x} &quot;)
+ |&gt; ignore
+
+ Console.ReadLine() |&gt; ignore</code></pre>
+ The sample will only output even seconds: <code>2/15/2022 12:03:08 AM
+ 2/15/2022 12:03:10 AM
+ 2/15/2022 12:03:12 AM
+ 2/15/2022 12:03:14 AM</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '458', 458)" onmouseover="showTip(event, '458', 458)">
+                <p>
+                  <a id="map">
+                    <a href="#map">
+                      <code><span>Event.map&#32;<span>mapping&#32;sourceEvent</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="458">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Event.map&#32;<span>mapping&#32;sourceEvent</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'U</span></code>
+                       - 
+                      The function to transform event values.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sourceEvent
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input event.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'U&gt;</span></code>
+                  </span>
+                  An event that passes the transformed values.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.EventModule.Map``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.EventModule.Map``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/eventmodule.fs#L17-17" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new event that passes values transformed by the given function.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to transform event values.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sourceEvent
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input event.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'U&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An event that passes the transformed values.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System
+
+ let createTimer interval =
+     let timer = new Timers.Timer(interval)
+     timer.AutoReset &lt;- true
+     timer.Enabled &lt;- true
+     timer.Elapsed
+
+ let timer = createTimer 1000
+
+ let transformSeconds (number: Timers.ElapsedEventArgs) =
+     match number with
+     | _ when number.SignalTime.Second % 2 = 0 -&gt; 100
+     | _ -&gt; -500
+
+ let evenSecondsEvent = Event.map transformSeconds timer
+
+ evenSecondsEvent.Subscribe(fun x -&gt; printf $&quot;{x} &quot;)
+ |&gt; ignore
+
+ Console.ReadLine() |&gt; ignore</code></pre>
+ The sample will transform the seconds if it's even or odd number and the output is: <code>-500 100 -500 100 -500 100</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '459', 459)" onmouseover="showTip(event, '459', 459)">
+                <p>
+                  <a id="merge">
+                    <a href="#merge">
+                      <code><span>Event.merge&#32;<span>event1&#32;event2</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="459">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Event.merge&#32;<span>event1&#32;event2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        event1
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del1,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The first input event.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        event2
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del2,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The second input event.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'T&gt;</span></code>
+                  </span>
+                  An event that fires when either of the input events fire.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.EventModule.Merge``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.EventModule.Merge``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/eventmodule.fs#L88-88" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Fires the output event when either of the input events fire.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  event1
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del1,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The first input event.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  event2
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del2,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The second input event.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An event that fires when either of the input events fire.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System.Reactive.Linq
+ open System
+ let createTimer interval =
+     let timer = new Timers.Timer(interval)
+     timer.AutoReset &lt;- true
+     timer.Enabled &lt;- true
+     timer.Elapsed
+
+ let oneSecondTimer = createTimer 1000
+ let fiveSecondsTimer = createTimer 5000
+
+ let result = Event.merge oneSecondTimer fiveSecondsTimer
+
+ result.Subscribe(fun output -&gt; printfn $&quot;Output - {output.SignalTime} &quot;)
+ |&gt; ignore
+
+ Console.ReadLine() |&gt; ignore</code></pre>
+ The sample will output: <code>Output - 2/15/2022 12:10:40 AM
+ Output - 2/15/2022 12:10:41 AM
+ Output - 2/15/2022 12:10:41 AM
+ Output - 2/15/2022 12:10:42 AM
+ Output - 2/15/2022 12:10:43 AM</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '460', 460)" onmouseover="showTip(event, '460', 460)">
+                <p>
+                  <a id="pairwise">
+                    <a href="#pairwise">
+                      <code><span>Event.pairwise&#32;<span>sourceEvent</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="460">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Event.pairwise&#32;<span>sourceEvent</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        sourceEvent
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input event.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;<span>'T&#32;*&#32;'T</span>&gt;</span></code>
+                  </span>
+                  An event that triggers on pairs of consecutive values passed from the source event.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.EventModule.Pairwise``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.EventModule.Pairwise``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/eventmodule.fs#L74-74" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new event that triggers on the second and subsequent triggerings of the input event.
+ The Nth triggering of the input event passes the arguments from the N-1th and Nth triggering as
+ a pair. The argument passed to the N-1th triggering is held in hidden internal state until the
+ Nth triggering occurs.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sourceEvent
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input event.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;<span>'T&#32;*&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An event that triggers on pairs of consecutive values passed from the source event.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System
+
+ let createTimer interval =
+     let timer = new Timers.Timer(interval)
+     timer.AutoReset &lt;- true
+     timer.Enabled &lt;- true
+     timer.Elapsed
+
+ let timer = createTimer 1000
+
+ let pairWise = Event.pairwise timer
+
+ let extractPair (pair: Timers.ElapsedEventArgs * Timers.ElapsedEventArgs) =
+     let leftPair, rightPair = pair
+     printfn $&quot;(Left): {leftPair.SignalTime} (Right): {rightPair.SignalTime}&quot;
+
+ pairWise.Subscribe(extractPair) |&gt; ignore
+
+ Console.ReadLine() |&gt; ignore</code></pre>
+ The sample will output the timer event every second: <code>
+ (Left): 2/14/2022 11:58:46 PM (Right): 2/14/2022 11:58:46 PM
+ (Left): 2/14/2022 11:58:46 PM (Right): 2/14/2022 11:58:47 PM
+ (Left): 2/14/2022 11:58:47 PM (Right): 2/14/2022 11:58:48 PM</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '461', 461)" onmouseover="showTip(event, '461', 461)">
+                <p>
+                  <a id="partition">
+                    <a href="#partition">
+                      <code><span>Event.partition&#32;<span>predicate&#32;sourceEvent</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="461">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Event.partition&#32;<span>predicate&#32;sourceEvent</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                       - 
+                      The function to determine which output event to trigger.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sourceEvent
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input event.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'T&gt;</span>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'T&gt;</span></span></code>
+                  </span>
+                  A tuple of events.  The first is triggered when the predicate evaluates to true
+ and the second when the predicate evaluates to false.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.EventModule.Partition``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.EventModule.Partition``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/eventmodule.fs#L33-33" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new event that listens to the original event and triggers the
+ first resulting event if the application of the predicate to the event arguments
+ returned true, and the second event if it returned false.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to determine which output event to trigger.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sourceEvent
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input event.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'T&gt;</span>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'T&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A tuple of events.  The first is triggered when the predicate evaluates to true
+ and the second when the predicate evaluates to false.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System
+
+ let createTimer interval =
+     let timer = new Timers.Timer(interval)
+     timer.AutoReset &lt;- true
+     timer.Enabled &lt;- true
+     timer.Elapsed
+
+ let timer = createTimer 1000
+
+ let getEvenSeconds (number: Timers.ElapsedEventArgs) =
+     match number with
+     | _ when number.SignalTime.Second % 2 = 0 -&gt; true
+     | _ -&gt; false
+
+ let leftPartition, rightPartition = Event.partition getEvenSeconds timer
+
+ leftPartition.Subscribe(fun x -&gt; printfn $&quot;Left partition: {x.SignalTime}&quot;)
+ |&gt; ignore
+
+ rightPartition.Subscribe(fun x -&gt; printfn $&quot;Right partition: {x.SignalTime}&quot;)
+ |&gt; ignore
+
+ Console.ReadLine() |&gt; ignore</code></pre>
+ The sample will partition into two events if it is even or odd seconds: <code>
+ Right partition: 2/15/2022 12:00:27 AM
+ Left partition: 2/15/2022 12:00:28 AM
+ Right partition: 2/15/2022 12:00:29 AM
+ Left partition: 2/15/2022 12:00:30 AM
+ Right partition: 2/15/2022 12:00:31 AM</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '462', 462)" onmouseover="showTip(event, '462', 462)">
+                <p>
+                  <a id="scan">
+                    <a href="#scan">
+                      <code><span>Event.scan&#32;<span>collector&#32;state&#32;sourceEvent</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="462">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Event.scan&#32;<span>collector&#32;state&#32;sourceEvent</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        collector
+                      </b>
+                      :
+                      <code><span>'U&#32;->&#32;'T&#32;->&#32;'U</span></code>
+                       - 
+                      The function to update the state with each event value.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        state
+                      </b>
+                      :
+                      <code>'U</code>
+                       - 
+                      The initial state.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sourceEvent
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input event.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'U&gt;</span></code>
+                  </span>
+                  An event that fires on the updated state values.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.EventModule.Scan``3```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.EventModule.Scan``3\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/eventmodule.fs#L57-57" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new event consisting of the results of applying the given accumulating function
+ to successive values triggered on the input event.  An item of internal state
+ records the current value of the state parameter.  The internal state is not locked during the
+ execution of the accumulation function, so care should be taken that the
+ input IEvent not triggered by multiple threads simultaneously.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  collector
+                </span>
+                :
+                <code><span>'U&#32;->&#32;'T&#32;->&#32;'U</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to update the state with each event value.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  state
+                </span>
+                :
+                <code>'U</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The initial state.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sourceEvent
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input event.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'U&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An event that fires on the updated state values.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System
+
+ let createTimer interval =
+     let timer = new Timers.Timer(interval)
+     timer.AutoReset &lt;- true
+     timer.Enabled &lt;- true
+     timer.Elapsed
+
+ let timer = createTimer 1000
+
+ let multiplyBy number =
+     fun (timerEvent: Timers.ElapsedEventArgs) -&gt; number * timerEvent.SignalTime./// Second
+
+ let initialState = 2
+
+ let scan = Event.scan multiplyBy initialState timer
+
+ scan.Subscribe(fun x -&gt; printf &quot;%A &quot; x) |&gt; ignore
+
+ Console.ReadLine() |&gt; ignore</code></pre>
+ The sample will output depending on your timestamp. It will multiply the seconds with an initial state of 2: <code>106 5724 314820 17629920 1004905440 -1845026624 -1482388416</code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '463', 463)" onmouseover="showTip(event, '463', 463)">
+                <p>
+                  <a id="split">
+                    <a href="#split">
+                      <code><span>Event.split&#32;<span>splitter&#32;sourceEvent</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="463">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Event.split&#32;<span>splitter&#32;sourceEvent</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        splitter
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpchoice-2.html">Choice</a>&lt;<span>'U1,&#32;'U2</span>&gt;</span></span></code>
+                       - 
+                      The function to transform event values into one of two types.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sourceEvent
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+                       - 
+                      The input event.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'U1&gt;</span>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'U2&gt;</span></span></code>
+                  </span>
+                  A tuple of events.  The first fires whenever <code>splitter</code> evaluates to Choice1of1 and
+ the second fires whenever <code>splitter</code> evaluates to Choice2of2.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.EventModule.Split``4```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.EventModule.Split``4\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/eventmodule.fs#L95-95" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns a new event that listens to the original event and triggers the
+ first resulting event if the application of the function to the event arguments
+ returned a Choice1Of2, and the second event if it returns a Choice2Of2.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  splitter
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpchoice-2.html">Choice</a>&lt;<span>'U1,&#32;'U2</span>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to transform event values into one of two types.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  sourceEvent
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input event.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'U1&gt;</span>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;'U2&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  A tuple of events.  The first fires whenever <code>splitter</code> evaluates to Choice1of1 and
+ the second fires whenever <code>splitter</code> evaluates to Choice2of2.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="example">
+              <pre><code class="fsharp language-fsharp">
+ open System
+
+ let createTimer interval =
+     let timer = new Timers.Timer(interval)
+     timer.AutoReset &lt;- true
+     timer.Enabled &lt;- true
+     timer.Elapsed
+
+ let timer = createTimer 1000
+
+ let bySeconds (timerEvent: Timers.ElapsedEventArgs) =
+     match timerEvent.SignalTime.Second % 2 = 0 with
+     | true -&gt; Choice1Of2 timerEvent.SignalTime.Second
+     | false -&gt; Choice2Of2 $&quot;{timerEvent.SignalTime.Second} is not an even num ber&quot;
+
+ let evenSplit, printOddNumbers = Event.split bySeconds timer
+
+ let printOutput event functionName =
+     Event.add (fun output -&gt; printfn $&quot;{functionName} - Split output: {output}. /// Type: {output.GetType()}&quot;) event
+
+ printOutput evenSplit (nameof evenSplit) |&gt; ignore
+
+ printOutput printOddNumbers (nameof printOddNumbers)
+ |&gt; ignore
+
+ Console.ReadLine() |&gt; ignore</code></pre>
+ The sample will split the events by even or odd seconds: <code>evenSplit - Split output: 44. Type: System.Int32
+ printOddNumbers - Split output: 45 is not an even number. Type: System.String
+ evenSplit - Split output: 46. Type: System.Int32
+ printOddNumbers - Split output: 47 is not an even number. Type: System.String
+ evenSplit - Split output: 48. Type: System.Int32
+ printOddNumbers - Split output: 49 is not an even number. Type: System.String</code>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,2617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DerivedPatterns (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    DerivedPatterns Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+        FSharp.Quotations
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        Contains a set of derived F# active patterns to analyze F# expression objects
+      </p>
+    </div>
+  </div>
+  <div></div>
+  <div></div>
+  <div>
+    <h3>
+      Active patterns
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Active pattern
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1110', 1110)" onmouseover="showTip(event, '1110', 1110)">
+                <p>
+                  <a id="(|AndAlso|_|)">
+                    <a href="#(|AndAlso|_|)">
+                      <code><span>(|AndAlso|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1110">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|AndAlso|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span>(<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the left and right parts of the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.AndAlsoPattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.AndAlsoPattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2921-2921" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize expressions of the form <code>a &amp;&amp; b</code>
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span>(<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the left and right parts of the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="andalso-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ true &amp;&amp; false @&gt; with
+ | AndAlso (a, b) -&gt; (a, b)
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>&lt;@ true @&gt;, &lt;@ false @&gt;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1111', 1111)" onmouseover="showTip(event, '1111', 1111)">
+                <p>
+                  <a id="(|Applications|_|)">
+                    <a href="#(|Applications|_|)">
+                      <code><span>(|Applications|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1111">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Applications|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span>(<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;*&#32;<span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the function and curried arguments of the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.ApplicationsPattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.ApplicationsPattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2916-2916" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize expressions that represent the application of a (possibly curried or tupled) first class function value
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span>(<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;*&#32;<span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the function and curried arguments of the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="applications-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.Patterns
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ (fun f -&gt; f (1, 2) 3) @&gt; with
+ | Lambda(_, Applications (f, curriedArgs)) -&gt;
+     curriedArgs |&gt; List.map (fun args -&gt; args.Length)
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>[2; 1]</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1112', 1112)" onmouseover="showTip(event, '1112', 1112)">
+                <p>
+                  <a id="(|Bool|_|)">
+                    <a href="#(|Bool|_|)">
+                      <code><span>(|Bool|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1112">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Bool|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.BoolPattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.BoolPattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2801-2801" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant boolean expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="bool-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ true @&gt; with
+ | Bool v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>true</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1113', 1113)" onmouseover="showTip(event, '1113', 1113)">
+                <p>
+                  <a id="(|Byte|_|)">
+                    <a href="#(|Byte|_|)">
+                      <code><span>(|Byte|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1113">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Byte|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byte.html">byte</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.BytePattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.BytePattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2837-2837" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant byte expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byte.html">byte</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="byte-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ 8uy @&gt; with
+ | Byte v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>8uy</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1114', 1114)" onmouseover="showTip(event, '1114', 1114)">
+                <p>
+                  <a id="(|Char|_|)">
+                    <a href="#(|Char|_|)">
+                      <code><span>(|Char|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1114">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Char|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-char.html">char</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.CharPattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.CharPattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2825-2825" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant unicode character expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-char.html">char</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="char-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ &#39;a&#39; @&gt; with
+ | Char v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>&#39;a&#39;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1115', 1115)" onmouseover="showTip(event, '1115', 1115)">
+                <p>
+                  <a id="(|Decimal|_|)">
+                    <a href="#(|Decimal|_|)">
+                      <code><span>(|Decimal|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1115">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Decimal|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-decimal.html">decimal</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.DecimalPattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.DecimalPattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2973-2973" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant decimal expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-decimal.html">decimal</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="decimal-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ 8.0M @&gt; with
+ | Decimal v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>8.0M</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1116', 1116)" onmouseover="showTip(event, '1116', 1116)">
+                <p>
+                  <a id="(|Double|_|)">
+                    <a href="#(|Double|_|)">
+                      <code><span>(|Double|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1116">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Double|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float.html">float</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.DoublePattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.DoublePattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2819-2819" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant 64-bit floating point number expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float.html">float</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="double-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ 1.0 @&gt; with
+ | Double v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>1.0</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1117', 1117)" onmouseover="showTip(event, '1117', 1117)">
+                <p>
+                  <a id="(|Int16|_|)">
+                    <a href="#(|Int16|_|)">
+                      <code><span>(|Int16|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1117">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Int16|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int16.html">int16</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.Int16Pattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.Int16Pattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2843-2843" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant int16 expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int16.html">int16</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="int16-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ 8s @&gt; with
+ | Int16 v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>8s</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1118', 1118)" onmouseover="showTip(event, '1118', 1118)">
+                <p>
+                  <a id="(|Int32|_|)">
+                    <a href="#(|Int32|_|)">
+                      <code><span>(|Int32|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1118">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Int32|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int32.html">int32</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.Int32Pattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.Int32Pattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2855-2855" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant int32 expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int32.html">int32</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="int32-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ 8 @&gt; with
+ | Int32 v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>8</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1119', 1119)" onmouseover="showTip(event, '1119', 1119)">
+                <p>
+                  <a id="(|Int64|_|)">
+                    <a href="#(|Int64|_|)">
+                      <code><span>(|Int64|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1119">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Int64|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int64.html">int64</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.Int64Pattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.Int64Pattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2867-2867" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant int64 expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int64.html">int64</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="int64-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ 8L @&gt; with
+ | Int64 v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>8L</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1120', 1120)" onmouseover="showTip(event, '1120', 1120)">
+                <p>
+                  <a id="(|Lambdas|_|)">
+                    <a href="#(|Lambdas|_|)">
+                      <code><span>(|Lambdas|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1120">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Lambdas|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span>(<span><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpvar.html">Var</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the curried variables and body of the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.LambdasPattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.LambdasPattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2912-2912" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize expressions that represent a (possibly curried or tupled) first class function value
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span>(<span><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpvar.html">Var</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the curried variables and body of the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="lambdas-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.Patterns
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ (fun (a1, a2) b -&gt; ()) @&gt; with
+ | Lambdas(curriedVars, _) -&gt;
+     curriedVars |&gt; List.map (List.map (fun arg -&gt; arg.Name))
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>[[&quot;a1&quot;; &quot;a2&quot;]; [&quot;b&quot;]]</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1121', 1121)" onmouseover="showTip(event, '1121', 1121)">
+                <p>
+                  <a id="(|MethodWithReflectedDefinition|_|)">
+                    <a href="#(|MethodWithReflectedDefinition|_|)">
+                      <code><span>(|MethodWithReflectedDefinition|_|)&#32;<span>methodBase</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1121">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|MethodWithReflectedDefinition|_|)&#32;<span>methodBase</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        methodBase
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.methodbase">MethodBase</a></code>
+                       - 
+                      The description of the method.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  The expression of the method definition if found, or None.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.MethodWithReflectedDefinitionPattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.MethodWithReflectedDefinitionPattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2983-2983" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize methods that have an associated ReflectedDefinition
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  methodBase
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.methodbase">MethodBase</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The description of the method.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The expression of the method definition if found, or None.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="methodwithreflecteddefinition-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations
+ open FSharp.Quotations.Patterns
+ open FSharp.Quotations.DerivedPatterns
+
+ [&lt;ReflectedDefinition&gt;]
+ let f x = (x, x)
+
+ let inpExpr = &lt;@ f 4 @&gt;
+
+ let implExpr =
+     match inpExpr with
+     | Call(None, MethodWithReflectedDefinition implExpr, [ _argExpr ]) -&gt; implExpr
+     | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates <code>implExpr</code> to a quotation with the same structure as <code>&lt;@ fun (x: int) -&gt; (x, x) @&gt;</code>, which is the implementation of the
+ method <code>f</code>. Note that the correct generic instantaition has been applied to the implementation to reflect
+ the the type at the callsite.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1122', 1122)" onmouseover="showTip(event, '1122', 1122)">
+                <p>
+                  <a id="(|OrElse|_|)">
+                    <a href="#(|OrElse|_|)">
+                      <code><span>(|OrElse|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1122">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|OrElse|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span>(<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the left and right parts of the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.OrElsePattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.OrElsePattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2927-2927" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize expressions of the form <code>a || b</code>
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><span>(<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the left and right parts of the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="orelse-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ true || false @&gt; with
+ | OrElse (a, b) -&gt; (a, b)
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>&lt;@ true @&gt;, &lt;@ false @&gt;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1123', 1123)" onmouseover="showTip(event, '1123', 1123)">
+                <p>
+                  <a id="(|PropertyGetterWithReflectedDefinition|_|)">
+                    <a href="#(|PropertyGetterWithReflectedDefinition|_|)">
+                      <code><span>(|PropertyGetterWithReflectedDefinition|_|)&#32;<span>propertyInfo</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1123">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|PropertyGetterWithReflectedDefinition|_|)&#32;<span>propertyInfo</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        propertyInfo
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></code>
+                       - 
+                      The description of the property.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  The expression of the method definition if found, or None.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.PropertyGetterWithReflectedDefinitionPattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.PropertyGetterWithReflectedDefinitionPattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2987-2987" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize property getters or values in modules that have an associated ReflectedDefinition
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  propertyInfo
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The description of the property.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The expression of the method definition if found, or None.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="propertywithreflecteddefinition-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations
+ open FSharp.Quotations.Patterns
+ open FSharp.Quotations.DerivedPatterns
+
+ [&lt;ReflectedDefinition&gt;]
+ type C&lt;&#39;T&gt;() =
+    member x.Identity = x
+
+ let inpExpr = &lt;@ C&lt;int&gt;().Identity @&gt;
+
+ let implExpr =
+     match inpExpr with
+     | PropertyGet(Some _, PropertyGetterWithReflectedDefinition implExpr, [ ]) -&gt; implExpr
+     | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates <code>implExpr</code> to a quotation with the same structure as <code>&lt;@ fun (x: C&lt;int&gt;) () -&gt; x @&gt;</code>, which is the implementation of the
+ property <code>Identity</code>. Note that the correct generic instantaition has been applied to the implementation to reflect
+ the the type at the callsite.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1124', 1124)" onmouseover="showTip(event, '1124', 1124)">
+                <p>
+                  <a id="(|PropertySetterWithReflectedDefinition|_|)">
+                    <a href="#(|PropertySetterWithReflectedDefinition|_|)">
+                      <code><span>(|PropertySetterWithReflectedDefinition|_|)&#32;<span>propertyInfo</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1124">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|PropertySetterWithReflectedDefinition|_|)&#32;<span>propertyInfo</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        propertyInfo
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></code>
+                       - 
+                      The description of the property.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  The expression of the method definition if found, or None.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.PropertySetterWithReflectedDefinitionPattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.PropertySetterWithReflectedDefinitionPattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2991-2991" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize property setters that have an associated ReflectedDefinition
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  propertyInfo
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The description of the property.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The expression of the method definition if found, or None.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="propertysetterwithreflecteddefinition-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations
+ open FSharp.Quotations.Patterns
+ open FSharp.Quotations.DerivedPatterns
+
+ [&lt;ReflectedDefinition&gt;]
+ type C&lt;&#39;T&gt;() =
+    member x.Count with set (v: int) = ()
+
+ let inpExpr = &lt;@ C&lt;int&gt;().Count &lt;- 3 @&gt;
+
+ let implExpr =
+     match inpExpr with
+     | PropertySet(Some _, PropertySetterWithReflectedDefinition implExpr, [], _valueExpr) -&gt; implExpr
+     | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates <code>implExpr</code> to a quotation with the same structure as <code>&lt;@ fun (x: C&lt;int&gt;) (v: int) -&gt; () @&gt;</code>, which is the implementation of the
+ setter for the property <code>Count</code>. Note that the correct generic instantaition has been applied to the implementation to reflect
+ the the type at the callsite.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1125', 1125)" onmouseover="showTip(event, '1125', 1125)">
+                <p>
+                  <a id="(|SByte|_|)">
+                    <a href="#(|SByte|_|)">
+                      <code><span>(|SByte|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1125">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|SByte|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-sbyte.html">sbyte</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.SBytePattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.SBytePattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2831-2831" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant signed byte expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-sbyte.html">sbyte</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="sbyte-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ 8y @&gt; with
+ | SByte v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>8y</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1126', 1126)" onmouseover="showTip(event, '1126', 1126)">
+                <p>
+                  <a id="(|Single|_|)">
+                    <a href="#(|Single|_|)">
+                      <code><span>(|Single|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1126">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Single|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float32.html">float32</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.SinglePattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.SinglePattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2813-2813" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant 32-bit floating point number expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float32.html">float32</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="single-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ 1.0f @&gt; with
+ | Single v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>1.0f</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1127', 1127)" onmouseover="showTip(event, '1127', 1127)">
+                <p>
+                  <a id="(|SpecificCall|_|)">
+                    <a href="#(|SpecificCall|_|)">
+                      <code><span>(|SpecificCall|_|)&#32;<span>templateParameter</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1127">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|SpecificCall|_|)&#32;<span>templateParameter</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        templateParameter
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input template expression to specify the method to call.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;->&#32;<span><span>(<span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&#32;*&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                  </span>
+                  The optional target object (present if the target is an
+ instance method), the generic type instantiation (non-empty if the target is a generic
+ instantiation), and the arguments to the function or method.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.SpecificCallPattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.SpecificCallPattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2933-2933" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                A parameterized active pattern to recognize calls to a specified function or method.
+ The returned elements are the optional target object (present if the target is an
+ instance method), the generic type instantiation (non-empty if the target is a generic
+ instantiation), and the arguments to the function or method.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  templateParameter
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input template expression to specify the method to call.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;->&#32;<span><span>(<span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&#32;*&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">list</a></span></span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The optional target object (present if the target is an
+ instance method), the generic type instantiation (non-empty if the target is a generic
+ instantiation), and the arguments to the function or method.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="specificcall-1">
+              Match a specific call to Console.WriteLine taking one string argument:
+ <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations
+ open FSharp.Quotations.Patterns
+ open FSharp.Quotations.DerivedPatterns
+
+ let inpExpr = &lt;@ Console.WriteLine(&quot;hello&quot;) @&gt;
+
+ match inpExpr with
+ | SpecificCall &lt;@ Console.WriteLine(&quot;1&quot;) @&gt; (None, [], [ argExpr ]) -&gt; argExpr
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to a quotation with the same structure as <code>&lt;@ &quot;hello&quot; @&gt;</code>.
+ 
+            </p>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="specificcall-2">
+              Calls to this active pattern can be partially applied to pre-evaluate some aspects of the matching. For example:
+ <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations
+ open FSharp.Quotations.Patterns
+ open FSharp.Quotations.DerivedPatterns
+
+ let (|ConsoleWriteLineOneArg|_|) = (|SpecificCall|_|) &lt;@ Console.WriteLine(&quot;1&quot;) @&gt;
+
+ let inpExpr = &lt;@ Console.WriteLine(&quot;hello&quot;) @&gt;
+
+ match inpExpr with
+ | ConsoleWriteLineOneArg (None, [], [ argExpr ]) -&gt; argExpr
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to a quotation with the same structure as <code>&lt;@ &quot;hello&quot; @&gt;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1128', 1128)" onmouseover="showTip(event, '1128', 1128)">
+                <p>
+                  <a id="(|String|_|)">
+                    <a href="#(|String|_|)">
+                      <code><span>(|String|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1128">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|String|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.StringPattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.StringPattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2807-2807" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant string expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="string-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ &quot;a&quot; @&gt; with
+ | String v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>&quot;a&quot;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1129', 1129)" onmouseover="showTip(event, '1129', 1129)">
+                <p>
+                  <a id="(|UInt16|_|)">
+                    <a href="#(|UInt16|_|)">
+                      <code><span>(|UInt16|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1129">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|UInt16|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint16.html">uint16</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.UInt16Pattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.UInt16Pattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2849-2849" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant unsigned int16 expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint16.html">uint16</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="uint16-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ 8us @&gt; with
+ | UInt16 v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>8us</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1130', 1130)" onmouseover="showTip(event, '1130', 1130)">
+                <p>
+                  <a id="(|UInt32|_|)">
+                    <a href="#(|UInt32|_|)">
+                      <code><span>(|UInt32|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1130">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|UInt32|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint32.html">uint32</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.UInt32Pattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.UInt32Pattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2861-2861" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant unsigned int32 expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint32.html">uint32</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="uint32-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ 8u @&gt; with
+ | UInt32 v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>8u</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1131', 1131)" onmouseover="showTip(event, '1131', 1131)">
+                <p>
+                  <a id="(|UInt64|_|)">
+                    <a href="#(|UInt64|_|)">
+                      <code><span>(|UInt64|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1131">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|UInt64|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint64.html">uint64</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern binds the constant value from the input expression
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.UInt64Pattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.UInt64Pattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2873-2873" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize constant unsigned int64 expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint64.html">uint64</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern binds the constant value from the input expression
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="uint64-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ 8UL @&gt; with
+ | UInt64 v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>8UL</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1132', 1132)" onmouseover="showTip(event, '1132', 1132)">
+                <p>
+                  <a id="(|Unit|_|)">
+                    <a href="#(|Unit|_|)">
+                      <code><span>(|Unit|_|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1132">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Unit|_|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                       - 
+                      The input expression to match against.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  When successful, the pattern does not bind any results
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Quotations.DerivedPatternsModule.UnitPattern`')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Quotations.DerivedPatternsModule.UnitPattern\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/quotations.fs#L2879-2879" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                An active pattern to recognize <code>()</code> constant expressions
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  input
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input expression to match against.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  When successful, the pattern does not bind any results
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="unit-1">
+              <pre><code class="fsharp language-fsharp">
+ open FSharp.Quotations.DerivedPatterns
+
+ match &lt;@ () @&gt; with
+ | Unit v -&gt; v
+ | _ -&gt; failwith &quot;unexpected&quot;</code></pre>
+ Evaluates to <code>true</code>.
+ 
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

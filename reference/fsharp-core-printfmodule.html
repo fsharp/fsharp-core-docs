@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Printf (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    Printf Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+        FSharp.Core
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        Extensible printf-style formatting for numbers and other datatypes
+      </p>
+    </div>
+    <p class="fsdocs-remarks">
+      Format specifications are strings with "%" markers indicating format
+ placeholders. Format placeholders consist of <code>%[flags][width][.precision][type]</code>.
+    </p>
+  </div>
+  <div>
+    <h3>
+      Types
+    </h3>
+    <table class="table outer-list fsdocs-entity-list">
+      <thead>
+        <tr>
+          <td>
+            Type
+          </td>
+          <td>
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-entity-name">
+            <p>
+              <a name="BuilderFormat<'T, 'Result>">
+                <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-builderformat-2.html">
+                  BuilderFormat<'T, 'Result>
+                </a>
+              </a>
+            </p>
+          </td>
+          <td class="fsdocs-entity-xmldoc">
+            <div>
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Microsoft.FSharp.Core.PrintfModule.BuilderFormat`2``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Microsoft.FSharp.Core.PrintfModule.BuilderFormat`2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fsi#L105-105" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Represents a statically-analyzed format associated with writing to a <a href="https://docs.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a>. The first type parameter indicates the
+ arguments of the format operation and the last the overall return type.
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-entity-name">
+            <p>
+              <a name="BuilderFormat<'T>">
+                <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-builderformat-1.html">
+                  BuilderFormat<'T>
+                </a>
+              </a>
+            </p>
+          </td>
+          <td class="fsdocs-entity-xmldoc">
+            <div>
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Microsoft.FSharp.Core.PrintfModule.BuilderFormat`1``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Microsoft.FSharp.Core.PrintfModule.BuilderFormat`1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fsi#L117-117" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Represents a statically-analyzed format associated with writing to a <a href="https://docs.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a>. The type parameter indicates the
+ arguments and return type of the format operation.
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-entity-name">
+            <p>
+              <a name="StringFormat<'T, 'Result>">
+                <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-stringformat-2.html">
+                  StringFormat<'T, 'Result>
+                </a>
+              </a>
+            </p>
+          </td>
+          <td class="fsdocs-entity-xmldoc">
+            <div>
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Microsoft.FSharp.Core.PrintfModule.StringFormat`2``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Microsoft.FSharp.Core.PrintfModule.StringFormat`2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fsi#L109-109" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Represents a statically-analyzed format when formatting builds a string. The first type parameter indicates the
+ arguments of the format operation and the last the overall return type.
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-entity-name">
+            <p>
+              <a name="StringFormat<'T>">
+                <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-stringformat-1.html">
+                  StringFormat<'T>
+                </a>
+              </a>
+            </p>
+          </td>
+          <td class="fsdocs-entity-xmldoc">
+            <div>
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Microsoft.FSharp.Core.PrintfModule.StringFormat`1``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Microsoft.FSharp.Core.PrintfModule.StringFormat`1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fsi#L121-121" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Represents a statically-analyzed format when formatting builds a string. The type parameter indicates the
+ arguments and return type of the format operation.
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-entity-name">
+            <p>
+              <a name="TextWriterFormat<'T, 'Result>">
+                <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-2.html">
+                  TextWriterFormat<'T, 'Result>
+                </a>
+              </a>
+            </p>
+          </td>
+          <td class="fsdocs-entity-xmldoc">
+            <div>
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Microsoft.FSharp.Core.PrintfModule.TextWriterFormat`2``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Microsoft.FSharp.Core.PrintfModule.TextWriterFormat`2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fsi#L113-113" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Represents a statically-analyzed format associated with writing to a <a href="https://docs.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a>. The first type parameter indicates the
+ arguments of the format operation and the last the overall return type.
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-entity-name">
+            <p>
+              <a name="TextWriterFormat<'T>">
+                <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">
+                  TextWriterFormat<'T>
+                </a>
+              </a>
+            </p>
+          </td>
+          <td class="fsdocs-entity-xmldoc">
+            <div>
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Microsoft.FSharp.Core.PrintfModule.TextWriterFormat`1``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Microsoft.FSharp.Core.PrintfModule.TextWriterFormat`1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fsi#L125-125" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Represents a statically-analyzed format associated with writing to a <a href="https://docs.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a>. The type parameter indicates the
+ arguments and return type of the format operation.
+              </p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '933', 933)" onmouseover="showTip(event, '933', 933)">
+                <p>
+                  <a id="bprintf">
+                    <a href="#bprintf">
+                      <code><span>bprintf&#32;<span>builder&#32;format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="933">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>bprintf&#32;<span>builder&#32;format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        builder
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a></code>
+                       - 
+                      The StringBuilder to print to.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-builderformat-1.html">BuilderFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input format or interpolated string.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The return type and arguments of the formatter.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringBuilder``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringBuilder``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1435-1435" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Print to a <a href="https://docs.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a>
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  builder
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The StringBuilder to print to.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-builderformat-1.html">BuilderFormat</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input format or interpolated string.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The return type and arguments of the formatter.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="bprintf-1">
+              Using interpolated strings:
+ <pre><code class="fsharp language-fsharp">
+ open Printf
+ open System.Text
+
+ let buffer = new StringBuilder()
+
+ bprintf buffer $&quot;Write three = {1+2}&quot;
+ buffer.ToString()</code></pre>
+ Evaluates to <code>&quot;Write three = 3&quot;</code>.
+ 
+            </p>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="bprintf-2">
+              Using <code>%</code> format patterns:
+ <pre><code class="fsharp language-fsharp">
+ open Printf
+ open System.Text
+
+ let buffer = new StringBuilder()
+
+ bprintf buffer &quot;Write five = %d&quot; (3+2)
+ buffer.ToString()</code></pre>
+ Evaluates to <code>&quot;Write five = 5&quot;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '934', 934)" onmouseover="showTip(event, '934', 934)">
+                <p>
+                  <a id="eprintf">
+                    <a href="#eprintf">
+                      <code><span>eprintf&#32;<span>format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="934">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>eprintf&#32;<span>format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The return type and arguments of the formatter.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToError``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToError``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1455-1455" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Formatted printing to stderr
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input formatter.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The return type and arguments of the formatter.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="eprintf-1">
+              Using interpolated strings:
+ <pre><code class="fsharp language-fsharp">
+ eprintf $&quot;Write three = {1+2}&quot;</code></pre>
+ After evaluation the text <code>&quot;Write three = 3&quot;</code> is written to <code>stderr</code>.
+ 
+            </p>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="eprintf-2">
+              Using <code>%</code> format patterns:
+ <pre><code class="fsharp language-fsharp">
+ eprintf &quot;Write five = %d&quot; (3+2)</code></pre>
+ After evaluation the text <code>&quot;Write five = 5&quot;</code> is written to <code>stderr</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '935', 935)" onmouseover="showTip(event, '935', 935)">
+                <p>
+                  <a id="eprintfn">
+                    <a href="#eprintfn">
+                      <code><span>eprintfn&#32;<span>format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="935">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>eprintfn&#32;<span>format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The return type and arguments of the formatter.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormatLineToError``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormatLineToError``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1463-1463" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Formatted printing to stderr, adding a newline 
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input formatter.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The return type and arguments of the formatter.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="eprintfn-1">
+              Using interpolated strings:
+ <pre><code class="fsharp language-fsharp">
+ eprintfn $&quot;Write three = {1+2}&quot;
+ eprintfn $&quot;Write four = {2+2}&quot;</code></pre>
+ After evaluation two lines are written to <code>stderr</code>.
+ 
+            </p>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="eprintf-2">
+              Using <code>%</code> format patterns:
+ <pre><code class="fsharp language-fsharp">
+ eprintfn &quot;Write five = %d&quot; (3+2)
+ eprintfn &quot;Write six = %d&quot; (3+3)</code></pre>
+ After evaluation two lines are written to <code>stderr</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '936', 936)" onmouseover="showTip(event, '936', 936)">
+                <p>
+                  <a id="failwithf">
+                    <a href="#failwithf">
+                      <code><span>failwithf&#32;<span>format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="936">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>failwithf&#32;<span>format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-stringformat-2.html">StringFormat</a>&lt;<span>'T,&#32;'Result</span>&gt;</span></code>
+                       - 
+                      The input formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The arguments of the formatter.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringThenFail``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringThenFail``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1447-1447" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Print to a string buffer and raise an exception with the given
+ result. Helper printers must return strings.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-stringformat-2.html">StringFormat</a>&lt;<span>'T,&#32;'Result</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input formatter.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The arguments of the formatter.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="failwithff-1">
+              <pre><code class="fsharp language-fsharp">
+ failwithf &quot;That&#39;s wrong. Five = %d and six = %d&quot; (3+2) (3+3)</code></pre>
+ Throws <code>Exception</code> with message <code>&quot;That&#39;s wrong. Five = 5 and six = 6&quot;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '937', 937)" onmouseover="showTip(event, '937', 937)">
+                <p>
+                  <a id="fprintf">
+                    <a href="#fprintf">
+                      <code><span>fprintf&#32;<span>textWriter&#32;format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="937">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>fprintf&#32;<span>textWriter&#32;format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        textWriter
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></code>
+                       - 
+                      The TextWriter to print to.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The return type and arguments of the formatter.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToTextWriter``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToTextWriter``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1439-1439" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Print to a text writer.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  textWriter
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The TextWriter to print to.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input formatter.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The return type and arguments of the formatter.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="fprintf-1">
+              Using interpolated strings:
+ <pre><code class="fsharp language-fsharp">
+ open Printf
+ open System.IO
+
+ let file = File.CreateText(&quot;out.txt&quot;)
+
+ fprintf file $&quot;Write three = {1+2}&quot;
+ file.Close()</code></pre>
+ After evaluation the file contains the text <code>&quot;Write three = 3&quot;</code>.
+ 
+            </p>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="fprintf-2">
+              Using <code>%</code> format patterns:
+ <pre><code class="fsharp language-fsharp">
+ open Printf
+ open System.IO
+
+ let file = File.CreateText(&quot;out.txt&quot;)
+
+ fprintf file &quot;Write five = %d&quot; (3+2)
+ file.Close()</code></pre>
+ After evaluation the file contains the text <code>&quot;Write five = 5&quot;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '938', 938)" onmouseover="showTip(event, '938', 938)">
+                <p>
+                  <a id="fprintfn">
+                    <a href="#fprintfn">
+                      <code><span>fprintfn&#32;<span>textWriter&#32;format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="938">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>fprintfn&#32;<span>textWriter&#32;format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        textWriter
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></code>
+                       - 
+                      The TextWriter to print to.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The return type and arguments of the formatter.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormatLineToTextWriter``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormatLineToTextWriter``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1443-1443" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Print to a text writer, adding a newline
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  textWriter
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The TextWriter to print to.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input formatter.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The return type and arguments of the formatter.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="fprintfn-1">
+              Using interpolated strings:
+ <pre><code class="fsharp language-fsharp">
+ open Printf
+ open System.IO
+
+ let file = File.CreateText(&quot;out.txt&quot;)
+
+ fprintfn file $&quot;Write three = {1+2}&quot;
+ fprintfn file $&quot;Write four = {2+2}&quot;
+ file.Close()</code></pre>
+ After evaluation the file contains two lines.
+ 
+            </p>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="fprintfn-2">
+              Using <code>%</code> format patterns:
+ <pre><code class="fsharp language-fsharp">
+ open Printf
+ open System.IO
+
+ let file = File.CreateText(&quot;out.txt&quot;)
+
+ fprintfn file &quot;Write five = %d&quot; (3+2)
+ fprintfn file &quot;Write six = %d&quot; (3+3)
+ file.Close()</code></pre>
+ After evaluation the file contains two lines.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '939', 939)" onmouseover="showTip(event, '939', 939)">
+                <p>
+                  <a id="kbprintf">
+                    <a href="#kbprintf">
+                      <code><span>kbprintf&#32;<span>continuation&#32;builder&#32;format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="939">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>kbprintf&#32;<span>continuation&#32;builder&#32;format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        continuation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;'Result</span></code>
+                       - 
+                      The function called after formatting to generate the format result.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        builder
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a></code>
+                       - 
+                      The input StringBuilder.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-builderformat-2.html">BuilderFormat</a>&lt;<span>'T,&#32;'Result</span>&gt;</span></code>
+                       - 
+                      The input formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The arguments of the formatter.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringBuilderThen``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringBuilderThen``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1427-1427" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                bprintf, but call the given 'final' function to generate the result.
+ See <code>kprintf</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  continuation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;'Result</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function called after formatting to generate the format result.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  builder
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input StringBuilder.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-builderformat-2.html">BuilderFormat</a>&lt;<span>'T,&#32;'Result</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input formatter.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The arguments of the formatter.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="kbprintf-1">
+              Using <code>%</code> format patterns:
+ <pre><code class="fsharp language-fsharp">
+ open Printf
+ open System.Text
+
+ let buffer = new StringBuilder()
+
+ kbprintf (fun () -&gt; buffer.ToString()) buffer &quot;Write five = %d&quot; (3+2)</code></pre>
+ Evaluates to <code>&quot;Write five = 5&quot;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '940', 940)" onmouseover="showTip(event, '940', 940)">
+                <p>
+                  <a id="kfprintf">
+                    <a href="#kfprintf">
+                      <code><span>kfprintf&#32;<span>continuation&#32;textWriter&#32;format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="940">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>kfprintf&#32;<span>continuation&#32;textWriter&#32;format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        continuation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;'Result</span></code>
+                       - 
+                      The function called after formatting to generate the format result.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        textWriter
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></code>
+                       - 
+                      The input TextWriter.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-2.html">TextWriterFormat</a>&lt;<span>'T,&#32;'Result</span>&gt;</span></code>
+                       - 
+                      The input formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The arguments of the formatter.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToTextWriterThen``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToTextWriterThen``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1431-1431" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                fprintf, but call the given 'final' function to generate the result.
+ See <code>kprintf</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  continuation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;'Result</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function called after formatting to generate the format result.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  textWriter
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input TextWriter.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-2.html">TextWriterFormat</a>&lt;<span>'T,&#32;'Result</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input formatter.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The arguments of the formatter.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="kfprintf-1">
+              Using <code>%</code> format patterns:
+ <pre><code class="fsharp language-fsharp">
+ open Printf
+ open System.IO
+
+ let file = File.CreateText(&quot;out.txt&quot;)
+
+ kfprintf (fun () -&gt; file.Close()) $&quot;Write three = {1+2}&quot;</code></pre>
+ Writes <code>&quot;Write five = 5&quot;</code> to <code>out.txt</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '941', 941)" onmouseover="showTip(event, '941', 941)">
+                <p>
+                  <a id="kprintf">
+                    <a href="#kprintf">
+                      <code><span>kprintf&#32;<span>continuation&#32;format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="941">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>kprintf&#32;<span>continuation&#32;format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        continuation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a>&#32;->&#32;'Result</span></code>
+                       - 
+                      The function called after formatting to generate the format result.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-stringformat-2.html">StringFormat</a>&lt;<span>'T,&#32;'Result</span>&gt;</span></code>
+                       - 
+                      The input formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The arguments of the formatter.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormatThen``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormatThen``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1424-1424" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                printf, but call the given 'final' function to generate the result.
+ For example, these let the printing force a flush after all output has
+ been entered onto the channel, but not before. 
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  continuation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a>&#32;->&#32;'Result</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function called after formatting to generate the format result.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-stringformat-2.html">StringFormat</a>&lt;<span>'T,&#32;'Result</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input formatter.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The arguments of the formatter.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="kprintf-1">
+              Using <code>%</code> format patterns:
+ <pre><code class="fsharp language-fsharp">
+ open Printf
+
+ kprintf (fun s -&gt; s + &quot;, done!&quot;) $&quot;Write three = {1+2}&quot;</code></pre>
+ Evaluates to <code>&quot;Write five = 5, done!&quot;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '942', 942)" onmouseover="showTip(event, '942', 942)">
+                <p>
+                  <a id="ksprintf">
+                    <a href="#ksprintf">
+                      <code><span>ksprintf&#32;<span>continuation&#32;format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="942">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ksprintf&#32;<span>continuation&#32;format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        continuation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a>&#32;->&#32;'Result</span></code>
+                       - 
+                      The function called to generate a result from the formatted string.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-stringformat-2.html">StringFormat</a>&lt;<span>'T,&#32;'Result</span>&gt;</span></code>
+                       - 
+                      The input formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The arguments of the formatter.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringThen``2```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringThen``2\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1403-1403" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                sprintf, but call the given 'final' function to generate the result.
+ See <code>kprintf</code>.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  continuation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a>&#32;->&#32;'Result</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function called to generate a result from the formatted string.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-stringformat-2.html">StringFormat</a>&lt;<span>'T,&#32;'Result</span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input formatter.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The arguments of the formatter.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="ksprintf-1">
+              Using <code>%</code> format patterns:
+ <pre><code class="fsharp language-fsharp">
+ open Printf
+
+ ksprintf (fun s -&gt; s + &quot;, done!&quot;) $&quot;Write three = {1+2}&quot;</code></pre>
+ Evaluates to <code>&quot;Write five = 5, done!&quot;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '943', 943)" onmouseover="showTip(event, '943', 943)">
+                <p>
+                  <a id="printf">
+                    <a href="#printf">
+                      <code><span>printf&#32;<span>format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="943">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>printf&#32;<span>format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The return type and arguments of the formatter.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormat``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormat``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1451-1451" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Formatted printing to stdout
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input formatter.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The return type and arguments of the formatter.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="printf-1">
+              Using interpolated strings:
+ <pre><code class="fsharp language-fsharp">
+ printf $&quot;Write three = {1+2}&quot;</code></pre>
+ After evaluation the text <code>&quot;Write three = 3&quot;</code> is written to <code>stdout</code>.
+ 
+            </p>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="printf-2">
+              Using <code>%</code> format patterns:
+ <pre><code class="fsharp language-fsharp">
+ printf &quot;Write five = %d&quot; (3+2)</code></pre>
+ After evaluation the text <code>&quot;Write five = 5&quot;</code> is written to <code>stdout</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '944', 944)" onmouseover="showTip(event, '944', 944)">
+                <p>
+                  <a id="printfn">
+                    <a href="#printfn">
+                      <code><span>printfn&#32;<span>format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="944">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>printfn&#32;<span>format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The return type and arguments of the formatter.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormatLine``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormatLine``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1459-1459" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Formatted printing to stdout, adding a newline.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input formatter.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The return type and arguments of the formatter.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="printfn-1">
+              Using interpolated strings:
+ <pre><code class="fsharp language-fsharp">
+ printfn $&quot;Write three = {1+2}&quot;
+ printfn $&quot;Write four = {2+2}&quot;</code></pre>
+ After evaluation the two lines are written to <code>stdout</code>.
+ 
+            </p>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="printfn-2">
+              Using <code>%</code> format patterns:
+ <pre><code class="fsharp language-fsharp">
+ printfn &quot;Write five = %d&quot; (3+2)
+ printfn &quot;Write six = %d&quot; (3+3)</code></pre>
+ After evaluation the two lines are written to <code>stdout</code>.
+ 
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '945', 945)" onmouseover="showTip(event, '945', 945)">
+                <p>
+                  <a id="sprintf">
+                    <a href="#sprintf">
+                      <code><span>sprintf&#32;<span>format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="945">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>sprintf&#32;<span>format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-stringformat-1.html">StringFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The formatted string.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringThen``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringThen``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/printf.fs#L1409-1409" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Print to a string via an internal string buffer and return
+ the result as a string. Helper printers must return strings.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  format
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule-stringformat-1.html">StringFormat</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The input formatter.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The formatted string.
+                </p>
+              </dd>
+            </dl>
+            <h5 class="fsdocs-example-header">
+              Example
+            </h5>
+            <p class="fsdocs-example" id="sprintf-1">
+              <pre><code class="fsharp language-fsharp">
+ sprintf &quot;Write five = %d and six = %d&quot; (3+2) (3+3)</code></pre>
+ Evaluates to <code>&quot;Write five = 5 and six = 6&quot;</code>.
+ 
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

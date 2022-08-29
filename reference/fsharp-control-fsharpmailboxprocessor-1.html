@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MailboxProcessor<'Msg> (FSharp.Core)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    MailboxProcessor<'Msg> Type
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+        FSharp.Control
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+    <dt>
+      Base Type: 
+      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+    </dt>
+    <dt>
+      All Interfaces: 
+      <code><a href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></code>
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        A message-processing agent which executes an asynchronous computation.
+      </p>
+    </div>
+    <p class="fsdocs-remarks">
+      The agent encapsulates a message queue that supports multiple-writers and
+ a single reader agent. Writers send messages to the agent by using the Post
+ method and its variations.
+
+ The agent may wait for messages using the Receive or TryReceive methods or
+ scan through all available messages using the Scan or TryScan method.
+    </p>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div>
+    <h3>
+      Constructors
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Constructor
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1300', 1300)" onmouseover="showTip(event, '1300', 1300)">
+                <p>
+                  <a id="``.ctor``">
+                    <a href="#``.ctor``">
+                      <code><span>MailboxProcessor<span><span>(<span>body,&#32;?cancellationToken</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1300">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>MailboxProcessor<span><span>(<span>body,&#32;?cancellationToken</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        body
+                      </b>
+                      :
+                      <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpmailboxprocessor-1.html">MailboxProcessor</a>&lt;'Msg&gt;</span>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></span></code>
+                       - 
+                      The function to produce an asynchronous computation that will be executed
+ as the read loop for the MailboxProcessor when Start is called.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancellationToken
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                       - 
+                      An optional cancellation token for the <code>body</code>.
+ Defaults to <code>Async.DefaultCancellationToken</code>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpmailboxprocessor-1.html">MailboxProcessor</a>&lt;'Msg&gt;</span></code>
+                  </span>
+                  The created MailboxProcessor.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.#ctor``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.#ctor\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L351-351" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Creates an agent. The <code>body</code> function is used to generate the asynchronous
+ computation executed by the agent. This function is not executed until
+ <code>Start</code> is called.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  body
+                </span>
+                :
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpmailboxprocessor-1.html">MailboxProcessor</a>&lt;'Msg&gt;</span>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to produce an asynchronous computation that will be executed
+ as the read loop for the MailboxProcessor when Start is called.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?cancellationToken
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  An optional cancellation token for the <code>body</code>.
+ Defaults to <code>Async.DefaultCancellationToken</code>.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpmailboxprocessor-1.html">MailboxProcessor</a>&lt;'Msg&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The created MailboxProcessor.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>
+      Instance members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Instance member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1301', 1301)" onmouseover="showTip(event, '1301', 1301)">
+                <p>
+                  <a id="CurrentQueueLength">
+                    <a href="#CurrentQueueLength">
+                      <code><span>this.CurrentQueueLength</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1301">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.CurrentQueueLength</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:P:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.CurrentQueueLength``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.CurrentQueueLength\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L360-360" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Returns the number of unprocessed messages in the message queue of the agent.
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1302', 1302)" onmouseover="showTip(event, '1302', 1302)">
+                <p>
+                  <a id="DefaultTimeout">
+                    <a href="#DefaultTimeout">
+                      <code><span>this.DefaultTimeout</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1302">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.DefaultTimeout</span></code>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:P:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.DefaultTimeout``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.DefaultTimeout\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L362-362" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Raises a timeout exception if a message not received in this amount of time. By default
+ no timeout is used.
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1303', 1303)" onmouseover="showTip(event, '1303', 1303)">
+                <p>
+                  <a id="Error">
+                    <a href="#Error">
+                      <code><span>this.Error</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1303">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Error</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/system.exception">Exception</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:P:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.Error``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.Error\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L367-367" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Occurs when the execution of the agent results in an exception.
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">IEvent</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/system.exception">Exception</a>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1304', 1304)" onmouseover="showTip(event, '1304', 1304)">
+                <p>
+                  <a id="Post">
+                    <a href="#Post">
+                      <code><span>this.Post</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1304">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Post</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        message
+                      </b>
+                      :
+                      <code>'Msg</code>
+                       - 
+                      The message to post.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.Post``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.Post\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L392-392" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Posts a message to the message queue of the MailboxProcessor, asynchronously.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  message
+                </span>
+                :
+                <code>'Msg</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The message to post.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1305', 1305)" onmouseover="showTip(event, '1305', 1305)">
+                <p>
+                  <a id="PostAndAsyncReply">
+                    <a href="#PostAndAsyncReply">
+                      <code><span>this.PostAndAsyncReply</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1305">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.PostAndAsyncReply</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        buildMessage
+                      </b>
+                      :
+                      <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasyncreplychannel-1.html">AsyncReplyChannel</a>&lt;'Reply&gt;</span>&#32;->&#32;'Msg</span></code>
+                       - 
+                      The function to incorporate the AsyncReplyChannel into
+ the message to be sent.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?timeout
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      An optional timeout parameter (in milliseconds) to wait for a reply message.
+ Defaults to -1 which corresponds to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'Reply&gt;</span></code>
+                  </span>
+                  An asynchronous computation that will wait for the reply from the agent.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.PostAndAsyncReply``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.PostAndAsyncReply``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L450-450" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Posts a message to an agent and await a reply on the channel, asynchronously.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              The message is generated by applying <code>buildMessage</code> to a new reply channel
+ to be incorporated into the message. The receiving agent must process this
+ message and invoke the Reply method on this reply channel precisely once.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  buildMessage
+                </span>
+                :
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasyncreplychannel-1.html">AsyncReplyChannel</a>&lt;'Reply&gt;</span>&#32;->&#32;'Msg</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to incorporate the AsyncReplyChannel into
+ the message to be sent.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?timeout
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  An optional timeout parameter (in milliseconds) to wait for a reply message.
+ Defaults to -1 which corresponds to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'Reply&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An asynchronous computation that will wait for the reply from the agent.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1306', 1306)" onmouseover="showTip(event, '1306', 1306)">
+                <p>
+                  <a id="PostAndReply">
+                    <a href="#PostAndReply">
+                      <code><span>this.PostAndReply</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1306">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.PostAndReply</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        buildMessage
+                      </b>
+                      :
+                      <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasyncreplychannel-1.html">AsyncReplyChannel</a>&lt;'Reply&gt;</span>&#32;->&#32;'Msg</span></code>
+                       - 
+                      The function to incorporate the AsyncReplyChannel into
+ the message to be sent.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?timeout
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      An optional timeout parameter (in milliseconds) to wait for a reply message.
+ Defaults to -1 which corresponds to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'Reply</code>
+                  </span>
+                  The reply from the agent.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.PostAndReply``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.PostAndReply``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L410-410" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Posts a message to an agent and await a reply on the channel, synchronously.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              The message is generated by applying <code>buildMessage</code> to a new reply channel
+ to be incorporated into the message. The receiving agent must process this
+ message and invoke the Reply method on this reply channel precisely once.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  buildMessage
+                </span>
+                :
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasyncreplychannel-1.html">AsyncReplyChannel</a>&lt;'Reply&gt;</span>&#32;->&#32;'Msg</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to incorporate the AsyncReplyChannel into
+ the message to be sent.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?timeout
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  An optional timeout parameter (in milliseconds) to wait for a reply message.
+ Defaults to -1 which corresponds to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'Reply</code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The reply from the agent.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1307', 1307)" onmouseover="showTip(event, '1307', 1307)">
+                <p>
+                  <a id="PostAndTryAsyncReply">
+                    <a href="#PostAndTryAsyncReply">
+                      <code><span>this.PostAndTryAsyncReply</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1307">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.PostAndTryAsyncReply</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        buildMessage
+                      </b>
+                      :
+                      <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasyncreplychannel-1.html">AsyncReplyChannel</a>&lt;'Reply&gt;</span>&#32;->&#32;'Msg</span></code>
+                       - 
+                      The function to incorporate the AsyncReplyChannel into
+ the message to be sent.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?timeout
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      An optional timeout parameter (in milliseconds) to wait for a reply message.
+ Defaults to -1 which corresponds to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'Reply&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&gt;</span></code>
+                  </span>
+                  An asynchronous computation that will return the reply or None if the timeout expires.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.PostAndTryAsyncReply``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.PostAndTryAsyncReply``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L415-415" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Like AsyncPostAndReply, but returns None if no reply within the timeout period.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  buildMessage
+                </span>
+                :
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasyncreplychannel-1.html">AsyncReplyChannel</a>&lt;'Reply&gt;</span>&#32;->&#32;'Msg</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to incorporate the AsyncReplyChannel into
+ the message to be sent.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?timeout
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  An optional timeout parameter (in milliseconds) to wait for a reply message.
+ Defaults to -1 which corresponds to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'Reply&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An asynchronous computation that will return the reply or None if the timeout expires.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1308', 1308)" onmouseover="showTip(event, '1308', 1308)">
+                <p>
+                  <a id="Receive">
+                    <a href="#Receive">
+                      <code><span>this.Receive</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1308">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Receive</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ?timeout
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      An optional timeout in milliseconds. Defaults to -1 which corresponds
+ to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'Msg&gt;</span></code>
+                  </span>
+                  An asynchronous computation that returns the received message.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.Receive``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.Receive\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L476-476" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Waits for a message. This will consume the first message in arrival order.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              This method is for use within the body of the agent.
+
+ This method is for use within the body of the agent. For each agent, at most
+ one concurrent reader may be active, so no more than one concurrent call to
+ Receive, TryReceive, Scan and/or TryScan may be active.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?timeout
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  An optional timeout in milliseconds. Defaults to -1 which corresponds
+ to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'Msg&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An asynchronous computation that returns the received message.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.timeoutexception">
+                    TimeoutException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the timeout is exceeded.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1309', 1309)" onmouseover="showTip(event, '1309', 1309)">
+                <p>
+                  <a id="Scan">
+                    <a href="#Scan">
+                      <code><span>this.Scan</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1309">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Scan</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        scanner
+                      </b>
+                      :
+                      <code><span>'Msg&#32;->&#32;<span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                       - 
+                      The function to return None if the message is to be skipped
+ or Some if the message is to be processed and removed from the queue.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?timeout
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      An optional timeout in milliseconds. Defaults to -1 which corresponds
+ to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  An asynchronous computation that <code>scanner</code> built off the read message.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.Scan``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.Scan``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L482-482" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Scans for a message by looking through messages in arrival order until <code>scanner</code>
+ returns a Some value. Other messages remain in the queue.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              Returns None if a timeout is given and the timeout is exceeded.
+
+ This method is for use within the body of the agent. For each agent, at most
+ one concurrent reader may be active, so no more than one concurrent call to
+ Receive, TryReceive, Scan and/or TryScan may be active.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  scanner
+                </span>
+                :
+                <code><span>'Msg&#32;->&#32;<span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to return None if the message is to be skipped
+ or Some if the message is to be processed and removed from the queue.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?timeout
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  An optional timeout in milliseconds. Defaults to -1 which corresponds
+ to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An asynchronous computation that <code>scanner</code> built off the read message.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/system.timeoutexception">
+                    TimeoutException
+                  </a>
+                </td>
+                <td>
+                  Thrown when the timeout is exceeded.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1310', 1310)" onmouseover="showTip(event, '1310', 1310)">
+                <p>
+                  <a id="Start">
+                    <a href="#Start">
+                      <code><span>this.Start</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1310">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Start</span></code>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.Start``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.Start\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L373-373" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Starts the agent.
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1311', 1311)" onmouseover="showTip(event, '1311', 1311)">
+                <p>
+                  <a id="TryPostAndReply">
+                    <a href="#TryPostAndReply">
+                      <code><span>this.TryPostAndReply</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1311">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.TryPostAndReply</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        buildMessage
+                      </b>
+                      :
+                      <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasyncreplychannel-1.html">AsyncReplyChannel</a>&lt;'Reply&gt;</span>&#32;->&#32;'Msg</span></code>
+                       - 
+                      The function to incorporate the AsyncReplyChannel into
+ the message to be sent.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?timeout
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      An optional timeout parameter (in milliseconds) to wait for a reply message.
+ Defaults to -1 which corresponds to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'Reply&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+                  </span>
+                  The reply from the agent or None if the timeout expires.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.TryPostAndReply``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.TryPostAndReply``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L395-395" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Like PostAndReply, but returns None if no reply within the timeout period.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  buildMessage
+                </span>
+                :
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasyncreplychannel-1.html">AsyncReplyChannel</a>&lt;'Reply&gt;</span>&#32;->&#32;'Msg</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to incorporate the AsyncReplyChannel into
+ the message to be sent.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?timeout
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  An optional timeout parameter (in milliseconds) to wait for a reply message.
+ Defaults to -1 which corresponds to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span>'Reply&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The reply from the agent or None if the timeout expires.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1312', 1312)" onmouseover="showTip(event, '1312', 1312)">
+                <p>
+                  <a id="TryReceive">
+                    <a href="#TryReceive">
+                      <code><span>this.TryReceive</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1312">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.TryReceive</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ?timeout
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      An optional timeout in milliseconds. Defaults to -1 which
+ corresponds to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'Msg&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&gt;</span></code>
+                  </span>
+                  An asynchronous computation that returns the received message or
+ None if the timeout is exceeded.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.TryReceive``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.TryReceive\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L479-479" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Waits for a message. This will consume the first message in arrival order.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              This method is for use within the body of the agent.
+
+ Returns None if a timeout is given and the timeout is exceeded.
+
+ This method is for use within the body of the agent. For each agent, at most
+ one concurrent reader may be active, so no more than one concurrent call to
+ Receive, TryReceive, Scan and/or TryScan may be active.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?timeout
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  An optional timeout in milliseconds. Defaults to -1 which
+ corresponds to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'Msg&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An asynchronous computation that returns the received message or
+ None if the timeout is exceeded.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1313', 1313)" onmouseover="showTip(event, '1313', 1313)">
+                <p>
+                  <a id="TryScan">
+                    <a href="#TryScan">
+                      <code><span>this.TryScan</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1313">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.TryScan</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        scanner
+                      </b>
+                      :
+                      <code><span>'Msg&#32;->&#32;<span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                       - 
+                      The function to return None if the message is to be skipped
+ or Some if the message is to be processed and removed from the queue.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?timeout
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      An optional timeout in milliseconds. Defaults to -1 which corresponds
+ to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&gt;</span></code>
+                  </span>
+                  An asynchronous computation that <code>scanner</code> built off the read message.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.TryScan``1```')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.TryScan``1\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L485-485" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Scans for a message by looking through messages in arrival order until <code>scanner</code>
+ returns a Some value. Other messages remain in the queue.
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              This method is for use within the body of the agent. For each agent, at most
+ one concurrent reader may be active, so no more than one concurrent call to
+ Receive, TryReceive, Scan and/or TryScan may be active.
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  scanner
+                </span>
+                :
+                <code><span>'Msg&#32;->&#32;<span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to return None if the message is to be skipped
+ or Some if the message is to be processed and removed from the queue.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?timeout
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  An optional timeout in milliseconds. Defaults to -1 which corresponds
+ to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout.infinite">Timeout.Infinite</a>.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An asynchronous computation that <code>scanner</code> built off the read message.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>
+      Static members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Static member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1314', 1314)" onmouseover="showTip(event, '1314', 1314)">
+                <p>
+                  <a id="Start">
+                    <a href="#Start">
+                      <code><span>MailboxProcessor.Start<span><span>(<span>body,&#32;?cancellationToken</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1314">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>MailboxProcessor.Start<span><span>(<span>body,&#32;?cancellationToken</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        body
+                      </b>
+                      :
+                      <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpmailboxprocessor-1.html">MailboxProcessor</a>&lt;'Msg&gt;</span>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></span></code>
+                       - 
+                      The function to produce an asynchronous computation that will be executed
+ as the read loop for the MailboxProcessor when Start is called.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancellationToken
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                       - 
+                      An optional cancellation token for the <code>body</code>.
+ Defaults to <code>Async.DefaultCancellationToken</code>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpmailboxprocessor-1.html">MailboxProcessor</a>&lt;'Msg&gt;</span></code>
+                  </span>
+                  The created MailboxProcessor.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.Start``')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-md-hover.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.FSharpMailboxProcessor`1.Start\'/>')">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/copy-xml-hover.png" class="hover"/>
+              </div>
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/mailbox.fs#L492-492" class="fsdocs-source-link" title="Source on GitHub">
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+                <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-hover.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                Creates and starts an agent. The <code>body</code> function is used to generate the asynchronous
+ computation executed by the agent.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  body
+                </span>
+                :
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpmailboxprocessor-1.html">MailboxProcessor</a>&lt;'Msg&gt;</span>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The function to produce an asynchronous computation that will be executed
+ as the read loop for the MailboxProcessor when Start is called.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?cancellationToken
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  An optional cancellation token for the <code>body</code>.
+ Defaults to <code>Async.DefaultCancellationToken</code>.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpmailboxprocessor-1.html">MailboxProcessor</a>&lt;'Msg&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  The created MailboxProcessor.
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
