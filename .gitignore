@@ -9,4 +9,4 @@ FSharp.Formatting/
 .fsdocs/
 FSharp.Core/obj/
 tmp/
-
+.idea/
