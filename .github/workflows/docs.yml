@@ -14,29 +14,28 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        dotnet: [6.0.203]
     runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v3
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 6.0.203
+          dotnet-version: 7.0.100
       - name: Restore tools
         run: dotnet tool restore
       - name: Restore projects
         run: dotnet restore FSharp.Core\FSharp.Core.fsproj
-      - name: Checkout fsharp master
+      - name: Checkout fsharp main
         run: git clone https://github.com/dotnet/fsharp --depth 1 fsharp -b main
-      - name: Build fsharp master (turn of CI build status)
-        run: cd fsharp && eng\CIBuild.cmd
-      - name: Checkout FSharp.Formatting master
+      - name: Build fsharp main (turn of CI build status)
+        run: cd fsharp && eng\CIBuild.cmd -noVisualStudio
+      - name: Checkout FSharp.Formatting main
         run: git clone https://github.com/fsprojects/FSharp.Formatting --depth 1 FSharp.Formatting
-      - name: Build FSharp.Formatting master
+      - name: Build FSharp.Formatting main
         run: cd FSharp.Formatting && .\build -t Build
       - name: Run fsdocs
-        run: dotnet FSharp.Formatting\src\fsdocs-tool\bin\Release\net6.0\fsdocs.dll build --sourcefolder fsharp
+        run: dotnet FSharp.Formatting\src\fsdocs-tool\bin\Release\net7.0\fsdocs.dll build --sourcefolder fsharp
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
