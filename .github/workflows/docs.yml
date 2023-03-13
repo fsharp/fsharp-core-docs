@@ -29,7 +29,7 @@ jobs:
       - name: Checkout fsharp main
         run: git clone https://github.com/dotnet/fsharp --depth 1 fsharp -b main
       - name: Build fsharp main (turn of CI build status)
-        run: cd fsharp && eng\CIBuild.cmd
+        run: cd fsharp && eng\CIBuild.cmd -noVisualStudio
       - name: Checkout FSharp.Formatting main
         run: git clone https://github.com/fsprojects/FSharp.Formatting --depth 1 FSharp.Formatting
       - name: Build FSharp.Formatting main
