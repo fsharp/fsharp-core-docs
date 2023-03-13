@@ -9,6 +9,11 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  FSHARP_DIR: fsharp
+  FSF_DIR: FSharp.Formatting
+
+
 jobs:
   build:
     strategy:
@@ -27,15 +32,25 @@ jobs:
       - name: Restore projects
         run: dotnet restore FSharp.Core\FSharp.Core.fsproj
       - name: Checkout fsharp main
-        run: git clone https://github.com/dotnet/fsharp --depth 1 fsharp -b main
+        uses: actions/checkout@v3
+        with:
+          repository: dotnet/fsharp
+          path: ${{ env.FSHARP_DIR }}
+          ref: main
       - name: Build fsharp main (turn of CI build status)
-        run: cd fsharp && eng\CIBuild.cmd -noVisualStudio
+        run: eng\CIBuild.cmd -noVisualStudio
+        working-directory: ${{ env.FSHARP_DIR }}
       - name: Checkout FSharp.Formatting main
-        run: git clone https://github.com/fsprojects/FSharp.Formatting --depth 1 FSharp.Formatting
+        uses: actions/checkout@v3
+        with:
+          repository: fsprojects/FSharp.Formatting
+          path: ${{ env.FSF_DIR }}
+          ref: main
       - name: Build FSharp.Formatting main
-        run: cd FSharp.Formatting && .\build -t Build
+        run: .\build -t Build
+        working-directory: ${{ env.FSF_DIR }}
       - name: Run fsdocs
-        run: dotnet FSharp.Formatting\src\fsdocs-tool\bin\Release\net7.0\fsdocs.dll build --sourcefolder fsharp
+        run: dotnet FSharp.Formatting\src\fsdocs-tool\bin\Release\net7.0\fsdocs.dll build --sourcefolder ${{ env.FSHARP_DIR }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
