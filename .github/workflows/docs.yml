@@ -26,7 +26,9 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 7.0.100
+          dotnet-version: |
+            7.0.100
+            7.0.202
       - name: Restore tools
         run: dotnet tool restore
       - name: Restore projects
@@ -37,8 +39,8 @@ jobs:
           repository: dotnet/fsharp
           path: ${{ env.FSHARP_DIR }}
           ref: main
-      - name: Build fsharp main (turn of CI build status)
-        run: eng\CIBuild.cmd -noVisualStudio
+      - name: Build FSharp.Core in fsharp main
+        run: dotnet build .\src\FSharp.Core\ /p:BUILDING_USING_DOTNET=true
         working-directory: ${{ env.FSHARP_DIR }}
       - name: Checkout FSharp.Formatting main
         uses: actions/checkout@v3
