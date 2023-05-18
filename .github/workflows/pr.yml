@@ -41,5 +41,7 @@ jobs:
       - name: Build FSharp.Formatting main
         run: dotnet fsi ./build.fsx -t Build
         working-directory: ${{ env.FSF_DIR }}
+      - name: Restore local FSharp.Core project in current repo
+        run: dotnet restore FSharp.Core/FSharp.Core.fsproj
       - name: Run fsdocs
         run: dotnet FSharp.Formatting/src/fsdocs-tool/bin/Release/net6.0/fsdocs.dll build --sourcefolder ${{ env.FSHARP_DIR }}
