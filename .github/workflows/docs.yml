@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
       - name: Checkout fsharp main
@@ -39,15 +39,15 @@ jobs:
         with:
           global-json-file: ${{ env.FSF_DIR }}/global.json
       - name: Restore local FSharp.Core project in current repo
-        run: dotnet restore FSharp.Core/FSharp.Core.fsproj
+        run: dotnet restore FSharp.Core\FSharp.Core.fsproj
       - name: Build FSharp.Core in fsharp main
-        run: dotnet build src/FSharp.Core/FSharp.Core.fsproj /p:BUILDING_USING_DOTNET=true
+        run: dotnet build src\FSharp.Core\FSharp.Core.fsproj /p:BUILDING_USING_DOTNET=true
         working-directory: ${{ env.FSHARP_DIR }}
       - name: Build FSharp.Formatting main
         run: dotnet fsi ./build.fsx -t Build
         working-directory: ${{ env.FSF_DIR }}
       - name: Run fsdocs
-        run: dotnet FSharp.Formatting/src/fsdocs-tool/bin/Release/net6.0/fsdocs.dll build --sourcefolder ${{ env.FSHARP_DIR }}
+        run: dotnet FSharp.Formatting\src\fsdocs-tool\bin\Release\net6.0\fsdocs.dll build --sourcefolder ${{ env.FSHARP_DIR }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
