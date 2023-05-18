@@ -12,7 +12,6 @@ on:
 env:
   FSHARP_DIR: fsharp
   FSF_DIR: FSharp.Formatting
-  BUILDING_USING_DOTNET: true
 
 jobs:
   build:
@@ -39,14 +38,14 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           global-json-file: ${{ env.FSF_DIR }}/global.json
+      - name: Restore local FSharp.Core project in current repo
+        run: dotnet restore FSharp.Core/FSharp.Core.fsproj
       - name: Build FSharp.Core in fsharp main
-        run: dotnet build --restore src/FSharp.Core/FSharp.Core.fsproj
+        run: dotnet build src/FSharp.Core/FSharp.Core.fsproj /p:BUILDING_USING_DOTNET=true
         working-directory: ${{ env.FSHARP_DIR }}
       - name: Build FSharp.Formatting main
         run: dotnet fsi ./build.fsx -t Build
         working-directory: ${{ env.FSF_DIR }}
-      - name: Restore local FSharp.Core project in current repo
-        run: dotnet restore FSharp.Core/FSharp.Core.fsproj
       - name: Run fsdocs
         run: dotnet FSharp.Formatting/src/fsdocs-tool/bin/Release/net6.0/fsdocs.dll build --sourcefolder ${{ env.FSHARP_DIR }}
       - name: Deploy
