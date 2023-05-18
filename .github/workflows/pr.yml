@@ -8,14 +8,11 @@ on:
 env:
   FSHARP_DIR: fsharp
   FSF_DIR: FSharp.Formatting
+  BUILDING_USING_DOTNET: true
 
 jobs:
   build:
-    strategy:
-      matrix:
-        os: [windows-latest]
-    runs-on: ${{ matrix.os }}
-
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Checkout fsharp main
@@ -24,29 +21,25 @@ jobs:
           repository: dotnet/fsharp
           path: ${{ env.FSHARP_DIR }}
           ref: main
-      - name: Setup .NET Core for FSharp
-        uses: actions/setup-dotnet@v3
-        with:
-          global-json-file: ${{ env.FSHARP_DIR }}/global.json
-      - name: Restore tools
-        run: dotnet tool restore
-      - name: Restore projects
-        run: dotnet restore FSharp.Core\FSharp.Core.fsproj
-      - name: Build FSharp.Core in fsharp main
-        run: dotnet build .\src\FSharp.Core\ /p:BUILDING_USING_DOTNET=true
-        working-directory: ${{ env.FSHARP_DIR }}
       - name: Checkout FSharp.Formatting main
         uses: actions/checkout@v3
         with:
           repository: fsprojects/FSharp.Formatting
           path: ${{ env.FSF_DIR }}
           ref: main
-      - name: Setup .NET Core for FSharp.Formatting
+      - name: Setup .NET for FSharp
+        uses: actions/setup-dotnet@v3
+        with:
+          global-json-file: ${{ env.FSHARP_DIR }}/global.json
+      - name: Setup .NET for FSharp.Formatting
         uses: actions/setup-dotnet@v3
         with:
           global-json-file: ${{ env.FSF_DIR }}/global.json
+      - name: Build FSharp.Core in fsharp main
+        run: dotnet build --restore src/FSharp.Core/FSharp.Core.fsproj
+        working-directory: ${{ env.FSHARP_DIR }}
       - name: Build FSharp.Formatting main
-        run: .\build -t Build
+        run: dotnet fsi ./build.fsx -t Build
         working-directory: ${{ env.FSF_DIR }}
       - name: Run fsdocs
-        run: dotnet FSharp.Formatting\src\fsdocs-tool\bin\Release\net6.0\fsdocs.dll build --sourcefolder ${{ env.FSHARP_DIR }}
+        run: dotnet FSharp.Formatting/src/fsdocs-tool/bin/Release/net6.0/fsdocs.dll build --sourcefolder ${{ env.FSHARP_DIR }}
