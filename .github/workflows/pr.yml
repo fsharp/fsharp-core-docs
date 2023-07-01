@@ -44,4 +44,9 @@ jobs:
         run: dotnet fsi ./build.fsx -t Build
         working-directory: ${{ env.FSF_DIR }}
       - name: Run fsdocs
+        env:
+          # allow roll forward to latest major version - this would happen for us if we invoked the fsdocs tool instead of invoking the binary directly
+          DOTNET_ROLL_FORWARD: "LatestMajor"
+          # need previews because .NET 8 is what's being used at runtime
+          DOTNET_ROLL_FORWARD_TO_PRERELEASE: "1"
         run: dotnet FSharp.Formatting/src/fsdocs-tool/bin/Release/net6.0/fsdocs.dll build --sourcefolder ${{ env.FSHARP_DIR }}
