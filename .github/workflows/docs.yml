@@ -17,8 +17,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Restore tools
-        run: dotnet tool restore
       - name: Checkout fsharp main
         uses: actions/checkout@v3
         with:
@@ -29,6 +27,8 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           global-json-file: ${{ env.FSHARP_DIR }}/global.json
+      - name: Restore tools
+        run: dotnet tool restore
       - name: Restore local FSharp.Core project in current repo
         run: dotnet restore FSharp.Core\FSharp.Core.fsproj
       - name: Build FSharp.Core in fsharp main
