@@ -10,3 +10,4 @@ FSharp.Formatting/
 FSharp.Core/obj/
 tmp/
 .idea/
+output/
