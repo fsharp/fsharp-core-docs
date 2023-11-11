@@ -21,32 +21,21 @@ jobs:
           repository: dotnet/fsharp
           path: ${{ env.FSHARP_DIR }}
           ref: main
-      - name: Checkout FSharp.Formatting main
-        uses: actions/checkout@v3
-        with:
-          repository: fsprojects/FSharp.Formatting
-          path: ${{ env.FSF_DIR }}
-          ref: main
       - name: Setup .NET for FSharp
         uses: actions/setup-dotnet@v3
         with:
           global-json-file: ${{ env.FSHARP_DIR }}/global.json
-      - name: Setup .NET for FSharp.Formatting
-        uses: actions/setup-dotnet@v3
-        with:
-          global-json-file: ${{ env.FSF_DIR }}/global.json
+      - name: Restore tools
+        run: dotnet tool restore
       - name: Restore local FSharp.Core project in current repo
         run: dotnet restore FSharp.Core\FSharp.Core.fsproj
       - name: Build FSharp.Core in fsharp main
         run: dotnet build src\FSharp.Core\FSharp.Core.fsproj /p:BUILDING_USING_DOTNET=true
         working-directory: ${{ env.FSHARP_DIR }}
-      - name: Build FSharp.Formatting main
-        run: dotnet fsi ./build.fsx -t Build
-        working-directory: ${{ env.FSF_DIR }}
       - name: Run fsdocs
         env:
           # allow roll forward to latest major version - this would happen for us if we invoked the fsdocs tool instead of invoking the binary directly
           DOTNET_ROLL_FORWARD: "LatestMajor"
           # need previews because .NET 8 is what's being used at runtime
           DOTNET_ROLL_FORWARD_TO_PRERELEASE: "1"
-        run: dotnet FSharp.Formatting/src/fsdocs-tool/bin/Release/net6.0/fsdocs.dll build --sourcefolder ${{ env.FSHARP_DIR }}
+        run: dotnet fsdocs build --sourcefolder ${{ env.FSHARP_DIR }}
