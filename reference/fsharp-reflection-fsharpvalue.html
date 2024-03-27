@@ -1,0 +1,3038 @@
+<!DOCTYPE html>
+<html lang="en" data-root="https://fsharp.github.io/fsharp-core-docs/">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="F# Software Foundation; Microsoft; F# Contributors" name="author">
+    <title>FSharpValue (FSharp.Core) | FSharp.Core</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fsharp.github.io/fsharp-core-docs/img/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <link href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
+    
+    
+</head>
+<body class="api-docs">
+<header>
+    <div class="start">
+        <div id="menu-toggle">
+            <iconify-icon class="icon closed" height="22" icon="eva:menu-fill" width="22"></iconify-icon>
+            <iconify-icon class="icon open" height="22" icon="mi:close" width="22"></iconify-icon>
+            <input type="checkbox" name="mobile-menu" />
+            <ul class="menu">
+                <li class="nav-header">Links</li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+                </li>
+                <li class="nav-item"><a class="nav-link"
+                                        href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+                    Notes</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+                    Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+        <a href="https://fsharp.org">
+            <img alt="Header menu logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png">
+            <strong>FSharp.Core</strong>
+        </a>
+    </div>
+    <div class="end">
+        <a href="https://github.com/dotnet/fsharp/" target="_blank">
+            <iconify-icon icon="uil:github" width="26" height="26"></iconify-icon>
+        </a>
+        <iconify-icon id="search-btn" icon="carbon:search" class="search" width="24" height="24"></iconify-icon>
+        <fsdocs-theme-toggle></fsdocs-theme-toggle>
+    </div>
+</header>
+<aside id="fsdocs-main-menu">
+    <ul class="menu">
+        <li class="nav-header">Links</li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+        </li>
+        <li class="nav-item"><a class="nav-link"
+                                href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+            Notes</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+            Repository</a></li>
+        
+        <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+    </ul>
+</aside>
+<main>
+    <div id="content">
+        <div>
+  <h2>
+    FSharpValue Type
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+        FSharp.Reflection
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+    <dt>
+      Base Type: 
+      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <pre>Contains operations associated with constructing and analyzing values associated with F# types
+ such as records, unions and tuples.</pre>
+    </div>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div>
+    <h3>
+      Static members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Static member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1771', 1771)" onmouseover="showTip(event, '1771', 1771)">
+                <p>
+                  <a id="GetExceptionFields">
+                    <a href="#GetExceptionFields">
+                      <code><span>FSharpValue.GetExceptionFields<span><span>(<span>exn,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1771">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.GetExceptionFields<span><span>(<span>exn,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        exn
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                       - 
+                      The exception instance.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                  </span>
+                  The fields from the given exception.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.GetExceptionFields`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.GetExceptionFields\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1418-1418" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Reads all the fields from a value built using an instance of an F# exception declaration
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Assumes the given input is an F# exception value. If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    exn
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The exception instance.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The fields from the given exception.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the input type is not an F# exception.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1772', 1772)" onmouseover="showTip(event, '1772', 1772)">
+                <p>
+                  <a id="GetRecordField">
+                    <a href="#GetRecordField">
+                      <code><span>FSharpValue.GetRecordField<span><span>(<span>record,&#32;info</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1772">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.GetRecordField<span><span>(<span>record,&#32;info</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        record
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                       - 
+                      The record object.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        info
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></code>
+                       - 
+                      The PropertyInfo describing the field to read.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                  </span>
+                  The field from the record.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.GetRecordField`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.GetRecordField\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1257-1257" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Reads a field from a record value.
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Assumes the given input is a record value. If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    record
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The record object.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    info
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The PropertyInfo describing the field to read.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The field from the record.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the input is not a record value.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1773', 1773)" onmouseover="showTip(event, '1773', 1773)">
+                <p>
+                  <a id="GetRecordFields">
+                    <a href="#GetRecordFields">
+                      <code><span>FSharpValue.GetRecordFields<span><span>(<span>record,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1773">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.GetRecordFields<span><span>(<span>record,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        record
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                       - 
+                      The record object.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags for the record.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                  </span>
+                  The array of fields from the record.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.GetRecordFields`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.GetRecordFields\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1267-1267" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Reads all the fields from a record value.
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Assumes the given input is a record value. If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    record
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The record object.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags for the record.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The array of fields from the record.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the input type is not a record type.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1774', 1774)" onmouseover="showTip(event, '1774', 1774)">
+                <p>
+                  <a id="GetTupleField">
+                    <a href="#GetTupleField">
+                      <code><span>FSharpValue.GetTupleField<span><span>(<span>tuple,&#32;index</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1774">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.GetTupleField<span><span>(<span>tuple,&#32;index</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        tuple
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                       - 
+                      The input tuple.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        index
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The index of the field to read.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                  </span>
+                  The value of the field.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.GetTupleField`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.GetTupleField\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1326-1326" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Reads a field from a tuple value.
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Assumes the given input is a tuple value. If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    tuple
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input tuple.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    index
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The index of the field to read.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The value of the field.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1775', 1775)" onmouseover="showTip(event, '1775', 1775)">
+                <p>
+                  <a id="GetTupleFields">
+                    <a href="#GetTupleFields">
+                      <code><span>FSharpValue.GetTupleFields<span><span>(<span>tuple</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1775">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.GetTupleFields<span><span>(<span>tuple</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        tuple
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                       - 
+                      The input tuple.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                  </span>
+                  An array of the fields from the given tuple.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.GetTupleFields`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.GetTupleFields\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1316-1316" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Reads all fields from a tuple.
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Assumes the given input is a tuple value. If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    tuple
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input tuple.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An array of the fields from the given tuple.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the input is not a tuple value.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1776', 1776)" onmouseover="showTip(event, '1776', 1776)">
+                <p>
+                  <a id="GetUnionFields">
+                    <a href="#GetUnionFields">
+                      <code><span>FSharpValue.GetUnionFields<span><span>(<span>value,&#32;unionType,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1776">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.GetUnionFields<span><span>(<span>value,&#32;unionType,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                       - 
+                      The input union case.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        unionType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The union type containing the value.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></span></code>
+                  </span>
+                  The description of the union case and its fields.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.GetUnionFields`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.GetUnionFields\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1377-1377" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Identify the union case and its fields for an object
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Assumes the given input is a union case value. If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised.
+
+ If the type is not given, then the runtime type of the input object is used to identify the
+ relevant union type. The type should always be given if the input object may be null. For example,
+ option values may be represented using the 'null'.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input union case.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    unionType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The union type containing the value.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a>&#32;*&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The description of the union case and its fields.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the input type is not a union case value.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1777', 1777)" onmouseover="showTip(event, '1777', 1777)">
+                <p>
+                  <a id="MakeFunction">
+                    <a href="#MakeFunction">
+                      <code><span>FSharpValue.MakeFunction<span><span>(<span>functionType,&#32;implementation</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1777">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.MakeFunction<span><span>(<span>functionType,&#32;implementation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        functionType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The function type of the implementation.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        implementation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+                       - 
+                      The untyped lambda of the function implementation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                  </span>
+                  A typed function from the given dynamic implementation.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.MakeFunction`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.MakeFunction\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1296-1296" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Builds a typed function from object from a dynamic function implementation
+                  </p>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    functionType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The function type of the implementation.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    implementation
+                  </span>
+                  :
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The untyped lambda of the function implementation.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A typed function from the given dynamic implementation.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1778', 1778)" onmouseover="showTip(event, '1778', 1778)">
+                <p>
+                  <a id="MakeRecord">
+                    <a href="#MakeRecord">
+                      <code><span>FSharpValue.MakeRecord<span><span>(<span>recordType,&#32;values,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1778">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.MakeRecord<span><span>(<span>recordType,&#32;values,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recordType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type of record to make.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        values
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                       - 
+                      The array of values to initialize the record.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags for the record.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                  </span>
+                  The created record.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.MakeRecord`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.MakeRecord\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1252-1252" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Creates an instance of a record type.
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Assumes the given input is a record type.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    recordType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The type of record to make.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    values
+                  </span>
+                  :
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The array of values to initialize the record.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags for the record.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The created record.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the input type is not a record type.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1779', 1779)" onmouseover="showTip(event, '1779', 1779)">
+                <p>
+                  <a id="MakeTuple">
+                    <a href="#MakeTuple">
+                      <code><span>FSharpValue.MakeTuple<span><span>(<span>tupleElements,&#32;tupleType</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1779">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.MakeTuple<span><span>(<span>tupleElements,&#32;tupleType</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        tupleElements
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                       - 
+                      The array of tuple fields.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        tupleType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The tuple type to create.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                  </span>
+                  An instance of the tuple type with the given elements.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.MakeTuple`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.MakeTuple\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1311-1311" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Creates an instance of a tuple type
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Assumes at least one element is given. If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    tupleElements
+                  </span>
+                  :
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The array of tuple fields.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    tupleType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The tuple type to create.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An instance of the tuple type with the given elements.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown if no elements are given.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1780', 1780)" onmouseover="showTip(event, '1780', 1780)">
+                <p>
+                  <a id="MakeUnion">
+                    <a href="#MakeUnion">
+                      <code><span>FSharpValue.MakeUnion<span><span>(<span>unionCase,&#32;args,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1780">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.MakeUnion<span><span>(<span>unionCase,&#32;args,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionCase
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+                       - 
+                      The description of the union case to create.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        args
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                       - 
+                      The array of arguments to construct the given case.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                  </span>
+                  The constructed union case.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.MakeUnion`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.MakeUnion\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1362-1362" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Create a union case value.
+                  </p>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    unionCase
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The description of the union case to create.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    args
+                  </span>
+                  :
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The array of arguments to construct the given case.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The constructed union case.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1781', 1781)" onmouseover="showTip(event, '1781', 1781)">
+                <p>
+                  <a id="PreComputeRecordConstructor">
+                    <a href="#PreComputeRecordConstructor">
+                      <code><span>FSharpValue.PreComputeRecordConstructor<span><span>(<span>recordType,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1781">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeRecordConstructor<span><span>(<span>recordType,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recordType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type of record to construct.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+                  </span>
+                  A function to construct records of the given type.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeRecordConstructor`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeRecordConstructor\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1286-1286" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Precompute a function for constructing a record value. 
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Assumes the given type is a RecordType.
+ If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised during pre-computation.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    recordType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The type of record to construct.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A function to construct records of the given type.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the input type is not a record type.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1782', 1782)" onmouseover="showTip(event, '1782', 1782)">
+                <p>
+                  <a id="PreComputeRecordConstructorInfo">
+                    <a href="#PreComputeRecordConstructorInfo">
+                      <code><span>FSharpValue.PreComputeRecordConstructorInfo<span><span>(<span>recordType,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1782">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeRecordConstructorInfo<span><span>(<span>recordType,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recordType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The record type.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.constructorinfo">ConstructorInfo</a></code>
+                  </span>
+                  A ConstructorInfo for the given record type.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeRecordConstructorInfo`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeRecordConstructorInfo\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1291-1291" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Get a ConstructorInfo for a record type
+                  </p>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    recordType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The record type.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.constructorinfo">ConstructorInfo</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A ConstructorInfo for the given record type.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1783', 1783)" onmouseover="showTip(event, '1783', 1783)">
+                <p>
+                  <a id="PreComputeRecordFieldReader">
+                    <a href="#PreComputeRecordFieldReader">
+                      <code><span>FSharpValue.PreComputeRecordFieldReader<span><span>(<span>info</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1783">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeRecordFieldReader<span><span>(<span>info</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        info
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></code>
+                       - 
+                      The PropertyInfo of the field to read.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+                  </span>
+                  A function to read the specified field from the record.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeRecordFieldReader`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeRecordFieldReader\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1277-1277" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Precompute a function for reading a particular field from a record.
+ Assumes the given type is a RecordType with a field of the given name.
+ If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised during pre-computation.
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Using the computed function will typically be faster than executing a corresponding call to Value.GetInfo
+ because the path executed by the computed function is optimized given the knowledge that it will be
+ used to read values of the given type.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    info
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The PropertyInfo of the field to read.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A function to read the specified field from the record.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the input type is not a record type.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1784', 1784)" onmouseover="showTip(event, '1784', 1784)">
+                <p>
+                  <a id="PreComputeRecordReader">
+                    <a href="#PreComputeRecordReader">
+                      <code><span>FSharpValue.PreComputeRecordReader<span><span>(<span>recordType,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1784">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeRecordReader<span><span>(<span>recordType,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        recordType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type of record to read.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></span></code>
+                  </span>
+                  An optimized reader for the given record type.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeRecordReader`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeRecordReader\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1281-1281" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Precompute a function for reading all the fields from a record. The fields are returned in the
+ same order as the fields reported by a call to Microsoft.FSharp.Reflection.Type.GetInfo for
+ this type.
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Assumes the given type is a RecordType.
+ If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised during pre-computation.
+
+ Using the computed function will typically be faster than executing a corresponding call to Value.GetInfo
+ because the path executed by the computed function is optimized given the knowledge that it will be
+ used to read values of the given type.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    recordType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The type of record to read.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An optimized reader for the given record type.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the input type is not a record type.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1785', 1785)" onmouseover="showTip(event, '1785', 1785)">
+                <p>
+                  <a id="PreComputeTupleConstructor">
+                    <a href="#PreComputeTupleConstructor">
+                      <code><span>FSharpValue.PreComputeTupleConstructor<span><span>(<span>tupleType</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1785">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeTupleConstructor<span><span>(<span>tupleType</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        tupleType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type of tuple to read.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+                  </span>
+                  A function to read a particular tuple type.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeTupleConstructor`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeTupleConstructor\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1352-1352" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Precompute a function for reading the values of a particular tuple type
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Assumes the given type is a TupleType.
+ If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised during pre-computation.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    tupleType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The type of tuple to read.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A function to read a particular tuple type.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the given type is not a tuple type.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1786', 1786)" onmouseover="showTip(event, '1786', 1786)">
+                <p>
+                  <a id="PreComputeTupleConstructorInfo">
+                    <a href="#PreComputeTupleConstructorInfo">
+                      <code><span>FSharpValue.PreComputeTupleConstructorInfo<span><span>(<span>tupleType</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1786">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeTupleConstructorInfo<span><span>(<span>tupleType</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        tupleType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The input tuple type.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.reflection.constructorinfo">ConstructorInfo</a>&#32;*&#32;<span><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                  </span>
+                  The description of the tuple type constructor and an optional extra type
+ for large tuples.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeTupleConstructorInfo`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeTupleConstructorInfo\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1358-1358" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Gets a method that constructs objects of the given tuple type.
+ For small tuples, no additional type will be returned.
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                For large tuples, an additional type is returned indicating that
+ a nested encoding has been used for the tuple type. In this case
+ the suffix portion of the tuple type has the given type and an
+ object of this type must be created and passed as the last argument
+ to the ConstructorInfo. A recursive call to PreComputeTupleConstructorInfo
+ can be used to determine the constructor for that the suffix type.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    tupleType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input tuple type.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.reflection.constructorinfo">ConstructorInfo</a>&#32;*&#32;<span><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The description of the tuple type constructor and an optional extra type
+ for large tuples.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1787', 1787)" onmouseover="showTip(event, '1787', 1787)">
+                <p>
+                  <a id="PreComputeTuplePropertyInfo">
+                    <a href="#PreComputeTuplePropertyInfo">
+                      <code><span>FSharpValue.PreComputeTuplePropertyInfo<span><span>(<span>tupleType,&#32;index</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1787">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeTuplePropertyInfo<span><span>(<span>tupleType,&#32;index</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        tupleType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The input tuple type.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        index
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The index of the tuple element to describe.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>&#32;*&#32;<span><span>(<span><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                  </span>
+                  The description of the tuple element and an optional type and index if the tuple is big.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeTuplePropertyInfo`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeTuplePropertyInfo\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1348-1348" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Gets information that indicates how to read a field of a tuple
+                  </p>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    tupleType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input tuple type.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    index
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The index of the tuple element to describe.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>&#32;*&#32;<span><span>(<span><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></span>)</span>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The description of the tuple element and an optional type and index if the tuple is big.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1788', 1788)" onmouseover="showTip(event, '1788', 1788)">
+                <p>
+                  <a id="PreComputeTupleReader">
+                    <a href="#PreComputeTupleReader">
+                      <code><span>FSharpValue.PreComputeTupleReader<span><span>(<span>tupleType</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1788">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeTupleReader<span><span>(<span>tupleType</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        tupleType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The tuple type to read.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></span></code>
+                  </span>
+                  A function to read values of the given tuple type.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeTupleReader`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeTupleReader\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1344-1344" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Precompute a function for reading the values of a particular tuple type
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Assumes the given type is a TupleType.
+ If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised during pre-computation.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    tupleType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The tuple type to read.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A function to read values of the given tuple type.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the given type is not a tuple type.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1789', 1789)" onmouseover="showTip(event, '1789', 1789)">
+                <p>
+                  <a id="PreComputeUnionConstructor">
+                    <a href="#PreComputeUnionConstructor">
+                      <code><span>FSharpValue.PreComputeUnionConstructor<span><span>(<span>unionCase,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1789">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeUnionConstructor<span><span>(<span>unionCase,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionCase
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+                       - 
+                      The description of the union case.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+                  </span>
+                  A function for constructing values of the given union case.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionConstructor`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionConstructor\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1367-1367" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Precompute a function for constructing a discriminated union value for a particular union case. 
+                  </p>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    unionCase
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The description of the union case.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A function for constructing values of the given union case.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1790', 1790)" onmouseover="showTip(event, '1790', 1790)">
+                <p>
+                  <a id="PreComputeUnionConstructorInfo">
+                    <a href="#PreComputeUnionConstructorInfo">
+                      <code><span>FSharpValue.PreComputeUnionConstructorInfo<span><span>(<span>unionCase,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1790">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeUnionConstructorInfo<span><span>(<span>unionCase,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionCase
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+                       - 
+                      The description of the union case.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></code>
+                  </span>
+                  The description of the constructor of the given union case.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionConstructorInfo`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionConstructorInfo\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1372-1372" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    A method that constructs objects of the given case
+                  </p>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    unionCase
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The description of the union case.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The description of the constructor of the given union case.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1791', 1791)" onmouseover="showTip(event, '1791', 1791)">
+                <p>
+                  <a id="PreComputeUnionReader">
+                    <a href="#PreComputeUnionReader">
+                      <code><span>FSharpValue.PreComputeUnionReader<span><span>(<span>unionCase,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1791">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeUnionReader<span><span>(<span>unionCase,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionCase
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+                       - 
+                      The description of the union case to read.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></span></code>
+                  </span>
+                  A function to for reading the fields of the given union case.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionReader`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionReader\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1412-1412" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Precompute a function for reading all the fields for a particular discriminator case of a union type
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Using the computed function will typically be faster than executing a corresponding call to GetFields
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    unionCase
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The description of the union case to read.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A function to for reading the fields of the given union case.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1792', 1792)" onmouseover="showTip(event, '1792', 1792)">
+                <p>
+                  <a id="PreComputeUnionTagMemberInfo">
+                    <a href="#PreComputeUnionTagMemberInfo">
+                      <code><span>FSharpValue.PreComputeUnionTagMemberInfo<span><span>(<span>unionType,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1792">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeUnionTagMemberInfo<span><span>(<span>unionType,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type of union to read.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></code>
+                  </span>
+                  The description of the union case reader.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionTagMemberInfo`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionTagMemberInfo\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1405-1405" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Precompute a property or static method for reading an integer representing the case tag of a union type.
+                  </p>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    unionType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The type of union to read.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The description of the union case reader.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1793', 1793)" onmouseover="showTip(event, '1793', 1793)">
+                <p>
+                  <a id="PreComputeUnionTagReader">
+                    <a href="#PreComputeUnionTagReader">
+                      <code><span>FSharpValue.PreComputeUnionTagReader<span><span>(<span>unionType,&#32;?bindingFlags</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1793">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpValue.PreComputeUnionTagReader<span><span>(<span>unionType,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type of union to optimize reading.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                       - 
+                      Optional binding flags.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></span></code>
+                  </span>
+                  An optimized function to read the tags of the given union type.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionTagReader`')">
+                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  </div>
+                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionTagReader\'/>')">
+                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  </div>
+                  <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1398-1398" class="fsdocs-source-link" title="Source on GitHub">
+                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                  </a>
+                  <p class="fsdocs-summary">
+                    Assumes the given type is a union type.
+ If not, <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a> is raised during pre-computation.
+                  </p>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                Using the computed function is more efficient than calling GetUnionCase
+ because the path executed by the computed function is optimized given the knowledge that it will be
+ used to read values of the given type.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    unionType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The type of union to optimize reading.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?bindingFlags
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    Optional binding flags.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An optimized function to read the tags of the given union type.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+        
+    </div>
+</main>
+<aside id="fsdocs-page-menu">
+    <p id="on-this-page">On this page</p>
+    <div class="empty"></div>
+</aside>
+<dialog>
+    <input type="search" placeholder="Search docs" />
+    <div class="results">
+        <ul></ul>
+        <p class="empty">Type something to start searching.</p>
+    </div>
+</dialog>
+<script type="module" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+<script type="module" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-theme.js"></script>
+<script type="module" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+
+</body>
+</html>
