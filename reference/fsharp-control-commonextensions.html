@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en" data-root="https://fsharp.github.io/fsharp-core-docs/">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="F# Software Foundation; Microsoft; F# Contributors" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="FSharp.Core">
+    <meta property="og:title" content="CommonExtensions (FSharp.Core)" />
+    <meta property="og:url" content="https://fsharp.github.io/fsharp-core-docs/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsharp.github.io/fsharp-core-docs/">
+    <meta name="twitter:title" content="CommonExtensions (FSharp.Core)">
+    
+    <title>CommonExtensions (FSharp.Core) | FSharp.Core</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fsharp.github.io/fsharp-core-docs/img/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-theme-set-dark.js"></script>
+    <script type="application/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-details-set-expanded.js"></script>
+    <link href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
+    
+    
+</head>
+<body class="api-docs">
+<header>
+    <div class="start">
+        <div id="menu-toggle">
+            <iconify-icon class="icon closed" height="22" icon="eva:menu-fill" width="22"></iconify-icon>
+            <iconify-icon class="icon open" height="22" icon="mi:close" width="22"></iconify-icon>
+            <input type="checkbox" name="mobile-menu" />
+            <ul class="menu">
+                <li class="nav-header">Links</li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+                </li>
+                <li class="nav-item"><a class="nav-link"
+                                        href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+                    Notes</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+                    Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+        <a href="https://fsharp.org">
+            <img alt="Header menu logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png">
+            <strong>FSharp.Core</strong>
+        </a>
+    </div>
+    <div class="end">
+        <a href="https://github.com/dotnet/fsharp/" target="_blank">
+            <iconify-icon icon="uil:github" width="26" height="26"></iconify-icon>
+        </a>
+        <iconify-icon id="search-btn" icon="carbon:search" class="search" width="24" height="24"></iconify-icon>
+        <fsdocs-theme-toggle></fsdocs-theme-toggle>
+    </div>
+</header>
+<aside id="fsdocs-main-menu">
+    <ul class="menu">
+        <li class="nav-header">Links</li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+        </li>
+        <li class="nav-item"><a class="nav-link"
+                                href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+            Notes</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+            Repository</a></li>
+        
+        <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-taskbuilderextensions.html">
+      FSharp.Control.TaskBuilderExtensions
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+    </ul>
+</aside>
+<main>
+    <div id="content">
+        <div>
+  <h2>
+    CommonExtensions Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+        FSharp.Control
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <div class="fsdocs-summary-contents">
+        <p class="fsdocs-summary">
+          A module of extension members providing asynchronous operations for some basic CLI types related to concurrency and I/O.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div></div>
+  <div>
+    <h3>
+      Type extensions
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Type extension
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '515', 515)" onmouseover="showTip(event, '515', 515)">
+                <p>
+                  <a id="Add">
+                    <a href="#Add">
+                      <code><span>this.Add</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="515">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Add</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        callback
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                       - 
+                      The function to be called for each observation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Permanently connects a listener function to the observable. The listener will
+ be invoked for each observation.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2286-2286" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.CommonExtensions.AddToObservable``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.CommonExtensions.AddToObservable``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p>
+                Extended Type: 
+                <code><a href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a></code>
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    callback
+                  </span>
+                  :
+                  <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The function to be called for each observation.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '516', 516)" onmouseover="showTip(event, '516', 516)">
+                <p>
+                  <a id="AsyncRead">
+                    <a href="#AsyncRead">
+                      <code><span>this.AsyncRead</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="516">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.AsyncRead</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        buffer
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byte.html">byte</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                       - 
+                      The buffer to read into.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?offset
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      An optional offset as a number of bytes in the stream.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?count
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      An optional number of bytes to read from the stream.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&gt;</span></code>
+                  </span>
+                  An asynchronous computation that will read from the stream into the given buffer.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Returns an asynchronous computation that will read from the stream into the given buffer.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2256-2256" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.CommonExtensions.AsyncRead\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Control.CommonExtensions.AsyncRead`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p>
+                Extended Type: 
+                <code><a href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></code>
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    buffer
+                  </span>
+                  :
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byte.html">byte</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The buffer to read into.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?offset
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    An optional offset as a number of bytes in the stream.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?count
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    An optional number of bytes to read from the stream.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An asynchronous computation that will read from the stream into the given buffer.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the sum of offset and count is longer than
+ the buffer length.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">
+                      ArgumentOutOfRangeException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when offset or count is negative.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '517', 517)" onmouseover="showTip(event, '517', 517)">
+                <p>
+                  <a id="AsyncRead">
+                    <a href="#AsyncRead">
+                      <code><span>this.AsyncRead</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="517">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.AsyncRead</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        count
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The number of bytes to read.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byte.html">byte</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span>&gt;</span></code>
+                  </span>
+                  An asynchronous computation that returns the read byte array when run.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Returns an asynchronous computation that will read the given number of bytes from the stream.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2262-2262" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.CommonExtensions.AsyncReadBytes\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Control.CommonExtensions.AsyncReadBytes`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p>
+                Extended Type: 
+                <code><a href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></code>
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    count
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The number of bytes to read.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byte.html">byte</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An asynchronous computation that returns the read byte array when run.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '518', 518)" onmouseover="showTip(event, '518', 518)">
+                <p>
+                  <a id="AsyncWrite">
+                    <a href="#AsyncWrite">
+                      <code><span>this.AsyncWrite</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="518">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.AsyncWrite</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        buffer
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byte.html">byte</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                       - 
+                      The buffer to write from.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?offset
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      An optional offset as a number of bytes in the stream.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?count
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      An optional number of bytes to write to the stream.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  An asynchronous computation that will write the given bytes to the stream.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Returns an asynchronous computation that will write the given bytes to the stream.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2278-2278" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.CommonExtensions.AsyncWrite\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Control.CommonExtensions.AsyncWrite`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p>
+                Extended Type: 
+                <code><a href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></code>
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    buffer
+                  </span>
+                  :
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byte.html">byte</a>&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">array</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The buffer to write from.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?offset
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    An optional offset as a number of bytes in the stream.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ?count
+                  </span>
+                  :
+                  <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    An optional number of bytes to write to the stream.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An asynchronous computation that will write the given bytes to the stream.
+                  </p>
+                </dd>
+              </dl>
+              <table class="fsdocs-exception-list">
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentexception">
+                      ArgumentException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when the sum of offset and count is longer than
+ the buffer length.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">
+                      ArgumentOutOfRangeException
+                    </a>
+                  </td>
+                  <td>
+                    Thrown when offset or count is negative.
+                  </td>
+                </tr>
+              </table>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '519', 519)" onmouseover="showTip(event, '519', 519)">
+                <p>
+                  <a id="Subscribe">
+                    <a href="#Subscribe">
+                      <code><span>this.Subscribe</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="519">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Subscribe</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        callback
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                       - 
+                      The function to be called for each observation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></code>
+                  </span>
+                  An object that will remove the listener if disposed.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Connects a listener function to the observable. The listener will
+ be invoked for each observation. The listener can be removed by
+ calling Dispose on the returned IDisposable object.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2290-2290" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.CommonExtensions.SubscribeToObservable``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.CommonExtensions.SubscribeToObservable``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p>
+                Extended Type: 
+                <code><a href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a></code>
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    callback
+                  </span>
+                  :
+                  <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The function to be called for each observation.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An object that will remove the listener if disposed.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+        
+    </div>
+</main>
+<aside id="fsdocs-page-menu">
+    <p id="on-this-page">On this page</p>
+    <div class="empty"></div>
+</aside>
+<dialog>
+    <input type="search" placeholder="Search docs" />
+    <div class="results">
+        <ul></ul>
+        <p class="empty">Type something to start searching.</p>
+    </div>
+</dialog>
+<script type="module" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+<script type="module" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-details-toggle.js"></script>
+<script type="module" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-theme.js"></script>
+<script type="module" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+
+</body>
+</html>
