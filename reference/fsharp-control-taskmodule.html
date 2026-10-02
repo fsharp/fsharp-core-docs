@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="F# Software Foundation; Microsoft; F# Contributors" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="FSharp.Core">
+    <meta property="og:title" content="Task (FSharp.Core)" />
+    <meta property="og:url" content="https://fsharp.github.io/fsharp-core-docs/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsharp.github.io/fsharp-core-docs/">
+    <meta name="twitter:title" content="Task (FSharp.Core)">
+    
+    <title>Task (FSharp.Core) | FSharp.Core</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="../img/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="../content/fsdocs-theme-set-dark.js"></script>
+    <script type="application/javascript" src="../content/fsdocs-details-set-expanded.js"></script>
+    <link href="../content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
+    <link href="../content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
+    
+    
+</head>
+<body class="api-docs">
+<header>
+    <div class="start">
+        <div id="menu-toggle">
+            <iconify-icon class="icon closed" height="22" icon="eva:menu-fill" width="22"></iconify-icon>
+            <iconify-icon class="icon open" height="22" icon="mi:close" width="22"></iconify-icon>
+            <input type="checkbox" name="mobile-menu" />
+            <ul class="menu">
+                <li class="nav-header">Links</li>
+                <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+                </li>
+                <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                        href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+                    Notes</a></li>
+                <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+                    Repository</a></li>
+                
+                <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+        <a href="https://fsharp.org">
+            <img alt="Logo" src="../img/logo.png">
+            <strong>FSharp.Core</strong>
+        </a>
+    </div>
+    <div class="end">
+        <a href="https://github.com/dotnet/fsharp/" target="_blank">
+            <iconify-icon icon="uil:github" width="26" height="26"></iconify-icon>
+        </a>
+        <iconify-icon id="search-btn" icon="carbon:search" class="search" width="24" height="24"></iconify-icon>
+        <fsdocs-theme-toggle></fsdocs-theme-toggle>
+    </div>
+</header>
+<aside id="fsdocs-main-menu">
+    <ul class="menu">
+        <li class="nav-header">Links</li>
+        <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+        </li>
+        <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+            Notes</a></li>
+        <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+            Repository</a></li>
+        
+        <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+    </ul>
+</aside>
+<main>
+    <div id="content">
+        <div>
+  <h2 id="fsharp-control-taskmodule" data-fsdocs-heading="1">
+    Task Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="../reference/fsharp-control.html">
+        FSharp.Control
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <div class="fsdocs-summary-contents">
+        <p class="fsdocs-summary">
+          Contains camelCase module-level functions for <a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a> computations.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h3 id="functions-and-values" data-fsdocs-heading="2">
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="558" data-fsdocs-tip-unique="558">
+                <p>
+                  <a id="bind">
+                    <a href="#bind">
+                      <code><span>Task.bind&#32;<span>binder&#32;task</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="558">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.bind&#32;<span>binder&#32;task</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        binder
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'U&gt;</span></span></code>
+                       - 
+                      A function that takes the result of the task and returns a new task.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        task
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input task.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'U&gt;</span></code>
+                  </span>
+                  A task that performs a monadic bind on the result of <code>task</code>.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T, &#39;U
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates a task that passes the result of the given task to the binder function.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L742-742" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.TaskModule.Bind``2\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.TaskModule.Bind``2```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    binder
+                  </span>
+                  :
+                  <code><span>'T&#32;->&#32;<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'U&gt;</span></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A function that takes the result of the task and returns a new task.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    task
+                  </span>
+                  :
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input task.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'U&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A task that performs a monadic bind on the result of <code>task</code>.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-bind-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">t</span> <span class="o">=</span> <span class="id">Task</span><span class="pn">.</span><span class="id">result</span> <span class="n">21</span> <span class="o">|&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">bind</span> <span class="pn">(</span><span class="k">fun</span> <span class="id">x</span> <span class="k">-&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">result</span> <span class="pn">(</span><span class="id">x</span> <span class="pn">*</span> <span class="n">2</span><span class="pn">)</span><span class="pn">)</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="2" class="id">t</span><span class="pn">.</span><span class="id">Result</span> <span class="c">// evaluates to 42</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">t</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="559" data-fsdocs-tip-unique="559">
+                <p>
+                  <a id="catch">
+                    <a href="#catch">
+                      <code><span>Task.catch&#32;<span>task</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="559">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.catch&#32;<span>task</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        task
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input <code>Task</code>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span><a href="../reference/fsharp-core-fsharpresult-2.html">Result</a>&lt;<span>'T,&#32;<a href="../reference/fsharp-core-exn.html">exn</a></span>&gt;</span>&gt;</span></code>
+                  </span>
+                  A <code>Task</code> that yields a <code>Result</code>: <code>Ok</code> with the outcome on success,
+ or <code>Error</code> with the exception on failure.
+ Propagates the underlying cancellation exception when <code>task</code> is canceled.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates a <code>Task</code> that reifies the outcome of the given <code>Task</code> as a <code>Result</code>:
+ <code>Ok</code> on success, <code>Error</code> on failure, so faults become values. Cancellation still propagates.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L789-789" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.TaskModule.Catch``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.TaskModule.Catch``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                <code>OperationCanceledException</code> and derived types such as <code>TaskCanceledException</code> propagate unchanged
+ (and the task remains Canceled) in order to maintain cancellation semantics.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    task
+                  </span>
+                  :
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input <code>Task</code>.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span><a href="../reference/fsharp-core-fsharpresult-2.html">Result</a>&lt;<span>'T,&#32;<a href="../reference/fsharp-core-exn.html">exn</a></span>&gt;</span>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A <code>Task</code> that yields a <code>Result</code>: <code>Ok</code> with the outcome on success,
+ or <code>Error</code> with the exception on failure.
+ Propagates the underlying cancellation exception when <code>task</code> is canceled.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-catch-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">safeDiv</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">x</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="fn">y</span> <span class="o">=</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="k">task</span> <span class="pn">{</span> <span class="k">return</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="5" class="fn">x</span> <span class="o">/</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="6" class="fn">y</span> <span class="pn">}</span> <span class="o">|&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">catch</span>
+ <span class="pn">(</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="7" class="fn">safeDiv</span> <span class="n">10</span> <span class="n">2</span><span class="pn">)</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="8" class="id">Result</span> <span class="c">// evaluates to Ok 5</span>
+ <span class="pn">(</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="9" class="fn">safeDiv</span> <span class="n">10</span> <span class="n">0</span><span class="pn">)</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="10" class="id">Result</span> <span class="c">// evaluates to Error (DivideByZeroException ...)</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">safeDiv</span><span class="pn">:</span> <span class="id">x</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span> <span class="id">y</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span> <span class="ta">&#39;a</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">x</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="id">y</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="fn">task</span><span class="pn">:</span> <span class="rt">TaskBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs5">Multiple items<br /><span class="k">module</span> <span class="m">Result</span><br />from Microsoft.FSharp.Core<br /><br />--------------------<br /><span class="k">type</span> <span class="vt">Result</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="ta">&#39;TError</span><span class="pn">&gt;</span> <span class="o">=</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Ok</span> <span class="k">of</span> <span class="prop">ResultValue</span><span class="pn">:</span> <span class="ta">&#39;T</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Error</span> <span class="k">of</span> <span class="prop">ErrorValue</span><span class="pn">:</span> <span class="ta">&#39;TError</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="560" data-fsdocs-tip-unique="560">
+                <p>
+                  <a id="catchWith">
+                    <a href="#catchWith">
+                      <code><span>Task.catchWith&#32;<span>handler&#32;task</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="560">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.catchWith&#32;<span>handler&#32;task</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        handler
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-core-exn.html">exn</a>&#32;->&#32;'T</span></code>
+                       - 
+                      A function to handle (non-cancellation) exceptions, yielding a recovery value based on the exception.
+ Any exception thrown by <code>handler</code> will propagate.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        task
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input <code>Task</code>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                  </span>
+                  A <code>Task</code> that yields the result of <code>task</code> on success, or <code>handler exn</code> on failure.
+ Propagates the underlying cancellation exception when <code>task</code> is canceled.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates a <code>Task</code> that yields the original result on success, or the result of
+ <code>handler exn</code> for non-cancellation exceptions.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L776-776" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.TaskModule.CatchWith``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.TaskModule.CatchWith``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                <code>OperationCanceledException</code> and derived types such as <code>TaskCanceledException</code> propagate unchanged
+ (and the task remains Canceled) in order to maintain cancellation semantics, and therefore are never passed to <code>handler</code>.
+ 
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    handler
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-core-exn.html">exn</a>&#32;->&#32;'T</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A function to handle (non-cancellation) exceptions, yielding a recovery value based on the exception.
+ Any exception thrown by <code>handler</code> will propagate.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    task
+                  </span>
+                  :
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input <code>Task</code>.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A <code>Task</code> that yields the result of <code>task</code> on success, or <code>handler exn</code> on failure.
+ Propagates the underlying cancellation exception when <code>task</code> is canceled.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-catchwith-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">safeDiv</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">x</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="fn">y</span> <span class="o">=</span>
+     <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="k">task</span> <span class="pn">{</span> <span class="k">return</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="5" class="fn">x</span> <span class="o">/</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="6" class="fn">y</span> <span class="pn">}</span>
+     <span class="o">|&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">catchWith</span> <span class="pn">(</span><span class="k">fun</span> <span class="id">_</span> <span class="k">-&gt;</span> <span class="n">0</span><span class="pn">)</span>
+ <span class="pn">(</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="7" class="fn">safeDiv</span> <span class="n">10</span> <span class="n">0</span><span class="pn">)</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="8" class="id">Result</span> <span class="c">// evaluates to 0</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">safeDiv</span><span class="pn">:</span> <span class="id">x</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span> <span class="id">y</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span> <span class="ta">&#39;a</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">x</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="id">y</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="fn">task</span><span class="pn">:</span> <span class="rt">TaskBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs5">Multiple items<br /><span class="k">module</span> <span class="m">Result</span><br />from Microsoft.FSharp.Core<br /><br />--------------------<br /><span class="k">type</span> <span class="vt">Result</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="ta">&#39;TError</span><span class="pn">&gt;</span> <span class="o">=</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Ok</span> <span class="k">of</span> <span class="prop">ResultValue</span><span class="pn">:</span> <span class="ta">&#39;T</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Error</span> <span class="k">of</span> <span class="prop">ErrorValue</span><span class="pn">:</span> <span class="ta">&#39;TError</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="561" data-fsdocs-tip-unique="561">
+                <p>
+                  <a id="empty">
+                    <a href="#empty">
+                      <code><span>Task.empty&#32;<span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="561">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.empty&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      A completed task that returns <code>unit</code>. This is a <code>Task&lt;unit&gt;</code> (not the non-generic <code>Task.CompletedTask</code>).
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L739-739" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Microsoft.FSharp.Control.TaskModule.Empty\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:Microsoft.FSharp.Control.TaskModule.Empty`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-empty-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="id">Task</span><span class="pn">.</span><span class="id">empty</span><span class="pn">.</span><span class="id">Result</span> <span class="c">// evaluates to ()</span>
+</code></pre></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="562" data-fsdocs-tip-unique="562">
+                <p>
+                  <a id="ignore">
+                    <a href="#ignore">
+                      <code><span>Task.ignore&#32;<span>task</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="562">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.ignore&#32;<span>task</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        task
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input task.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  A task that is equivalent to the input task, but disregards the result.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates a task that runs the given task and ignores its result.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L769-769" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.TaskModule.Ignore``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.TaskModule.Ignore``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    task
+                  </span>
+                  :
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input task.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A task that is equivalent to the input task, but disregards the result.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-ignore-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">t</span> <span class="pn">:</span> <span class="id">Task</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="id">unit</span><span class="pn">&gt;</span> <span class="o">=</span> <span class="id">Task</span><span class="pn">.</span><span class="id">result</span> <span class="n">42</span> <span class="o">|&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">ignore</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="id">int</span><span class="pn">&gt;</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="4" class="id">t</span><span class="pn">.</span><span class="id">Result</span> <span class="c">// evaluates to ()</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">t</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">type</span> unit <span class="o">=</span> <span class="rt">Unit</span></div>
+<div popover class="fsdocs-tip" id="fs3">Multiple items<br /><span class="k">val</span> <span class="fn">int</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">int</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> int <span class="o">=</span> <span class="vt">int32</span><br /><br />--------------------<br /><span class="k">type</span> int<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span><br />&#160;&#160;<span class="vt">int</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="563" data-fsdocs-tip-unique="563">
+                <p>
+                  <a id="map">
+                    <a href="#map">
+                      <code><span>Task.map&#32;<span>mapping&#32;task</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="563">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.map&#32;<span>mapping&#32;task</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'U</span></code>
+                       - 
+                      The function to apply to the result.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        task
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input task.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'U&gt;</span></code>
+                  </span>
+                  A task that applies <code>mapping</code> to the result of <code>task</code>.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T, &#39;U
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates a task that applies the mapping function to the result of the given task.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L755-755" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.TaskModule.Map``2\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.TaskModule.Map``2```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    mapping
+                  </span>
+                  :
+                  <code><span>'T&#32;->&#32;'U</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The function to apply to the result.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    task
+                  </span>
+                  :
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input task.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'U&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A task that applies <code>mapping</code> to the result of <code>task</code>.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-map-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">t</span> <span class="o">=</span> <span class="id">Task</span><span class="pn">.</span><span class="id">result</span> <span class="n">21</span> <span class="o">|&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">map</span> <span class="pn">(</span><span class="k">fun</span> <span class="id">x</span> <span class="k">-&gt;</span> <span class="id">x</span> <span class="pn">*</span> <span class="n">2</span><span class="pn">)</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="2" class="id">t</span><span class="pn">.</span><span class="id">Result</span> <span class="c">// evaluates to 42</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">t</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="564" data-fsdocs-tip-unique="564">
+                <p>
+                  <a id="ofValueTask">
+                    <a href="#ofValueTask">
+                      <code><span>Task.ofValueTask&#32;<span>valueTask</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="564">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.ofValueTask&#32;<span>valueTask</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        valueTask
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input value task.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                  </span>
+                  A task equivalent to the given value task.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts a <a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a> to a <a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L874-874" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.TaskModule.OfValueTask``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.TaskModule.OfValueTask``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    valueTask
+                  </span>
+                  :
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value task.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A task equivalent to the given value task.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-ofvaluetask-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">vt</span> <span class="o">=</span> <span class="id">ValueTask</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="id">int</span><span class="pn">&gt;</span><span class="pn">(</span><span class="n">42</span><span class="pn">)</span>
+ <span class="k">let</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="id">t</span> <span class="o">=</span> <span class="id">Task</span><span class="pn">.</span><span class="id">ofValueTask</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="4" class="id">vt</span>
+ <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="5" class="id">t</span><span class="pn">.</span><span class="id">Result</span> <span class="c">// evaluates to 42</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">vt</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br /><span class="k">val</span> <span class="fn">int</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">int</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> int <span class="o">=</span> <span class="vt">int32</span><br /><br />--------------------<br /><span class="k">type</span> int<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span><br />&#160;&#160;<span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="fn">t</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="565" data-fsdocs-tip-unique="565">
+                <p>
+                  <a id="parallelDoLimit">
+                    <a href="#parallelDoLimit">
+                      <code><span>Task.parallelDoLimit&#32;<span>maxDegreeOfParallelism&#32;ct&#32;computations</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="565">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.parallelDoLimit&#32;<span>maxDegreeOfParallelism&#32;ct&#32;computations</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        maxDegreeOfParallelism
+                      </b>
+                      :
+                      <code><a href="../reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The maximum number of tasks to run concurrently. Must be &gt; 0.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ct
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                       - 
+                      An outer cancellation token used to cancel the parallel request.
+ When multiple tasks can run concurrently, task factories receive a linked token that is also canceled if a sibling faults;
+ otherwise they receive <code>ct</code> directly.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        computations
+                      </b>
+                      :
+                      <code><span><span>(<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>&#32;->&#32;<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></span>)</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                       - 
+                      A sequence of unit task start functions accepting a <a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  A task that runs all inputs with the specified parallelism limit and returns <code>unit</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates a task that executes the <code>computations</code> in parallel,
+ with concurrency limited to at most <code>maxDegreeOfParallelism</code>.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L861-861" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.TaskModule.ParallelDoLimit\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Control.TaskModule.ParallelDoLimit`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                <p>The relative start and completion order per computation is arbitrary.</p><p>If any of the computations Fault, the governing CancellationToken of its siblings will be Canceled.</p><p>Where multiple computations Fault, a single exception is propagated.</p>
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    maxDegreeOfParallelism
+                  </span>
+                  :
+                  <code><a href="../reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The maximum number of tasks to run concurrently. Must be &gt; 0.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ct
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    An outer cancellation token used to cancel the parallel request.
+ When multiple tasks can run concurrently, task factories receive a linked token that is also canceled if a sibling faults;
+ otherwise they receive <code>ct</code> directly.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computations
+                  </span>
+                  :
+                  <code><span><span>(<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>&#32;->&#32;<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></span>)</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A sequence of unit task start functions accepting a <a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A task that runs all inputs with the specified parallelism limit and returns <code>unit</code>.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-paralleldolimit-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="k">task</span> <span class="pn">{</span>
+     <span class="k">return!</span>
+         <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">seq</span> <span class="pn">{</span> <span class="k">for</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="fn">i</span> <span class="k">in</span> <span class="n">1..</span><span class="n">10</span> <span class="k">-&gt;</span> <span class="k">fun</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="id">_ct</span> <span class="k">-&gt;</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="5" class="k">task</span> <span class="pn">{</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="6" class="fn">printfn</span> <span class="s">&quot;</span><span class="pf">%d</span><span class="s">&quot;</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="7" class="fn">i</span> <span class="pn">}</span> <span class="pn">}</span> <span class="c">// NOTE output order can vary</span>
+         <span class="o">|&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">parallelDoLimit</span> <span class="n">3</span> <span class="id">CancellationToken</span><span class="pn">.</span><span class="id">None</span>
+ <span class="pn">}</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">task</span><span class="pn">:</span> <span class="rt">TaskBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br /><span class="k">val</span> <span class="fn">seq</span><span class="pn">:</span> <span class="id">sequence</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span> <span class="rt">seq</span><br /><br />--------------------<br /><span class="k">type</span> <span class="ta">&#39;T</span> <span class="if">seq</span> <span class="o">=</span> <span class="m">System.Collections.Generic.</span><span class="if">IEnumerable</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="id">i</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="m">_ct</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">val</span> <span class="fn">printfn</span><span class="pn">:</span> <span class="id">format</span><span class="pn">:</span> <span class="m">Printf.</span><span class="rt">TextWriterFormat</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="566" data-fsdocs-tip-unique="566">
+                <p>
+                  <a id="parallelLimit">
+                    <a href="#parallelLimit">
+                      <code><span>Task.parallelLimit&#32;<span>maxDegreeOfParallelism&#32;ct&#32;computations</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="566">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.parallelLimit&#32;<span>maxDegreeOfParallelism&#32;ct&#32;computations</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        maxDegreeOfParallelism
+                      </b>
+                      :
+                      <code><a href="../reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The maximum number of tasks to run concurrently. Must be &gt; 0.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ct
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                       - 
+                      An outer cancellation token used to cancel the parallel request.
+ When multiple tasks can run concurrently, task factories receive a linked token that is also canceled if a sibling faults;
+ otherwise they receive <code>ct</code> directly.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        computations
+                      </b>
+                      :
+                      <code><span><span>(<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>&#32;->&#32;<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></span>)</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                       - 
+                      A sequence of task start functions accepting a <a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span>'T[]</span>&gt;</span></code>
+                  </span>
+                  A task yielding an array of the results of <code>computations</code> in the order they were supplied.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates a task that executes each of the <code>computations</code> in parallel with concurrency limited
+ to at most <code>maxDegreeOfParallelism</code>, returning an array of their results in order of the input sequence.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L812-812" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.TaskModule.ParallelLimit``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.TaskModule.ParallelLimit``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                <p>The relative start and completion order per computation is arbitrary.</p><p>If any of the computations Fault, the governing CancellationToken of its siblings will be Canceled.</p><p>Where multiple computations Fault, a single exception is propagated.</p>
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    maxDegreeOfParallelism
+                  </span>
+                  :
+                  <code><a href="../reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The maximum number of tasks to run concurrently. Must be &gt; 0.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ct
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    An outer cancellation token used to cancel the parallel request.
+ When multiple tasks can run concurrently, task factories receive a linked token that is also canceled if a sibling faults;
+ otherwise they receive <code>ct</code> directly.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computations
+                  </span>
+                  :
+                  <code><span><span>(<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>&#32;->&#32;<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></span>)</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A sequence of task start functions accepting a <a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span>'T[]</span>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A task yielding an array of the results of <code>computations</code> in the order they were supplied.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-parallellimit-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="k">task</span> <span class="pn">{</span>
+     <span class="k">return!</span>
+         <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">seq</span> <span class="pn">{</span> <span class="k">for</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="fn">i</span> <span class="k">in</span> <span class="n">1..</span><span class="n">10</span> <span class="k">-&gt;</span> <span class="k">fun</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="id">_ct</span> <span class="k">-&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">result</span> <span class="pn">(</span><span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="5" class="id">i</span> <span class="pn">*</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="6" class="id">i</span><span class="pn">)</span> <span class="pn">}</span>
+         <span class="o">|&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">parallelLimit</span> <span class="n">3</span> <span class="id">CancellationToken</span><span class="pn">.</span><span class="id">None</span>
+ <span class="pn">}</span> <span class="c">// returns [| 1; 4; 9; 16; 25; 36; 49; 64; 81; 100 |]</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">task</span><span class="pn">:</span> <span class="rt">TaskBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br /><span class="k">val</span> <span class="fn">seq</span><span class="pn">:</span> <span class="id">sequence</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span> <span class="rt">seq</span><br /><br />--------------------<br /><span class="k">type</span> <span class="ta">&#39;T</span> <span class="if">seq</span> <span class="o">=</span> <span class="m">System.Collections.Generic.</span><span class="if">IEnumerable</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="id">i</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="m">_ct</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="567" data-fsdocs-tip-unique="567">
+                <p>
+                  <a id="result">
+                    <a href="#result">
+                      <code><span>Task.result&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="567">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.result&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The value to return.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                  </span>
+                  A completed task that returns <code>value</code>.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates a task that returns the given value.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L735-735" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.TaskModule.Result``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.TaskModule.Result``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The value to return.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A completed task that returns <code>value</code>.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-result-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">t</span> <span class="o">=</span> <span class="id">Task</span><span class="pn">.</span><span class="id">result</span> <span class="n">42</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="2" class="id">t</span><span class="pn">.</span><span class="id">Result</span> <span class="c">// evaluates to 42</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">t</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="568" data-fsdocs-tip-unique="568">
+                <p>
+                  <a id="sequential">
+                    <a href="#sequential">
+                      <code><span>Task.sequential&#32;<span>ct&#32;computations</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="568">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.sequential&#32;<span>ct&#32;computations</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ct
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                       - 
+                      A cancellation token to pass to each task factory.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        computations
+                      </b>
+                      :
+                      <code><span><span>(<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>&#32;->&#32;<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></span>)</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                       - 
+                      A sequence of task start functions accepting a <a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span>'T[]</span>&gt;</span></code>
+                  </span>
+                  A task yielding an array of the results of <code>computations</code> in the order they were supplied.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates a task that executes each of the <code>computations</code> in sequence,
+ returning an array of their results in order of the input sequence.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L793-793" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.TaskModule.Sequential``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.TaskModule.Sequential``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ct
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A cancellation token to pass to each task factory.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computations
+                  </span>
+                  :
+                  <code><span><span>(<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>&#32;->&#32;<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></span>)</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A sequence of task start functions accepting a <a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span>'T[]</span>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A task yielding an array of the results of <code>computations</code> in the order they were supplied.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-sequential-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="k">task</span> <span class="pn">{</span>
+     <span class="k">return!</span>
+         <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">seq</span> <span class="pn">{</span> <span class="k">for</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="fn">i</span> <span class="k">in</span> <span class="n">1..</span><span class="n">10</span> <span class="k">-&gt;</span> <span class="k">fun</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="id">_ct</span> <span class="k">-&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">result</span> <span class="pn">(</span><span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="5" class="id">i</span> <span class="pn">*</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="6" class="id">i</span><span class="pn">)</span> <span class="pn">}</span>
+         <span class="o">|&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">sequential</span> <span class="id">CancellationToken</span><span class="pn">.</span><span class="id">None</span>
+ <span class="pn">}</span> <span class="c">// returns [| 1; 4; 9; 16; 25; 36; 49; 64; 81; 100 |]</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">task</span><span class="pn">:</span> <span class="rt">TaskBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br /><span class="k">val</span> <span class="fn">seq</span><span class="pn">:</span> <span class="id">sequence</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span> <span class="rt">seq</span><br /><br />--------------------<br /><span class="k">type</span> <span class="ta">&#39;T</span> <span class="if">seq</span> <span class="o">=</span> <span class="m">System.Collections.Generic.</span><span class="if">IEnumerable</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="id">i</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="m">_ct</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="569" data-fsdocs-tip-unique="569">
+                <p>
+                  <a id="sequentialDo">
+                    <a href="#sequentialDo">
+                      <code><span>Task.sequentialDo&#32;<span>ct&#32;computations</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="569">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.sequentialDo&#32;<span>ct&#32;computations</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ct
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                       - 
+                      A cancellation token to pass to each task factory.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        computations
+                      </b>
+                      :
+                      <code><span><span>(<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>&#32;->&#32;<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></span>)</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                       - 
+                      A sequence of unit task start functions accepting a <a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  A task that runs all inputs in sequence and returns <code>unit</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates a task that executes each of the <code>computations</code> in sequence, returning <code>unit</code>.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L805-805" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.TaskModule.SequentialDo\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Control.TaskModule.SequentialDo`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ct
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A cancellation token to pass to each task factory.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computations
+                  </span>
+                  :
+                  <code><span><span>(<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>&#32;->&#32;<span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></span>)</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A sequence of unit task start functions accepting a <a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A task that runs all inputs in sequence and returns <code>unit</code>.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-sequentialdo-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="k">task</span> <span class="pn">{</span>
+     <span class="k">return!</span>
+         <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">seq</span> <span class="pn">{</span> <span class="k">for</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="fn">i</span> <span class="k">in</span> <span class="n">1..</span><span class="n">10</span> <span class="k">-&gt;</span> <span class="k">fun</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="id">_ct</span> <span class="k">-&gt;</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="5" class="k">task</span> <span class="pn">{</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="6" class="fn">printfn</span> <span class="s">&quot;</span><span class="pf">%d</span><span class="s">&quot;</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="7" class="fn">i</span> <span class="pn">}</span> <span class="pn">}</span>
+         <span class="c">// NOTE numbers are guaranteed to be printed in order 1..10</span>
+         <span class="o">|&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">sequentialDo</span> <span class="id">CancellationToken</span><span class="pn">.</span><span class="id">None</span>
+ <span class="pn">}</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">task</span><span class="pn">:</span> <span class="rt">TaskBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br /><span class="k">val</span> <span class="fn">seq</span><span class="pn">:</span> <span class="id">sequence</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span> <span class="rt">seq</span><br /><br />--------------------<br /><span class="k">type</span> <span class="ta">&#39;T</span> <span class="if">seq</span> <span class="o">=</span> <span class="m">System.Collections.Generic.</span><span class="if">IEnumerable</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="id">i</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="m">_ct</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">val</span> <span class="fn">printfn</span><span class="pn">:</span> <span class="id">format</span><span class="pn">:</span> <span class="m">Printf.</span><span class="rt">TextWriterFormat</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="570" data-fsdocs-tip-unique="570">
+                <p>
+                  <a id="startAsyncImmediate">
+                    <a href="#startAsyncImmediate">
+                      <code><span>Task.startAsyncImmediate&#32;<span>ct&#32;computation</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="570">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Task.startAsyncImmediate&#32;<span>ct&#32;computation</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ct
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                       - 
+                      A cancellation token to use for <code>computation</code>.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                       - 
+                      The async computation to start.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                  </span>
+                  A task representing the result of <code>computation</code>.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Starts the <code>computation</code> on the current thread, returning a <a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>
+ that represents its result.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/tasks.fs#L869-869" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.TaskModule.StartAsyncImmediate``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.TaskModule.StartAsyncImmediate``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                The computation begins executing synchronously on the calling thread, offloading only at the point
+ where it first suspends (mirroring <a href="../reference/fsharp-control-fsharpasync.html#StartImmediateAsTask">Async.StartImmediateAsTask</a>).
+ <code>ct</code> flows into the computation, so cancelling it cancels <code>computation</code>, and the resulting task observes
+ that cancellation.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ct
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A cancellation token to use for <code>computation</code>.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computation
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The async computation to start.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A task representing the result of <code>computation</code>.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="task-startasyncimmediate-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">use</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">cts</span> <span class="o">=</span> <span class="k">new</span> <span class="id">CancellationTokenSource</span><span class="pn">(</span><span class="pn">)</span>
+ <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="k">task</span> <span class="pn">{</span>
+     <span class="k">return!</span>
+         <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="k">async</span> <span class="pn">{</span> <span class="k">return</span> <span class="n">42</span> <span class="pn">}</span>
+         <span class="o">|&gt;</span> <span class="id">Task</span><span class="pn">.</span><span class="id">startAsyncImmediate</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="4" class="id">cts</span><span class="pn">.</span><span class="id">Token</span>
+ <span class="pn">}</span> <span class="c">// returns 42</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">cts</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="fn">task</span><span class="pn">:</span> <span class="rt">TaskBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="fn">async</span><span class="pn">:</span> <span class="rt">AsyncBuilder</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+        
+    </div>
+</main>
+<aside id="fsdocs-page-menu">
+    <p id="on-this-page">On this page</p>
+    <ul>
+  <li class="level-2" data-fsdocs-heading="1">
+    <a href="#fsharp-control-taskmodule" title="Task Module">
+      Task Module
+    </a>
+  </li>
+  <li class="level-3" data-fsdocs-heading="2">
+    <a href="#functions-and-values" title="Functions and values">
+      Functions and values
+    </a>
+  </li>
+</ul><style>
+body { timeline-scope: --fsdocs-heading-1, --fsdocs-heading-2, --fsdocs-main; }
+#content [data-fsdocs-heading="1"] { view-timeline-name: --fsdocs-heading-1; }
+#fsdocs-page-menu [data-fsdocs-heading="1"] { animation-timeline: --fsdocs-heading-1, --fsdocs-heading-2, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="1"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="1"] { --fsdocs-toc-focused: 1; }
+#content [data-fsdocs-heading="2"] { view-timeline-name: --fsdocs-heading-2; }
+#fsdocs-page-menu [data-fsdocs-heading="2"] { animation-timeline: --fsdocs-heading-2, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="2"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="2"] { --fsdocs-toc-focused: 1; }
+</style>
+</aside>
+<dialog>
+    <input type="search" placeholder="Search docs" />
+    <div class="results">
+        <ul></ul>
+        <p class="empty">Type something to start searching.</p>
+    </div>
+</dialog>
+<script type="module" src="../content/fsdocs-tips.js"></script>
+<script type="module" src="../content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="../content/fsdocs-details-toggle.js"></script>
+<script type="module" src="../content/fsdocs-theme.js"></script>
+<script type="module" src="../content/fsdocs-search.js"></script>
+<script type="module" src="../content/fsdocs-copy-button.js"></script>
+<script type="module" src="../content/fsdocs-hotkeys.js"></script>
+
+</body>
+</html>
