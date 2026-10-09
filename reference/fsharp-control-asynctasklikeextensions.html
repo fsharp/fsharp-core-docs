@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="F# Software Foundation; Microsoft; F# Contributors" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="FSharp.Core">
+    <meta property="og:title" content="AsyncTaskLikeExtensions (FSharp.Core)" />
+    <meta property="og:url" content="https://fsharp.github.io/fsharp-core-docs/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsharp.github.io/fsharp-core-docs/">
+    <meta name="twitter:title" content="AsyncTaskLikeExtensions (FSharp.Core)">
+    
+    <title>AsyncTaskLikeExtensions (FSharp.Core) | FSharp.Core</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="../img/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="../content/fsdocs-theme-set-dark.js"></script>
+    <script type="application/javascript" src="../content/fsdocs-details-set-expanded.js"></script>
+    <link href="../content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
+    <link href="../content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
+    
+    
+</head>
+<body class="api-docs">
+<header>
+    <div class="start">
+        <div id="menu-toggle">
+            <iconify-icon class="icon closed" height="22" icon="eva:menu-fill" width="22"></iconify-icon>
+            <iconify-icon class="icon open" height="22" icon="mi:close" width="22"></iconify-icon>
+            <input type="checkbox" name="mobile-menu" />
+            <ul class="menu">
+                <li class="nav-header">Links</li>
+                <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+                </li>
+                <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                        href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+                    Notes</a></li>
+                <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+                    Repository</a></li>
+                
+                <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+        <a href="https://fsharp.org">
+            <img alt="Logo" src="../img/logo.png">
+            <strong>FSharp.Core</strong>
+        </a>
+    </div>
+    <div class="end">
+        <a href="https://github.com/dotnet/fsharp/" target="_blank">
+            <iconify-icon icon="uil:github" width="26" height="26"></iconify-icon>
+        </a>
+        <iconify-icon id="search-btn" icon="carbon:search" class="search" width="24" height="24"></iconify-icon>
+        <fsdocs-theme-toggle></fsdocs-theme-toggle>
+    </div>
+</header>
+<aside id="fsdocs-main-menu">
+    <ul class="menu">
+        <li class="nav-header">Links</li>
+        <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+        </li>
+        <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+            Notes</a></li>
+        <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+            Repository</a></li>
+        
+        <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+    </ul>
+</aside>
+<main>
+    <div id="content">
+        <div>
+  <h2 id="fsharp-control-asynctasklikeextensions" data-fsdocs-heading="1">
+    AsyncTaskLikeExtensions Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="../reference/fsharp-control.html">
+        FSharp.Control
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <div class="fsdocs-summary-contents">
+        <p class="fsdocs-summary">
+          A module of extension members providing support for awaiting any task-like value via the GetAwaiter pattern.
+        </p>
+      </div>
+    </div>
+  </div>
+  <h2 id="section0" data-fsdocs-heading="2">
+    Starting Async Computations
+  </h2>
+  <div></div>
+  <div>
+    <h3 id="section0-type-extensions" data-fsdocs-heading="3">
+      Type extensions
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Type extension
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="529" data-fsdocs-tip-unique="529">
+                <p>
+                  <a id="StartTaskImmediate">
+                    <a href="#StartTaskImmediate">
+                      <code><span>Async.StartTaskImmediate<span><span>(<span>createTask</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="529">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.StartTaskImmediate<span><span>(<span>createTask</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        createTask
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>&#32;->&#32;^TaskLike</span></code>
+                       - 
+                      A function that accepts a <code>CancellationToken</code> and returns a task-like value
+ satisfying the GetAwaiter pattern.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^TaskLike, ^Awaiter, &#39;T (requires (member GetAwaiter : ^TaskLike -&gt; ^Awaiter) and :&gt; System.Runtime.CompilerServices.ICriticalNotifyCompletion and (member get_IsCompleted : ^Awaiter -&gt; Microsoft.FSharp.Core.bool) and (member GetResult : ^Awaiter -&gt; &#39;T))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates an asynchronous computation that passes the ambient <code>Async.CancellationToken</code> to
+ <code>createTask</code>, and then awaits the resulting task-like value.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2314-2314" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.AsyncTaskLikeExtensions.Async.StartTaskImmediate.Static``3\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.AsyncTaskLikeExtensions.Async.StartTaskImmediate.Static``3```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                The value returned by <code>createTask</code> must satisfy the GetAwaiter pattern: it must have a
+ <code>GetAwaiter()</code> method returning an awaiter implementing
+ <a href="https://learn.microsoft.com/dotnet/api/system.runtime.compilerservices.icriticalnotifycompletion">ICriticalNotifyCompletion</a>
+ with <code>IsCompleted</code> and <code>GetResult()</code> members.
+
+ This overload uses statically resolved type parameters (SRTP) so it can accept factories returning
+ any task-like type, including <code>YieldAwaitable</code> (from <code>Task.Yield()</code>) and
+ <code>ConfiguredTaskAwaitable</code> (from <code>task.ConfigureAwait(false)</code>).
+ The specific overloads for <a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>, <a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>,
+ <a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a> and <a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask">ValueTask</a>
+ are preferred when the factory return type is known.
+ 
+              </p>
+              <p>
+                Extended Type: 
+                <code><a href="../reference/fsharp-control-fsharpasync.html">Async</a></code>
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    createTask
+                  </span>
+                  :
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>&#32;->&#32;^TaskLike</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A function that accepts a <code>CancellationToken</code> and returns a task-like value
+ satisfying the GetAwaiter pattern.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="startTaskImmediate-tasklike-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="c">// Straightforward: factory returns Task&lt;string&gt;, which is handled by</span>
+ <span class="c">// the specific Task&lt;&#39;T&gt; overload of StartTaskImmediate (not this one).</span>
+ <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">fetchPlain</span> <span class="pn">(</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">url</span><span class="pn">:</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="rt">string</span><span class="pn">)</span> <span class="o">=</span>
+     <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="id">Async</span><span class="pn">.</span><span class="id">StartTaskImmediate</span><span class="pn">(</span><span class="k">fun</span> <span class="id">ct</span> <span class="k">-&gt;</span>
+         <span class="id">httpClient</span><span class="pn">.</span><span class="id">GetStringAsync</span><span class="pn">(</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="5" class="id">url</span><span class="pn">,</span> <span class="id">ct</span><span class="pn">)</span><span class="pn">)</span>   <span class="c">// returns Task&lt;string&gt;</span>
+
+ <span class="c">// Adding ConfigureAwait(false) to the mix yields a ConfiguredTaskAwaitable&lt;string&gt;,</span>
+ <span class="c">// which has no specific overload — this SRTP overload handles it.</span>
+ <span class="k">let</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="6" class="fn">fetchConfigured</span> <span class="pn">(</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="7" class="fn">url</span><span class="pn">:</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="8" class="rt">string</span><span class="pn">)</span> <span class="o">=</span>
+     <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="9" class="id">Async</span><span class="pn">.</span><span class="id">StartTaskImmediate</span><span class="pn">(</span><span class="k">fun</span> <span class="id">ct</span> <span class="k">-&gt;</span>
+         <span class="id">httpClient</span><span class="pn">.</span><span class="id">GetStringAsync</span><span class="pn">(</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="10" class="id">url</span><span class="pn">,</span> <span class="id">ct</span><span class="pn">)</span><span class="pn">.</span><span class="id">ConfigureAwait</span><span class="pn">(</span><span class="k">false</span><span class="pn">)</span><span class="pn">)</span>
+
+ <span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="11" class="k">async</span> <span class="pn">{</span>
+     <span class="k">let!</span> <span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="12" class="fn">html</span> <span class="o">=</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="13" class="fn">fetchConfigured</span> <span class="s">&quot;https://example.com&quot;</span>
+     <span class="id">printn</span> <span class="s">$&quot;Downloaded {</span><span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="14" class="id">html</span><span class="pn">.</span><span class="id">Length</span><span class="s">} chars&quot;</span>
+ <span class="pn">}</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="15" class="id">Async</span><span class="pn">.</span><span class="id">RunSynchronouslyImmediate</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">fetchPlain</span><span class="pn">:</span> <span class="id">url</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">-&gt;</span> <span class="ta">&#39;a</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">url</span><span class="pn">:</span> <span class="rt">string</span></div>
+<div popover class="fsdocs-tip" id="fs3">Multiple items<br /><span class="k">val</span> <span class="fn">string</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">string</span><br /><br />--------------------<br /><span class="k">type</span> <span class="rt">string</span> <span class="o">=</span> <span class="m">System.</span><span class="rt">String</span></div>
+<div popover class="fsdocs-tip" id="fs4">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">val</span> <span class="fn">fetchConfigured</span><span class="pn">:</span> <span class="id">url</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">-&gt;</span> <span class="ta">&#39;a</span></div>
+<div popover class="fsdocs-tip" id="fs6"><span class="k">val</span> <span class="fn">async</span><span class="pn">:</span> <span class="rt">AsyncBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs7"><span class="k">val</span> <span class="id">html</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <h2 id="section1" data-fsdocs-heading="4">
+    Awaiting Results
+  </h2>
+  <div></div>
+  <div>
+    <h3 id="section1-type-extensions" data-fsdocs-heading="5">
+      Type extensions
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Type extension
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="530" data-fsdocs-tip-unique="530">
+                <p>
+                  <a id="Await">
+                    <a href="#Await">
+                      <code><span>Async.Await<span><span>(<span>task</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="530">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.Await<span><span>(<span>task</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        task
+                      </b>
+                      :
+                      <code>^TaskLike</code>
+                       - 
+                      The task-like value to await.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^TaskLike, ^Awaiter, &#39;T (requires (member GetAwaiter : ^TaskLike -&gt; ^Awaiter) and :&gt; System.Runtime.CompilerServices.ICriticalNotifyCompletion and (member get_IsCompleted : ^Awaiter -&gt; Microsoft.FSharp.Core.bool) and (member GetResult : ^Awaiter -&gt; &#39;T))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates an asynchronous computation that will wait for the given task-like value to complete and return
+ its result.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2290-2290" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.AsyncTaskLikeExtensions.Async.Await.Static``3\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.AsyncTaskLikeExtensions.Async.Await.Static``3```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                <p>For the common case where you are running a Task within an Asynchronous Computation,
+ see <c>StartTaskImmediate</c>, which surfaces the ambient <c>CancellationToken</c>
+ so that it can be passed to the Task being started.</p><p>The value must satisfy the GetAwaiter pattern: it must have a <c>GetAwaiter()</c> method
+ returning an awaiter implementing <see cref="T:System.Runtime.CompilerServices.ICriticalNotifyCompletion" />
+ with <c>IsCompleted</c> and <c>GetResult()</c> members.</p><p>Exceptions thrown by <c>GetResult()</c> are propagated directly.</p><p>Unlike the <see cref="T:System.Threading.Tasks.Task" />
+ and <see cref="T:System.Threading.Tasks.ValueTask" />
+ overloads, an <see cref="T:System.AggregateException" /> carrying multiple inner exceptions is not preserved:
+ the first inner exception surfaces (standard <c>GetResult()</c> semantics).</p><p>This overload uses statically resolved type parameters (SRTP) so it can accept any task-like type.
+ The specific overloads for <see cref="T:System.Threading.Tasks.Task`1" />, <see cref="T:System.Threading.Tasks.Task" />,
+ <see cref="T:System.Threading.Tasks.ValueTask`1" /> and <see cref="T:System.Threading.Tasks.ValueTask" />
+ are preferred when the argument type is known.</p>
+              </p>
+              <p>
+                Extended Type: 
+                <code><a href="../reference/fsharp-control-fsharpasync.html">Async</a></code>
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    task
+                  </span>
+                  :
+                  <code>^TaskLike</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The task-like value to await.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="await-tasklike-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="c">// A minimal custom task-like type</span>
+ <span class="k">type</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="rt">MyTask</span><span class="pn">&lt;</span><span class="ta">&#39;</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="id">T</span><span class="pn">&gt;</span><span class="pn">(</span><span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="d">task</span><span class="pn">:</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="id">System</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="5" class="id">Threading</span><span class="pn">.</span><span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="6" class="id">Tasks</span><span class="pn">.</span><span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="7" class="id">Task</span><span class="pn">&lt;</span><span class="ta">&#39;</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="8" class="id">T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="o">=</span>
+     <span class="k">member</span> <span class="id">_</span><span class="pn">.</span><span class="fn">GetAwaiter</span><span class="pn">(</span><span class="pn">)</span> <span class="o">=</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="9" class="d">task</span><span class="pn">.</span><span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="10" class="id">GetAwaiter</span><span class="pn">(</span><span class="pn">)</span>
+
+ <span class="k">let</span> <span data-fsdocs-tip="fs9" data-fsdocs-tip-unique="11" class="id">myTask</span> <span class="o">=</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="12" class="fn">MyTask</span><span class="pn">(</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="13" class="id">System</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="14" class="id">Threading</span><span class="pn">.</span><span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="15" class="id">Tasks</span><span class="pn">.</span><span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="16" class="d">Task</span><span class="pn">.</span><span data-fsdocs-tip="fs10" data-fsdocs-tip-unique="17" class="id">FromResult</span> <span class="n">42</span><span class="pn">)</span>
+ <span data-fsdocs-tip="fs11" data-fsdocs-tip-unique="18" class="k">async</span> <span class="pn">{</span>
+     <span class="k">let!</span> <span data-fsdocs-tip="fs12" data-fsdocs-tip-unique="19" class="fn">result</span> <span class="o">=</span> <span data-fsdocs-tip="fs13" data-fsdocs-tip-unique="20" class="id">Async</span><span class="pn">.</span><span class="id">Await</span> <span data-fsdocs-tip="fs9" data-fsdocs-tip-unique="21" class="id">myTask</span>
+     <span class="id">printn</span> <span class="s">$&quot;Result: {</span><span data-fsdocs-tip="fs12" data-fsdocs-tip-unique="22" class="id">result</span><span class="s">}&quot;</span>
+ <span class="pn">}</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs13" data-fsdocs-tip-unique="23" class="rt">Async</span><span class="pn">.</span><span data-fsdocs-tip="fs14" data-fsdocs-tip-unique="24" class="id">RunSynchronously</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1">Multiple items<br /><span class="k">type</span> <span class="rt">MyTask</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="o">=</span><br />&#160;&#160;<span class="k">new</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">MyTask</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">member</span> <span class="fn">GetAwaiter</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="vt">TaskAwaiter</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br /><br />--------------------<br /><span class="k">new</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">MyTask</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="ta">&#39;T</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="id">task</span><span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">namespace</span> <span class="m">System</span></div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">namespace</span> <span class="m">System.Threading</span></div>
+<div popover class="fsdocs-tip" id="fs6"><span class="k">namespace</span> <span class="m">System.Threading.Tasks</span></div>
+<div popover class="fsdocs-tip" id="fs7">Multiple items<br /><em>Represents an asynchronous operation that can return a value.<br /><br />TResult: The type of the result produced by this Task`1.</em><br /><span class="k">type</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span> <span class="o">=</span><br />&#160;&#160;<span class="k">inherit</span> <span class="rt">Task</span><br />&#160;&#160;<span class="k">new</span><span class="pn">:</span> <span class="pn">``</span><span class="o">function</span><span class="pn">``</span> <span class="pn">:</span> <span class="rt">Func</span><span class="pn">&lt;</span><span class="rt">obj</span><span class="pn">,</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span> <span class="o">*</span> <span class="id">state</span><span class="pn">:</span> <span class="rt">obj</span> <span class="pn">-&gt;</span> <span class="rt">unit</span> + 7 overloads<br />&#160;&#160;<span class="k">member</span> <span class="fn">ConfigureAwait</span><span class="pn">:</span> <span class="id">continueOnCapturedContext</span><span class="pn">:</span> <span class="vt">bool</span> <span class="pn">-&gt;</span> <span class="vt">ConfiguredTaskAwaitable</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">member</span> <span class="fn">ContinueWith</span><span class="pn">:</span> <span class="id">continuationAction</span><span class="pn">:</span> <span class="rt">Action</span><span class="pn">&lt;</span><span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><span class="pn">,</span><span class="rt">obj</span><span class="pn">&gt;</span> <span class="o">*</span> <span class="id">state</span><span class="pn">:</span> <span class="rt">obj</span> <span class="pn">-&gt;</span> <span class="rt">Task</span> + 19 overloads<br />&#160;&#160;<span class="k">member</span> <span class="fn">GetAwaiter</span><span class="pn">:</span> <span class="vt">unit</span> <span class="pn">-&gt;</span> <span class="vt">TaskAwaiter</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">member</span> <span class="fn">WaitAsync</span><span class="pn">:</span> <span class="id">cancellationToken</span><span class="pn">:</span> <span class="vt">CancellationToken</span> <span class="pn">-&gt;</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span> + 4 overloads<br />&#160;&#160;<span class="k">member</span> <span class="prop">Result</span><span class="pn">:</span> <span class="ta">&#39;TResult</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="prop">Factory</span><span class="pn">:</span> <span class="rt">TaskFactory</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><br /><br />--------------------<br /><em>Represents an asynchronous operation.</em><br /><span class="k">type</span> <span class="rt">Task</span> <span class="o">=</span><br />&#160;&#160;<span class="k">interface</span> <span class="if">IAsyncResult</span><br />&#160;&#160;<span class="k">interface</span> <span class="if">IDisposable</span><br />&#160;&#160;<span class="k">new</span><span class="pn">:</span> <span class="id">action</span><span class="pn">:</span> <span class="rt">Action</span> <span class="pn">-&gt;</span> <span class="rt">unit</span> + 7 overloads<br />&#160;&#160;<span class="k">member</span> <span class="fn">ConfigureAwait</span><span class="pn">:</span> <span class="id">continueOnCapturedContext</span><span class="pn">:</span> <span class="vt">bool</span> <span class="pn">-&gt;</span> <span class="vt">ConfiguredTaskAwaitable</span> + 1 overload<br />&#160;&#160;<span class="k">member</span> <span class="fn">ContinueWith</span><span class="pn">:</span> <span class="id">continuationAction</span><span class="pn">:</span> <span class="rt">Action</span><span class="pn">&lt;</span><span class="rt">Task</span><span class="pn">,</span><span class="rt">obj</span><span class="pn">&gt;</span> <span class="o">*</span> <span class="id">state</span><span class="pn">:</span> <span class="rt">obj</span> <span class="pn">-&gt;</span> <span class="rt">Task</span> + 19 overloads<br />&#160;&#160;<span class="k">member</span> <span class="fn">Dispose</span><span class="pn">:</span> <span class="vt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">member</span> <span class="fn">GetAwaiter</span><span class="pn">:</span> <span class="vt">unit</span> <span class="pn">-&gt;</span> <span class="vt">TaskAwaiter</span><br />&#160;&#160;<span class="k">member</span> <span class="fn">RunSynchronously</span><span class="pn">:</span> <span class="vt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span> + 1 overload<br />&#160;&#160;<span class="k">member</span> <span class="fn">Start</span><span class="pn">:</span> <span class="vt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span> + 1 overload<br />&#160;&#160;<span class="k">member</span> <span class="fn">Wait</span><span class="pn">:</span> <span class="vt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span> + 5 overloads<br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="pn">``</span><span class="o">function</span><span class="pn">``</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Func</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="pn">``</span><span class="o">function</span><span class="pn">``</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Func</span><span class="pn">&lt;</span><span class="rt">obj</span><span class="pn">,</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">state</span><span class="pn">:</span> <span class="rt">obj</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="pn">``</span><span class="o">function</span><span class="pn">``</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Func</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">cancellationToken</span><span class="pn">:</span> <span class="m">System.Threading.</span><span class="vt">CancellationToken</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="pn">``</span><span class="o">function</span><span class="pn">``</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Func</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">creationOptions</span><span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="en">TaskCreationOptions</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="pn">``</span><span class="o">function</span><span class="pn">``</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Func</span><span class="pn">&lt;</span><span class="rt">obj</span><span class="pn">,</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">state</span><span class="pn">:</span> <span class="rt">obj</span><span class="pn">,</span> <span class="id">cancellationToken</span><span class="pn">:</span> <span class="m">System.Threading.</span><span class="vt">CancellationToken</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="pn">``</span><span class="o">function</span><span class="pn">``</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Func</span><span class="pn">&lt;</span><span class="rt">obj</span><span class="pn">,</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">state</span><span class="pn">:</span> <span class="rt">obj</span><span class="pn">,</span> <span class="id">creationOptions</span><span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="en">TaskCreationOptions</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="pn">``</span><span class="o">function</span><span class="pn">``</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Func</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">cancellationToken</span><span class="pn">:</span> <span class="m">System.Threading.</span><span class="vt">CancellationToken</span><span class="pn">,</span> <span class="id">creationOptions</span><span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="en">TaskCreationOptions</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="pn">``</span><span class="o">function</span><span class="pn">``</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Func</span><span class="pn">&lt;</span><span class="rt">obj</span><span class="pn">,</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">state</span><span class="pn">:</span> <span class="rt">obj</span><span class="pn">,</span> <span class="id">cancellationToken</span><span class="pn">:</span> <span class="m">System.Threading.</span><span class="vt">CancellationToken</span><span class="pn">,</span> <span class="id">creationOptions</span><span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="en">TaskCreationOptions</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><br /><br />--------------------<br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="id">action</span><span class="pn">:</span> <span class="m">System.</span><span class="rt">Action</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="id">action</span><span class="pn">:</span> <span class="m">System.</span><span class="rt">Action</span><span class="pn">,</span> <span class="id">cancellationToken</span><span class="pn">:</span> <span class="m">System.Threading.</span><span class="vt">CancellationToken</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="id">action</span><span class="pn">:</span> <span class="m">System.</span><span class="rt">Action</span><span class="pn">,</span> <span class="id">creationOptions</span><span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="en">TaskCreationOptions</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="id">action</span><span class="pn">:</span> <span class="m">System.</span><span class="rt">Action</span><span class="pn">&lt;</span><span class="rt">obj</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">state</span><span class="pn">:</span> <span class="rt">obj</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="id">action</span><span class="pn">:</span> <span class="m">System.</span><span class="rt">Action</span><span class="pn">,</span> <span class="id">cancellationToken</span><span class="pn">:</span> <span class="m">System.Threading.</span><span class="vt">CancellationToken</span><span class="pn">,</span> <span class="id">creationOptions</span><span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="en">TaskCreationOptions</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="id">action</span><span class="pn">:</span> <span class="m">System.</span><span class="rt">Action</span><span class="pn">&lt;</span><span class="rt">obj</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">state</span><span class="pn">:</span> <span class="rt">obj</span><span class="pn">,</span> <span class="id">cancellationToken</span><span class="pn">:</span> <span class="m">System.Threading.</span><span class="vt">CancellationToken</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="id">action</span><span class="pn">:</span> <span class="m">System.</span><span class="rt">Action</span><span class="pn">&lt;</span><span class="rt">obj</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">state</span><span class="pn">:</span> <span class="rt">obj</span><span class="pn">,</span> <span class="id">creationOptions</span><span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="en">TaskCreationOptions</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><br /><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">(</span><span class="id">action</span><span class="pn">:</span> <span class="m">System.</span><span class="rt">Action</span><span class="pn">&lt;</span><span class="rt">obj</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">state</span><span class="pn">:</span> <span class="rt">obj</span><span class="pn">,</span> <span class="id">cancellationToken</span><span class="pn">:</span> <span class="m">System.Threading.</span><span class="vt">CancellationToken</span><span class="pn">,</span> <span class="id">creationOptions</span><span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="en">TaskCreationOptions</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span></div>
+<div popover class="fsdocs-tip" id="fs8"><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">.</span><span class="fn">GetAwaiter</span><span class="pn">(</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Runtime.CompilerServices.</span><span class="vt">TaskAwaiter</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs9"><span class="k">val</span> <span class="fn">myTask</span><span class="pn">:</span> <span class="rt">MyTask</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs10"><span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">.</span><span class="fn">FromResult</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span><span class="pn">(</span><span class="id">result</span><span class="pn">:</span> <span class="ta">&#39;TResult</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.Threading.Tasks.</span><span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;TResult</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs11"><span class="k">val</span> <span class="fn">async</span><span class="pn">:</span> <span class="rt">AsyncBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs12"><span class="k">val</span> <span class="id">result</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs13">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs14"><span class="k">static</span> <span class="k">member</span> <span class="rt">Async</span><span class="pn">.</span><span class="fn">RunSynchronously</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">timeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">cancellationToken</span><span class="pn">:</span> <span class="m">System.Threading.</span><span class="vt">CancellationToken</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="ta">&#39;T</span></div>
+
+
+ Prints <code>Result: 42</code>.
+ 
+              </p>
+            </details>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+        
+    </div>
+</main>
+<aside id="fsdocs-page-menu">
+    <p id="on-this-page">On this page</p>
+    <ul>
+  <li class="level-2" data-fsdocs-heading="1">
+    <a href="#fsharp-control-asynctasklikeextensions" title="AsyncTaskLikeExtensions Module">
+      AsyncTaskLikeExtensions Module
+    </a>
+  </li>
+  <li class="level-2" data-fsdocs-heading="2">
+    <a href="#section0" title="Starting Async Computations">
+      Starting Async Computations
+    </a>
+  </li>
+  <li class="level-3" data-fsdocs-heading="3">
+    <a href="#section0-type-extensions" title="Type extensions">
+      Type extensions
+    </a>
+  </li>
+  <li class="level-2" data-fsdocs-heading="4">
+    <a href="#section1" title="Awaiting Results">
+      Awaiting Results
+    </a>
+  </li>
+  <li class="level-3" data-fsdocs-heading="5">
+    <a href="#section1-type-extensions" title="Type extensions">
+      Type extensions
+    </a>
+  </li>
+</ul><style>
+body { timeline-scope: --fsdocs-heading-1, --fsdocs-heading-2, --fsdocs-heading-3, --fsdocs-heading-4, --fsdocs-heading-5, --fsdocs-main; }
+#content [data-fsdocs-heading="1"] { view-timeline-name: --fsdocs-heading-1; }
+#fsdocs-page-menu [data-fsdocs-heading="1"] { animation-timeline: --fsdocs-heading-1, --fsdocs-heading-2; }
+body:has(#content [data-fsdocs-heading="1"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="1"] { --fsdocs-toc-focused: 1; }
+#content [data-fsdocs-heading="2"] { view-timeline-name: --fsdocs-heading-2; }
+#fsdocs-page-menu [data-fsdocs-heading="2"] { animation-timeline: --fsdocs-heading-2, --fsdocs-heading-3; }
+body:has(#content [data-fsdocs-heading="2"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="2"] { --fsdocs-toc-focused: 1; }
+#content [data-fsdocs-heading="3"] { view-timeline-name: --fsdocs-heading-3; }
+#fsdocs-page-menu [data-fsdocs-heading="3"] { animation-timeline: --fsdocs-heading-3, --fsdocs-heading-4; }
+body:has(#content [data-fsdocs-heading="3"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="3"] { --fsdocs-toc-focused: 1; }
+#content [data-fsdocs-heading="4"] { view-timeline-name: --fsdocs-heading-4; }
+#fsdocs-page-menu [data-fsdocs-heading="4"] { animation-timeline: --fsdocs-heading-4, --fsdocs-heading-5, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="4"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="4"] { --fsdocs-toc-focused: 1; }
+#content [data-fsdocs-heading="5"] { view-timeline-name: --fsdocs-heading-5; }
+#fsdocs-page-menu [data-fsdocs-heading="5"] { animation-timeline: --fsdocs-heading-5, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="5"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="5"] { --fsdocs-toc-focused: 1; }
+</style>
+</aside>
+<dialog>
+    <input type="search" placeholder="Search docs" />
+    <div class="results">
+        <ul></ul>
+        <p class="empty">Type something to start searching.</p>
+    </div>
+</dialog>
+<script type="module" src="../content/fsdocs-tips.js"></script>
+<script type="module" src="../content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="../content/fsdocs-details-toggle.js"></script>
+<script type="module" src="../content/fsdocs-theme.js"></script>
+<script type="module" src="../content/fsdocs-search.js"></script>
+<script type="module" src="../content/fsdocs-copy-button.js"></script>
+<script type="module" src="../content/fsdocs-hotkeys.js"></script>
+
+</body>
+</html>
