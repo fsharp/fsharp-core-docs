@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="F# Software Foundation; Microsoft; F# Contributors" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="FSharp.Core">
+    <meta property="og:title" content="UnionCaseInfo (FSharp.Core)" />
+    <meta property="og:url" content="https://fsharp.github.io/fsharp-core-docs/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsharp.github.io/fsharp-core-docs/">
+    <meta name="twitter:title" content="UnionCaseInfo (FSharp.Core)">
+    
+    <title>UnionCaseInfo (FSharp.Core) | FSharp.Core</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="../img/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="../content/fsdocs-theme-set-dark.js"></script>
+    <script type="application/javascript" src="../content/fsdocs-details-set-expanded.js"></script>
+    <link href="../content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
+    <link href="../content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
+    
+    
+</head>
+<body class="api-docs">
+<header>
+    <div class="start">
+        <div id="menu-toggle">
+            <iconify-icon class="icon closed" height="22" icon="eva:menu-fill" width="22"></iconify-icon>
+            <iconify-icon class="icon open" height="22" icon="mi:close" width="22"></iconify-icon>
+            <input type="checkbox" name="mobile-menu" />
+            <ul class="menu">
+                <li class="nav-header">Links</li>
+                <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+                </li>
+                <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                        href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+                    Notes</a></li>
+                <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+                    Repository</a></li>
+                
+                <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+        <a href="https://fsharp.org">
+            <img alt="Logo" src="../img/logo.png">
+            <strong>FSharp.Core</strong>
+        </a>
+    </div>
+    <div class="end">
+        <a href="https://github.com/dotnet/fsharp/" target="_blank">
+            <iconify-icon icon="uil:github" width="26" height="26"></iconify-icon>
+        </a>
+        <iconify-icon id="search-btn" icon="carbon:search" class="search" width="24" height="24"></iconify-icon>
+        <fsdocs-theme-toggle></fsdocs-theme-toggle>
+    </div>
+</header>
+<aside id="fsdocs-main-menu">
+    <ul class="menu">
+        <li class="nav-header">Links</li>
+        <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+        </li>
+        <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+            Notes</a></li>
+        <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+            Repository</a></li>
+        
+        <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+    </ul>
+</aside>
+<main>
+    <div id="content">
+        <div>
+  <h2 id="fsharp-reflection-unioncaseinfo" data-fsdocs-heading="1">
+    UnionCaseInfo Type
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="../reference/fsharp-reflection.html">
+        FSharp.Reflection
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+    <dt>
+      Base Type: 
+      <code><a href="../reference/fsharp-core-obj.html">obj</a></code>
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <div class="fsdocs-summary-contents">
+        <p class="fsdocs-summary">
+          Represents a case of a discriminated union type
+        </p>
+      </div>
+    </div>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div>
+    <h3 id="instance-members" data-fsdocs-heading="2">
+      Instance members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Instance member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="1892" data-fsdocs-tip-unique="1892">
+                <p>
+                  <a id="DeclaringType">
+                    <a href="#DeclaringType">
+                      <code><span>this.DeclaringType</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="1892">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.DeclaringType</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      The type in which the case occurs.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1082-1082" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Microsoft.FSharp.Reflection.UnionCaseInfo.DeclaringType\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:Microsoft.FSharp.Reflection.UnionCaseInfo.DeclaringType`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="DeclaringType-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">type</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="rt">Weather</span> <span class="o">=</span> <span class="uc">Rainy</span> <span class="pn">|</span> <span class="uc">Sunny</span>
+
+ <span class="k">let</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="id">rainy</span> <span class="o">=</span>
+     <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="k">typeof</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="4" class="rt">Weather</span><span class="pn">&gt;</span>
+     <span class="o">|&gt;</span> <span class="id">FSharpType</span><span class="pn">.</span><span class="id">GetUnionCases</span>
+     <span class="o">|&gt;</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="5" class="m">Array</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="6" class="id">head</span>
+
+ <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="7" class="id">rainy</span><span class="pn">.</span><span class="id">DeclaringType</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">type</span> Weather <span class="o">=</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Rainy</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Sunny</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="fn">rainy</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="k">typeof</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Type</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">module</span> <span class="m">Array</span><br />from Microsoft.FSharp.Collections</div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">val</span> <span class="fn">head</span><span class="pn">:</span> <span class="id">array</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">array</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span></div>
+
+
+ Evaluates to a value of type <code>System.Type</code>
+ that holds type information for <code>Weather</code>.
+ 
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="1893" data-fsdocs-tip-unique="1893">
+                <p>
+                  <a id="GetCustomAttributes">
+                    <a href="#GetCustomAttributes">
+                      <code><span>this.GetCustomAttributes</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="1893">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.GetCustomAttributes</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        attributeType
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                       - 
+                      The type of attributes to return.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-core-obj.html">obj</a>&#32;<a href="../reference/fsharp-core-array-1.html">array</a></span></code>
+                  </span>
+                  An array of custom attributes.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Returns the custom attributes associated with the case matching the given attribute type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1090-1090" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.UnionCaseInfo.GetCustomAttributes\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.UnionCaseInfo.GetCustomAttributes`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    attributeType
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The type of attributes to return.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-core-obj.html">obj</a>&#32;<a href="../reference/fsharp-core-array-1.html">array</a></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An array of custom attributes.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="GetCustomAttributes-2">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">type</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="rt">Signal</span><span class="pn">(</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">signal</span><span class="pn">:</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="rt">string</span><span class="pn">)</span> <span class="o">=</span>
+    <span class="k">inherit</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="id">System</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="5" class="id">Attribute</span><span class="pn">(</span><span class="pn">)</span>
+    <span class="k">member</span> <span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="6" class="fn">this</span><span class="pn">.</span><span class="prop">Signal</span> <span class="o">=</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="7" class="fn">signal</span>
+
+ <span class="k">type</span> <span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="8" class="rt">Answer</span> <span class="o">=</span>
+     <span class="pn">|</span> <span class="pn">[&lt;</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="9" class="rt">Signal</span><span class="pn">(</span><span class="s">&quot;Thumbs up&quot;</span><span class="pn">)</span><span class="pn">&gt;]</span> <span class="uc">Yes</span>
+     <span class="pn">|</span> <span class="pn">[&lt;</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="10" class="rt">Signal</span><span class="pn">(</span><span class="s">&quot;Thumbs down&quot;</span><span class="pn">)</span><span class="pn">&gt;]</span> <span class="uc">No</span>
+
+ <span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="11" class="k">typeof</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="12" class="rt">Answer</span><span class="pn">&gt;</span>
+ <span class="o">|&gt;</span> <span class="id">FSharpType</span><span class="pn">.</span><span class="id">GetUnionCases</span>
+ <span class="o">|&gt;</span> <span data-fsdocs-tip="fs9" data-fsdocs-tip-unique="13" class="m">Array</span><span class="pn">.</span><span data-fsdocs-tip="fs10" data-fsdocs-tip-unique="14" class="id">map</span> <span class="pn">(</span><span class="k">fun</span> <span data-fsdocs-tip="fs11" data-fsdocs-tip-unique="15" class="fn">x</span> <span class="k">-&gt;</span> <span data-fsdocs-tip="fs11" data-fsdocs-tip-unique="16" class="fn">x</span><span class="pn">.</span><span class="id">GetCustomAttributes</span><span class="pn">(</span><span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="17" class="id">typeof</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="18" class="id">Signal</span><span class="pn">&gt;</span><span class="pn">)</span><span class="pn">)</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1">Multiple items<br /><span class="k">type</span> <span class="rt">Signal</span> <span class="o">=</span><br />&#160;&#160;<span class="k">inherit</span> <span class="rt">Attribute</span><br />&#160;&#160;<span class="k">new</span><span class="pn">:</span> <span class="id">signal</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">-&gt;</span> <span class="rt">Signal</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">Signal</span><span class="pn">:</span> <span class="rt">string</span><br /><br />--------------------<br /><span class="k">new</span><span class="pn">:</span> <span class="id">signal</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">-&gt;</span> <span class="rt">Signal</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">signal</span><span class="pn">:</span> <span class="rt">string</span></div>
+<div popover class="fsdocs-tip" id="fs3">Multiple items<br /><span class="k">val</span> <span class="fn">string</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">string</span><br /><br />--------------------<br /><span class="k">type</span> <span class="rt">string</span> <span class="o">=</span> <span class="m">System.</span><span class="rt">String</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">namespace</span> <span class="m">System</span></div>
+<div popover class="fsdocs-tip" id="fs5">Multiple items<br /><em>Represents the base class for custom attributes.</em><br /><span class="k">type</span> <span class="rt">Attribute</span> <span class="o">=</span><br />&#160;&#160;<span class="k">member</span> <span class="fn">Equals</span><span class="pn">:</span> <span class="id">obj</span><span class="pn">:</span> <span class="rt">obj</span> <span class="pn">-&gt;</span> <span class="vt">bool</span><br />&#160;&#160;<span class="k">member</span> <span class="fn">GetHashCode</span><span class="pn">:</span> <span class="vt">unit</span> <span class="pn">-&gt;</span> <span class="vt">int</span><br />&#160;&#160;<span class="k">member</span> <span class="fn">IsDefaultAttribute</span><span class="pn">:</span> <span class="vt">unit</span> <span class="pn">-&gt;</span> <span class="vt">bool</span><br />&#160;&#160;<span class="k">member</span> <span class="fn">Match</span><span class="pn">:</span> <span class="id">obj</span><span class="pn">:</span> <span class="rt">obj</span> <span class="pn">-&gt;</span> <span class="vt">bool</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">GetCustomAttribute</span><span class="pn">:</span> <span class="id">element</span><span class="pn">:</span> <span class="rt">Assembly</span> <span class="o">*</span> <span class="id">attributeType</span><span class="pn">:</span> <span class="rt">Type</span> <span class="pn">-&gt;</span> <span class="rt">Attribute</span> + 7 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">GetCustomAttributes</span><span class="pn">:</span> <span class="id">element</span><span class="pn">:</span> <span class="rt">Assembly</span> <span class="pn">-&gt;</span> <span class="rt">Attribute</span> <span class="rt">array</span> + 15 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">IsDefined</span><span class="pn">:</span> <span class="id">element</span><span class="pn">:</span> <span class="rt">Assembly</span> <span class="o">*</span> <span class="id">attributeType</span><span class="pn">:</span> <span class="rt">Type</span> <span class="pn">-&gt;</span> <span class="vt">bool</span> + 7 overloads<br />&#160;&#160;<span class="k">member</span> <span class="prop">TypeId</span><span class="pn">:</span> <span class="rt">obj</span><br /><br />--------------------<br /><span class="m">System.</span><span class="rt">Attribute</span><span class="pn">(</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Attribute</span></div>
+<div popover class="fsdocs-tip" id="fs6"><span class="k">val</span> <span class="id">this</span><span class="pn">:</span> <span class="rt">Signal</span></div>
+<div popover class="fsdocs-tip" id="fs7"><span class="k">type</span> Answer <span class="o">=</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Yes</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">No</span></div>
+<div popover class="fsdocs-tip" id="fs8"><span class="k">val</span> <span class="k">typeof</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Type</span></div>
+<div popover class="fsdocs-tip" id="fs9"><span class="k">module</span> <span class="m">Array</span><br />from Microsoft.FSharp.Collections</div>
+<div popover class="fsdocs-tip" id="fs10"><span class="k">val</span> <span class="fn">map</span><span class="pn">:</span> <span class="id">mapping</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="ta">&#39;U</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="id">array</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">array</span> <span class="pn">-&gt;</span> <span class="ta">&#39;U</span> <span class="rt">array</span></div>
+<div popover class="fsdocs-tip" id="fs11"><span class="k">val</span> <span class="id">x</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+ Evaluates to
+ <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="pn">[|</span><span class="pn">[|</span><span class="id">FSI_0147</span><span class="o">+</span><span class="id">Signal</span> <span class="pn">{</span><span class="id">Signal</span> <span class="o">=</span> <span class="s">&quot;Thumbs up&quot;</span><span class="pn">;</span>
+                      <span class="id">TypeId</span> <span class="o">=</span> <span class="id">FSI_0147</span><span class="o">+</span><span class="id">Signal</span><span class="pn">;</span><span class="pn">}</span><span class="pn">|]</span><span class="pn">;</span>
+   <span class="pn">[|</span><span class="id">FSI_0147</span><span class="o">+</span><span class="id">Signal</span> <span class="pn">{</span><span class="id">Signal</span> <span class="o">=</span> <span class="s">&quot;Thumbs down&quot;</span><span class="pn">;</span>
+                      <span class="id">TypeId</span> <span class="o">=</span> <span class="id">FSI_0147</span><span class="o">+</span><span class="id">Signal</span><span class="pn">;</span><span class="pn">}</span><span class="pn">|]</span><span class="pn">|]</span>
+</code></pre></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="1894" data-fsdocs-tip-unique="1894">
+                <p>
+                  <a id="GetCustomAttributes">
+                    <a href="#GetCustomAttributes">
+                      <code><span>this.GetCustomAttributes</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="1894">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.GetCustomAttributes</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-core-obj.html">obj</a>&#32;<a href="../reference/fsharp-core-array-1.html">array</a></span></code>
+                  </span>
+                  An array of custom attributes.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Returns the custom attributes associated with the case.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1087-1087" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.UnionCaseInfo.GetCustomAttributes\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.UnionCaseInfo.GetCustomAttributes`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-core-obj.html">obj</a>&#32;<a href="../reference/fsharp-core-array-1.html">array</a></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An array of custom attributes.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="GetCustomAttributes-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">type</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="rt">Weather</span> <span class="o">=</span>
+     <span class="pn">|</span> <span class="uc">Rainy</span>
+     <span class="pn">|</span> <span class="uc">Sunny</span>
+
+ <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="k">typeof</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="3" class="rt">Weather</span><span class="pn">&gt;</span>
+ <span class="o">|&gt;</span> <span class="id">FSharpType</span><span class="pn">.</span><span class="id">GetUnionCases</span>
+ <span class="o">|&gt;</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="4" class="m">Array</span><span class="pn">.</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="5" class="id">map</span> <span class="pn">(</span><span class="k">fun</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="6" class="fn">x</span> <span class="k">-&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="7" class="fn">x</span><span class="pn">.</span><span class="id">GetCustomAttributes</span><span class="pn">(</span><span class="pn">)</span><span class="pn">)</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">type</span> Weather <span class="o">=</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Rainy</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Sunny</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="k">typeof</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Type</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">module</span> <span class="m">Array</span><br />from Microsoft.FSharp.Collections</div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="fn">map</span><span class="pn">:</span> <span class="id">mapping</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="ta">&#39;U</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="id">array</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">array</span> <span class="pn">-&gt;</span> <span class="ta">&#39;U</span> <span class="rt">array</span></div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">val</span> <span class="id">x</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+ Evaluates to
+ <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="pn">[|</span><span class="pn">[|</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">Microsoft</span><span class="pn">.</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="id">FSharp</span><span class="pn">.</span><span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="id">Core</span><span class="pn">.</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="id">CompilationMappingAttribute</span>
+     <span class="pn">{</span><span class="id">ResourceName</span> <span class="o">=</span> <span class="k">null</span><span class="pn">;</span>
+      <span class="id">SequenceNumber</span> <span class="o">=</span> <span class="n">0</span><span class="pn">;</span>
+      <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="5" class="id">SourceConstructFlags</span> <span class="o">=</span> <span class="id">UnionCase</span><span class="pn">;</span>
+      <span class="id">TypeDefinitions</span> <span class="o">=</span> <span class="k">null</span><span class="pn">;</span>
+      <span class="id">TypeId</span> <span class="o">=</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="6" class="id">Microsoft</span><span class="pn">.</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="7" class="id">FSharp</span><span class="pn">.</span><span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="8" class="id">Core</span><span class="pn">.</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="9" class="id">CompilationMappingAttribute</span><span class="pn">;</span>
+      <span class="id">VariantNumber</span> <span class="o">=</span> <span class="n">0</span><span class="pn">;</span><span class="pn">}</span><span class="pn">|]</span><span class="pn">;</span>
+ <span class="pn">[|</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="10" class="id">Microsoft</span><span class="pn">.</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="11" class="id">FSharp</span><span class="pn">.</span><span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="12" class="id">Core</span><span class="pn">.</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="13" class="id">CompilationMappingAttribute</span>
+     <span class="pn">{</span><span class="id">ResourceName</span> <span class="o">=</span> <span class="k">null</span><span class="pn">;</span>
+      <span class="id">SequenceNumber</span> <span class="o">=</span> <span class="n">1</span><span class="pn">;</span>
+      <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="14" class="id">SourceConstructFlags</span> <span class="o">=</span> <span class="id">UnionCase</span><span class="pn">;</span>
+      <span class="id">TypeDefinitions</span> <span class="o">=</span> <span class="k">null</span><span class="pn">;</span>
+      <span class="id">TypeId</span> <span class="o">=</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="15" class="id">Microsoft</span><span class="pn">.</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="16" class="id">FSharp</span><span class="pn">.</span><span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="17" class="id">Core</span><span class="pn">.</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="18" class="id">CompilationMappingAttribute</span><span class="pn">;</span>
+      <span class="id">VariantNumber</span> <span class="o">=</span> <span class="n">0</span><span class="pn">;</span><span class="pn">}</span><span class="pn">|]</span><span class="pn">|]</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">namespace</span> <span class="m">Microsoft</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">namespace</span> <span class="m">Microsoft.FSharp</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">namespace</span> <span class="m">Microsoft.FSharp.Core</span></div>
+<div popover class="fsdocs-tip" id="fs4">Multiple items<br /><span class="k">type</span> <span class="rt">CompilationMappingAttribute</span> <span class="o">=</span><br />&#160;&#160;<span class="k">inherit</span> <span class="rt">Attribute</span><br />&#160;&#160;<span class="k">new</span><span class="pn">:</span> <span class="id">sourceConstructFlags</span><span class="pn">:</span> <span class="en">SourceConstructFlags</span> <span class="pn">-&gt;</span> <span class="rt">CompilationMappingAttribute</span> + 3 overloads<br />&#160;&#160;<span class="k">member</span> <span class="prop">ResourceName</span><span class="pn">:</span> <span class="rt">string</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">SequenceNumber</span><span class="pn">:</span> <span class="vt">int</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">SourceConstructFlags</span><span class="pn">:</span> <span class="en">SourceConstructFlags</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">TypeDefinitions</span><span class="pn">:</span> <span class="rt">Type</span> <span class="rt">array</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">VariantNumber</span><span class="pn">:</span> <span class="vt">int</span><br /><br />--------------------<br /><span class="k">new</span><span class="pn">:</span> <span class="id">sourceConstructFlags</span><span class="pn">:</span> <span class="en">SourceConstructFlags</span> <span class="pn">-&gt;</span> <span class="rt">CompilationMappingAttribute</span><br /><span class="k">new</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;<span class="id">sourceConstructFlags</span><span class="pn">:</span> <span class="en">SourceConstructFlags</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="id">sequenceNumber</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">CompilationMappingAttribute</span><br /><span class="k">new</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;<span class="id">resourceName</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="id">typeDefinitions</span><span class="pn">:</span> <span class="m">System.</span><span class="rt">Type</span> <span class="rt">array</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">CompilationMappingAttribute</span><br /><span class="k">new</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;<span class="id">sourceConstructFlags</span><span class="pn">:</span> <span class="en">SourceConstructFlags</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="id">variantNumber</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="id">sequenceNumber</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">CompilationMappingAttribute</span></div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">type</span> <span class="vt">SourceConstructFlags</span> <span class="o">=</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">None</span> <span class="o">=</span> <span class="n">0</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">SumType</span> <span class="o">=</span> <span class="n">1</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">RecordType</span> <span class="o">=</span> <span class="n">2</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">ObjectType</span> <span class="o">=</span> <span class="n">3</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">Field</span> <span class="o">=</span> <span class="n">4</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">Exception</span> <span class="o">=</span> <span class="n">5</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">Closure</span> <span class="o">=</span> <span class="n">6</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">Module</span> <span class="o">=</span> <span class="n">7</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">UnionCase</span> <span class="o">=</span> <span class="n">8</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">Value</span> <span class="o">=</span> <span class="n">9</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">KindMask</span> <span class="o">=</span> <span class="n">31</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">NonPublicRepresentation</span> <span class="o">=</span> <span class="n">32</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="1895" data-fsdocs-tip-unique="1895">
+                <p>
+                  <a id="GetCustomAttributesData">
+                    <a href="#GetCustomAttributesData">
+                      <code><span>this.GetCustomAttributesData</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="1895">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.GetCustomAttributesData</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a href="https://learn.microsoft.com/dotnet/api/system.reflection.customattributedata">CustomAttributeData</a>&gt;</span></code>
+                  </span>
+                  An list of custom attribute data items.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Returns the custom attributes data associated with the case.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1093-1093" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.UnionCaseInfo.GetCustomAttributesData\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.UnionCaseInfo.GetCustomAttributesData`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a href="https://learn.microsoft.com/dotnet/api/system.reflection.customattributedata">CustomAttributeData</a>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An list of custom attribute data items.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="GetCustomAttributesData-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">type</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="rt">Signal</span><span class="pn">(</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">signal</span><span class="pn">:</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="rt">string</span><span class="pn">)</span> <span class="o">=</span>
+   <span class="k">inherit</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="id">System</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="5" class="id">Attribute</span><span class="pn">(</span><span class="pn">)</span>
+   <span class="k">member</span> <span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="6" class="fn">this</span><span class="pn">.</span><span class="prop">Signal</span> <span class="o">=</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="7" class="fn">signal</span>
+
+ <span class="k">type</span> <span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="8" class="rt">Answer</span> <span class="o">=</span>
+     <span class="pn">|</span> <span class="pn">[&lt;</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="9" class="rt">Signal</span><span class="pn">(</span><span class="s">&quot;Thumbs up&quot;</span><span class="pn">)</span><span class="pn">&gt;]</span> <span class="uc">Yes</span>
+     <span class="pn">|</span> <span class="pn">[&lt;</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="10" class="rt">Signal</span><span class="pn">(</span><span class="s">&quot;Thumbs down&quot;</span><span class="pn">)</span><span class="pn">&gt;]</span> <span class="uc">No</span>
+
+ <span class="k">let</span> <span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="11" class="id">answerYes</span> <span class="o">=</span>
+     <span data-fsdocs-tip="fs9" data-fsdocs-tip-unique="12" class="k">typeof</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="13" class="rt">Answer</span><span class="pn">&gt;</span>
+     <span class="o">|&gt;</span> <span class="id">FSharpType</span><span class="pn">.</span><span class="id">GetUnionCases</span>
+     <span class="o">|&gt;</span> <span data-fsdocs-tip="fs10" data-fsdocs-tip-unique="14" class="m">Array</span><span class="pn">.</span><span data-fsdocs-tip="fs11" data-fsdocs-tip-unique="15" class="id">find</span> <span class="pn">(</span><span class="k">fun</span> <span data-fsdocs-tip="fs12" data-fsdocs-tip-unique="16" class="fn">x</span> <span class="k">-&gt;</span> <span data-fsdocs-tip="fs12" data-fsdocs-tip-unique="17" class="fn">x</span><span class="pn">.</span><span class="id">Name</span> <span class="o">=</span> <span class="s">&quot;Yes&quot;</span><span class="pn">)</span>
+
+ <span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="18" class="id">answerYes</span><span class="pn">.</span><span class="id">GetCustomAttributesData</span><span class="pn">(</span><span class="pn">)</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1">Multiple items<br /><span class="k">type</span> <span class="rt">Signal</span> <span class="o">=</span><br />&#160;&#160;<span class="k">inherit</span> <span class="rt">Attribute</span><br />&#160;&#160;<span class="k">new</span><span class="pn">:</span> <span class="id">signal</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">-&gt;</span> <span class="rt">Signal</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">Signal</span><span class="pn">:</span> <span class="rt">string</span><br /><br />--------------------<br /><span class="k">new</span><span class="pn">:</span> <span class="id">signal</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">-&gt;</span> <span class="rt">Signal</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">signal</span><span class="pn">:</span> <span class="rt">string</span></div>
+<div popover class="fsdocs-tip" id="fs3">Multiple items<br /><span class="k">val</span> <span class="fn">string</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">string</span><br /><br />--------------------<br /><span class="k">type</span> <span class="rt">string</span> <span class="o">=</span> <span class="m">System.</span><span class="rt">String</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">namespace</span> <span class="m">System</span></div>
+<div popover class="fsdocs-tip" id="fs5">Multiple items<br /><em>Represents the base class for custom attributes.</em><br /><span class="k">type</span> <span class="rt">Attribute</span> <span class="o">=</span><br />&#160;&#160;<span class="k">member</span> <span class="fn">Equals</span><span class="pn">:</span> <span class="id">obj</span><span class="pn">:</span> <span class="rt">obj</span> <span class="pn">-&gt;</span> <span class="vt">bool</span><br />&#160;&#160;<span class="k">member</span> <span class="fn">GetHashCode</span><span class="pn">:</span> <span class="vt">unit</span> <span class="pn">-&gt;</span> <span class="vt">int</span><br />&#160;&#160;<span class="k">member</span> <span class="fn">IsDefaultAttribute</span><span class="pn">:</span> <span class="vt">unit</span> <span class="pn">-&gt;</span> <span class="vt">bool</span><br />&#160;&#160;<span class="k">member</span> <span class="fn">Match</span><span class="pn">:</span> <span class="id">obj</span><span class="pn">:</span> <span class="rt">obj</span> <span class="pn">-&gt;</span> <span class="vt">bool</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">GetCustomAttribute</span><span class="pn">:</span> <span class="id">element</span><span class="pn">:</span> <span class="rt">Assembly</span> <span class="o">*</span> <span class="id">attributeType</span><span class="pn">:</span> <span class="rt">Type</span> <span class="pn">-&gt;</span> <span class="rt">Attribute</span> + 7 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">GetCustomAttributes</span><span class="pn">:</span> <span class="id">element</span><span class="pn">:</span> <span class="rt">Assembly</span> <span class="pn">-&gt;</span> <span class="rt">Attribute</span> <span class="rt">array</span> + 15 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">IsDefined</span><span class="pn">:</span> <span class="id">element</span><span class="pn">:</span> <span class="rt">Assembly</span> <span class="o">*</span> <span class="id">attributeType</span><span class="pn">:</span> <span class="rt">Type</span> <span class="pn">-&gt;</span> <span class="vt">bool</span> + 7 overloads<br />&#160;&#160;<span class="k">member</span> <span class="prop">TypeId</span><span class="pn">:</span> <span class="rt">obj</span><br /><br />--------------------<br /><span class="m">System.</span><span class="rt">Attribute</span><span class="pn">(</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Attribute</span></div>
+<div popover class="fsdocs-tip" id="fs6"><span class="k">val</span> <span class="id">this</span><span class="pn">:</span> <span class="rt">Signal</span></div>
+<div popover class="fsdocs-tip" id="fs7"><span class="k">type</span> Answer <span class="o">=</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Yes</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">No</span></div>
+<div popover class="fsdocs-tip" id="fs8"><span class="k">val</span> <span class="fn">answerYes</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs9"><span class="k">val</span> <span class="k">typeof</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Type</span></div>
+<div popover class="fsdocs-tip" id="fs10"><span class="k">module</span> <span class="m">Array</span><br />from Microsoft.FSharp.Collections</div>
+<div popover class="fsdocs-tip" id="fs11"><span class="k">val</span> <span class="fn">find</span><span class="pn">:</span> <span class="id">predicate</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">bool</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="id">array</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">array</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span></div>
+<div popover class="fsdocs-tip" id="fs12"><span class="k">val</span> <span class="id">x</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+ Evaluates to
+ <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp">  <span class="pn">[|</span><span class="pn">[</span><span class="id">FSI_0150</span><span class="o">+</span><span class="id">Signal</span><span class="pn">(</span><span class="s">&quot;Thumbs up&quot;</span><span class="pn">)</span><span class="pn">]</span>
+      <span class="pn">{</span><span class="id">AttributeType</span> <span class="o">=</span> <span class="id">FSI_0150</span><span class="o">+</span><span class="id">Signal</span><span class="pn">;</span>
+       <span class="id">Constructor</span> <span class="o">=</span> <span class="id">Void</span> <span class="pn">.</span><span class="id">ctor</span><span class="pn">(</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">System</span><span class="pn">.</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="id">String</span><span class="pn">)</span><span class="pn">;</span>
+       <span class="id">ConstructorArguments</span> <span class="o">=</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="id">seq</span> <span class="pn">[</span><span class="s">&quot;Thumbs up&quot;</span><span class="pn">]</span><span class="pn">;</span>
+       <span class="id">NamedArguments</span> <span class="o">=</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="4" class="id">seq</span> <span class="pn">[</span><span class="pn">]</span><span class="pn">;</span><span class="pn">}</span><span class="pn">;</span>
+    <span class="pn">[</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="5" class="id">Microsoft</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="6" class="id">FSharp</span><span class="pn">.</span><span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="7" class="id">Core</span><span class="pn">.</span><span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="8" class="id">CompilationMappingAttribute</span><span class="pn">(</span><span class="pn">(</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="9" class="id">Microsoft</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="10" class="id">FSharp</span><span class="pn">.</span><span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="11" class="id">Core</span><span class="pn">.</span><span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="12" class="id">SourceConstructFlags</span><span class="pn">)</span><span class="n">8</span><span class="pn">,</span> <span class="pn">(</span><span class="id">Int32</span><span class="pn">)</span><span class="n">0</span><span class="pn">)</span><span class="pn">]</span>
+      <span class="pn">{</span><span class="id">AttributeType</span> <span class="o">=</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="13" class="id">Microsoft</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="14" class="id">FSharp</span><span class="pn">.</span><span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="15" class="id">Core</span><span class="pn">.</span><span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="16" class="id">CompilationMappingAttribute</span><span class="pn">;</span>
+       <span class="id">Constructor</span> <span class="o">=</span> <span class="id">Void</span> <span class="pn">.</span><span class="id">ctor</span><span class="pn">(</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="17" class="id">Microsoft</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="18" class="id">FSharp</span><span class="pn">.</span><span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="19" class="id">Core</span><span class="pn">.</span><span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="20" class="id">SourceConstructFlags</span><span class="pn">,</span> <span class="id">Int32</span><span class="pn">)</span><span class="pn">;</span>
+       <span class="id">ConstructorArguments</span> <span class="o">=</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="21" class="id">seq</span>
+                                <span class="pn">[</span><span class="pn">(</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="22" class="id">Microsoft</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="23" class="id">FSharp</span><span class="pn">.</span><span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="24" class="id">Core</span><span class="pn">.</span><span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="25" class="id">SourceConstructFlags</span><span class="pn">)</span><span class="n">8</span><span class="pn">;</span>
+                                 <span class="pn">(</span><span class="id">Int32</span><span class="pn">)</span><span class="n">0</span><span class="pn">]</span><span class="pn">;</span>
+       <span class="id">NamedArguments</span> <span class="o">=</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="26" class="id">seq</span> <span class="pn">[</span><span class="pn">]</span><span class="pn">;</span><span class="pn">}</span><span class="pn">|]</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">namespace</span> <span class="m">System</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br /><em>Represents text as a sequence of UTF-16 code units.</em><br /><span class="k">type</span> <span class="rt">String</span> <span class="o">=</span><br />&#160;&#160;<span class="k">interface</span> <span class="rt">seq</span><span class="pn">&lt;</span><span class="vt">char</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">interface</span> <span class="if">IEnumerable</span><br />&#160;&#160;<span class="k">interface</span> <span class="if">ICloneable</span><br />&#160;&#160;<span class="k">interface</span> <span class="if">IComparable</span><br />&#160;&#160;<span class="k">interface</span> <span class="if">IComparable</span><span class="pn">&lt;</span><span class="rt">string</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">interface</span> <span class="if">IConvertible</span><br />&#160;&#160;<span class="k">interface</span> <span class="if">IEquatable</span><span class="pn">&lt;</span><span class="rt">string</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">interface</span> <span class="if">IParsable</span><span class="pn">&lt;</span><span class="rt">string</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">interface</span> <span class="if">ISpanParsable</span><span class="pn">&lt;</span><span class="rt">string</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">new</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="rt">nativeptr</span><span class="pn">&lt;</span><span class="vt">char</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">unit</span> + 8 overloads<br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="m">System.</span><span class="rt">String</span><span class="pn">(</span><span class="id">value</span><span class="pn">:</span> <span class="rt">nativeptr</span><span class="pn">&lt;</span><span class="vt">char</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">String</span><br /><span class="m">System.</span><span class="rt">String</span><span class="pn">(</span><span class="id">value</span><span class="pn">:</span> <span class="vt">char</span> <span class="rt">array</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">String</span><br /><span class="m">System.</span><span class="rt">String</span><span class="pn">(</span><span class="id">value</span><span class="pn">:</span> <span class="m">System.</span><span class="vt">ReadOnlySpan</span><span class="pn">&lt;</span><span class="vt">char</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">String</span><br /><span class="m">System.</span><span class="rt">String</span><span class="pn">(</span><span class="id">value</span><span class="pn">:</span> <span class="rt">nativeptr</span><span class="pn">&lt;</span><span class="vt">sbyte</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">String</span><br /><span class="m">System.</span><span class="rt">String</span><span class="pn">(</span><span class="id">c</span><span class="pn">:</span> <span class="vt">char</span><span class="pn">,</span> <span class="id">count</span><span class="pn">:</span> <span class="vt">int</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">String</span><br /><span class="m">System.</span><span class="rt">String</span><span class="pn">(</span><span class="id">value</span><span class="pn">:</span> <span class="rt">nativeptr</span><span class="pn">&lt;</span><span class="vt">char</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">startIndex</span><span class="pn">:</span> <span class="vt">int</span><span class="pn">,</span> <span class="id">length</span><span class="pn">:</span> <span class="vt">int</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">String</span><br /><span class="m">System.</span><span class="rt">String</span><span class="pn">(</span><span class="id">value</span><span class="pn">:</span> <span class="vt">char</span> <span class="rt">array</span><span class="pn">,</span> <span class="id">startIndex</span><span class="pn">:</span> <span class="vt">int</span><span class="pn">,</span> <span class="id">length</span><span class="pn">:</span> <span class="vt">int</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">String</span><br /><span class="m">System.</span><span class="rt">String</span><span class="pn">(</span><span class="id">value</span><span class="pn">:</span> <span class="rt">nativeptr</span><span class="pn">&lt;</span><span class="vt">sbyte</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">startIndex</span><span class="pn">:</span> <span class="vt">int</span><span class="pn">,</span> <span class="id">length</span><span class="pn">:</span> <span class="vt">int</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">String</span><br /><span class="m">System.</span><span class="rt">String</span><span class="pn">(</span><span class="id">value</span><span class="pn">:</span> <span class="rt">nativeptr</span><span class="pn">&lt;</span><span class="vt">sbyte</span><span class="pn">&gt;</span><span class="pn">,</span> <span class="id">startIndex</span><span class="pn">:</span> <span class="vt">int</span><span class="pn">,</span> <span class="id">length</span><span class="pn">:</span> <span class="vt">int</span><span class="pn">,</span> <span class="id">enc</span><span class="pn">:</span> <span class="m">System.Text.</span><span class="rt">Encoding</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">String</span></div>
+<div popover class="fsdocs-tip" id="fs3">Multiple items<br /><span class="k">val</span> <span class="fn">seq</span><span class="pn">:</span> <span class="id">sequence</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span> <span class="rt">seq</span><br /><br />--------------------<br /><span class="k">type</span> <span class="ta">&#39;T</span> <span class="if">seq</span> <span class="o">=</span> <span class="m">System.Collections.Generic.</span><span class="if">IEnumerable</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">namespace</span> <span class="m">Microsoft</span></div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">namespace</span> <span class="m">Microsoft.FSharp</span></div>
+<div popover class="fsdocs-tip" id="fs6"><span class="k">namespace</span> <span class="m">Microsoft.FSharp.Core</span></div>
+<div popover class="fsdocs-tip" id="fs7">Multiple items<br /><span class="k">type</span> <span class="rt">CompilationMappingAttribute</span> <span class="o">=</span><br />&#160;&#160;<span class="k">inherit</span> <span class="rt">Attribute</span><br />&#160;&#160;<span class="k">new</span><span class="pn">:</span> <span class="id">sourceConstructFlags</span><span class="pn">:</span> <span class="en">SourceConstructFlags</span> <span class="pn">-&gt;</span> <span class="rt">CompilationMappingAttribute</span> + 3 overloads<br />&#160;&#160;<span class="k">member</span> <span class="prop">ResourceName</span><span class="pn">:</span> <span class="rt">string</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">SequenceNumber</span><span class="pn">:</span> <span class="vt">int</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">SourceConstructFlags</span><span class="pn">:</span> <span class="en">SourceConstructFlags</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">TypeDefinitions</span><span class="pn">:</span> <span class="rt">Type</span> <span class="rt">array</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">VariantNumber</span><span class="pn">:</span> <span class="vt">int</span><br /><br />--------------------<br /><span class="k">new</span><span class="pn">:</span> <span class="id">sourceConstructFlags</span><span class="pn">:</span> <span class="en">SourceConstructFlags</span> <span class="pn">-&gt;</span> <span class="rt">CompilationMappingAttribute</span><br /><span class="k">new</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;<span class="id">sourceConstructFlags</span><span class="pn">:</span> <span class="en">SourceConstructFlags</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="id">sequenceNumber</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">CompilationMappingAttribute</span><br /><span class="k">new</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;<span class="id">resourceName</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="id">typeDefinitions</span><span class="pn">:</span> <span class="m">System.</span><span class="rt">Type</span> <span class="rt">array</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">CompilationMappingAttribute</span><br /><span class="k">new</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;<span class="id">sourceConstructFlags</span><span class="pn">:</span> <span class="en">SourceConstructFlags</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="id">variantNumber</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="id">sequenceNumber</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">CompilationMappingAttribute</span></div>
+<div popover class="fsdocs-tip" id="fs8"><span class="k">type</span> <span class="vt">SourceConstructFlags</span> <span class="o">=</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">None</span> <span class="o">=</span> <span class="n">0</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">SumType</span> <span class="o">=</span> <span class="n">1</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">RecordType</span> <span class="o">=</span> <span class="n">2</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">ObjectType</span> <span class="o">=</span> <span class="n">3</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">Field</span> <span class="o">=</span> <span class="n">4</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">Exception</span> <span class="o">=</span> <span class="n">5</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">Closure</span> <span class="o">=</span> <span class="n">6</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">Module</span> <span class="o">=</span> <span class="n">7</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">UnionCase</span> <span class="o">=</span> <span class="n">8</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">Value</span> <span class="o">=</span> <span class="n">9</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">KindMask</span> <span class="o">=</span> <span class="n">31</span><br />&#160;&#160;<span class="pn">|</span> <span class="prop">NonPublicRepresentation</span> <span class="o">=</span> <span class="n">32</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="1896" data-fsdocs-tip-unique="1896">
+                <p>
+                  <a id="GetFields">
+                    <a href="#GetFields">
+                      <code><span>this.GetFields</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="1896">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.GetFields</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>&#32;<a href="../reference/fsharp-core-array-1.html">array</a></span></code>
+                  </span>
+                  The fields associated with the case.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      The fields associated with the case, represented by a PropertyInfo.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1084-1084" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Reflection.UnionCaseInfo.GetFields\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Reflection.UnionCaseInfo.GetFields`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>&#32;<a href="../reference/fsharp-core-array-1.html">array</a></span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The fields associated with the case.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="GetFields-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">type</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="rt">Shape</span> <span class="o">=</span>
+     <span class="pn">|</span> <span class="uc">Rectangle</span> <span class="k">of</span> <span class="prop">width</span> <span class="pn">:</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="vt">float</span> <span class="pn">*</span> <span class="prop">length</span> <span class="pn">:</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="3" class="vt">float</span>
+     <span class="pn">|</span> <span class="uc">Circle</span> <span class="k">of</span> <span class="prop">radius</span> <span class="pn">:</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="4" class="vt">float</span>
+     <span class="pn">|</span> <span class="uc">Prism</span> <span class="k">of</span> <span class="prop">width</span> <span class="pn">:</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="5" class="vt">float</span> <span class="pn">*</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="6" class="vt">float</span> <span class="pn">*</span> <span class="prop">height</span> <span class="pn">:</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="7" class="vt">float</span>
+
+ <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="8" class="k">typeof</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="9" class="rt">Shape</span><span class="pn">&gt;</span>
+ <span class="o">|&gt;</span> <span class="id">FSharpType</span><span class="pn">.</span><span class="id">GetUnionCases</span>
+ <span class="o">|&gt;</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="10" class="m">Array</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="11" class="id">map</span> <span class="pn">(</span><span class="k">fun</span> <span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="12" class="fn">unionCase</span> <span class="k">-&gt;</span>
+     <span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="13" class="fn">unionCase</span><span class="pn">.</span><span class="id">GetFields</span><span class="pn">(</span><span class="pn">)</span>
+     <span class="o">|&gt;</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="14" class="m">Array</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="15" class="id">map</span> <span class="pn">(</span><span class="k">fun</span> <span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="16" class="fn">fieldInfo</span> <span class="k">-&gt;</span>
+         <span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="17" class="fn">fieldInfo</span><span class="pn">.</span><span class="id">Name</span><span class="pn">,</span>
+         <span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="18" class="fn">fieldInfo</span><span class="pn">.</span><span class="id">PropertyType</span><span class="pn">.</span><span class="id">Name</span><span class="pn">)</span><span class="pn">)</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">type</span> Shape <span class="o">=</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Rectangle</span> <span class="k">of</span> <span class="prop">width</span><span class="pn">:</span> <span class="vt">float</span> <span class="o">*</span> <span class="prop">length</span><span class="pn">:</span> <span class="vt">float</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Circle</span> <span class="k">of</span> <span class="prop">radius</span><span class="pn">:</span> <span class="vt">float</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Prism</span> <span class="k">of</span> <span class="prop">width</span><span class="pn">:</span> <span class="vt">float</span> <span class="o">*</span> <span class="vt">float</span> <span class="o">*</span> <span class="prop">height</span><span class="pn">:</span> <span class="vt">float</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br /><span class="k">val</span> <span class="fn">float</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">float</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> float <span class="o">=</span> <span class="m">System.</span><span class="vt">Double</span><br /><br />--------------------<br /><span class="k">type</span> float<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span><br />&#160;&#160;<span class="vt">float</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="k">typeof</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Type</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">module</span> <span class="m">Array</span><br />from Microsoft.FSharp.Collections</div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">val</span> <span class="fn">map</span><span class="pn">:</span> <span class="id">mapping</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="ta">&#39;U</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="id">array</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">array</span> <span class="pn">-&gt;</span> <span class="ta">&#39;U</span> <span class="rt">array</span></div>
+<div popover class="fsdocs-tip" id="fs6"><span class="k">val</span> <span class="id">unionCase</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs7"><span class="k">val</span> <span class="id">fieldInfo</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+ Evaluates to
+ <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="pn">[|</span><span class="pn">[|</span><span class="pn">(</span><span class="s">&quot;width&quot;</span><span class="pn">,</span> <span class="s">&quot;Double&quot;</span><span class="pn">)</span><span class="pn">;</span> <span class="pn">(</span><span class="s">&quot;length&quot;</span><span class="pn">,</span> <span class="s">&quot;Double&quot;</span><span class="pn">)</span><span class="pn">|]</span><span class="pn">;</span>
+   <span class="pn">[|</span><span class="pn">(</span><span class="s">&quot;radius&quot;</span><span class="pn">,</span> <span class="s">&quot;Double&quot;</span><span class="pn">)</span><span class="pn">|]</span><span class="pn">;</span>
+   <span class="pn">[|</span><span class="pn">(</span><span class="s">&quot;width&quot;</span><span class="pn">,</span> <span class="s">&quot;Double&quot;</span><span class="pn">)</span><span class="pn">;</span> <span class="pn">(</span><span class="s">&quot;Item2&quot;</span><span class="pn">,</span> <span class="s">&quot;Double&quot;</span><span class="pn">)</span><span class="pn">;</span> <span class="pn">(</span><span class="s">&quot;height&quot;</span><span class="pn">,</span> <span class="s">&quot;Double&quot;</span><span class="pn">)</span><span class="pn">|]</span><span class="pn">|]</span>
+</code></pre></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="1897" data-fsdocs-tip-unique="1897">
+                <p>
+                  <a id="Name">
+                    <a href="#Name">
+                      <code><span>this.Name</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="1897">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Name</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-string.html">string</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      The name of the case.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1072-1072" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Microsoft.FSharp.Reflection.UnionCaseInfo.Name\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:Microsoft.FSharp.Reflection.UnionCaseInfo.Name`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-string.html">string</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="Name-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">type</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="rt">Weather</span> <span class="o">=</span> <span class="uc">Rainy</span> <span class="pn">|</span> <span class="uc">Sunny</span>
+
+ <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="k">typeof</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="3" class="rt">Weather</span><span class="pn">&gt;</span>
+ <span class="o">|&gt;</span> <span class="id">FSharpType</span><span class="pn">.</span><span class="id">GetUnionCases</span>
+ <span class="o">|&gt;</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="4" class="m">Array</span><span class="pn">.</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="5" class="id">map</span> <span class="pn">(</span><span class="k">fun</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="6" class="fn">x</span> <span class="k">-&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="7" class="fn">x</span><span class="pn">.</span><span class="id">Name</span><span class="pn">)</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">type</span> Weather <span class="o">=</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Rainy</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Sunny</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="k">typeof</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Type</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">module</span> <span class="m">Array</span><br />from Microsoft.FSharp.Collections</div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="fn">map</span><span class="pn">:</span> <span class="id">mapping</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="ta">&#39;U</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="id">array</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">array</span> <span class="pn">-&gt;</span> <span class="ta">&#39;U</span> <span class="rt">array</span></div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">val</span> <span class="id">x</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+ Evaluates to <code>[|&quot;Rainy&quot;, &quot;Sunny&quot;|]</code>
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="1898" data-fsdocs-tip-unique="1898">
+                <p>
+                  <a id="Tag">
+                    <a href="#Tag">
+                      <code><span>this.Tag</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="1898">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Tag</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      The integer tag for the case.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/reflect.fs#L1096-1096" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Microsoft.FSharp.Reflection.UnionCaseInfo.Tag\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:Microsoft.FSharp.Reflection.UnionCaseInfo.Tag`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="Tag-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">type</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="rt">CoinToss</span> <span class="o">=</span> <span class="uc">Heads</span> <span class="pn">|</span> <span class="uc">Tails</span>
+
+ <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="k">typeof</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="3" class="rt">CoinToss</span><span class="pn">&gt;</span>
+ <span class="o">|&gt;</span> <span class="id">FSharpType</span><span class="pn">.</span><span class="id">GetUnionCases</span>
+ <span class="o">|&gt;</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="4" class="m">Array</span><span class="pn">.</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="5" class="id">map</span> <span class="pn">(</span><span class="k">fun</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="6" class="fn">x</span> <span class="k">-&gt;</span> <span class="s">$&quot;{</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="7" class="fn">x</span><span class="pn">.</span><span class="id">Name</span><span class="s">} has tag {</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="8" class="fn">x</span><span class="pn">.</span><span class="id">Tag</span><span class="s">}&quot;</span><span class="pn">)</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">type</span> CoinToss <span class="o">=</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Heads</span><br />&#160;&#160;<span class="pn">|</span> <span class="uc">Tails</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="k">typeof</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">:</span> <span class="m">System.</span><span class="rt">Type</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">module</span> <span class="m">Array</span><br />from Microsoft.FSharp.Collections</div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="fn">map</span><span class="pn">:</span> <span class="id">mapping</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="ta">&#39;U</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="id">array</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">array</span> <span class="pn">-&gt;</span> <span class="ta">&#39;U</span> <span class="rt">array</span></div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">val</span> <span class="id">x</span><span class="pn">:</span> <span class="rt">obj</span></div>
+
+
+ Evaluates to <code>[|&quot;Heads has tag 0&quot;; &quot;Tails has tag 1&quot;|]</code>
+              </p>
+            </details>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+</div>
+        
+    </div>
+</main>
+<aside id="fsdocs-page-menu">
+    <p id="on-this-page">On this page</p>
+    <ul>
+  <li class="level-2" data-fsdocs-heading="1">
+    <a href="#fsharp-reflection-unioncaseinfo" title="UnionCaseInfo Type">
+      UnionCaseInfo Type
+    </a>
+  </li>
+  <li class="level-3" data-fsdocs-heading="2">
+    <a href="#instance-members" title="Instance members">
+      Instance members
+    </a>
+  </li>
+</ul><style>
+body { timeline-scope: --fsdocs-heading-1, --fsdocs-heading-2, --fsdocs-main; }
+#content [data-fsdocs-heading="1"] { view-timeline-name: --fsdocs-heading-1; }
+#fsdocs-page-menu [data-fsdocs-heading="1"] { animation-timeline: --fsdocs-heading-1, --fsdocs-heading-2, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="1"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="1"] { --fsdocs-toc-focused: 1; }
+#content [data-fsdocs-heading="2"] { view-timeline-name: --fsdocs-heading-2; }
+#fsdocs-page-menu [data-fsdocs-heading="2"] { animation-timeline: --fsdocs-heading-2, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="2"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="2"] { --fsdocs-toc-focused: 1; }
+</style>
+</aside>
+<dialog>
+    <input type="search" placeholder="Search docs" />
+    <div class="results">
+        <ul></ul>
+        <p class="empty">Type something to start searching.</p>
+    </div>
+</dialog>
+<script type="module" src="../content/fsdocs-tips.js"></script>
+<script type="module" src="../content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="../content/fsdocs-details-toggle.js"></script>
+<script type="module" src="../content/fsdocs-theme.js"></script>
+<script type="module" src="../content/fsdocs-search.js"></script>
+<script type="module" src="../content/fsdocs-copy-button.js"></script>
+<script type="module" src="../content/fsdocs-hotkeys.js"></script>
+
+</body>
+</html>

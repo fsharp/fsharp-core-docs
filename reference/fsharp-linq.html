@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="F# Software Foundation; Microsoft; F# Contributors" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="FSharp.Core">
+    <meta property="og:title" content="FSharp.Linq" />
+    <meta property="og:url" content="https://fsharp.github.io/fsharp-core-docs/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsharp.github.io/fsharp-core-docs/">
+    <meta name="twitter:title" content="FSharp.Linq">
+    
+    <title>FSharp.Linq | FSharp.Core</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="../img/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="../content/fsdocs-theme-set-dark.js"></script>
+    <script type="application/javascript" src="../content/fsdocs-details-set-expanded.js"></script>
+    <link href="../content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
+    <link href="../content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
+    
+    
+</head>
+<body class="api-docs">
+<header>
+    <div class="start">
+        <div id="menu-toggle">
+            <iconify-icon class="icon closed" height="22" icon="eva:menu-fill" width="22"></iconify-icon>
+            <iconify-icon class="icon open" height="22" icon="mi:close" width="22"></iconify-icon>
+            <input type="checkbox" name="mobile-menu" />
+            <ul class="menu">
+                <li class="nav-header">Links</li>
+                <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+                </li>
+                <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                        href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+                    Notes</a></li>
+                <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+                    Repository</a></li>
+                
+                <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+        <a href="https://fsharp.org">
+            <img alt="Logo" src="../img/logo.png">
+            <strong>FSharp.Core</strong>
+        </a>
+    </div>
+    <div class="end">
+        <a href="https://github.com/dotnet/fsharp/" target="_blank">
+            <iconify-icon icon="uil:github" width="26" height="26"></iconify-icon>
+        </a>
+        <iconify-icon id="search-btn" icon="carbon:search" class="search" width="24" height="24"></iconify-icon>
+        <fsdocs-theme-toggle></fsdocs-theme-toggle>
+    </div>
+</header>
+<aside id="fsdocs-main-menu">
+    <ul class="menu">
+        <li class="nav-header">Links</li>
+        <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+        </li>
+        <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+            Notes</a></li>
+        <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+            Repository</a></li>
+        
+        <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+    </ul>
+</aside>
+<main>
+    <div id="content">
+        <div>
+  <h2 id="fsharp-linq" data-fsdocs-heading="1">
+    FSharp.Linq Namespace
+  </h2>
+  <div class="fsdocs-xmldoc">
+    <p>
+      
+   Library functionality for F# query syntax and interoperability with .NET LINQ Expressions. See
+   also <a href="https://learn.microsoft.com/dotnet/fsharp/language-reference/query-expressions">F# Query Expressions</a> in the F# Language Guide.
+ 
+    </p>
+  </div>
+  <h3 id="namespaces" data-fsdocs-heading="2">
+    Namespaces
+  </h3>
+  <table class="table outer-list fsdocs-entity-list">
+    <thead>
+      <tr>
+        <td>
+          Namespace
+        </td>
+        <td>
+          Description
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a href="../reference/fsharp-linq-runtimehelpers.html" title="FSharp.Linq.RuntimeHelpers" data-fsdocs-nav="">
+            FSharp.Linq.RuntimeHelpers
+          </a>
+        </td>
+        <td>
+             Library functionality associated with converting F# quotations to .NET LINQ expression trees.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table outer-list fsdocs-entity-list">
+    <thead>
+      <tr>
+        <td>
+          Type/Module
+        </td>
+        <td>
+          Description
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Nullable">
+              <a href="../reference/fsharp-linq-nullablemodule.html" data-fsdocs-nav="">
+                Nullable
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-summary-contents">
+              <p class="fsdocs-summary">
+                 Functions for converting nullable values
+              </p>
+            </div>
+            <div class="icon-button-row">
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fsi#L297-297" class="fsdocs-source-link" title="Source on GitHub">
+                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+              </a>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Microsoft.FSharp.Linq.NullableModule\'/>')">
+                <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Microsoft.FSharp.Linq.NullableModule`')">
+                <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="NullableOperators">
+              <a href="../reference/fsharp-linq-nullableoperators.html" data-fsdocs-nav="">
+                NullableOperators
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-summary-contents">
+              <p class="fsdocs-summary">
+                 Operators for working with nullable values, primarily used on F# queries.
+              </p>
+            </div>
+            <div class="icon-button-row">
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Nullable.fsi#L10-10" class="fsdocs-source-link" title="Source on GitHub">
+                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+              </a>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Microsoft.FSharp.Linq.NullableOperators\'/>')">
+                <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Microsoft.FSharp.Linq.NullableOperators`')">
+                <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="QueryBuilder">
+              <a href="../reference/fsharp-linq-querybuilder.html" data-fsdocs-nav="">
+                QueryBuilder
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-summary-contents">
+              <p class="fsdocs-summary">
+                 The type used to support the F# query syntax. Use 'query { ... }' to use the query syntax. See
+ also <a href="https://learn.microsoft.com/dotnet/fsharp/language-reference/query-expressions">F# Query Expressions</a> in the F# Language Guide.
+              </p>
+            </div>
+            <div class="icon-button-row">
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Query.fsi#L36-36" class="fsdocs-source-link" title="Source on GitHub">
+                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+              </a>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Microsoft.FSharp.Linq.QueryBuilder\'/>')">
+                <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Microsoft.FSharp.Linq.QueryBuilder`')">
+                <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="QuerySource<'T, 'Q>">
+              <a href="../reference/fsharp-linq-querysource-2.html" data-fsdocs-nav="">
+                QuerySource<'T, 'Q>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-summary-contents">
+              <p class="fsdocs-summary">
+                
+ A partial input or result in an F# query. This type is used to support the F# query syntax.
+ 
+              </p>
+            </div>
+            <div class="icon-button-row">
+              <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/Query.fsi#L22-22" class="fsdocs-source-link" title="Source on GitHub">
+                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+              </a>
+              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Microsoft.FSharp.Linq.QuerySource`2\'/>')">
+                <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+              </div>
+              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:Microsoft.FSharp.Linq.QuerySource`2``')">
+                <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+        
+    </div>
+</main>
+<aside id="fsdocs-page-menu">
+    <p id="on-this-page">On this page</p>
+    <ul>
+  <li class="level-2" data-fsdocs-heading="1">
+    <a href="#fsharp-linq" title="FSharp.Linq Namespace">
+      FSharp.Linq Namespace
+    </a>
+  </li>
+  <li class="level-3" data-fsdocs-heading="2">
+    <a href="#namespaces" title="Namespaces">
+      Namespaces
+    </a>
+    <ul class="fsdocs-menu-entries">
+      <li>
+        <a href="../reference/fsharp-linq-runtimehelpers.html" title="FSharp.Linq.RuntimeHelpers">
+          FSharp.Linq.RuntimeHelpers
+        </a>
+      </li>
+      <li>
+        <a href="../reference/fsharp-linq-nullablemodule.html" title="Nullable">
+          Nullable
+        </a>
+      </li>
+      <li>
+        <a href="../reference/fsharp-linq-nullableoperators.html" title="NullableOperators">
+          NullableOperators
+        </a>
+      </li>
+      <li>
+        <a href="../reference/fsharp-linq-querybuilder.html" title="QueryBuilder">
+          QueryBuilder
+        </a>
+      </li>
+      <li>
+        <a href="../reference/fsharp-linq-querysource-2.html" title="QuerySource<'T, 'Q>">
+          QuerySource<'T, 'Q>
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul><style>
+body { timeline-scope: --fsdocs-heading-1, --fsdocs-heading-2, --fsdocs-main; }
+#content [data-fsdocs-heading="1"] { view-timeline-name: --fsdocs-heading-1; }
+#fsdocs-page-menu [data-fsdocs-heading="1"] { animation-timeline: --fsdocs-heading-1, --fsdocs-heading-2, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="1"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="1"] { --fsdocs-toc-focused: 1; }
+#content [data-fsdocs-heading="2"] { view-timeline-name: --fsdocs-heading-2; }
+#fsdocs-page-menu [data-fsdocs-heading="2"] { animation-timeline: --fsdocs-heading-2, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="2"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="2"] { --fsdocs-toc-focused: 1; }
+</style>
+</aside>
+<dialog>
+    <input type="search" placeholder="Search docs" />
+    <div class="results">
+        <ul></ul>
+        <p class="empty">Type something to start searching.</p>
+    </div>
+</dialog>
+<script type="module" src="../content/fsdocs-tips.js"></script>
+<script type="module" src="../content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="../content/fsdocs-details-toggle.js"></script>
+<script type="module" src="../content/fsdocs-theme.js"></script>
+<script type="module" src="../content/fsdocs-search.js"></script>
+<script type="module" src="../content/fsdocs-copy-button.js"></script>
+<script type="module" src="../content/fsdocs-hotkeys.js"></script>
+
+</body>
+</html>
