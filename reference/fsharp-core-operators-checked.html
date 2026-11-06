@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="F# Software Foundation; Microsoft; F# Contributors" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="FSharp.Core">
+    <meta property="og:title" content="Checked (FSharp.Core)" />
+    <meta property="og:url" content="https://fsharp.github.io/fsharp-core-docs/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsharp.github.io/fsharp-core-docs/">
+    <meta name="twitter:title" content="Checked (FSharp.Core)">
+    
+    <title>Checked (FSharp.Core) | FSharp.Core</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="../img/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="../content/fsdocs-theme-set-dark.js"></script>
+    <script type="application/javascript" src="../content/fsdocs-details-set-expanded.js"></script>
+    <link href="../content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
+    <link href="../content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
+    
+    
+</head>
+<body class="api-docs">
+<header>
+    <div class="start">
+        <div id="menu-toggle">
+            <iconify-icon class="icon closed" height="22" icon="eva:menu-fill" width="22"></iconify-icon>
+            <iconify-icon class="icon open" height="22" icon="mi:close" width="22"></iconify-icon>
+            <input type="checkbox" name="mobile-menu" />
+            <ul class="menu">
+                <li class="nav-header">Links</li>
+                <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+                </li>
+                <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                        href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+                    Notes</a></li>
+                <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+                    Repository</a></li>
+                
+                <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+        <a href="https://fsharp.org">
+            <img alt="Logo" src="../img/logo.png">
+            <strong>FSharp.Core</strong>
+        </a>
+    </div>
+    <div class="end">
+        <a href="https://github.com/dotnet/fsharp/" target="_blank">
+            <iconify-icon icon="uil:github" width="26" height="26"></iconify-icon>
+        </a>
+        <iconify-icon id="search-btn" icon="carbon:search" class="search" width="24" height="24"></iconify-icon>
+        <fsdocs-theme-toggle></fsdocs-theme-toggle>
+    </div>
+</header>
+<aside id="fsdocs-main-menu">
+    <ul class="menu">
+        <li class="nav-header">Links</li>
+        <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+        </li>
+        <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+            Notes</a></li>
+        <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+            Repository</a></li>
+        
+        <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+    </ul>
+</aside>
+<main>
+    <div id="content">
+        <div>
+  <h2 id="fsharp-core-operators-checked" data-fsdocs-heading="1">
+    Checked Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="../reference/fsharp-core.html">
+        FSharp.Core
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+    <dt>
+      Parent Module: 
+      <a href="../reference/fsharp-core-operators.html">
+        Operators
+      </a>
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <div class="fsdocs-summary-contents">
+        <p class="fsdocs-summary">
+          This module contains the basic arithmetic operations with overflow checks.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h3 id="functions-and-values" data-fsdocs-heading="2">
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="835" data-fsdocs-tip-unique="835">
+                <p>
+                  <a id="(*)">
+                    <a href="#(*)">
+                      <code><span>x&#32;*&#32;y</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="835">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>x&#32;*&#32;y</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>^T1</code>
+                       - 
+                      The first value.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>^T2</code>
+                       - 
+                      The second value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>^T3</code>
+                  </span>
+                  The product of the two input values.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T1, ^T2, ^T3 (requires (static member op_Multiply : ^T1 * ^T2 -&gt; ^T3) and (static member op_Multiply : ^T1 * ^T2 -&gt; ^T3))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Overloaded multiplication operator (checks for overflow)
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5646-5646" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.op_Multiply``3\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.op_Multiply``3```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    x
+                  </span>
+                  :
+                  <code>^T1</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The first value.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    y
+                  </span>
+                  :
+                  <code>^T2</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The second value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>^T3</code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The product of the two input values.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="836" data-fsdocs-tip-unique="836">
+                <p>
+                  <a id="(+)">
+                    <a href="#(+)">
+                      <code><span>x&#32;+&#32;y</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="836">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>x&#32;+&#32;y</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>^T1</code>
+                       - 
+                      The first value.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>^T2</code>
+                       - 
+                      The second value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>^T3</code>
+                  </span>
+                  The sum of the two input values.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T1, ^T2, ^T3 (requires (static member op_Addition : ^T1 * ^T2 -&gt; ^T3) and (static member op_Addition : ^T1 * ^T2 -&gt; ^T3))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Overloaded addition operator (checks for overflow)
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5593-5593" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.op_Addition``3\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.op_Addition``3```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    x
+                  </span>
+                  :
+                  <code>^T1</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The first value.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    y
+                  </span>
+                  :
+                  <code>^T2</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The second value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>^T3</code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The sum of the two input values.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="837" data-fsdocs-tip-unique="837">
+                <p>
+                  <a id="(-)">
+                    <a href="#(-)">
+                      <code><span>x&#32;-&#32;y</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="837">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>x&#32;-&#32;y</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>^T1</code>
+                       - 
+                      The first value.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>^T2</code>
+                       - 
+                      The second value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>^T3</code>
+                  </span>
+                  The first value minus the second value.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T1, ^T2, ^T3 (requires (static member op_Subtraction : ^T1 * ^T2 -&gt; ^T3) and (static member op_Subtraction : ^T1 * ^T2 -&gt; ^T3))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Overloaded subtraction operator (checks for overflow)
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5615-5615" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.op_Subtraction``3\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.op_Subtraction``3```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    x
+                  </span>
+                  :
+                  <code>^T1</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The first value.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    y
+                  </span>
+                  :
+                  <code>^T2</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The second value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>^T3</code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The first value minus the second value.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="838" data-fsdocs-tip-unique="838">
+                <p>
+                  <a id="(~-)">
+                    <a href="#(~-)">
+                      <code><span>~-value</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="838">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>~-value</span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>^T</code>
+                  </span>
+                  The negated value.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_UnaryNegation : ^T -&gt; ^T))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Overloaded unary negation (checks for overflow)
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5634-5634" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.op_UnaryNegation``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.op_UnaryNegation``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The negated value.
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="839" data-fsdocs-tip-unique="839">
+                <p>
+                  <a id="byte">
+                    <a href="#byte">
+                      <code><span>byte&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="839">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>byte&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-byte.html">byte</a></code>
+                  </span>
+                  The converted byte
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.byte))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to <code>byte</code>. This is a direct, checked conversion for all
+ primitive numeric types. For strings, the input is converted using <a href="https://learn.microsoft.com/dotnet/api/system.byte.parse">Byte.Parse</a>
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5668-5668" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.ToByte``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.ToByte``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-byte.html">byte</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The converted byte
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="840" data-fsdocs-tip-unique="840">
+                <p>
+                  <a id="char">
+                    <a href="#char">
+                      <code><span>char&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="840">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>char&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-char.html">char</a></code>
+                  </span>
+                  The converted char
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.char))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to <code>char</code>. Numeric inputs are converted using a checked
+ conversion according to the UTF-16 encoding for characters. String inputs must
+ be exactly one character long. For other input types the operation requires an
+ appropriate static conversion method on the input type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5728-5728" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.ToChar``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.ToChar``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-char.html">char</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The converted char
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="841" data-fsdocs-tip-unique="841">
+                <p>
+                  <a id="int">
+                    <a href="#int">
+                      <code><span>int&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="841">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>int&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  The converted int
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.int))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to <code>int</code>. This is a direct, checked conversion for all
+ primitive numeric types. For strings, the input is converted using <a href="https://learn.microsoft.com/dotnet/api/system.int32.parse">Int32.Parse</a>
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5807-5807" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.ToInt``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.ToInt``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The converted int
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="842" data-fsdocs-tip-unique="842">
+                <p>
+                  <a id="int16">
+                    <a href="#int16">
+                      <code><span>int16&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="842">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>int16&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-int16.html">int16</a></code>
+                  </span>
+                  The converted int16
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.int16))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to <code>int16</code>. This is a direct, checked conversion for all
+ primitive numeric types. For strings, the input is converted using <a href="https://learn.microsoft.com/dotnet/api/system.int16.parse">Int16.Parse</a>
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5748-5748" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.ToInt16``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.ToInt16``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-int16.html">int16</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The converted int16
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="843" data-fsdocs-tip-unique="843">
+                <p>
+                  <a id="int32">
+                    <a href="#int32">
+                      <code><span>int32&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="843">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>int32&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-int32.html">int32</a></code>
+                  </span>
+                  The converted int32
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.int32))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to <code>int32</code>. This is a direct, checked conversion for all
+ primitive numeric types. For strings, the input is converted using <a href="https://learn.microsoft.com/dotnet/api/system.int32.parse">Int32.Parse</a>
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5788-5788" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.ToInt32``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.ToInt32``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-int32.html">int32</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The converted int32
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="844" data-fsdocs-tip-unique="844">
+                <p>
+                  <a id="int64">
+                    <a href="#int64">
+                      <code><span>int64&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="844">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>int64&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-int64.html">int64</a></code>
+                  </span>
+                  The converted int64
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.int64))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to <code>int64</code>. This is a direct, checked conversion for all
+ primitive numeric types. For strings, the input is converted using <a href="https://learn.microsoft.com/dotnet/api/system.int64.parse">Int64.Parse</a>
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5831-5831" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.ToInt64``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.ToInt64``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-int64.html">int64</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The converted int64
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="845" data-fsdocs-tip-unique="845">
+                <p>
+                  <a id="nativeint">
+                    <a href="#nativeint">
+                      <code><span>nativeint&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="845">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>nativeint&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-nativeint.html">nativeint</a></code>
+                  </span>
+                  The converted nativeint
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.nativeint))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to <a href="../reference/fsharp-core-nativeint.html">nativeint</a>. This is a direct, checked conversion for all
+ primitive numeric types. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5872-5872" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.ToIntPtr``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.ToIntPtr``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-nativeint.html">nativeint</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The converted nativeint
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="846" data-fsdocs-tip-unique="846">
+                <p>
+                  <a id="sbyte">
+                    <a href="#sbyte">
+                      <code><span>sbyte&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="846">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>sbyte&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-sbyte.html">sbyte</a></code>
+                  </span>
+                  The converted sbyte
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.sbyte))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to <code>sbyte</code>. This is a direct, checked conversion for all
+ primitive numeric types. For strings, the input is converted using <a href="https://learn.microsoft.com/dotnet/api/system.sbyte.parse">SByte.Parse</a>
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5688-5688" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.ToSByte``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.ToSByte``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-sbyte.html">sbyte</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The converted sbyte
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="847" data-fsdocs-tip-unique="847">
+                <p>
+                  <a id="uint16">
+                    <a href="#uint16">
+                      <code><span>uint16&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="847">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>uint16&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-uint16.html">uint16</a></code>
+                  </span>
+                  The converted uint16
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.uint16))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to <code>uint16</code>. This is a direct, checked conversion for all
+ primitive numeric types. For strings, the input is converted using <a href="https://learn.microsoft.com/dotnet/api/system.uint16.parse">UInt16.Parse</a>
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5708-5708" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.ToUInt16``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.ToUInt16``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-uint16.html">uint16</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The converted uint16
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="848" data-fsdocs-tip-unique="848">
+                <p>
+                  <a id="uint32">
+                    <a href="#uint32">
+                      <code><span>uint32&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="848">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>uint32&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-uint32.html">uint32</a></code>
+                  </span>
+                  The converted uint32
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.uint32))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to <code>uint32</code>. This is a direct, checked conversion for all
+ primitive numeric types. For strings, the input is converted using <a href="https://learn.microsoft.com/dotnet/api/system.uint32.parse">UInt32.Parse</a>
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5768-5768" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.ToUInt32``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.ToUInt32``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-uint32.html">uint32</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The converted uint32
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="849" data-fsdocs-tip-unique="849">
+                <p>
+                  <a id="uint64">
+                    <a href="#uint64">
+                      <code><span>uint64&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="849">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>uint64&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-uint64.html">uint64</a></code>
+                  </span>
+                  The converted uint64
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.uint64))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to <code>uint64</code>. This is a direct, checked conversion for all
+ primitive numeric types. For strings, the input is converted using <a href="https://learn.microsoft.com/dotnet/api/system.uint64.parse">UInt64.Parse</a>
+ with InvariantCulture settings. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5811-5811" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.ToUInt64``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.ToUInt64``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-uint64.html">uint64</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The converted uint64
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="850" data-fsdocs-tip-unique="850">
+                <p>
+                  <a id="unativeint">
+                    <a href="#unativeint">
+                      <code><span>unativeint&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="850">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>unativeint&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                       - 
+                      The input value.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-unativeint.html">unativeint</a></code>
+                  </span>
+                  The converted unativeint
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.unativeint))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to <code>unativeint</code>. This is a direct, checked conversion for all
+ primitive numeric types. Otherwise the operation requires an appropriate
+ static conversion method on the input type.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/prim-types.fs#L5851-5851" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.Operators.Checked.ToUIntPtr``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.Operators.Checked.ToUIntPtr``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input value.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-unativeint.html">unativeint</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The converted unativeint
+                  </p>
+                </dd>
+              </dl>
+            </details>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+        
+    </div>
+</main>
+<aside id="fsdocs-page-menu">
+    <p id="on-this-page">On this page</p>
+    <ul>
+  <li class="level-2" data-fsdocs-heading="1">
+    <a href="#fsharp-core-operators-checked" title="Checked Module">
+      Checked Module
+    </a>
+  </li>
+  <li class="level-3" data-fsdocs-heading="2">
+    <a href="#functions-and-values" title="Functions and values">
+      Functions and values
+    </a>
+  </li>
+</ul><style>
+body { timeline-scope: --fsdocs-heading-1, --fsdocs-heading-2, --fsdocs-main; }
+#content [data-fsdocs-heading="1"] { view-timeline-name: --fsdocs-heading-1; }
+#fsdocs-page-menu [data-fsdocs-heading="1"] { animation-timeline: --fsdocs-heading-1, --fsdocs-heading-2, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="1"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="1"] { --fsdocs-toc-focused: 1; }
+#content [data-fsdocs-heading="2"] { view-timeline-name: --fsdocs-heading-2; }
+#fsdocs-page-menu [data-fsdocs-heading="2"] { animation-timeline: --fsdocs-heading-2, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="2"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="2"] { --fsdocs-toc-focused: 1; }
+</style>
+</aside>
+<dialog>
+    <input type="search" placeholder="Search docs" />
+    <div class="results">
+        <ul></ul>
+        <p class="empty">Type something to start searching.</p>
+    </div>
+</dialog>
+<script type="module" src="../content/fsdocs-tips.js"></script>
+<script type="module" src="../content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="../content/fsdocs-details-toggle.js"></script>
+<script type="module" src="../content/fsdocs-theme.js"></script>
+<script type="module" src="../content/fsdocs-search.js"></script>
+<script type="module" src="../content/fsdocs-copy-button.js"></script>
+<script type="module" src="../content/fsdocs-hotkeys.js"></script>
+
+</body>
+</html>
