@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="F# Software Foundation; Microsoft; F# Contributors" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="FSharp.Core">
+    <meta property="og:title" content="Async (FSharp.Core)" />
+    <meta property="og:url" content="https://fsharp.github.io/fsharp-core-docs/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsharp.github.io/fsharp-core-docs/">
+    <meta name="twitter:title" content="Async (FSharp.Core)">
+    
+    <title>Async (FSharp.Core) | FSharp.Core</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="../img/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="../content/fsdocs-theme-set-dark.js"></script>
+    <script type="application/javascript" src="../content/fsdocs-details-set-expanded.js"></script>
+    <link href="../content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
+    <link href="../content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
+    
+    
+</head>
+<body class="api-docs">
+<header>
+    <div class="start">
+        <div id="menu-toggle">
+            <iconify-icon class="icon closed" height="22" icon="eva:menu-fill" width="22"></iconify-icon>
+            <iconify-icon class="icon open" height="22" icon="mi:close" width="22"></iconify-icon>
+            <input type="checkbox" name="mobile-menu" />
+            <ul class="menu">
+                <li class="nav-header">Links</li>
+                <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+                </li>
+                <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                        href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+                    Notes</a></li>
+                <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+                    Repository</a></li>
+                
+                <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+        <a href="https://fsharp.org">
+            <img alt="Logo" src="../img/logo.png">
+            <strong>FSharp.Core</strong>
+        </a>
+    </div>
+    <div class="end">
+        <a href="https://github.com/dotnet/fsharp/" target="_blank">
+            <iconify-icon icon="uil:github" width="26" height="26"></iconify-icon>
+        </a>
+        <iconify-icon id="search-btn" icon="carbon:search" class="search" width="24" height="24"></iconify-icon>
+        <fsdocs-theme-toggle></fsdocs-theme-toggle>
+    </div>
+</header>
+<aside id="fsdocs-main-menu">
+    <ul class="menu">
+        <li class="nav-header">Links</li>
+        <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+        </li>
+        <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+            Notes</a></li>
+        <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+            Repository</a></li>
+        
+        <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+    </ul>
+</aside>
+<main>
+    <div id="content">
+        <div>
+  <h2 id="fsharp-control-asyncmodule" data-fsdocs-heading="1">
+    Async Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="../reference/fsharp-control.html">
+        FSharp.Control
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <div class="fsdocs-summary-contents">
+        <p class="fsdocs-summary">
+          Contains camelCase module-level functions for <a href="../reference/fsharp-control-fsharpasync-1.html">Async</a> computations.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h3 id="functions-and-values" data-fsdocs-heading="2">
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="513" data-fsdocs-tip-unique="513">
+                <p>
+                  <a id="bind">
+                    <a href="#bind">
+                      <code><span>bind&#32;<span>binder&#32;computation</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="513">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>bind&#32;<span>binder&#32;computation</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        binder
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'U&gt;</span></span></code>
+                       - 
+                      A function that takes the result of the computation and returns a new asynchronous computation.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input computation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'U&gt;</span></code>
+                  </span>
+                  An asynchronous computation that performs a monadic bind on the result of <code>computation</code>.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T, &#39;U
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates an asynchronous computation that passes the result of the given computation to the binder function.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2469-2469" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.AsyncModule.Bind``2\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.AsyncModule.Bind``2```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    binder
+                  </span>
+                  :
+                  <code><span>'T&#32;->&#32;<span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'U&gt;</span></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A function that takes the result of the computation and returns a new asynchronous computation.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computation
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input computation.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'U&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An asynchronous computation that performs a monadic bind on the result of <code>computation</code>.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="async-bind-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">computation</span> <span class="o">=</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="id">Async</span><span class="pn">.</span><span class="id">result</span> <span class="n">21</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="3" class="id">Async</span><span class="pn">.</span><span class="id">bind</span> <span class="pn">(</span><span class="k">fun</span> <span class="id">x</span> <span class="k">-&gt;</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="4" class="id">Async</span><span class="pn">.</span><span class="id">result</span> <span class="pn">(</span><span class="id">x</span> <span class="pn">*</span> <span class="n">2</span><span class="pn">)</span><span class="pn">)</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="5" class="id">computation</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="6" class="id">Async</span><span class="pn">.</span><span class="id">RunSynchronouslyImmediate</span> <span class="c">// evaluates to 42</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">computation</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="514" data-fsdocs-tip-unique="514">
+                <p>
+                  <a id="catch">
+                    <a href="#catch">
+                      <code><span>catch&#32;<span>computation</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="514">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>catch&#32;<span>computation</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input computation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span><a href="../reference/fsharp-core-fsharpresult-2.html">Result</a>&lt;<span>'T,&#32;<a href="../reference/fsharp-core-exn.html">exn</a></span>&gt;</span>&gt;</span></code>
+                  </span>
+                  An asynchronous computation that yields a <code>Result</code>: <code>Ok</code> with the outcome on success,
+ or <code>Error</code> with the exception on failure.
+ Propagates the underlying cancellation exception when cancellation occurs.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates an asynchronous computation that reifies the outcome of the given <code>computation</code> as a <code>Result</code>:
+ <code>Ok</code> on success, <code>Error</code> on failure, so exceptions become values. Cancellation still propagates.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2487-2487" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.AsyncModule.Catch``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.AsyncModule.Catch``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                <code>OperationCanceledException</code> and derived types such as <code>TaskCanceledException</code> propagate unchanged.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computation
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input computation.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span><a href="../reference/fsharp-core-fsharpresult-2.html">Result</a>&lt;<span>'T,&#32;<a href="../reference/fsharp-core-exn.html">exn</a></span>&gt;</span>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An asynchronous computation that yields a <code>Result</code>: <code>Ok</code> with the outcome on success,
+ or <code>Error</code> with the exception on failure.
+ Propagates the underlying cancellation exception when cancellation occurs.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="async-catch-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">safeDiv</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">x</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="fn">y</span> <span class="o">=</span>
+     <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="k">async</span> <span class="pn">{</span> <span class="k">return</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="5" class="fn">x</span> <span class="o">/</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="6" class="fn">y</span> <span class="pn">}</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="7" class="id">Async</span><span class="pn">.</span><span class="id">catch</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="8" class="fn">safeDiv</span> <span class="n">10</span> <span class="n">2</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="9" class="id">Async</span><span class="pn">.</span><span class="id">RunSynchronouslyImmediate</span> <span class="c">// evaluates to Ok 5</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="10" class="fn">safeDiv</span> <span class="n">10</span> <span class="n">0</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="11" class="id">Async</span><span class="pn">.</span><span class="id">RunSynchronouslyImmediate</span> <span class="c">// evaluates to Error (DivideByZeroException ...)</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">safeDiv</span><span class="pn">:</span> <span class="id">x</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span> <span class="id">y</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span> <span class="ta">&#39;a</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">x</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="id">y</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="fn">async</span><span class="pn">:</span> <span class="rt">AsyncBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs5">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="515" data-fsdocs-tip-unique="515">
+                <p>
+                  <a id="catchWith">
+                    <a href="#catchWith">
+                      <code><span>catchWith&#32;<span>handler&#32;computation</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="515">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>catchWith&#32;<span>handler&#32;computation</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        handler
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-core-exn.html">exn</a>&#32;->&#32;'T</span></code>
+                       - 
+                      A function to handle (non-cancellation) exceptions, yielding a recovery value based on the exception.
+ Any exception thrown by <code>handler</code> will propagate.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input computation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  An asynchronous computation that yields the result of <code>computation</code> on success,
+ or <code>handler exn</code> on failure.
+ Propagates the underlying cancellation exception where cancellation occurs.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates an asynchronous computation that yields the original result on success, or the result of
+ <code>handler exn</code> for non-cancellation exceptions.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2478-2478" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.AsyncModule.CatchWith``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.AsyncModule.CatchWith``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                <code>OperationCanceledException</code> and derived types such as <code>TaskCanceledException</code> propagate unchanged,
+ and therefore are never passed to <code>handler</code>.
+ 
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    handler
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-core-exn.html">exn</a>&#32;->&#32;'T</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A function to handle (non-cancellation) exceptions, yielding a recovery value based on the exception.
+ Any exception thrown by <code>handler</code> will propagate.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computation
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input computation.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An asynchronous computation that yields the result of <code>computation</code> on success,
+ or <code>handler exn</code> on failure.
+ Propagates the underlying cancellation exception where cancellation occurs.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="async-catchwith-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">safeDiv</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">x</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="fn">y</span> <span class="o">=</span>
+     <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="k">async</span> <span class="pn">{</span> <span class="k">return</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="5" class="fn">x</span> <span class="o">/</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="6" class="fn">y</span> <span class="pn">}</span>
+     <span class="o">|&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="7" class="id">Async</span><span class="pn">.</span><span class="id">catchWith</span> <span class="pn">(</span><span class="k">fun</span> <span class="id">_</span> <span class="k">-&gt;</span> <span class="n">0</span><span class="pn">)</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="8" class="fn">safeDiv</span> <span class="n">10</span> <span class="n">0</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="9" class="id">Async</span><span class="pn">.</span><span class="id">RunSynchronouslyImmediate</span> <span class="c">// evaluates to 0</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">safeDiv</span><span class="pn">:</span> <span class="id">x</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span> <span class="id">y</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span> <span class="ta">&#39;a</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">x</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="id">y</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="fn">async</span><span class="pn">:</span> <span class="rt">AsyncBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs5">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="516" data-fsdocs-tip-unique="516">
+                <p>
+                  <a id="empty">
+                    <a href="#empty">
+                      <code><span>empty&#32;<span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="516">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>empty&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      An asynchronous computation that returns <code>unit</code>. This is equivalent to <code>async.Zero()</code>.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2497-2497" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Microsoft.FSharp.Control.AsyncModule.Empty\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:Microsoft.FSharp.Control.AsyncModule.Empty`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="async-empty-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">Async</span><span class="pn">.</span><span class="id">empty</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="2" class="id">Async</span><span class="pn">.</span><span class="id">RunSynchronouslyImmediate</span> <span class="c">// evaluates to ()</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="517" data-fsdocs-tip-unique="517">
+                <p>
+                  <a id="ignore">
+                    <a href="#ignore">
+                      <code><span>ignore&#32;<span>computation</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="517">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ignore&#32;<span>computation</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input computation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  A computation that is equivalent to the input computation, but disregards the result.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates an asynchronous computation that runs the given computation and ignores its result.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2474-2474" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.AsyncModule.Ignore``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.AsyncModule.Ignore``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computation
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input computation.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A computation that is equivalent to the input computation, but disregards the result.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="async-ignore-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">readFile</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">filename</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="fn">numBytes</span><span class="pn">:</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="rt">Async</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="5" class="rt">unit</span><span class="pn">&gt;</span> <span class="o">=</span>
+     <span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="6" class="k">async</span> <span class="pn">{</span>
+         <span class="k">use</span> <span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="7" class="d">file</span> <span class="o">=</span> <span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="8" class="id">System</span><span class="pn">.</span><span data-fsdocs-tip="fs9" data-fsdocs-tip-unique="9" class="id">IO</span><span class="pn">.</span><span data-fsdocs-tip="fs10" data-fsdocs-tip-unique="10" class="rt">File</span><span class="pn">.</span><span data-fsdocs-tip="fs11" data-fsdocs-tip-unique="11" class="id">OpenRead</span><span class="pn">(</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="12" class="fn">filename</span><span class="pn">)</span>
+         <span class="k">do!</span> <span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="13" class="d">file</span><span class="pn">.</span><span data-fsdocs-tip="fs12" data-fsdocs-tip-unique="14" class="id">AsyncRead</span><span class="pn">(</span><span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="15" class="fn">numBytes</span><span class="pn">)</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="16" class="id">Async</span><span class="pn">.</span><span class="id">ignore</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs13" data-fsdocs-tip-unique="17" class="id">byte</span><span class="pn">[</span><span class="pn">]</span><span class="pn">&gt;</span>
+     <span class="pn">}</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">readFile</span><span class="pn">:</span> <span class="id">filename</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">-&gt;</span> <span class="id">numBytes</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">unit</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">filename</span><span class="pn">:</span> <span class="rt">string</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="id">numBytes</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs4">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">type</span> unit <span class="o">=</span> <span class="rt">Unit</span></div>
+<div popover class="fsdocs-tip" id="fs6"><span class="k">val</span> <span class="fn">async</span><span class="pn">:</span> <span class="rt">AsyncBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs7"><span class="k">val</span> <span class="id">file</span><span class="pn">:</span> <span class="m">System.IO.</span><span class="rt">FileStream</span></div>
+<div popover class="fsdocs-tip" id="fs8"><span class="k">namespace</span> <span class="m">System</span></div>
+<div popover class="fsdocs-tip" id="fs9"><span class="k">namespace</span> <span class="m">System.IO</span></div>
+<div popover class="fsdocs-tip" id="fs10"><em>Provides static methods for the creation, copying, deletion, moving, and opening of a single file, and aids in the creation of FileStream objects.</em><br /><span class="k">type</span> <span class="rt">File</span> <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AppendAllBytes</span><span class="pn">:</span> <span class="id">path</span><span class="pn">:</span> <span class="rt">string</span> <span class="o">*</span> <span class="id">bytes</span><span class="pn">:</span> <span class="vt">byte</span> <span class="rt">array</span> <span class="pn">-&gt;</span> <span class="rt">unit</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AppendAllBytesAsync</span><span class="pn">:</span> <span class="id">path</span><span class="pn">:</span> <span class="rt">string</span> <span class="o">*</span> <span class="id">bytes</span><span class="pn">:</span> <span class="vt">byte</span> <span class="rt">array</span> <span class="o">*</span> <span class="pn">?</span><span class="id">cancellationToken</span><span class="pn">:</span> <span class="vt">CancellationToken</span> <span class="pn">-&gt;</span> <span class="rt">Task</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AppendAllLines</span><span class="pn">:</span> <span class="id">path</span><span class="pn">:</span> <span class="rt">string</span> <span class="o">*</span> <span class="id">contents</span><span class="pn">:</span> <span class="rt">string</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">unit</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AppendAllLinesAsync</span><span class="pn">:</span> <span class="id">path</span><span class="pn">:</span> <span class="rt">string</span> <span class="o">*</span> <span class="id">contents</span><span class="pn">:</span> <span class="rt">string</span> <span class="rt">seq</span> <span class="o">*</span> <span class="id">encoding</span><span class="pn">:</span> <span class="rt">Encoding</span> <span class="o">*</span> <span class="pn">?</span><span class="id">cancellationToken</span><span class="pn">:</span> <span class="vt">CancellationToken</span> <span class="pn">-&gt;</span> <span class="rt">Task</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AppendAllText</span><span class="pn">:</span> <span class="id">path</span><span class="pn">:</span> <span class="rt">string</span> <span class="o">*</span> <span class="id">contents</span><span class="pn">:</span> <span class="vt">ReadOnlySpan</span><span class="pn">&lt;</span><span class="vt">char</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">unit</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AppendAllTextAsync</span><span class="pn">:</span> <span class="id">path</span><span class="pn">:</span> <span class="rt">string</span> <span class="o">*</span> <span class="id">contents</span><span class="pn">:</span> <span class="vt">ReadOnlyMemory</span><span class="pn">&lt;</span><span class="vt">char</span><span class="pn">&gt;</span> <span class="o">*</span> <span class="id">encoding</span><span class="pn">:</span> <span class="rt">Encoding</span> <span class="o">*</span> <span class="pn">?</span><span class="id">cancellationToken</span><span class="pn">:</span> <span class="vt">CancellationToken</span> <span class="pn">-&gt;</span> <span class="rt">Task</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AppendText</span><span class="pn">:</span> <span class="id">path</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">-&gt;</span> <span class="rt">StreamWriter</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Copy</span><span class="pn">:</span> <span class="id">sourceFileName</span><span class="pn">:</span> <span class="rt">string</span> <span class="o">*</span> <span class="id">destFileName</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">-&gt;</span> <span class="rt">unit</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Create</span><span class="pn">:</span> <span class="id">path</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">-&gt;</span> <span class="rt">FileStream</span> + 2 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CreateHardLink</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">path</span><span class="pn">:</span> <span class="rt">string</span> <span class="o">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">pathToTarget</span><span class="pn">:</span> <span class="rt">string</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">FileSystemInfo</span><br />&#160;&#160;<span class="pn">...</span></div>
+<div popover class="fsdocs-tip" id="fs11"><span class="m">System.IO.</span><span class="rt">File</span><span class="pn">.</span><span class="fn">OpenRead</span><span class="pn">(</span><span class="id">path</span><span class="pn">:</span> <span class="rt">string</span><span class="pn">)</span> <span class="pn">:</span> <span class="m">System.IO.</span><span class="rt">FileStream</span></div>
+<div popover class="fsdocs-tip" id="fs12"><span class="k">member</span> <span class="m">System.IO.</span><span class="rt">Stream</span><span class="pn">.</span><span class="fn">AsyncRead</span><span class="pn">:</span> <span class="id">count</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">byte</span> <span class="rt">array</span><span class="pn">&gt;</span><br /><span class="k">member</span> <span class="m">System.IO.</span><span class="rt">Stream</span><span class="pn">.</span><span class="fn">AsyncRead</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;<span class="id">buffer</span><span class="pn">:</span> <span class="vt">byte</span> <span class="rt">array</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">offset</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">count</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs13">Multiple items<br /><span class="k">val</span> <span class="fn">byte</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">byte</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> byte <span class="o">=</span> <span class="m">System.</span><span class="vt">Byte</span><br /><br />--------------------<br /><span class="k">type</span> byte<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span><br />&#160;&#160;<span class="vt">byte</span></div>
+
+
+              </p>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="async-ignore-2">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">computation</span> <span class="pn">:</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="rt">Async</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="rt">unit</span><span class="pn">&gt;</span> <span class="o">=</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="4" class="id">Async</span><span class="pn">.</span><span class="id">result</span> <span class="n">42</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="5" class="id">Async</span><span class="pn">.</span><span class="id">ignore</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="6" class="id">int</span><span class="pn">&gt;</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="7" class="id">computation</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="8" class="rt">Async</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="9" class="id">RunSynchronously</span> <span class="c">// evaluates to ()</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">unit</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">type</span> unit <span class="o">=</span> <span class="rt">Unit</span></div>
+<div popover class="fsdocs-tip" id="fs4">Multiple items<br /><span class="k">val</span> <span class="fn">int</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">int</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> int <span class="o">=</span> <span class="vt">int32</span><br /><br />--------------------<br /><span class="k">type</span> int<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span><br />&#160;&#160;<span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">static</span> <span class="k">member</span> <span class="rt">Async</span><span class="pn">.</span><span class="fn">RunSynchronously</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">timeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">cancellationToken</span><span class="pn">:</span> <span class="m">System.Threading.</span><span class="vt">CancellationToken</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="ta">&#39;T</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="518" data-fsdocs-tip-unique="518">
+                <p>
+                  <a id="map">
+                    <a href="#map">
+                      <code><span>map&#32;<span>mapping&#32;computation</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="518">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>map&#32;<span>mapping&#32;computation</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'U</span></code>
+                       - 
+                      The function to apply to the result.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                       - 
+                      The input computation.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'U&gt;</span></code>
+                  </span>
+                  An asynchronous computation that applies <code>mapping</code> to the result of <code>computation</code>.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T, &#39;U
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates an asynchronous computation that applies the mapping function to the result of the given computation.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2465-2465" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.AsyncModule.Map``2\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.AsyncModule.Map``2```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    mapping
+                  </span>
+                  :
+                  <code><span>'T&#32;->&#32;'U</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The function to apply to the result.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computation
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input computation.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'U&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An asynchronous computation that applies <code>mapping</code> to the result of <code>computation</code>.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="async-map-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">computation</span> <span class="o">=</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="id">Async</span><span class="pn">.</span><span class="id">result</span> <span class="n">21</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="3" class="id">Async</span><span class="pn">.</span><span class="id">map</span> <span class="pn">(</span><span class="k">fun</span> <span class="id">x</span> <span class="k">-&gt;</span> <span class="id">x</span> <span class="pn">*</span> <span class="n">2</span><span class="pn">)</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="4" class="id">computation</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="5" class="id">Async</span><span class="pn">.</span><span class="id">RunSynchronouslyImmediate</span> <span class="c">// evaluates to 42</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">computation</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="519" data-fsdocs-tip-unique="519">
+                <p>
+                  <a id="parallelDoLimit">
+                    <a href="#parallelDoLimit">
+                      <code><span>parallelDoLimit&#32;<span>maxDegreeOfParallelism&#32;computations</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="519">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>parallelDoLimit&#32;<span>maxDegreeOfParallelism&#32;computations</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        maxDegreeOfParallelism
+                      </b>
+                      :
+                      <code><a href="../reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The maximum number of computations to run concurrently. Must be &gt; 0.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        computations
+                      </b>
+                      :
+                      <code><span><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                       - 
+                      A sequence of unit computations to be parallelized.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  A computation that runs all inputs with limited parallelism and returns <code>unit</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates an asynchronous computation that executes all the supplied asynchronous computations returning unit,
+ with concurrency limited to at most <code>maxDegreeOfParallelism</code>.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2508-2508" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.AsyncModule.ParallelDoLimit\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Control.AsyncModule.ParallelDoLimit`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                The relative start and completion order of computations is arbitrary.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    maxDegreeOfParallelism
+                  </span>
+                  :
+                  <code><a href="../reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The maximum number of computations to run concurrently. Must be &gt; 0.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computations
+                  </span>
+                  :
+                  <code><span><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A sequence of unit computations to be parallelized.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A computation that runs all inputs with limited parallelism and returns <code>unit</code>.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="async-paralleldolimit-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">seq</span> <span class="pn">{</span> <span class="k">for</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">i</span> <span class="k">in</span> <span class="n">1..</span><span class="n">10</span> <span class="k">-&gt;</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="k">async</span> <span class="pn">{</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="fn">printfn</span> <span class="s">&quot;</span><span class="pf">%d</span><span class="s">&quot;</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="5" class="fn">i</span> <span class="pn">}</span> <span class="pn">}</span> <span class="c">// NOTE output order can vary</span>
+ <span class="o">|&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="6" class="id">Async</span><span class="pn">.</span><span class="id">parallelDoLimit</span> <span class="n">3</span>
+ <span class="o">|&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="7" class="id">Async</span><span class="pn">.</span><span class="id">RunSynchronouslyImmediate</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1">Multiple items<br /><span class="k">val</span> <span class="fn">seq</span><span class="pn">:</span> <span class="id">sequence</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span> <span class="rt">seq</span><br /><br />--------------------<br /><span class="k">type</span> <span class="ta">&#39;T</span> <span class="if">seq</span> <span class="o">=</span> <span class="m">System.Collections.Generic.</span><span class="if">IEnumerable</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">i</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="fn">async</span><span class="pn">:</span> <span class="rt">AsyncBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="fn">printfn</span><span class="pn">:</span> <span class="id">format</span><span class="pn">:</span> <span class="m">Printf.</span><span class="rt">TextWriterFormat</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span></div>
+<div popover class="fsdocs-tip" id="fs5">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="520" data-fsdocs-tip-unique="520">
+                <p>
+                  <a id="parallelLimit">
+                    <a href="#parallelLimit">
+                      <code><span>parallelLimit&#32;<span>maxDegreeOfParallelism&#32;computations</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="520">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>parallelLimit&#32;<span>maxDegreeOfParallelism&#32;computations</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        maxDegreeOfParallelism
+                      </b>
+                      :
+                      <code><a href="../reference/fsharp-core-int.html">int</a></code>
+                       - 
+                      The maximum number of computations to run concurrently. Must be &gt; 0.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        computations
+                      </b>
+                      :
+                      <code><span><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                       - 
+                      A sequence of computations to be parallelized.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T[]</span>&gt;</span></code>
+                  </span>
+                  A computation that returns an array of results from the input computations in the same order they were supplied.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates an asynchronous computation that executes all the supplied asynchronous computations
+ with concurrency limited to at most <code>maxDegreeOfParallelism</code>,
+ and returns their results as an array in the same order as the inputs.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2504-2504" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.AsyncModule.ParallelLimit``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.AsyncModule.ParallelLimit``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                While the result order matches the input order, the relative start and completion order of computations is arbitrary.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    maxDegreeOfParallelism
+                  </span>
+                  :
+                  <code><a href="../reference/fsharp-core-int.html">int</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The maximum number of computations to run concurrently. Must be &gt; 0.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computations
+                  </span>
+                  :
+                  <code><span><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A sequence of computations to be parallelized.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T[]</span>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A computation that returns an array of results from the input computations in the same order they were supplied.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="async-parallellimit-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">results</span> <span class="o">=</span>
+     <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">seq</span> <span class="pn">{</span> <span class="k">for</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="fn">i</span> <span class="k">in</span> <span class="n">1..</span><span class="n">10</span> <span class="k">-&gt;</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="k">async</span> <span class="pn">{</span> <span class="k">return</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="5" class="fn">i</span> <span class="o">*</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="6" class="fn">i</span> <span class="pn">}</span> <span class="pn">}</span>
+     <span class="o">|&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="7" class="id">Async</span><span class="pn">.</span><span class="id">parallelLimit</span> <span class="n">3</span>
+     <span class="o">|&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="8" class="id">Async</span><span class="pn">.</span><span class="id">RunSynchronouslyImmediate</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="9" class="id">results</span> <span class="c">// evaluates to [| 1; 4; 9; 16; 25; 36; 49; 64; 81; 100 |]</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">results</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br /><span class="k">val</span> <span class="fn">seq</span><span class="pn">:</span> <span class="id">sequence</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span> <span class="rt">seq</span><br /><br />--------------------<br /><span class="k">type</span> <span class="ta">&#39;T</span> <span class="if">seq</span> <span class="o">=</span> <span class="m">System.Collections.Generic.</span><span class="if">IEnumerable</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="id">i</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="fn">async</span><span class="pn">:</span> <span class="rt">AsyncBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs5">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="521" data-fsdocs-tip-unique="521">
+                <p>
+                  <a id="result">
+                    <a href="#result">
+                      <code><span>result&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="521">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>result&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The value to return.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  An asynchronous computation that returns <code>value</code> when executed.
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates an asynchronous computation that returns the given value.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2461-2461" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.AsyncModule.Result``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Control.AsyncModule.Result``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The value to return.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    An asynchronous computation that returns <code>value</code> when executed.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="async-result-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">computation</span> <span class="o">=</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="id">Async</span><span class="pn">.</span><span class="id">result</span> <span class="n">42</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="3" class="id">computation</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="4" class="id">Async</span><span class="pn">.</span><span class="id">RunSynchronouslyImmediate</span> <span class="c">// evaluates to 42</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">computation</span><span class="pn">:</span> <span class="rt">obj</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="522" data-fsdocs-tip-unique="522">
+                <p>
+                  <a id="sequentialDo">
+                    <a href="#sequentialDo">
+                      <code><span>sequentialDo&#32;<span>computations</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="522">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>sequentialDo&#32;<span>computations</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        computations
+                      </b>
+                      :
+                      <code><span><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                       - 
+                      A sequence of unit computations to be executed in sequence.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  A computation that runs all inputs in sequence and returns <code>unit</code>.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Creates an asynchronous computation that executes each of the <code>computations</code> in sequence, returning <code>unit</code>.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/async.fs#L2500-2500" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Control.AsyncModule.SequentialDo\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Microsoft.FSharp.Control.AsyncModule.SequentialDo`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    computations
+                  </span>
+                  :
+                  <code><span><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    A sequence of unit computations to be executed in sequence.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="../reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    A computation that runs all inputs in sequence and returns <code>unit</code>.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="async-sequentialdo-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="c">// NOTE numbers are guaranteed to be printed in order 1..10</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">seq</span> <span class="pn">{</span> <span class="k">for</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">i</span> <span class="k">in</span> <span class="n">1..</span><span class="n">10</span> <span class="k">-&gt;</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="k">async</span> <span class="pn">{</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="fn">printfn</span> <span class="s">&quot;</span><span class="pf">%d</span><span class="s">&quot;</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="5" class="fn">i</span> <span class="pn">}</span> <span class="pn">}</span>
+ <span class="o">|&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="6" class="id">Async</span><span class="pn">.</span><span class="id">sequentialDo</span>
+ <span class="o">|&gt;</span> <span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="7" class="id">Async</span><span class="pn">.</span><span class="id">RunSynchronouslyImmediate</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1">Multiple items<br /><span class="k">val</span> <span class="fn">seq</span><span class="pn">:</span> <span class="id">sequence</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span> <span class="rt">seq</span><br /><br />--------------------<br /><span class="k">type</span> <span class="ta">&#39;T</span> <span class="if">seq</span> <span class="o">=</span> <span class="m">System.Collections.Generic.</span><span class="if">IEnumerable</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">i</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="fn">async</span><span class="pn">:</span> <span class="rt">AsyncBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="fn">printfn</span><span class="pn">:</span> <span class="id">format</span><span class="pn">:</span> <span class="m">Printf.</span><span class="rt">TextWriterFormat</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span></div>
+<div popover class="fsdocs-tip" id="fs5">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+        
+    </div>
+</main>
+<aside id="fsdocs-page-menu">
+    <p id="on-this-page">On this page</p>
+    <ul>
+  <li class="level-2" data-fsdocs-heading="1">
+    <a href="#fsharp-control-asyncmodule" title="Async Module">
+      Async Module
+    </a>
+  </li>
+  <li class="level-3" data-fsdocs-heading="2">
+    <a href="#functions-and-values" title="Functions and values">
+      Functions and values
+    </a>
+  </li>
+</ul><style>
+body { timeline-scope: --fsdocs-heading-1, --fsdocs-heading-2, --fsdocs-main; }
+#content [data-fsdocs-heading="1"] { view-timeline-name: --fsdocs-heading-1; }
+#fsdocs-page-menu [data-fsdocs-heading="1"] { animation-timeline: --fsdocs-heading-1, --fsdocs-heading-2, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="1"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="1"] { --fsdocs-toc-focused: 1; }
+#content [data-fsdocs-heading="2"] { view-timeline-name: --fsdocs-heading-2; }
+#fsdocs-page-menu [data-fsdocs-heading="2"] { animation-timeline: --fsdocs-heading-2, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="2"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="2"] { --fsdocs-toc-focused: 1; }
+</style>
+</aside>
+<dialog>
+    <input type="search" placeholder="Search docs" />
+    <div class="results">
+        <ul></ul>
+        <p class="empty">Type something to start searching.</p>
+    </div>
+</dialog>
+<script type="module" src="../content/fsdocs-tips.js"></script>
+<script type="module" src="../content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="../content/fsdocs-details-toggle.js"></script>
+<script type="module" src="../content/fsdocs-theme.js"></script>
+<script type="module" src="../content/fsdocs-search.js"></script>
+<script type="module" src="../content/fsdocs-copy-button.js"></script>
+<script type="module" src="../content/fsdocs-hotkeys.js"></script>
+
+</body>
+</html>

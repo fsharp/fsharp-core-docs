@@ -1,0 +1,2796 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="F# Software Foundation; Microsoft; F# Contributors" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="FSharp.Core">
+    <meta property="og:title" content="ExtraTopLevelOperators (FSharp.Core)" />
+    <meta property="og:url" content="https://fsharp.github.io/fsharp-core-docs/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsharp.github.io/fsharp-core-docs/">
+    <meta name="twitter:title" content="ExtraTopLevelOperators (FSharp.Core)">
+    
+    <title>ExtraTopLevelOperators (FSharp.Core) | FSharp.Core</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="../img/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="../content/fsdocs-theme-set-dark.js"></script>
+    <script type="application/javascript" src="../content/fsdocs-details-set-expanded.js"></script>
+    <link href="../content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
+    <link href="../content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
+    
+    
+</head>
+<body class="api-docs">
+<header>
+    <div class="start">
+        <div id="menu-toggle">
+            <iconify-icon class="icon closed" height="22" icon="eva:menu-fill" width="22"></iconify-icon>
+            <iconify-icon class="icon open" height="22" icon="mi:close" width="22"></iconify-icon>
+            <input type="checkbox" name="mobile-menu" />
+            <ul class="menu">
+                <li class="nav-header">Links</li>
+                <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+                </li>
+                <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                        href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+                    Notes</a></li>
+                <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+                    Repository</a></li>
+                
+                <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+        <a href="https://fsharp.org">
+            <img alt="Logo" src="../img/logo.png">
+            <strong>FSharp.Core</strong>
+        </a>
+    </div>
+    <div class="end">
+        <a href="https://github.com/dotnet/fsharp/" target="_blank">
+            <iconify-icon icon="uil:github" width="26" height="26"></iconify-icon>
+        </a>
+        <iconify-icon id="search-btn" icon="carbon:search" class="search" width="24" height="24"></iconify-icon>
+        <fsdocs-theme-toggle></fsdocs-theme-toggle>
+    </div>
+</header>
+<aside id="fsdocs-main-menu">
+    <ul class="menu">
+        <li class="nav-header">Links</li>
+        <li class="license-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/main/License.txt">License</a>
+        </li>
+        <li class="release-notes-menu-item builtin-menu-item nav-item"><a class="nav-link"
+                                href="https://github.com/dotnet/fsharp/blob/main/release-notes.md">Release
+            Notes</a></li>
+        <li class="repository-menu-item builtin-menu-item nav-item"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source
+            Repository</a></li>
+        
+        <li class="nav-header">
+  <a href="../reference/index.html">
+    API Reference
+  </a>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-collections.html" title="FSharp.Collections">
+      Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-control.html" title="FSharp.Control">
+      Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="../reference/fsharp-core.html" title="FSharp.Core">
+      Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-linq.html" title="FSharp.Linq">
+      Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-nativeinterop.html" title="FSharp.NativeInterop">
+      NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-quotations.html" title="FSharp.Quotations">
+      Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="../reference/fsharp-reflection.html" title="FSharp.Reflection">
+      Reflection
+    </a>
+  </span>
+</li>
+    </ul>
+</aside>
+<main>
+    <div id="content">
+        <div>
+  <h2 id="fsharp-core-extratopleveloperators" data-fsdocs-heading="1">
+    ExtraTopLevelOperators Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="../reference/fsharp-core.html">
+        FSharp.Core
+      </a>
+    </dt>
+    <dt>
+      Assembly: FSharp.Core.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <div class="fsdocs-summary-contents">
+        <p class="fsdocs-summary">
+          A set of extra operators and functions. This module is automatically opened in all F# code.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h3 id="nested-entities" data-fsdocs-heading="2">
+      Nested modules
+    </h3>
+    <table class="table outer-list fsdocs-entity-list">
+      <thead>
+        <tr>
+          <td>
+            Modules
+          </td>
+          <td>
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-entity-name">
+            <p>
+              <a name="Checked">
+                <a href="../reference/fsharp-core-extratopleveloperators-checked.html" data-fsdocs-nav="">
+                  Checked
+                </a>
+              </a>
+            </p>
+          </td>
+          <td class="fsdocs-entity-xmldoc">
+            <div>
+              <div class="fsdocs-summary-contents">
+                <p class="fsdocs-summary">
+                  
+                </p>
+              </div>
+              <div class="icon-button-row">
+                <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fsi#L231-231" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+                <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Microsoft.FSharp.Core.ExtraTopLevelOperators.Checked\'/>')">
+                  <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                </div>
+                <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Microsoft.FSharp.Core.ExtraTopLevelOperators.Checked`')">
+                  <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3 id="functions-and-values" data-fsdocs-heading="3">
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="612" data-fsdocs-tip-unique="612">
+                <p>
+                  <a id="(~%%)">
+                    <a href="#(~%%)">
+                      <code><span>(~%%)&#32;<span>expression</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="612">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(~%%)&#32;<span>expression</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        expression
+                      </b>
+                      :
+                      <code><a href="../reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Special prefix operator for splicing untyped expressions into quotation holes.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L332-332" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.SpliceUntypedExpression``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.SpliceUntypedExpression``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    expression
+                  </span>
+                  :
+                  <code><a href="../reference/fsharp-quotations-fsharpexpr.html">Expr</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="rawsplice-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">f</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">v</span> <span class="o">=</span> <span class="pn">&lt;@@</span> <span class="pn">(</span><span class="o">%%</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="3" class="fn">v</span><span class="pn">:</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="4" class="vt">int</span><span class="pn">)</span> <span class="o">+</span> <span class="pn">(</span><span class="o">%%</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="5" class="fn">v</span><span class="pn">:</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="6" class="vt">int</span><span class="pn">)</span> <span class="pn">@@&gt;</span>
+
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="7" class="fn">f</span> <span class="pn">&lt;@@</span> <span class="n">5</span> <span class="o">+</span> <span class="n">5</span> <span class="pn">@@&gt;</span><span class="pn">;;</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">f</span><span class="pn">:</span> <span class="id">v</span><span class="pn">:</span> <span class="m">Quotations.</span><span class="rt">Expr</span> <span class="pn">-&gt;</span> <span class="m">Quotations.</span><span class="rt">Expr</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">v</span><span class="pn">:</span> <span class="m">Quotations.</span><span class="rt">Expr</span></div>
+<div popover class="fsdocs-tip" id="fs3">Multiple items<br /><span class="k">val</span> <span class="fn">int</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">int</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> int <span class="o">=</span> <span class="vt">int32</span><br /><br />--------------------<br /><span class="k">type</span> int<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span><br />&#160;&#160;<span class="vt">int</span></div>
+
+
+ Evaluates to an untyped quotation equivalent to <code>&lt;@@ (5 + 5) + (5 + 5) @@&gt;</code>
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="613" data-fsdocs-tip-unique="613">
+                <p>
+                  <a id="(~%)">
+                    <a href="#(~%)">
+                      <code><span>(~%)&#32;<span>expression</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="613">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(~%)&#32;<span>expression</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        expression
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-quotations-fsharpexpr-1.html">Expr</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Special prefix operator for splicing typed expressions into quotation holes.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L327-327" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.SpliceExpression``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.SpliceExpression``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    expression
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-quotations-fsharpexpr-1.html">Expr</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="splice-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">f</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">v</span> <span class="o">=</span> <span class="pn">&lt;@</span> <span class="o">%</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="3" class="fn">v</span> <span class="o">+</span> <span class="o">%</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="4" class="fn">v</span> <span class="pn">@&gt;</span>
+
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="5" class="fn">f</span> <span class="pn">&lt;@</span> <span class="n">5</span> <span class="o">+</span> <span class="n">5</span> <span class="pn">@&gt;</span><span class="pn">;;</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">f</span><span class="pn">:</span> <span class="id">v</span><span class="pn">:</span> <span class="m">Quotations.</span><span class="rt">Expr</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="m">Quotations.</span><span class="rt">Expr</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">v</span><span class="pn">:</span> <span class="m">Quotations.</span><span class="rt">Expr</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+
+
+ Evaluates to a quotation equivalent to <code>&lt;@ (5 + 5) + (5 + 5) @&gt;</code>
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="614" data-fsdocs-tip-unique="614">
+                <p>
+                  <a id="array2D">
+                    <a href="#array2D">
+                      <code><span>array2D&#32;<span>rows</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="614">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>array2D&#32;<span>rows</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        rows
+                      </b>
+                      :
+                      <code><span>'a&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  <br/>
+                  Type parameters: 
+                  &#39;a, &#39;T (requires :&gt; &#39;T Microsoft.FSharp.Collections.seq)
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Builds a 2D array from a sequence of sequences of elements.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L220-220" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.CreateArray2D``2\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.CreateArray2D``2```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    rows
+                  </span>
+                  :
+                  <code><span>'a&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span>'T[,]</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="array2d-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">array2D</span> <span class="pn">[</span> <span class="pn">[</span> <span class="n">1.0</span><span class="pn">;</span> <span class="n">2.0</span> <span class="pn">]</span><span class="pn">;</span> <span class="pn">[</span> <span class="n">3.0</span><span class="pn">;</span> <span class="n">4.0</span> <span class="pn">]</span> <span class="pn">]</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">array2D</span><span class="pn">:</span> <span class="id">rows</span><span class="pn">:</span> <span class="pn">#</span><span class="rt">seq</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span> <span class="rt">array2d</span></div>
+
+
+ Evaluates to a 2x2 zero-based array with contents <code>[[1.0; 2.0]; [3.0; 4.0]]</code>
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="615" data-fsdocs-tip-unique="615">
+                <p>
+                  <a id="async">
+                    <a href="#async">
+                      <code><span>async&#32;<span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="615">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>async&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-control-fsharpasyncbuilder.html">AsyncBuilder</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Builds an asynchronous workflow using computation expression syntax.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L298-298" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Microsoft.FSharp.Core.ExtraTopLevelOperators.DefaultAsyncBuilder\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:Microsoft.FSharp.Core.ExtraTopLevelOperators.DefaultAsyncBuilder`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-control-fsharpasyncbuilder.html">AsyncBuilder</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="async-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">sleepExample</span><span class="pn">(</span><span class="pn">)</span> <span class="o">=</span>
+     <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="k">async</span> <span class="pn">{</span>
+         <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="fn">printfn</span> <span class="s">&quot;sleeping&quot;</span>
+         <span class="k">do!</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="rt">Async</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="5" class="id">Sleep</span> <span class="n">10</span>
+         <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="6" class="fn">printfn</span> <span class="s">&quot;waking up&quot;</span>
+         <span class="k">return</span> <span class="n">6</span>
+      <span class="pn">}</span>
+
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="7" class="fn">sleepExample</span><span class="pn">(</span><span class="pn">)</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="8" class="rt">Async</span><span class="pn">.</span><span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="9" class="id">RunSynchronously</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">sleepExample</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="fn">async</span><span class="pn">:</span> <span class="rt">AsyncBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="fn">printfn</span><span class="pn">:</span> <span class="id">format</span><span class="pn">:</span> <span class="m">Printf.</span><span class="rt">TextWriterFormat</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span></div>
+<div popover class="fsdocs-tip" id="fs4">Multiple items<br /><span class="k">type</span> Async <span class="o">=</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AsBeginEnd</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">(</span><span class="ta">&#39;Arg</span> <span class="pn">*</span> <span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitEvent</span><span class="pn">:</span> <span class="id">event</span><span class="pn">:</span> <span class="if">IEvent</span><span class="pn">&lt;</span><span class="ta">&#39;Del</span><span class="pn">,</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span> <span class="o">:&gt;</span> <span class="rt">Delegate</span> <span class="k">and</span> <span class="ta">&#39;Del</span><span class="pn">:</span> <span class="k">not null</span><span class="pn">)</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitIAsyncResult</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">iar</span><span class="pn">:</span> <span class="if">IAsyncResult</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitTask</span><span class="pn">:</span> <span class="id">task</span><span class="pn">:</span> <span class="rt">Task</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 1 overload<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">AwaitWaitHandle</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">waitHandle</span><span class="pn">:</span> <span class="rt">WaitHandle</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">millisecondsTimeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="vt">bool</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">CancelDefaultToken</span><span class="pn">:</span> <span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Catch</span><span class="pn">:</span> <span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">Choice</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">,</span><span class="rt">exn</span><span class="pn">&gt;</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">Choice</span><span class="pn">:</span> <span class="id">computations</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span> <span class="rt">option</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromBeginEnd</span><span class="pn">:</span> <span class="id">beginAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">AsyncCallback</span> <span class="pn">*</span> <span class="rt">objnull</span> <span class="pn">-&gt;</span> <span class="if">IAsyncResult</span><span class="pn">)</span> <span class="pn">*</span> <span class="id">endAction</span><span class="pn">:</span> <span class="pn">(</span><span class="if">IAsyncResult</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">?</span><span class="id">cancelAction</span><span class="pn">:</span> <span class="pn">(</span><span class="rt">unit</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> + 3 overloads<br />&#160;&#160;<span class="k">static</span> <span class="k">member</span> <span class="fn">FromContinuations</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span class="id">callback</span><span class="pn">:</span> <span class="pn">(</span><span class="pn">(</span><span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">exn</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">*</span> <span class="pn">(</span><span class="rt">OperationCanceledException</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span> <span class="rt">unit</span><span class="pn">)</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="pn">...</span><br /><br />--------------------<br /><span class="k">type</span> Async<span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs5"><span class="k">static</span> <span class="k">member</span> <span class="rt">Async</span><span class="pn">.</span><span class="fn">Sleep</span><span class="pn">:</span> <span class="id">dueTime</span><span class="pn">:</span> <span class="m">System.</span><span class="vt">TimeSpan</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">unit</span><span class="pn">&gt;</span><br /><span class="k">static</span> <span class="k">member</span> <span class="rt">Async</span><span class="pn">.</span><span class="fn">Sleep</span><span class="pn">:</span> <span class="id">millisecondsDueTime</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">-&gt;</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="rt">unit</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs6"><span class="k">static</span> <span class="k">member</span> <span class="rt">Async</span><span class="pn">.</span><span class="fn">RunSynchronously</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;<span class="id">computation</span><span class="pn">:</span> <span class="rt">Async</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">timeout</span><span class="pn">:</span> <span class="vt">int</span> <span class="pn">*</span><br />&#160;&#160;&#160;&#160;<span class="pn">?</span><span class="id">cancellationToken</span><span class="pn">:</span> <span class="m">System.Threading.</span><span class="vt">CancellationToken</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="ta">&#39;T</span></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="616" data-fsdocs-tip-unique="616">
+                <p>
+                  <a id="dict">
+                    <a href="#dict">
+                      <code><span>dict&#32;<span>keyValuePairs</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="616">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>dict&#32;<span>keyValuePairs</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        keyValuePairs
+                      </b>
+                      :
+                      <code><span><span>(<span>'Key&#32;*&#32;'Value</span>)</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<span>'Key,&#32;'Value</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                  Type parameters: 
+                  &#39;Key, &#39;Value (requires equality)
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Builds a read-only lookup table from a sequence of key/value pairs. The key objects are indexed using generic hashing and equality.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L201-201" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.CreateDictionary``2\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.CreateDictionary``2```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    keyValuePairs
+                  </span>
+                  :
+                  <code><span><span>(<span>'Key&#32;*&#32;'Value</span>)</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<span>'Key,&#32;'Value</span>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="dict-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">table</span> <span class="o">=</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">dict</span> <span class="pn">[</span> <span class="pn">(</span><span class="n">1</span><span class="pn">,</span> <span class="n">100</span><span class="pn">)</span><span class="pn">;</span> <span class="pn">(</span><span class="n">2</span><span class="pn">,</span> <span class="n">200</span><span class="pn">)</span> <span class="pn">]</span>
+
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="3" class="id">table</span><span class="pn">[</span><span class="n">1</span><span class="pn">]</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">table</span><span class="pn">:</span> <span class="m">System.Collections.Generic.</span><span class="if">IDictionary</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">,</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="fn">dict</span><span class="pn">:</span> <span class="id">keyValuePairs</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Key</span> <span class="pn">*</span> <span class="ta">&#39;Value</span><span class="pn">)</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="m">System.Collections.Generic.</span><span class="if">IDictionary</span><span class="pn">&lt;</span><span class="ta">&#39;Key</span><span class="pn">,</span><span class="ta">&#39;Value</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">equality</span><span class="pn">)</span></div>
+
+
+ Evaluates to <code>100</code>.
+ 
+              </p>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="dict-2">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">table</span> <span class="o">=</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">dict</span> <span class="pn">[</span> <span class="pn">(</span><span class="n">1</span><span class="pn">,</span> <span class="n">100</span><span class="pn">)</span><span class="pn">;</span> <span class="pn">(</span><span class="n">2</span><span class="pn">,</span> <span class="n">200</span><span class="pn">)</span> <span class="pn">]</span>
+
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="3" class="id">table</span><span class="pn">[</span><span class="n">3</span><span class="pn">]</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">table</span><span class="pn">:</span> <span class="m">System.Collections.Generic.</span><span class="if">IDictionary</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">,</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="fn">dict</span><span class="pn">:</span> <span class="id">keyValuePairs</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Key</span> <span class="pn">*</span> <span class="ta">&#39;Value</span><span class="pn">)</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="m">System.Collections.Generic.</span><span class="if">IDictionary</span><span class="pn">&lt;</span><span class="ta">&#39;Key</span><span class="pn">,</span><span class="ta">&#39;Value</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">equality</span><span class="pn">)</span></div>
+
+
+ Throws <code>System.Collections.Generic.KeyNotFoundException</code>.
+ 
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="617" data-fsdocs-tip-unique="617">
+                <p>
+                  <a id="double">
+                    <a href="#double">
+                      <code><span>double&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="617">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>double&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-double.html">double</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.double))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to 64-bit float.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L305-305" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.ToDouble``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.ToDouble``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                This is a direct conversion for all
+ primitive numeric types. For strings, the input is converted using <code>Double.Parse()</code>  with InvariantCulture settings. Otherwise the operation requires and invokes a <code>ToDouble</code> method on the input type.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-double.html">double</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="double-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">double</span> <span class="n">45</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1">Multiple items<br /><span class="k">val</span> <span class="fn">double</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">double</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> double <span class="o">=</span> <span class="m">System.</span><span class="vt">Double</span><br /><br />--------------------<br /><span class="k">type</span> double<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span> <span class="rt">float</span><span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span></div>
+
+
+ Evaluates to <code>45.0</code>.
+ 
+              </p>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="double-2">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">double</span> <span class="n">12.3f</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1">Multiple items<br /><span class="k">val</span> <span class="fn">double</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">double</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> double <span class="o">=</span> <span class="m">System.</span><span class="vt">Double</span><br /><br />--------------------<br /><span class="k">type</span> double<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span> <span class="rt">float</span><span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span></div>
+
+
+ Evaluates to <code>12.30000019</code>.
+ 
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="618" data-fsdocs-tip-unique="618">
+                <p>
+                  <a id="eprintf">
+                    <a href="#eprintf">
+                      <code><span>eprintf&#32;<span>format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="618">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>eprintf&#32;<span>format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The formatted result.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Print to <code>stderr</code> using the given format.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L269-269" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatToError``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatToError``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    format
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The formatter.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The formatted result.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="example">
+                See <code>Printf.eprintf</code> (link: <a href="../reference/fsharp-core-printfmodule.html">Printf.PrintFormatToError</a>) for examples.
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="619" data-fsdocs-tip-unique="619">
+                <p>
+                  <a id="eprintfn">
+                    <a href="#eprintfn">
+                      <code><span>eprintfn&#32;<span>format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="619">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>eprintfn&#32;<span>format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The formatted result.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Print to <code>stderr</code> using the given format, and add a newline.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L277-277" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatLineToError``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatLineToError``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    format
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The formatter.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The formatted result.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="example">
+                See <code>Printf.eprintfn</code> (link: <a href="../reference/fsharp-core-printfmodule.html">Printf.PrintFormatLineToError</a>) for examples.
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="620" data-fsdocs-tip-unique="620">
+                <p>
+                  <a id="failwithf">
+                    <a href="#failwithf">
+                      <code><span>failwithf&#32;<span>format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="620">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>failwithf&#32;<span>format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-core-printfmodule-stringformat-2.html">StringFormat</a>&lt;<span>'T,&#32;'Result</span>&gt;</span></code>
+                       - 
+                      The formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The formatted result.
+                  <br/>
+                  Type parameters: 
+                  &#39;T, &#39;Result
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Print to a string buffer and raise an exception with the given
+ result. Helper printers must return strings.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L253-253" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatToStringThenFail``2\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatToStringThenFail``2```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    format
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-core-printfmodule-stringformat-2.html">StringFormat</a>&lt;<span>'T,&#32;'Result</span>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The formatter.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The formatted result.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="example">
+                See <code>Printf.failwithf</code> (link: <a href="../reference/fsharp-core-printfmodule.html">Printf.PrintFormatToStringThenFail</a>) for examples.
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="621" data-fsdocs-tip-unique="621">
+                <p>
+                  <a id="fprintf">
+                    <a href="#fprintf">
+                      <code><span>fprintf&#32;<span>textWriter&#32;format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="621">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>fprintf&#32;<span>textWriter&#32;format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        textWriter
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></code>
+                       - 
+                      The file TextWriter.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The formatted result.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Print to a file using the given format.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L257-257" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatToTextWriter``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatToTextWriter``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    textWriter
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The file TextWriter.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    format
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The formatter.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The formatted result.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="example">
+                See <code>Printf.fprintf</code> (link: <a href="../reference/fsharp-core-printfmodule.html">Printf.PrintFormatToTextWriter</a>) for examples.
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="622" data-fsdocs-tip-unique="622">
+                <p>
+                  <a id="fprintfn">
+                    <a href="#fprintfn">
+                      <code><span>fprintfn&#32;<span>textWriter&#32;format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="622">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>fprintfn&#32;<span>textWriter&#32;format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        textWriter
+                      </b>
+                      :
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></code>
+                       - 
+                      The file TextWriter.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The formatted result.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Print to a file using the given format, and add a newline.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L261-261" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatLineToTextWriter``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatLineToTextWriter``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    textWriter
+                  </span>
+                  :
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The file TextWriter.
+                  </p>
+                </dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    format
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The formatter.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The formatted result.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="example">
+                See <code>Printf.fprintfn</code> (link: <a href="../reference/fsharp-core-printfmodule.html">Printf.PrintFormatLineToTextWriter</a>) for examples.
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="623" data-fsdocs-tip-unique="623">
+                <p>
+                  <a id="int8">
+                    <a href="#int8">
+                      <code><span>int8&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="623">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>int8&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-int8.html">int8</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.int8))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to signed byte.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L313-313" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.ToSByte``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.ToSByte``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                This is a direct conversion for all
+ primitive numeric types. For strings, the input is converted using <code>SByte.Parse()</code>  with InvariantCulture settings.
+ Otherwise the operation requires and invokes a <code>ToSByte</code> method on the input type.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-int8.html">int8</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="int8-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">int8</span> <span class="o">-</span><span class="n">12</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1">Multiple items<br /><span class="k">val</span> <span class="fn">int8</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">int8</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> int8 <span class="o">=</span> <span class="m">System.</span><span class="vt">SByte</span><br /><br />--------------------<br /><span class="k">type</span> int8<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span> <span class="rt">sbyte</span><span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span></div>
+
+
+ Evaluates to <code>-12y</code>.
+ 
+              </p>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="int8-2">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">int8</span> <span class="s">&quot;3&quot;</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1">Multiple items<br /><span class="k">val</span> <span class="fn">int8</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">int8</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> int8 <span class="o">=</span> <span class="m">System.</span><span class="vt">SByte</span><br /><br />--------------------<br /><span class="k">type</span> int8<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span> <span class="rt">sbyte</span><span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span></div>
+
+
+ Evaluates to <code>3y</code>.
+ 
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="624" data-fsdocs-tip-unique="624">
+                <p>
+                  <a id="print">
+                    <a href="#print">
+                      <code><span>print&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="624">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>print&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The value to print.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the value to a string using the <code>string</code> operator and writes it to the standard output.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L281-281" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintValue``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintValue``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The value to print.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="print-example">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="id">print</span> <span class="s">&quot;Hello, &quot;</span>
+ <span class="id">print</span> <span class="s">&quot;World!&quot;</span>
+ <span class="c">// output: Hello, World!</span>
+</code></pre></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="625" data-fsdocs-tip-unique="625">
+                <p>
+                  <a id="printf">
+                    <a href="#printf">
+                      <code><span>printf&#32;<span>format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="625">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>printf&#32;<span>format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The formatted result.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Print to <code>stdout</code> using the given format.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L265-265" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormat``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormat``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    format
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The formatter.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The formatted result.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="example">
+                See <code>Printf.printf</code> (link: <a href="../reference/fsharp-core-printfmodule.html">Printf.PrintFormat</a>) for examples.
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="626" data-fsdocs-tip-unique="626">
+                <p>
+                  <a id="printfn">
+                    <a href="#printfn">
+                      <code><span>printfn&#32;<span>format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="626">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>printfn&#32;<span>format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The formatted result.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Print to <code>stdout</code> using the given format, and add a newline.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L273-273" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatLine``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatLine``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    format
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-core-printfmodule-textwriterformat-1.html">TextWriterFormat</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The formatter.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The formatted result.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="example">
+                See <code>Printf.printfn</code> (link: <a href="../reference/fsharp-core-printfmodule.html">Printf.PrintFormatLine</a>) for examples.
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="627" data-fsdocs-tip-unique="627">
+                <p>
+                  <a id="printn">
+                    <a href="#printn">
+                      <code><span>printn&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="627">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>printn&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                       - 
+                      The value to print.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the value to a string using the <code>string</code> operator and writes it to the standard output, followed by a newline.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L291-291" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintValueLine``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintValueLine``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The value to print.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="printn-example">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="id">printn</span> <span class="s">&quot;Hello, World!&quot;</span>
+ <span class="c">// output: Hello, World!</span>
+</code></pre></div>
+
+
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="628" data-fsdocs-tip-unique="628">
+                <p>
+                  <a id="query">
+                    <a href="#query">
+                      <code><span>query&#32;<span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="628">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>query&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-linq-querybuilder.html">QueryBuilder</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Builds a query using query syntax and operators.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L353-353" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Microsoft.FSharp.Core.ExtraTopLevelOperators.query\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:Microsoft.FSharp.Core.ExtraTopLevelOperators.query`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-linq-querybuilder.html">QueryBuilder</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="query-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">findEvensAndSortAndDouble</span><span class="pn">(</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">xs</span><span class="pn">:</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="id">System</span><span class="pn">.</span><span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="4" class="id">Linq</span><span class="pn">.</span><span data-fsdocs-tip="fs5" data-fsdocs-tip-unique="5" class="id">IQueryable</span><span class="pn">&lt;</span><span data-fsdocs-tip="fs6" data-fsdocs-tip-unique="6" class="vt">int</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="o">=</span>
+     <span data-fsdocs-tip="fs7" data-fsdocs-tip-unique="7" class="k">query</span> <span class="pn">{</span>
+         <span class="k">for</span> <span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="8" class="fn">x</span> <span class="k">in</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="9" class="fn">xs</span> <span class="k">do</span>
+         <span data-fsdocs-tip="fs9" data-fsdocs-tip-unique="10" class="k">where</span> <span class="pn">(</span><span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="11" class="fn">x</span> <span class="o">%</span> <span class="n">2</span> <span class="o">=</span> <span class="n">0</span><span class="pn">)</span>
+         <span data-fsdocs-tip="fs10" data-fsdocs-tip-unique="12" class="k">sortBy</span> <span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="13" class="fn">x</span>
+         <span data-fsdocs-tip="fs11" data-fsdocs-tip-unique="14" class="k">select</span> <span class="pn">(</span><span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="15" class="fn">x</span><span class="o">+</span><span data-fsdocs-tip="fs8" data-fsdocs-tip-unique="16" class="fn">x</span><span class="pn">)</span>
+      <span class="pn">}</span>
+
+ <span class="k">let</span> <span data-fsdocs-tip="fs12" data-fsdocs-tip-unique="17" class="id">data</span> <span class="o">=</span> <span class="pn">[</span><span class="n">1</span><span class="pn">;</span> <span class="n">2</span><span class="pn">;</span> <span class="n">6</span><span class="pn">;</span> <span class="n">7</span><span class="pn">;</span> <span class="n">3</span><span class="pn">;</span> <span class="n">6</span><span class="pn">;</span> <span class="n">2</span><span class="pn">;</span> <span class="n">1</span><span class="pn">]</span>
+
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="18" class="fn">findEvensAndSortAndDouble</span> <span class="pn">(</span><span data-fsdocs-tip="fs12" data-fsdocs-tip-unique="19" class="id">data</span><span class="pn">.</span><span class="id">AsQueryable</span><span class="pn">(</span><span class="pn">)</span><span class="pn">)</span> <span class="o">|&gt;</span> <span data-fsdocs-tip="fs13" data-fsdocs-tip-unique="20" class="m">Seq</span><span class="pn">.</span><span data-fsdocs-tip="fs14" data-fsdocs-tip-unique="21" class="id">toList</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">findEvensAndSortAndDouble</span><span class="pn">:</span><br />&#160;&#160;&#160;&#160;<span class="id">xs</span><span class="pn">:</span> <span class="m">System.Linq.</span><span class="if">IQueryable</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="m">System.Linq.</span><span class="if">IQueryable</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="id">xs</span><span class="pn">:</span> <span class="m">System.Linq.</span><span class="if">IQueryable</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">namespace</span> <span class="m">System</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">namespace</span> <span class="m">System.Linq</span></div>
+<div popover class="fsdocs-tip" id="fs5">Multiple items<br /><em>Provides functionality to evaluate queries against a specific data source wherein the type of the data is not specified.</em><br /><span class="k">type</span> <span class="if">IQueryable</span> <span class="o">=</span><br />&#160;&#160;<span class="k">inherit</span> <span class="if">IEnumerable</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">ElementType</span><span class="pn">:</span> <span class="rt">Type</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">Expression</span><span class="pn">:</span> <span class="rt">Expression</span><br />&#160;&#160;<span class="k">member</span> <span class="prop">Provider</span><span class="pn">:</span> <span class="if">IQueryProvider</span><br /><br />--------------------<br /><em>Provides functionality to evaluate queries against a specific data source wherein the type of the data is known.<br /><br />T: The type of the data in the data source.</em><br /><span class="k">type</span> <span class="if">IQueryable</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="o">=</span><br />&#160;&#160;<span class="k">inherit</span> <span class="rt">seq</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span><br />&#160;&#160;<span class="k">inherit</span> <span class="if">IEnumerable</span><br />&#160;&#160;<span class="k">inherit</span> <span class="if">IQueryable</span></div>
+<div popover class="fsdocs-tip" id="fs6">Multiple items<br /><span class="k">val</span> <span class="fn">int</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">int</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> int <span class="o">=</span> <span class="vt">int32</span><br /><br />--------------------<br /><span class="k">type</span> int<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span><br />&#160;&#160;<span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs7"><span class="k">val</span> <span class="fn">query</span><span class="pn">:</span> <span class="m">Linq.</span><span class="rt">QueryBuilder</span></div>
+<div popover class="fsdocs-tip" id="fs8"><span class="k">val</span> <span class="id">x</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs9">custom operation<span class="pn">:</span> <span class="fn">where</span> <span class="pn">(</span><span class="vt">bool</span><span class="pn">)</span><br />Calls <span class="m">Linq.</span><span class="rt">QueryBuilder</span><span class="pn">.</span><span class="fn">Where</span></div>
+<div popover class="fsdocs-tip" id="fs10">custom operation<span class="pn">:</span> <span class="fn">sortBy</span> <span class="pn">(</span><span class="ta">&#39;Key</span><span class="pn">)</span><br />Calls <span class="m">Linq.</span><span class="rt">QueryBuilder</span><span class="pn">.</span><span class="fn">SortBy</span></div>
+<div popover class="fsdocs-tip" id="fs11">custom operation<span class="pn">:</span> <span class="fn">select</span> <span class="pn">(</span><span class="ta">&#39;Result</span><span class="pn">)</span><br />Calls <span class="m">Linq.</span><span class="rt">QueryBuilder</span><span class="pn">.</span><span class="fn">Select</span></div>
+<div popover class="fsdocs-tip" id="fs12"><span class="k">val</span> <span class="fn">data</span><span class="pn">:</span> <span class="vt">int</span> <span class="rt">list</span></div>
+<div popover class="fsdocs-tip" id="fs13"><span class="k">module</span> <span class="m">Seq</span><br />from Microsoft.FSharp.Collections</div>
+<div popover class="fsdocs-tip" id="fs14"><span class="k">val</span> <span class="fn">toList</span><span class="pn">:</span> <span class="id">source</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span> <span class="rt">list</span></div>
+
+
+ Evaluates to <code>[4; 4; 12; 12]</code>.
+ 
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="629" data-fsdocs-tip-unique="629">
+                <p>
+                  <a id="readOnlyDict">
+                    <a href="#readOnlyDict">
+                      <code><span>readOnlyDict&#32;<span>keyValuePairs</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="629">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>readOnlyDict&#32;<span>keyValuePairs</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        keyValuePairs
+                      </b>
+                      :
+                      <code><span><span>(<span>'Key&#32;*&#32;'Value</span>)</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<span>'Key,&#32;'Value</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                  Type parameters: 
+                  &#39;Key, &#39;Value (requires equality)
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Builds a read-only lookup table from a sequence of key/value pairs. The key objects are indexed using generic hashing and equality.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L208-208" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.CreateReadOnlyDictionary``2\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.CreateReadOnlyDictionary``2```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    keyValuePairs
+                  </span>
+                  :
+                  <code><span><span>(<span>'Key&#32;*&#32;'Value</span>)</span>&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<span>'Key,&#32;'Value</span>&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="readonlydict-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">table</span> <span class="o">=</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">readOnlyDict</span> <span class="pn">[</span> <span class="pn">(</span><span class="n">1</span><span class="pn">,</span> <span class="n">100</span><span class="pn">)</span><span class="pn">;</span> <span class="pn">(</span><span class="n">2</span><span class="pn">,</span> <span class="n">200</span><span class="pn">)</span> <span class="pn">]</span>
+
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="3" class="id">table</span><span class="pn">[</span><span class="n">1</span><span class="pn">]</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">table</span><span class="pn">:</span> <span class="m">System.Collections.Generic.</span><span class="if">IReadOnlyDictionary</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">,</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="fn">readOnlyDict</span><span class="pn">:</span> <span class="id">keyValuePairs</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Key</span> <span class="pn">*</span> <span class="ta">&#39;Value</span><span class="pn">)</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="m">System.Collections.Generic.</span><span class="if">IReadOnlyDictionary</span><span class="pn">&lt;</span><span class="ta">&#39;Key</span><span class="pn">,</span><span class="ta">&#39;Value</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">equality</span><span class="pn">)</span></div>
+
+
+ Evaluates to <code>100</code>.
+ 
+              </p>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="readonlydict-2">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">table</span> <span class="o">=</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">readOnlyDict</span> <span class="pn">[</span> <span class="pn">(</span><span class="n">1</span><span class="pn">,</span> <span class="n">100</span><span class="pn">)</span><span class="pn">;</span> <span class="pn">(</span><span class="n">2</span><span class="pn">,</span> <span class="n">200</span><span class="pn">)</span> <span class="pn">]</span>
+
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="3" class="id">table</span><span class="pn">[</span><span class="n">3</span><span class="pn">]</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">table</span><span class="pn">:</span> <span class="m">System.Collections.Generic.</span><span class="if">IReadOnlyDictionary</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">,</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="fn">readOnlyDict</span><span class="pn">:</span> <span class="id">keyValuePairs</span><span class="pn">:</span> <span class="pn">(</span><span class="ta">&#39;Key</span> <span class="pn">*</span> <span class="ta">&#39;Value</span><span class="pn">)</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="m">System.Collections.Generic.</span><span class="if">IReadOnlyDictionary</span><span class="pn">&lt;</span><span class="ta">&#39;Key</span><span class="pn">,</span><span class="ta">&#39;Value</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">equality</span><span class="pn">)</span></div>
+
+
+ Throws <code>System.Collections.Generic.KeyNotFoundException</code>.
+ 
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="630" data-fsdocs-tip-unique="630">
+                <p>
+                  <a id="set">
+                    <a href="#set">
+                      <code><span>set&#32;<span>elements</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="630">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>set&#32;<span>elements</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        elements
+                      </b>
+                      :
+                      <code><span>'T&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                       - 
+                      The input sequence of elements.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="../reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                  </span>
+                  The created set.
+                  <br/>
+                  Type parameters: 
+                  &#39;T (requires comparison)
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Builds a set from a sequence of objects. The objects are indexed using generic comparison.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L28-28" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.CreateSet``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.CreateSet``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    elements
+                  </span>
+                  :
+                  <code><span>'T&#32;<a href="../reference/fsharp-collections-seq-1.html">seq</a></span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The input sequence of elements.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="../reference/fsharp-collections-fsharpset-1.html">Set</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The created set.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="set-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="id">values</span> <span class="o">=</span> <span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="fn">set</span> <span class="pn">[</span> <span class="n">1</span><span class="pn">;</span> <span class="n">2</span><span class="pn">;</span> <span class="n">3</span><span class="pn">;</span> <span class="n">5</span><span class="pn">;</span> <span class="n">7</span><span class="pn">;</span> <span class="n">11</span> <span class="pn">]</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">values</span><span class="pn">:</span> <span class="rt">Set</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs2"><span class="k">val</span> <span class="fn">set</span><span class="pn">:</span> <span class="id">elements</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="rt">seq</span> <span class="pn">-&gt;</span> <span class="rt">Set</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">comparison</span><span class="pn">)</span></div>
+
+
+ Evaluates to a set containing the given numbers.
+ 
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="631" data-fsdocs-tip-unique="631">
+                <p>
+                  <a id="single">
+                    <a href="#single">
+                      <code><span>single&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="631">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>single&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-single.html">single</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.single))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to 32-bit float.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L301-301" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.ToSingle``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.ToSingle``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                This is a direct conversion for all
+ primitive numeric types. For strings, the input is converted using <code>Single.Parse()</code>  with InvariantCulture settings. Otherwise the operation requires and invokes a <code>ToSingle</code> method on the input type.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-single.html">single</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="single-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">single</span> <span class="n">45</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1">Multiple items<br /><span class="k">val</span> <span class="fn">single</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">single</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> single <span class="o">=</span> <span class="m">System.</span><span class="vt">Single</span><br /><br />--------------------<br /><span class="k">type</span> single<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span> <span class="rt">float32</span><span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span></div>
+
+
+ Evaluates to <code>45.0f</code>.
+ 
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="632" data-fsdocs-tip-unique="632">
+                <p>
+                  <a id="sprintf">
+                    <a href="#sprintf">
+                      <code><span>sprintf&#32;<span>format</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="632">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>sprintf&#32;<span>format</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        format
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-core-printfmodule-stringformat-1.html">StringFormat</a>&lt;'T&gt;</span></code>
+                       - 
+                      The formatter.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  The formatted result.
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Print to a string using the given format.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L249-249" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatToString``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.PrintFormatToString``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    format
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-core-printfmodule-stringformat-1.html">StringFormat</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs">
+                  <p>
+                    The formatter.
+                  </p>
+                </dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-return-docs">
+                  <p>
+                    The formatted result.
+                  </p>
+                </dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="example">
+                See <code>Printf.sprintf</code> (link: <a href="../reference/fsharp-core-printfmodule.html">Printf.PrintFormatToStringThen</a>) for examples.
+              </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="633" data-fsdocs-tip-unique="633">
+                <p>
+                  <a id="uint8">
+                    <a href="#uint8">
+                      <code><span>uint8&#32;<span>value</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="633">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>uint8&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>^T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="../reference/fsharp-core-uint8.html">uint8</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  inline
+                  <br/>
+                  Type parameters: 
+                  ^T (requires (static member op_Explicit : ^T -&gt; Microsoft.FSharp.Core.uint8))
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      Converts the argument to byte.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L309-309" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.ToByte``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.ToByte``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <p class="fsdocs-remarks">
+                This is a direct conversion for all
+ primitive numeric types. For strings, the input is converted using <code>Byte.Parse()</code> on strings and otherwise requires a <code>ToByte</code> method on the input type.
+              </p>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    value
+                  </span>
+                  :
+                  <code>^T</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="../reference/fsharp-core-uint8.html">uint8</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="uint8-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">uint8</span> <span class="n">12</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1">Multiple items<br /><span class="k">val</span> <span class="fn">uint8</span><span class="pn">:</span> <span class="id">value</span><span class="pn">:</span> <span class="ta">&#39;T</span> <span class="pn">-&gt;</span> <span class="vt">uint8</span> <span class="pn">(</span><span class="k">requires</span> <span class="k">member</span> <span class="fn">op_Explicit</span><span class="pn">)</span><br /><br />--------------------<br /><span class="k">type</span> uint8 <span class="o">=</span> <span class="m">System.</span><span class="vt">Byte</span><br /><br />--------------------<br /><span class="k">type</span> uint8<span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span> <span class="o">=</span> <span class="rt">byte</span><span class="pn">&lt;</span><span class="ta">&#39;Measure</span><span class="pn">&gt;</span></div>
+
+
+ Evaluates to <code>12uy</code>.
+ 
+              </p>
+            </details>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div>
+    <h3 id="active-patterns" data-fsdocs-heading="4">
+      Active patterns
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Active pattern
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code data-fsdocs-tip="634" data-fsdocs-tip-unique="634">
+                <p>
+                  <a id="(|Lazy|)">
+                    <a href="#(|Lazy|)">
+                      <code><span>(|Lazy|)&#32;<span>input</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div popover="" class="fsdocs-tip" id="634">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>(|Lazy|)&#32;<span>input</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        input
+                      </b>
+                      :
+                      <code><span><a href="../reference/fsharp-control-lazy-1.html">Lazy</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                  Type parameters: 
+                  &#39;T
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <details>
+              <summary>
+                <div class="fsdocs-summary">
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                      An active pattern to force the execution of values of type <code>Lazy&lt;_&gt;</code>.
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="https://github.com/dotnet/fsharp//tree/master/src/FSharp.Core/fslib-extra-pervasives.fs#L350-350" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Microsoft.FSharp.Core.ExtraTopLevelOperators.LazyPattern``1\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('```cref:M:Microsoft.FSharp.Core.ExtraTopLevelOperators.LazyPattern``1```')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    input
+                  </span>
+                  :
+                  <code><span><a href="../reference/fsharp-control-lazy-1.html">Lazy</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+              <h5 class="fsdocs-example-header">
+                Example
+              </h5>
+              <p class="fsdocs-example" id="lazy-1">
+                <div class="fsdocs-snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="k">let</span> <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="1" class="fn">f</span> <span class="pn">(</span><span data-fsdocs-tip="fs2" data-fsdocs-tip-unique="2" class="id">Lazy</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="3" class="fn">v</span><span class="pn">)</span> <span class="o">=</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="4" class="fn">v</span> <span class="o">+</span> <span data-fsdocs-tip="fs3" data-fsdocs-tip-unique="5" class="fn">v</span>
+
+ <span class="k">let</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="6" class="id">v</span> <span class="o">=</span> <span class="k">lazy</span> <span class="pn">(</span><span class="id">print</span> <span class="s">&quot;eval!&quot;</span><span class="pn">;</span> <span class="n">5</span><span class="o">+</span><span class="n">5</span><span class="pn">)</span>
+
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="7" class="fn">f</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="8" class="id">v</span>
+ <span data-fsdocs-tip="fs1" data-fsdocs-tip-unique="9" class="fn">f</span> <span data-fsdocs-tip="fs4" data-fsdocs-tip-unique="10" class="id">v</span>
+</code></pre></div>
+<div popover class="fsdocs-tip" id="fs1"><span class="k">val</span> <span class="fn">f</span><span class="pn">:</span> <span class="rt">Lazy</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs2">Multiple items<br />active recognizer <span class="uc">Lazy</span><span class="pn">:</span> <span class="rt">Lazy</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="pn">-&gt;</span> <span class="ta">&#39;T</span><br /><br />--------------------<br /><span class="k">type</span> <span class="rt">Lazy</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span> <span class="o">=</span> <span class="m">System.</span><span class="rt">Lazy</span><span class="pn">&lt;</span><span class="ta">&#39;T</span><span class="pn">&gt;</span></div>
+<div popover class="fsdocs-tip" id="fs3"><span class="k">val</span> <span class="id">v</span><span class="pn">:</span> <span class="vt">int</span></div>
+<div popover class="fsdocs-tip" id="fs4"><span class="k">val</span> <span class="fn">v</span><span class="pn">:</span> <span class="rt">Lazy</span><span class="pn">&lt;</span><span class="vt">int</span><span class="pn">&gt;</span></div>
+
+
+ Evaluates to <code>10</code>. The text <code>eval!</code> is printed once on the first invocation of <code>f</code>.
+ 
+              </p>
+            </details>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+        
+    </div>
+</main>
+<aside id="fsdocs-page-menu">
+    <p id="on-this-page">On this page</p>
+    <ul>
+  <li class="level-2" data-fsdocs-heading="1">
+    <a href="#fsharp-core-extratopleveloperators" title="ExtraTopLevelOperators Module">
+      ExtraTopLevelOperators Module
+    </a>
+  </li>
+  <li class="level-3" data-fsdocs-heading="2">
+    <a href="#nested-entities" title="Nested modules">
+      Nested modules
+    </a>
+    <ul class="fsdocs-menu-entries">
+      <li>
+        <a href="../reference/fsharp-core-extratopleveloperators-checked.html" title="Checked">
+          Checked
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li class="level-3" data-fsdocs-heading="3">
+    <a href="#functions-and-values" title="Functions and values">
+      Functions and values
+    </a>
+  </li>
+  <li class="level-3" data-fsdocs-heading="4">
+    <a href="#active-patterns" title="Active patterns">
+      Active patterns
+    </a>
+  </li>
+</ul><style>
+body { timeline-scope: --fsdocs-heading-1, --fsdocs-heading-2, --fsdocs-heading-3, --fsdocs-heading-4, --fsdocs-main; }
+#content [data-fsdocs-heading="1"] { view-timeline-name: --fsdocs-heading-1; }
+#fsdocs-page-menu [data-fsdocs-heading="1"] { animation-timeline: --fsdocs-heading-1, --fsdocs-heading-2; }
+body:has(#content [data-fsdocs-heading="1"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="1"] { --fsdocs-toc-focused: 1; }
+#content [data-fsdocs-heading="2"] { view-timeline-name: --fsdocs-heading-2; }
+#fsdocs-page-menu [data-fsdocs-heading="2"] { animation-timeline: --fsdocs-heading-2, --fsdocs-heading-3; }
+body:has(#content [data-fsdocs-heading="2"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="2"] { --fsdocs-toc-focused: 1; }
+#content [data-fsdocs-heading="3"] { view-timeline-name: --fsdocs-heading-3; }
+#fsdocs-page-menu [data-fsdocs-heading="3"] { animation-timeline: --fsdocs-heading-3, --fsdocs-heading-4, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="3"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="3"] { --fsdocs-toc-focused: 1; }
+#content [data-fsdocs-heading="4"] { view-timeline-name: --fsdocs-heading-4; }
+#fsdocs-page-menu [data-fsdocs-heading="4"] { animation-timeline: --fsdocs-heading-4, --fsdocs-main; }
+body:has(#content [data-fsdocs-heading="4"]:is(:focus, .fsdocs-hotkey-focus)) #fsdocs-page-menu [data-fsdocs-heading="4"] { --fsdocs-toc-focused: 1; }
+</style>
+</aside>
+<dialog>
+    <input type="search" placeholder="Search docs" />
+    <div class="results">
+        <ul></ul>
+        <p class="empty">Type something to start searching.</p>
+    </div>
+</dialog>
+<script type="module" src="../content/fsdocs-tips.js"></script>
+<script type="module" src="../content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="../content/fsdocs-details-toggle.js"></script>
+<script type="module" src="../content/fsdocs-theme.js"></script>
+<script type="module" src="../content/fsdocs-search.js"></script>
+<script type="module" src="../content/fsdocs-copy-button.js"></script>
+<script type="module" src="../content/fsdocs-hotkeys.js"></script>
+
+</body>
+</html>
